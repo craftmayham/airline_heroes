@@ -1,0 +1,21 @@
+modLoader = 'lowcodefml'
+showAsResourcePack = false
+loaderVersion="[47,)"
+license="All rights reserved"
+
+[[mods]]
+modId="airline_heroes"
+displayName="Airline Heroes"
+version="1.0.0"
+logoFile = "logo.png"
+logoBlur = false
+description='''
+e
+'''
+
+[[dependencies.airline_heroes]]
+modId = "palladium"
+mandatory = true
+versionRange = ""
+ordering = "NONE"
+side = "BOTH"

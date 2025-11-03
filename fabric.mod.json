@@ -1,0 +1,11 @@
+{
+    "schemaVersion": 1,
+    "authors": [],
+    "environment": "*",
+    "name": "Airline Heroes",
+    "id": "airline_heroes",
+    "version": "1.0.0",
+    "description": "e",
+    "icon": "logo.png",
+    "license": "All rights reserved"
+}

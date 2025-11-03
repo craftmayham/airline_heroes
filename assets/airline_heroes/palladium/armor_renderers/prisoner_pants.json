@@ -1,0 +1,5 @@
+{
+  "textures": "airline_heroes:textures/models/armor/prisoner_pants.png",
+  "model_layers": "palladium:humanoid#suit",
+  "hide_second_layer": true
+}

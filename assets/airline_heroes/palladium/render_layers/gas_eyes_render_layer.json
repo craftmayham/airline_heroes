@@ -1,0 +1,14 @@
+{
+  "type": "palladium:compound",
+  "layers": [
+  {
+  "model_layer": "minecraft:player#main",
+  "texture": "airline_heroes:textures/models/test.png"
+  },
+    {
+  "model_layer": "palladium:humanoid#suit",
+  "texture": "airline_heroes:textures/models/eyes.png",
+  "render_type": "glow"
+  }
+  ]
+}

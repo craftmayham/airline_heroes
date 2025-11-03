@@ -1,0 +1,16 @@
+{
+  "pack": {
+    "id": "airline_heroes",
+    "description": "e",
+    "pack_format": 15,
+    "version": "1.0.0"
+  },
+  "dependencies": {
+    "common": {
+    },
+    "fabric": {
+    },
+    "forge": {
+    }
+  }
+}

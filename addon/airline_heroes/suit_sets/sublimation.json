@@ -1,0 +1,37 @@
+{
+  "tooltip": [
+    "Sublimation set"
+  ],
+  "armor_material": "minecraft:diamond",
+  "creative_mode_tab": "combat",
+  "chest": {
+    "item_name": "sublimation_jacket",
+	"armor_renderer": "airline_heroes:sublimation_jacket",
+    "tooltip": [
+      "Chestplate"
+    ]
+  },
+  "legs": {
+    "item_name": "sublimation_pants",
+	"armor_renderer": "airline_heroes:sublimation_pants",
+    "tooltip": [
+      "Leggings"
+    ]
+  },
+  "feet": {
+    "item_name": "sublimation_shoes",
+	"armor_renderer": "airline_heroes:sublimation_shoes",
+    "tooltip": [
+      "Boots"
+    ]
+  },
+  "head": {
+    "item_name": "sublimation_goggles",
+	"armor_renderer": "airline_heroes:sublimation_goggles",
+    "openable": true,
+    "opening_time": 6,
+    "tooltip": [
+      "Helmet"
+    ]
+  }
+}

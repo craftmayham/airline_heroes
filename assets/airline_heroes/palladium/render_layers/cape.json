@@ -1,0 +1,23 @@
+	{
+  "type": "palladium:compound",
+  "layers": [
+    {
+      "type": "geckolib:default",
+  "model": "airline_heroes:geo/cape.geo.json",
+        "conditions": [
+        {
+          "type": "palladium:is_moving"
+        }
+      ],
+  "texture": "airline_heroes:textures/models/cape.png",
+        "animation_file": "airline_heroes:animations/cape.animation.json",
+      "animation_controller": [
+        {
+          "name": "looping",
+          "transition_tick_time": 10,
+          "animation": "animation.airline_heroes:cape_idle"
+        }
+      ]
+	}
+	]
+}
