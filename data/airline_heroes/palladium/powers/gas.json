@@ -307,6 +307,34 @@
 }
 		  ]
 	  }
+},
+"exhaust":
+{
+    "type": "palladium:command",
+    "icon": "minecraft:command_block",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "first_tick_commands": [
+	"say on"
+	],
+    "last_tick_commands": [
+	"say off"
+	],
+    "commands": [
+    ],
+		"conditions": {
+		"enabling": [
+			                  {
+                    "type": "palladium:ability_enabled",
+                    "ability": "gas_form"
+                  }
+		]
+	}
 }
 }
 }
