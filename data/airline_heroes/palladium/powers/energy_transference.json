@@ -7,46 +7,27 @@
   "abilities": {
 	  "energy_removal":
 	  {
-    "type": "palladium:slowfall",
+    "type": "airline_heroes:beacon_aura",
     "icon": "minecraft:feather",
     "title": "Energy Removal",
     "bar_color": "light_gray",
     "hidden": false,
     "hidden_in_bar": false,
+	"radius": 2,
+	"fall_speed": -0.05,
     "list_index": -1,
     "gui_position": "null",
     "description": "null",
-	"conditions": {
-		"enabling": [
-		{
-    "type": "palladium:ability_enabled",
-	"ability": "energy_removal_toggle"
-		}
-		]
-		}
-},
-"energy_removal_toggle":
-{
-      "type": "palladium:dummy",
-	"icon": "minecraft:blaze_powder",
-	      "conditions": {
-        "enabling": [
-          {
+	"conditions":{
+        "enabling":[{ 
             "type": "palladium:toggle",
             "cooldown": 0,
-			"key_type": "key_bind"
-          },
-		  {
-    "type": "palladium:not",
-    "conditions": [
-			  {
-    "type": "palladium:has_effect",
-    "effect": "airline_heroes:nullified"
-}
-	]
-}
-        ]
-      }
+            "key_type": "key_bind",
+            "needs_empty_hand": false,
+            "allow_scrolling_when_crouching": true
+        }]
 }
 }
+  }
+  
 }

@@ -1,33 +1,37 @@
-StartupEvents.registry('palladium:abilities', (event) => {
-    event.create('airline_heroes:slowfall_aura')
-        .icon(palladium.createItemIcon('minecraft:feather'))
-        .documentationDescription('Slows the fall of nearby entities while active.')
+// File: kubejs/startup_scripts/beacon_aura.js
 
-        .addProperty('radius', 'double', 6.0, 'Radius around the entity that causes slowfall')
-        .addProperty('fall_speed', 'double', -0.05, 'Minimum allowed downward velocity (closer to 0 = slower fall)')
-
+StartupEvents.registry('palladium:abilities', event => {
+    event.create('airline_heroes:beacon_aura')
+        .icon(palladium.createItemIcon('minecraft:beacon'))
+        .displayName('Beacon Aura')
+        .documentationDescription('Toggleable aura that grants beacon-like buffs to nearby allies.')
+        .addProperty('radius', 'double', 8.0, 'Effect radius in blocks')
         .tick((entity, entry, holder, enabled) => {
+            // Only active when toggled on
             if (!enabled) return;
-            if (!entity.level || entity.level.isClientSide()) return; // run server-side only
+            if (!entity.level || entity.level.isClientSide()) return;
 
             const radius = entry.getPropertyByName('radius');
-            const fallSpeed = entry.getPropertyByName('fall_speed'); // e.g. -0.05
 
-            // Create an area to check for entities
+            // Create an axis-aligned bounding box around the entity
             const aabb = AABB.of(
                 entity.x - radius, entity.y - radius, entity.z - radius,
                 entity.x + radius, entity.y + radius, entity.z + radius
             );
 
-            // Get all nearby entities except the ability holder
-            const nearby = entity.level.getEntitiesWithin(aabb).filter(e => e.id != entity.id);
+            // Get all nearby living entities, excluding the ability holder
+            const nearby = entity.level.getEntitiesWithin(aabb)
+                .filter(e => e && e.isLiving && e.isLiving() && e !== entity);
 
-            // Limit downward motion of each entity
-            nearby.forEach(e => {
-                const motion = e.deltaMovement;
-                if (motion.y < fallSpeed) {
-                    e.setDeltaMovement(motion.x, fallSpeed, motion.z);
+            for (const e of nearby) {
+                try {
+                    // Apply short-duration effects that refresh each tick
+                    e.potionEffects.add('minecraft:slowness', 40, 2, false, false);
+                    e.potionEffects.add('minecraft:slow_falling', 40, 0, false, false);
+                    e.potionEffects.add('minecraft:mining_fatigue', 40, 2, false, false);
+                } catch (err) {
+                    console.warn('[BeaconAura] Skipped ${e} — ${err}');
                 }
-            });
+            }
         });
 });
