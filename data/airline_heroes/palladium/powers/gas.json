@@ -2,7 +2,7 @@
   "name": "Gas",
   "background": "minecraft:textures/block/red_wool.png",
   "icon": "minecraft:apple",
-      "gui_display_type": "list",
+      "gui_display_type": "tree",
 	"ability_bar_texture": "palladium:textures/gui/ability_bar.png",
   "abilities": {
 	"vibrate": {
@@ -64,6 +64,17 @@
       "type": "palladium:dummy",
 	"icon": "minecraft:blaze_rod",
 	      "conditions": {
+		"unlocking": [
+		{
+    "type": "palladium:scoreboard_score_buyable",
+    "objective": "airline_heroes.skill_points",
+    "score": 1,
+    "icon": "minecraft:command_block",
+    "description": {
+        "text": "Scoreboard Score"
+    }
+}
+		],
         "enabling": [
           {
             "type": "palladium:toggle",
@@ -335,6 +346,16 @@
                   }
 		]
 	}
-}
+},
+"loop": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [
+                "scoreboard objectives add airline_heroes.skill_points dummy"
+            ],
+            "last_tick_commands": [
+            ],
+            "commands": []
+        }
 }
 }
