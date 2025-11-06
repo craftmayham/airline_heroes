@@ -293,11 +293,13 @@
     "hidden": true,
     "first_tick_commands": [
 	"say on",
-	"particle cloud ~ ~0.3 ~ 0.2 0.4 0.2 0.6 5 force"
+	"particle minecraft:cloud ~ ~1.3 ~ 0.3 0.2 0.3 0.05 10 force",
+	"playsound minecraft:block.fire.extinguish master @a ~ ~ ~ 1 1.8"
 	],
     "last_tick_commands": [
 	"say off",
-	"particle cloud ~ ~0.3 ~ 0.2 0.2 0.2 0.6 5 force"
+	"particle minecraft:cloud ~ ~1.3 ~ 0.3 0.2 0.3 0.05 10 force",
+	"playsound minecraft:block.fire.extinguish master @a ~ ~ ~ 1 1.8"
 	],
     "commands": [
     ],
