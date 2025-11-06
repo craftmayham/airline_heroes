@@ -1,14 +1,14 @@
 {
   "name": "Gas",
   "background": "minecraft:textures/block/red_wool.png",
-  "icon": "minecraft:apple",
+  "icon": "airline_heroes:textures/icons/sublimation_icon.png",
       "gui_display_type": "tree",
 	"ability_bar_texture": "palladium:textures/gui/ability_bar.png",
   "abilities": {
 	  "gas_form":
 {
       "type": "palladium:dummy",
-	"icon": "minecraft:blaze_rod",
+	"icon": "airline_heroes:textures/icons/sublimation_gas_form.png",
 	"title": "Gas Form",
 	"bar_color": "pink",
 	"list_index": 0,
@@ -292,10 +292,12 @@
     "type": "palladium:command",
     "hidden": true,
     "first_tick_commands": [
-	"say on"
+	"say on",
+	"particle cloud ~ ~0.3 ~ 0.2 0.4 0.2 0.6 5 force"
 	],
     "last_tick_commands": [
-	"say off"
+	"say off",
+	"particle cloud ~ ~0.3 ~ 0.2 0.2 0.2 0.6 5 force"
 	],
     "commands": [
     ],
