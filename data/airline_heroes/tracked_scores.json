@@ -1,5 +1,6 @@
 {
   "objectives": [
-    "airline_heroes.skill_points"
+    "airline_heroes.skill_points",
+	"kinetic_drain"
   ]
 }

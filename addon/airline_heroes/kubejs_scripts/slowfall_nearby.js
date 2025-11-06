@@ -26,9 +26,10 @@ StartupEvents.registry('palladium:abilities', event => {
             for (const e of nearby) {
                 try {
                     // Apply short-duration effects that refresh each tick
-                    e.potionEffects.add('minecraft:slowness', 40, 2, false, false);
+                    e.potionEffects.add('minecraft:slowness', 40, 5, false, false);
                     e.potionEffects.add('minecraft:slow_falling', 40, 0, false, false);
                     e.potionEffects.add('minecraft:mining_fatigue', 40, 2, false, false);
+					e.potionEffects.add('airline_heroes:kinetic_drain',40, 0, true, true);
                 } catch (err) {
                     console.warn('[BeaconAura] Skipped ${e} — ${err}');
                 }

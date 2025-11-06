@@ -1,33 +1,153 @@
 {
-	"name": "Energy Transference",
+  "name": "Energy Transference",
   "background": "minecraft:textures/block/red_wool.png",
   "icon": "minecraft:blaze_powder",
   "gui_display_type": "list",
-	"ability_bar_texture": "palladium:textures/gui/ability_bar.png",
+  "ability_bar_texture": "palladium:textures/gui/ability_bar.png",
+
   "abilities": {
-	  "energy_removal":
-	  {
-    "type": "airline_heroes:beacon_aura",
-    "icon": "minecraft:feather",
-    "title": "Energy Removal",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-	"radius": 2,
-	"fall_speed": -0.05,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
-	"conditions":{
-        "enabling":[{ 
+    "energy_removal": {
+      "type": "airline_heroes:beacon_aura",
+      "icon": "minecraft:feather",
+      "title": "Energy Removal",
+      "bar_color": "light_gray",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "radius": 2,
+      "fall_speed": -0.05,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "null",
+      "conditions": {
+        "enabling": [
+          {
             "type": "palladium:toggle",
             "cooldown": 0,
             "key_type": "key_bind",
             "needs_empty_hand": false,
             "allow_scrolling_when_crouching": true
-        }]
+          }
+        ]
+      }
+    },
+
+    "energy_removal_self_score": {
+      "type": "palladium:command",
+      "hidden": true,
+      "first_tick_commands": [],
+      "last_tick_commands": [],
+      "commands": ["scoreboard players add @s kinetic_drain 1"],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "energy_removal_self"
+          }
+        ]
+      }
+    },
+
+    "energy_removal_self": {
+      "type": "palladium:slowfall",
+      "icon": "minecraft:feather",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "null",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "energy_removal_self_toggle"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:on_ground"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    "energy_removal_self_toggle": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:blaze_rod",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:toggle",
+            "cooldown": 0,
+            "key_type": "key_bind"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+	"kinetic_jaunt":
+	{
+		
+    "type": "palladium:attribute_modifier",
+    "icon": "minecraft:iron_chestplate",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "attribute": "minecraft:generic.movement_speed",
+    "amount": 3,
+    "operation": 0,
+    "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
+	"energy_bar_usage": {
+   "energy_bar": "energy_bar_name",
+   "amount": 10
+},
+	"conditions": {
+		
+        "enabling": [
+          {
+            "type": "palladium:toggle",
+            "cooldown": 0,
+            "key_type": "key_bind"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
 }
-}
+  },
+
+  "energy_bars": {
+    "potential_energy": {
+      "max": 2000,
+      "color": "#fc8803",
+      "synced_value": {
+        "type": "score",
+        "objective": "kinetic_drain",
+        "fallback": 0
+      }
+    }
   }
-  
 }
