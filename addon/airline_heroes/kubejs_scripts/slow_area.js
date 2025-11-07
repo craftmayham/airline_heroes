@@ -1,5 +1,3 @@
-// File: kubejs/startup_scripts/beacon_aura.js
-
 let ClientboundSetEntityMotionPacket = Java.loadClass('net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket');
 StartupEvents.registry('palladium:abilities', event => {
     event.create('airline_heroes:slow_area')
@@ -35,7 +33,7 @@ StartupEvents.registry('palladium:abilities', event => {
 					e.potionEffects.add('airline_heroes:kinetic_drain',40, 0, true, true); 
 					
 					} 
-					catch (err) { console.warn('[BeaconAura] Skipped ${e} — ${err}'); 
+					catch (err) { console.warn('[SlowAura] Skipped ${e} — ${err}'); 
 					}
 			
 				                    if (e.isPlayer()) {
