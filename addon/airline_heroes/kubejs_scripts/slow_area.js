@@ -2,7 +2,7 @@
 
 let ClientboundSetEntityMotionPacket = Java.loadClass('net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket');
 StartupEvents.registry('palladium:abilities', event => {
-    event.create('airline_heroes:beacon_aura')
+    event.create('airline_heroes:slow_area')
         .icon(palladium.createItemIcon('minecraft:beacon'))
         .displayName('Slow Area')
         .documentationDescription('Toggleable aoe that slows entities and grants them the "Kinetic Drain Effect"')
@@ -31,8 +31,13 @@ StartupEvents.registry('palladium:abilities', event => {
                       e.setDeltaMovement(motion)  
 					  
                     // Apply short-duration effects that refresh each tick
-					e.potionEffects.add('airline_heroes:kinetic_drain',40, 0, true, true);
-              
+			    try {
+					e.potionEffects.add('airline_heroes:kinetic_drain',40, 0, true, true); 
+					
+					} 
+					catch (err) { console.warn('[BeaconAura] Skipped ${e} — ${err}'); 
+					}
+			
 				                    if (e.isPlayer()) {
                         e.connection.send(new ClientboundSetEntityMotionPacket(e));
                     }

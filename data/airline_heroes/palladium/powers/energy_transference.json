@@ -7,14 +7,14 @@
 
   "abilities": {
     "energy_removal": {
-      "type": "airline_heroes:beacon_aura",
+      "type": "airline_heroes:slow_area",
       "icon": "minecraft:feather",
       "title": "Energy Removal",
       "bar_color": "light_gray",
       "hidden": false,
       "hidden_in_bar": false,
-      "radius": 5,
-      "speed": 0.1,
+      "radius": 15,
+      "speed": 0.01,
       "list_index": -1,
       "gui_position": "null",
       "description": "null",
