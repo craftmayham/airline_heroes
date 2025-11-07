@@ -3,7 +3,7 @@
   "background": "minecraft:textures/block/red_wool.png",
   "icon": "minecraft:blaze_powder",
   "gui_display_type": "list",
-  "ability_bar_texture": "palladium:textures/gui/ability_bar.png",
+  "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
 
   "abilities": {
     "energy_removal": {

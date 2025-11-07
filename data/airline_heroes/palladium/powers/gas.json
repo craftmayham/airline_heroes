@@ -3,7 +3,7 @@
   "background": "minecraft:textures/block/red_wool.png",
   "icon": "airline_heroes:textures/icons/sublimation_icon.png",
       "gui_display_type": "tree",
-	"ability_bar_texture": "palladium:textures/gui/ability_bar.png",
+	"ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
   "abilities": {
 	  "gas_form":
 {
