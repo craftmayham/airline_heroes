@@ -7,7 +7,7 @@ StartupEvents.registry('palladium:abilities', event => {
         .displayName('Slow Area')
         .documentationDescription('Toggleable aoe that slows entities and grants them the "Kinetic Drain Effect"')
         .addProperty('radius', 'double', 8.0, 'Effect radius in blocks')
-		.addProperty('speed', 'double', 0.5, 'Effect radius in blocks')
+		.addProperty('speed', 'double', 0.5, 'Speed of slowness')
         .tick((entity, entry, holder, enabled) => {
             // Only active when toggled on
             if (!enabled) return;
