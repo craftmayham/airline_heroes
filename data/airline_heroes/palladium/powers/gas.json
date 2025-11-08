@@ -13,18 +13,11 @@
 	"bar_color": "pink",
 	"list_index": 0,
 	"description": "The user sublimates into a cloud of gas.",
+	    "gui_position": [
+	0,
+	0
+	],
 	      "conditions": {
-		"unlocking": [
-		{
-    "type": "palladium:scoreboard_score_buyable",
-    "objective": "airline_heroes.skill_points",
-    "score": 1,
-    "icon": "minecraft:command_block",
-    "description": {
-        "text": "Scoreboard Score"
-    }
-}
-		],
         "enabling": [
           {
             "type": "palladium:toggle",
@@ -328,11 +321,15 @@
     "title": "Health Increase 1",
     "bar_color": "light_gray",
     "list_index": 1,
-    "gui_position": "null",
+    "gui_position": [
+	0,
+	1
+	],
     "description": "null",
     "attribute": "minecraft:generic.max_health",
-    "amount": 2,
+    "amount": 8,
     "operation": 0,
+	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
 	 "conditions": {
 		"unlocking": [
 		{
@@ -343,6 +340,10 @@
     "description": {
         "text": "Scoreboard Score"
     }
+},
+{
+    "type": "palladium:ability_unlocked",
+    "ability": "gas_form"
 }
 		]
       }
@@ -354,13 +355,14 @@
     "bar_color": "light_gray",
     "list_index": 2,
     "gui_position": [
-	5,
-	-5
+	0,
+	2
 	],
     "description": "null",
     "attribute": "minecraft:generic.max_health",
-    "amount": 2,
+    "amount": 6,
     "operation": 0,
+	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e2",
 	 "conditions": {
 		"unlocking": [
 		{
@@ -385,11 +387,15 @@
     "title": "Health Increase 3",
     "bar_color": "light_gray",
     "list_index": 3,
-    "gui_position": "null",
+    "gui_position": [
+	0,
+	3
+	],
     "description": "null",
     "attribute": "minecraft:generic.max_health",
-    "amount": 2,
+    "amount": 6,
     "operation": 0,
+	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e3",
 	 "conditions": {
 		"unlocking": [
 		{
@@ -404,6 +410,204 @@
 {
     "type": "palladium:ability_unlocked",
     "ability": "health_upgrade_2"
+}
+		]
+      }
+},
+"power_upgrade_1": {
+    "type": "palladium:attribute_modifier",
+    "icon": "airline_heroes:textures/icons/power_upgrade_1.png",
+    "title": "Power Increase 1",
+    "bar_color": "light_gray",
+    "list_index": 1,
+    "gui_position": [
+	1,
+	0
+	],
+    "description": "null",
+    "attribute": "minecraft:generic.attack_damage",
+    "amount": 8,
+    "operation": 0,
+	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e4",
+	 "conditions": {
+		"unlocking": [
+		{
+    "type": "palladium:scoreboard_score_buyable",
+    "objective": "airline_heroes.skill_points",
+    "score": 1,
+    "icon": "minecraft:command_block",
+    "description": {
+        "text": "Scoreboard Score"
+    }
+},
+{
+    "type": "palladium:ability_unlocked",
+    "ability": "gas_form"
+}
+		]
+      }
+},
+"power_upgrade_2": {
+    "type": "palladium:attribute_modifier",
+    "icon": "airline_heroes:textures/icons/power_upgrade_2.png",
+    "title": "Power Increase 2",
+    "bar_color": "light_gray",
+    "list_index": 2,
+    "gui_position": [
+	2,
+	0
+	],
+    "description": "null",
+    "attribute": "minecraft:generic.attack_damage",
+    "amount": 6,
+    "operation": 0,
+	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e5",
+	 "conditions": {
+		"unlocking": [
+		{
+    "type": "palladium:scoreboard_score_buyable",
+    "objective": "airline_heroes.skill_points",
+    "score": 1,
+    "icon": "minecraft:command_block",
+    "description": {
+        "text": "Scoreboard Score"
+    }
+},
+{
+    "type": "palladium:ability_unlocked",
+    "ability": "power_upgrade_1"
+}
+		]
+      }
+},
+"power_upgrade_3": {
+    "type": "palladium:attribute_modifier",
+    "icon": "airline_heroes:textures/icons/power_upgrade_3.png",
+    "title": "Power Increase 3",
+    "bar_color": "light_gray",
+    "list_index": 3,
+    "gui_position": [
+	3,
+	0
+	],
+    "description": "null",
+    "attribute": "minecraft:generic.attack_damage",
+    "amount": 6,
+    "operation": 0,
+	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e6",
+	 "conditions": {
+		"unlocking": [
+		{
+    "type": "palladium:scoreboard_score_buyable",
+    "objective": "airline_heroes.skill_points",
+    "score": 1,
+    "icon": "minecraft:command_block",
+    "description": {
+        "text": "Scoreboard Score"
+    }
+},
+{
+    "type": "palladium:ability_unlocked",
+    "ability": "power_upgrade_2"
+}
+		]
+      }
+},
+"endurance_upgrade_1": {
+    "type": "palladium:attribute_modifier",
+    "icon": "airline_heroes:textures/icons/endurance_upgrade_1.png",
+    "title": "Endurance Increase 1",
+    "bar_color": "light_gray",
+    "list_index": 1,
+    "gui_position": [
+	-1,
+	0
+	],
+    "description": "null",
+    "attribute": "minecraft:generic.movement_speed",
+    "amount": 0.02,
+    "operation": 0,
+	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e7",
+	 "conditions": {
+		"unlocking": [
+		{
+    "type": "palladium:scoreboard_score_buyable",
+    "objective": "airline_heroes.skill_points",
+    "score": 1,
+    "icon": "minecraft:command_block",
+    "description": {
+        "text": "Scoreboard Score"
+    }
+},
+{
+    "type": "palladium:ability_unlocked",
+    "ability": "gas_form"
+}
+		]
+      }
+},
+"endurance_upgrade_2": {
+    "type": "palladium:attribute_modifier",
+    "icon": "airline_heroes:textures/icons/endurance_upgrade_2.png",
+    "title": "Endurance Increase 2",
+    "bar_color": "light_gray",
+    "list_index": 2,
+    "gui_position": [
+	-2,
+	0
+	],
+    "description": "null",
+    "attribute": "minecraft:generic.movement_speed",
+    "amount": 0.02,
+    "operation": 0,
+	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e8",
+	 "conditions": {
+		"unlocking": [
+		{
+    "type": "palladium:scoreboard_score_buyable",
+    "objective": "airline_heroes.skill_points",
+    "score": 1,
+    "icon": "minecraft:command_block",
+    "description": {
+        "text": "Scoreboard Score"
+    }
+},
+{
+    "type": "palladium:ability_unlocked",
+    "ability": "endurance_upgrade_1"
+}
+		]
+      }
+},
+"endurance_upgrade_3": {
+    "type": "palladium:attribute_modifier",
+    "icon": "airline_heroes:textures/icons/endurance_upgrade_3.png",
+    "title": "Endurance Increase 3",
+    "bar_color": "light_gray",
+    "list_index": 3,
+    "gui_position": [
+	-3,
+	0
+	],
+    "description": "null",
+    "attribute": "minecraft:generic.movement_speed",
+    "amount": 0.02,
+    "operation": 0,
+	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e9",
+	 "conditions": {
+		"unlocking": [
+		{
+    "type": "palladium:scoreboard_score_buyable",
+    "objective": "airline_heroes.skill_points",
+    "score": 1,
+    "icon": "minecraft:command_block",
+    "description": {
+        "text": "Scoreboard Score"
+    }
+},
+{
+    "type": "palladium:ability_unlocked",
+    "ability": "endurance_upgrade_2"
 }
 		]
       }

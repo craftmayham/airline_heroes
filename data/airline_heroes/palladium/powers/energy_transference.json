@@ -196,6 +196,19 @@
 }	
 }
 	
+
+    "commands": []
+},
+"loop": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [
+                "scoreboard objectives add kinetic_drain dummy"
+            ],
+            "last_tick_commands": [
+            ],
+            "commands": []
+        }
  },
 
   "energy_bars": {
