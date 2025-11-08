@@ -19,6 +19,11 @@
 	],
 	      "conditions": {
         "enabling": [
+		{
+			"type": "airline_heroes:has_hunger",
+			"min_hunger": 1,
+			"max_hunger": 20
+		},
           {
             "type": "palladium:toggle",
             "cooldown": 0,
@@ -247,7 +252,7 @@
 		]
 	}
 },
-    "flight_speed": {
+    "levitation": {
       "type": "palladium:attribute_modifier",
     "hidden": true,
       "attribute": "palladium:levitation_speed",
@@ -295,6 +300,7 @@
 	"playsound minecraft:block.fire.extinguish master @a ~ ~ ~ 1 1.8"
 	],
     "commands": [
+	"effect give @s minecraft:hunger 1 16 true" 
     ],
 		"conditions": {
 		"enabling": [
@@ -305,16 +311,6 @@
 		]
 	}
 },
-"loop": {
-            "type": "palladium:command",
-            "hidden": true,
-            "first_tick_commands": [
-                "scoreboard objectives add airline_heroes.skill_points dummy"
-            ],
-            "last_tick_commands": [
-            ],
-            "commands": []
-        },
 "health_upgrade_1": {
     "type": "palladium:attribute_modifier",
     "icon": "airline_heroes:textures/icons/health_upgrade_1.png",
