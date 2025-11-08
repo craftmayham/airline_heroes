@@ -14,7 +14,7 @@
       "hidden": false,
       "hidden_in_bar": false,
       "radius": 15,
-      "speed": 0.01,
+      "speed": 0.9,
       "list_index": -1,
       "gui_position": "null",
       "description": "null",
@@ -97,8 +97,7 @@
         ]
       }
     },
-	"kinetic_jaunt":
-	{
+	"kinetic_jaunt":{
 		
     "type": "palladium:attribute_modifier",
     "icon": "minecraft:iron_chestplate",
@@ -110,13 +109,9 @@
     "gui_position": "null",
     "description": "null",
     "attribute": "minecraft:generic.movement_speed",
-    "amount": 3,
+    "amount": 2,
     "operation": 0,
     "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
-	"energy_bar_usage": {
-   "energy_bar": "energy_bar_name",
-   "amount": 10
-},
 	"conditions": {
 		
         "enabling": [
@@ -136,8 +131,23 @@
           }
         ]
       }
+},
+	"kinetic_jaunt_stepheight":{
+
+    "type": "palladium:command",
+    "icon": "minecraft:command_block",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "first_tick_commands": ["scale set pehkui:step_height 3"],
+    "last_tick_commands": ["scale reset pehkui:step_height"],
+    "commands": []
 }
-  },
+ },
 
   "energy_bars": {
     "potential_energy": {
