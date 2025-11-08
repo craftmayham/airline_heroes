@@ -6,7 +6,7 @@ StartupEvents.registry('mob_effect', event => {
             if (!entity.server) return;
 
             const scoreboard = entity.server.getScoreboard();
-            const objective = scoreboard.getObjective('kinetic_drain');
+            const objective = scoreboard.getObjective('airline_heroes.potential_energy');
             if (!objective) return;
 
             const players = entity.server.players;

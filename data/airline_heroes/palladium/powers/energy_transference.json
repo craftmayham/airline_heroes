@@ -36,7 +36,7 @@
       "hidden": true,
       "first_tick_commands": [],
       "last_tick_commands": [],
-      "commands": ["scoreboard players add @s kinetic_drain 1"],
+      "commands": ["scoreboard players add @s airline_heroes.potential_energy 1"],
       "conditions": {
         "enabling": [
           {
@@ -166,7 +166,7 @@
       "hidden": true,
       "first_tick_commands": [],
       "last_tick_commands": [],
-      "commands": ["scoreboard players remove @s kinetic_drain 1"],
+      "commands": ["scoreboard players remove @s airline_heroes.potential_energy 1"],
       "conditions": {
         "enabling": [
           {
@@ -208,7 +208,7 @@
       "color": "#fc8803",
       "synced_value": {
         "type": "score",
-        "objective": "kinetic_drain",
+        "objective": "airline_heroes.potential_energy",
         "fallback": 0
       }
     }
