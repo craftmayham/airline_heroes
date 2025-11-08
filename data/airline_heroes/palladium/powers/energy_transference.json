@@ -146,7 +146,17 @@
     "first_tick_commands": ["scale set pehkui:step_height 3"],
     "last_tick_commands": ["scale reset pehkui:step_height"],
     "commands": []
-}
+},
+"loop": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [
+                "scoreboard objectives add kinetic_drain dummy"
+            ],
+            "last_tick_commands": [
+            ],
+            "commands": []
+        }
  },
 
   "energy_bars": {
