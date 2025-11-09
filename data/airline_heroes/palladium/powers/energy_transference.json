@@ -218,9 +218,9 @@
 ]
        }
 },
-"kinetic_glow_orange":{
-    "type": "palladium:entity_glow",
-    "icon": "minecraft:glow_berries",
+"energy_overlay":{
+    "type": "palladium:render_layer",
+    "icon": "minecraft:blaze_rod",
     "title": "null",
     "bar_color": "light_gray",
     "hidden": true,
@@ -228,11 +228,26 @@
     "list_index": -1,
     "gui_position": "null",
     "description": "null",
-    "mode": "self",
-    "color": "FF5C00",
-    "distance": 0,
-    "property_key": "null",
-    "property_value": "null"
+    "render_layer": "airline_heroes:energy_overlay",
+	"conditions": {
+         "enabling": 
+          [
+   {
+    "type": "palladium:or",
+    "conditions": [
+   {
+    "type": "palladium:ability_enabled",
+    "ability": "kinetic_jaunt"
+},
+{
+    "type": "palladium:ability_on_cooldown",
+    "ability": "launch_forward"
+}
+
+   ]
+   }
+   ]
+}
 },
 "scoreboard_cap": {
       "type": "palladium:command",
