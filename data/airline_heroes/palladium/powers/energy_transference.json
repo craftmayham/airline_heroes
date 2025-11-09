@@ -358,8 +358,12 @@
 		  }
 	  ]
     }
- }
-
+ },
+"kinetic_push": {
+	"type": "airline_heroes:push_pull",
+	"range": 3,
+	"motion_scale": 2
+}
  },
 
   "energy_bars": {
