@@ -1,0 +1,9 @@
+{
+  "type": "palladium:compound",
+  "layers": [
+  {
+  "model_layer": "palladium:humanoid#suit",
+  "texture": "airline_heroes:textures/models/orange_overlay.png"
+  }
+  ]
+}
