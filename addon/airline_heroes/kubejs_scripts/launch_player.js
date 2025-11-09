@@ -1,4 +1,5 @@
 let ClientboundSetEntityMotionPacket = Java.loadClass('net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket');
+
 StartupEvents.registry('palladium:abilities', event => {
     event.create('airline_heroes:launch_player')
         .icon(palladium.createItemIcon('minecraft:elytra'))

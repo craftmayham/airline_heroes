@@ -30,7 +30,7 @@ StartupEvents.registry('palladium:abilities', event => {
 					  
                     // Apply short-duration effects that refresh each tick
 			    try {
-					e.potionEffects.add('airline_heroes:kinetic_drain',40, 0, true, true); 
+					e.potionEffects.add('airline_heroes:kinetic_drain',20, 0, true, true); 
 					
 					} 
 					catch (err) { console.warn('[SlowAura] Skipped ${e} — ${err}'); 

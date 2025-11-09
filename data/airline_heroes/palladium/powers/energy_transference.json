@@ -199,7 +199,408 @@
 		
 			]
 }	
+},
+"scoreboard_cap": {
+      "type": "palladium:command",
+      "hidden": true,
+      "first_tick_commands": [],
+      "last_tick_commands": [],
+      "commands": ["scoreboard players set @s[scores={airline_heroes.potential_energy=2001..}] airline_heroes.potential_energy 2000"]
+      },
+	  
+"kinetic_bound": {
+    "type": "palladium:attribute_modifier",
+    "icon": "minecraft:rabbit_foot",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "attribute": "palladium:jump_power",
+    "amount": 2,
+    "operation": 0,
+    "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e3",
+	"conditions": {
+		"enabling":[
+		{
+            "type": "palladium:ability_enabled",
+            "ability": "kinetic_bound_held"
+          }
+		
+	]
+	}
+	},
+	
+	
+	 
+	"kinetic_bound_leap": {
+    "type": "palladium:attribute_modifier",
+    "icon": "minecraft:rabbit_foot",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "attribute": "palladium:leaping",
+    "amount": 1,
+    "operation": 0,
+    "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e4",
+			"conditions": {
+			"enabling":[
+	{
+            "type": "palladium:ability_enabled",
+            "ability": "kinetic_bound_held"
+          }
+		
+			]
 }
+	},
+	"kinetic_bound_1": {
+    "type": "palladium:attribute_modifier",
+    "icon": "minecraft:rabbit_foot",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "attribute": "palladium:jump_power",
+    "amount": 4,
+    "operation": 0,
+    "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e5",
+	"conditions": {
+		"enabling":[
+		{
+    "type": "palladium:ability_ticks",
+    "ability": "kinetic_bound",
+    "min": 1,
+    "max": 40
+}
+		
+	]
+	}
+	},
+	
+	
+	 
+	"kinetic_bound_leap_1": {
+    "type": "palladium:attribute_modifier",
+    "icon": "minecraft:rabbit_foot",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "attribute": "palladium:leaping",
+    "amount": 2,
+    "operation": 0,
+    "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e6",
+			"conditions": {
+			"enabling":[
+			{
+    "type": "palladium:ability_ticks",
+    "ability": "kinetic_bound",
+    "min": 1,
+    "max": 40
+}
+		
+			]
+}
+	},
+	"kinetic_bound_2": {
+    "type": "palladium:attribute_modifier",
+    "icon": "minecraft:rabbit_foot",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "attribute": "palladium:jump_power",
+    "amount": 4,
+    "operation": 0,
+    "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e5",
+	"conditions": {
+		"enabling":[
+		{
+    "type": "palladium:ability_ticks",
+    "ability": "kinetic_bound",
+    "min": 1,
+    "max": 80
+}
+		
+	]
+	}
+	},
+	
+	
+	 
+	"kinetic_bound_leap_2": {
+    "type": "palladium:attribute_modifier",
+    "icon": "minecraft:rabbit_foot",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "attribute": "palladium:leaping",
+    "amount": 2,
+    "operation": 0,
+    "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e6",
+			"conditions": {
+			"enabling":[
+			{
+    "type": "palladium:ability_ticks",
+    "ability": "kinetic_bound",
+    "min": 1,
+    "max": 80
+}
+		
+			]
+}
+	},
+	"kinetic_bound_3": {
+    "type": "palladium:attribute_modifier",
+    "icon": "minecraft:rabbit_foot",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "attribute": "palladium:jump_power",
+    "amount": 6,
+    "operation": 0,
+    "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e5",
+	"conditions": {
+		"enabling":[
+		{
+    "type": "palladium:ability_ticks",
+    "ability": "kinetic_bound",
+    "min": 81,
+    "max": 120
+}
+		
+	]
+	}
+	},
+	
+	
+	 
+	"kinetic_bound_leap_3": {
+    "type": "palladium:attribute_modifier",
+    "icon": "minecraft:rabbit_foot",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "attribute": "palladium:leaping",
+    "amount": 3,
+    "operation": 0,
+    "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e6",
+			"conditions": {
+			"enabling":[
+			{
+    "type": "palladium:ability_ticks",
+    "ability": "kinetic_bound",
+    "min": 81,
+    "max": 120
+}
+		
+			]
+}
+	},
+	"kinetic_bound_4": {
+    "type": "palladium:attribute_modifier",
+    "icon": "minecraft:rabbit_foot",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "attribute": "palladium:jump_power",
+    "amount": 8,
+    "operation": 0,
+    "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e5",
+	"conditions": {
+		"enabling":[
+		{
+    "type": "palladium:ability_ticks",
+    "ability": "kinetic_bound",
+    "min": 121,
+    "max": 180
+}
+		
+	]
+	}
+	},
+	
+	
+	 
+	"kinetic_bound_leap_4": {
+    "type": "palladium:attribute_modifier",
+    "icon": "minecraft:rabbit_foot",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "attribute": "palladium:leaping",
+    "amount": 4,
+    "operation": 0,
+    "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e6",
+			"conditions": {
+			"enabling":[
+			{
+    "type": "palladium:ability_ticks",
+    "ability": "kinetic_bound",
+    "min": 121,
+    "max": 180
+}
+		
+			]
+}
+	},
+		"kinetic_bound_5": {
+    "type": "palladium:attribute_modifier",
+    "icon": "minecraft:rabbit_foot",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "attribute": "palladium:jump_power",
+    "amount": 10,
+    "operation": 0,
+    "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e5",
+	"conditions": {
+		"enabling":[
+		{
+    "type": "palladium:ability_ticks",
+    "ability": "kinetic_bound",
+    "min": 181,
+    "max": 201
+}
+		
+	]
+	}
+	},
+	
+	
+	 
+	"kinetic_bound_leap_5": {
+    "type": "palladium:attribute_modifier",
+    "icon": "minecraft:rabbit_foot",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "attribute": "palladium:leaping",
+    "amount": 5,
+    "operation": 0,
+    "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e6",
+			"conditions": {
+			"enabling":[
+			{
+    "type": "palladium:ability_ticks",
+    "ability": "kinetic_bound",
+    "min": 181,
+    "max": 201
+}
+		
+			]
+}
+	},
+	
+	"kinetic_bound_gui_overlay":{
+    "type": "palladium:gui_overlay",
+    "icon": "minecraft:rabbit_foot",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "texture": "minecraft:textures/gui/presets/isles.png",
+    "texture_width": 256,
+    "texture_height": 256,
+    "translate": [
+        0,
+        0,
+        0
+    ],
+    "rotate": [
+        0,
+        0,
+        0
+    ],
+    "scale": [
+        0.1,
+        0.1,
+        0.1
+    ],
+    "alignment": "stretch",
+	"conditions": {
+			"enabling":[
+			{
+    "type": "palladium:ability_ticks",
+    "ability": "kinetic_bound_held",
+    "min": 1,
+    "max": 40
+}
+		
+			]
+}
+},
+	"kinetic_bound_held": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:rabbit_foot",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:held",
+            "cooldown": 0,
+            "key_type": "key_bind"
+          },
+		  {
+			  "type": "palladium:on_ground"
+		  },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    }
  },
 
   "energy_bars": {
