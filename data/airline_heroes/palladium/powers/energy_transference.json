@@ -200,6 +200,40 @@
 			]
 }	
 },
+"kinetic_jaunt_trail":
+    {
+    "type": "palladium:trail",
+    "icon": "minecraft:blaze_rod",
+    "bar_color": "light_gray",
+    "hidden": true,
+    "trail": "airline_heroes:kinetic_speed_trail",
+      "conditions": {
+         "enabling": 
+          [
+   
+   {
+    "type": "palladium:ability_enabled",
+    "ability": "kinetic_jaunt"
+}
+]
+       }
+},
+"kinetic_glow_orange":{
+    "type": "palladium:entity_glow",
+    "icon": "minecraft:glow_berries",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "mode": "self",
+    "color": "FF5C00",
+    "distance": 0,
+    "property_key": "null",
+    "property_value": "null"
+},
 "scoreboard_cap": {
       "type": "palladium:command",
       "hidden": true,
@@ -218,6 +252,7 @@
           [
     {
     "type": "palladium:action",
+	"cooldown": 10,
     "key_type": "key_bind",
     "needs_empty_hand": false,
     "allow_scrolling_when_crouching": true
@@ -236,13 +271,13 @@
     "icon": "minecraft:blaze_rod",
     "bar_color": "light_gray",
     "hidden": true,
-    "trail": "airline_heroes:test_trail",
+    "trail": "airline_heroes:kinetic_dash_trail",
       "conditions": {
          "enabling": 
           [
    
    {
-    "type": "palladium:",
+    "type": "palladium:ability_on_cooldown",
     "ability": "launch_forward"
 }
 ]
@@ -362,23 +397,21 @@
     "commands": ["scoreboard players add @s airline_heroes.potential_energy 2000"],
 	"conditions": {
         "enabling": [
-          {
-            "type": "palladium:toggle",
-            "cooldown": 1200,
-            "key_type": "key_bind"
-          },
+    {
+    "type": "palladium:activation",
+    "cooldown": 72000,
+    "ticks": 1200,
+    "key_type": "key_bind",
+    "needs_empty_hand": false,
+    "allow_scrolling_when_crouching": true
+},
           {
             "type": "palladium:not",
             "conditions": [
               {
                 "type": "palladium:has_effect",
                 "effect": "airline_heroes:nullified"
-              },
-			  {
-    "type": "palladium:ability_ticks",
-    "ability": "potential_unleashed",
-    "min": 72000
-}
+              }
             ]
           }
         ]
