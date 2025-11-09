@@ -1,0 +1,9 @@
+{
+  "type": "palladium:compound",
+  "layers": [
+    {
+  "model_layer": "minecraft:player#main",
+  "texture": "airline_heroes:textures/models/missing_eye.png"
+  }
+  ]
+}

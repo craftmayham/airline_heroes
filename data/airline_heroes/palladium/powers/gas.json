@@ -78,6 +78,14 @@
 	]
 	}
   },
+  "render_missing_eye": 
+{
+    "type": "palladium:render_layer",
+    "hidden": true,
+    "render_layer": "airline_heroes:missing_eye",
+	"conditions": {
+	}
+},
 "render": 
 {
     "type": "palladium:render_layer",
@@ -504,6 +512,29 @@
 		]
 	}
 },
+"float": {
+    "type": "palladium:attribute_modifier",
+    "icon": "airline_heroes:textures/icons/health_upgrade_1.png",
+    "title": "Float",
+    "bar_color": "light_gray",
+    "list_index": 1,
+    "gui_position": [
+	0,
+	1
+	],
+    "attribute": "porting_lib:entity_gravity",
+    "amount": -0.085,
+    "operation": 0,
+	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
+	 "conditions": {
+		  "enabling": [
+             {
+                    "type": "palladium:ability_enabled",
+                    "ability": "gas_form"
+                  }
+		  ]
+	  }
+},
 "health_upgrade_1": {
     "type": "palladium:attribute_modifier",
     "icon": "airline_heroes:textures/icons/health_upgrade_1.png",
@@ -800,7 +831,46 @@
 }
 		]
       }
+},
+	   "launch_forward": {
+      "type": "airline_heroes:launch_player",
+      "power": 3.5,
+	  "conditions": {
+		 "enabling": 
+		  [
+	{
+    "type": "palladium:action",
+    "cooldown": 40,
+    "key_type": "key_bind",
+    "needs_empty_hand": false,
+    "allow_scrolling_when_crouching": true
 }
+]
+	   }
+    },
+	"launch_forward_trail":
+	{
+    "type": "palladium:trail",
+    "icon": "minecraft:blaze_rod",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "trail": "airline_heroes:test_trail",
+	  "conditions": {
+		 "enabling": 
+		  [
+	{
+    "type": "palladium:ability_on_cooldown",
+    "ability": "launch_forward"
+}
+]
+	   }
+}
+
 },
   "energy_bars": {
     "golden_carrot": {
