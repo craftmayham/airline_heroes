@@ -14,7 +14,7 @@
       "hidden": false,
       "hidden_in_bar": false,
       "radius": 15,
-      "speed": 0.5,
+      "speed": 0.3,
       "list_index": -1,
       "gui_position": "null",
       "description": "null",
@@ -242,7 +242,7 @@
           [
    
    {
-    "type": "palladium:ability_on_cooldown",
+    "type": "palladium:",
     "ability": "launch_forward"
 }
 ]
@@ -271,7 +271,7 @@
     "title": "null",
     "bar_color": "light_gray",
     "hidden": false,
-    "hidden_in_bar": false,
+    "hidden_in_bar": true,
     "list_index": -1,
     "gui_position": "null",
     "description": "null",
@@ -283,9 +283,9 @@
 		
         "enabling": [
           {
-            "type": "palladium:toggle",
+            "type": "palladium:held",
             "cooldown": 0,
-            "key_type": "key_bind"
+            "key_type": "right_click"
           },
 		 {
     "type": "palladium:objective_score",
@@ -330,39 +330,60 @@
 		
 	}
  },
- "kinetic_punch_score": {
-      "type": "palladium:command",
-      "hidden": true,
-      "first_tick_commands": ["scoreboard players remove @s airline_heroes.potential_energy 500"],
-      "last_tick_commands": [],
-      "commands": [],
-      "conditions": {
-        "enabling": [
-          {
-    "type": "palladium:and",
-    "conditions": [
-	{  
-    "type": "palladium:ability_enabled",
-    "ability": "kinetic_punch"
-		  
-		  
-},
- {
-       "type": "palladium:action",
-    "cooldown": 0,
-    "key_type": "left_click",
-    "needs_empty_hand": false,
-    "allow_scrolling_when_crouching": true 
-}
-]
-		  }
-	  ]
-    }
- },
 "kinetic_push": {
 	"type": "airline_heroes:push_pull",
 	"range": 3,
-	"motion_scale": 2
+	"motion_scale": 10,
+	"conditions":{
+		"enabling":[
+		{
+    "type": "palladium:action",
+    "cooldown": 0,
+    "key_type": "key_bind",
+    "needs_empty_hand": false,
+    "allow_scrolling_when_crouching": true
+}
+	]
+	}
+},
+"potential_unleashed":
+{
+	    "type": "palladium:command",
+    "icon": "minecraft:command_block",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "first_tick_commands": [],
+    "last_tick_commands": [],
+    "commands": ["scoreboard players add @s airline_heroes.potential_energy 2000"],
+	"conditions": {
+        "enabling": [
+          {
+            "type": "palladium:toggle",
+            "cooldown": 1200,
+            "key_type": "key_bind"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              },
+			  {
+    "type": "palladium:ability_ticks",
+    "ability": "potential_unleashed",
+    "min": 72000
+}
+            ]
+          }
+        ]
+      }
+
 }
  },
 
