@@ -121,9 +121,9 @@
             "key_type": "key_bind"
           },
 		 {
-    "type": "palladium:energy_bar",
-    "energy_bar": "potential_energy",
-    "min": 1
+    "type": "palladium:objective_score",
+    "objective": "airline_heroes.potential_energy",
+    "min_score": 1
 },
           {
             "type": "palladium:not",
@@ -205,7 +205,9 @@
       "hidden": true,
       "first_tick_commands": [],
       "last_tick_commands": [],
-      "commands": ["scoreboard players set @s[scores={airline_heroes.potential_energy=2001..}] airline_heroes.potential_energy 2000"]
+      "commands": [
+	  "scoreboard players set @s[scores={airline_heroes.potential_energy=2001..}] airline_heroes.potential_energy 2000",
+	  "scoreboard players set @s[scores={airline_heroes.potential_energy=..-1}] airline_heroes.potential_energy 0"]
       },
 	
 	"launch_forward": {
@@ -221,9 +223,9 @@
     "allow_scrolling_when_crouching": true
 },	  
 {
-    "type": "palladium:energy_bar",
-    "energy_bar": "potential_energy",
-    "min": 1
+    "type": "palladium:objective_score",
+    "objective": "airline_heroes.potential_energy",
+    "min_score": 1
  }
 ]
        }
@@ -286,9 +288,9 @@
             "key_type": "key_bind"
           },
 		 {
-    "type": "palladium:energy_bar",
-    "energy_bar": "potential_energy",
-    "min": 1
+    "type": "palladium:objective_score",
+    "objective": "airline_heroes.potential_energy",
+    "min_score": 1
 },
           {
             "type": "palladium:not",
