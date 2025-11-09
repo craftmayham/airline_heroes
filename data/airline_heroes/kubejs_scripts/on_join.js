@@ -3,5 +3,14 @@ PlayerEvents.loggedIn(event => {
     const username = player.getGameProfile().getName();
     event.server.runCommandSilent(`scoreboard objectives add airline_heroes.skill_points dummy`);
     event.server.runCommandSilent(`scoreboard objectives add airline_heroes.potential_energy dummy`);
+
+	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.golden_carrot minecraft.used:minecraft.golden_carrot`);
+	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.cake minecraft.custom:minecraft.eat_cake_slice`);
+	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.melon minecraft.used:minecraft.melon_slice`);
+	
+	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.glow_berries minecraft.used:minecraft.glow_berries`);
+	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.potato minecraft.used:minecraft.potato`);
+	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.rotten_flesh minecraft.used:minecraft.rotten_flesh`);
+	
 	event.server.runCommandSilent(`execute unless score ${username} airline_heroes.skill_points matches 0.. run scoreboard players set ${username} airline_heroes.skill_points 0`);
 })
