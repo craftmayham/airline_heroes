@@ -10,7 +10,11 @@
           "conditions": [
             {
               "type": "palladium:is_moving"
-            }
+            },	
+	{
+    "type": "palladium:item_in_slot_open",
+    "slot": "head"
+}
           ]
         }
       ],
@@ -30,7 +34,16 @@
          "conditions": [
         {
           "type": "palladium:is_moving"
-        }
+        },
+		{
+		    "type": "palladium:not",
+    "conditions": [
+	{
+    "type": "palladium:item_in_slot_open",
+    "slot": "head"
+}
+	]
+		}
 		],
   "texture": "airline_heroes:textures/models/scarf.png",
         "animation_file": "airline_heroes:animations/scarf.animation.json",
