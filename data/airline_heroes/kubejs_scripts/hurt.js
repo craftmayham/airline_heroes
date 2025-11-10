@@ -9,6 +9,9 @@ EntityEvents.hurt((event) => {
 		
         if (palladium.abilities.isEnabled(player, "airline_heroes:energy_transference", "kinetic_punch_damage")) {
             scoreboard.getOrCreatePlayerScore(player.username, objective).add(-500);
+			    let pos = hurtEntity.blockPosition().mutable()
+				let posfixed = pos.y+1
+        player.server.runCommandSilent(`particle airline_heroes:air_punch ${pos.x} ${posfixed} ${pos.z} 0 0 0 0 5 force`);
         }
     }
 });
