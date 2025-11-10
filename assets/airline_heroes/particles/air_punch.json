@@ -1,9 +1,12 @@
 {
   "textures": [
+     "airline_heroes:gust_6",
     "airline_heroes:gust_0",
 	 "airline_heroes:gust_1",
 	  "airline_heroes:gust_2",
 	   "airline_heroes:gust_3",
-	    "airline_heroes:gust_0"
+	    "airline_heroes:gust_4",
+		 "airline_heroes:gust_5",
+		 "airline_heroes:gust_6"
   ]
 }
