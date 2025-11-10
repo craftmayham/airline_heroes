@@ -41,6 +41,10 @@
           "animation": "animation.airline_heroes.scarf.moving"
         }
       ]
-	}
+	},
+	{
+  "model_layer": "palladium:humanoid#suit",
+  "texture": "airline_heroes:textures/models/armor/sublimation_goggles.png"
+  }
 	]
 }

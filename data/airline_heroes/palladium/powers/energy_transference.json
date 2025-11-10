@@ -218,7 +218,7 @@
 ]
        }
 },
-"energy_overlay":{
+"orange_energy_overlay":{
     "type": "palladium:render_layer",
     "icon": "minecraft:blaze_rod",
     "title": "null",
@@ -228,7 +228,7 @@
     "list_index": -1,
     "gui_position": "null",
     "description": "null",
-    "render_layer": "airline_heroes:energy_overlay",
+    "render_layer": "airline_heroes:orange_energy_overlay",
 	"conditions": {
          "enabling": 
           [
@@ -244,6 +244,36 @@
     "ability": "launch_forward"
 }
 
+   ]
+   }
+   ]
+}
+},
+"blue_energy_overlay":{
+    "type": "palladium:render_layer",
+    "icon": "minecraft:blaze_rod",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "render_layer": "airline_heroes:blue_energy_overlay",
+	"conditions": {
+         "enabling": 
+          [
+   {
+    "type": "palladium:or",
+    "conditions": [
+   {
+    "type": "palladium:ability_enabled",
+    "ability": "energy_removal"
+},
+   {
+    "type": "palladium:ability_enabled",
+    "ability": "energy_removal_self"
+}
    ]
    }
    ]
