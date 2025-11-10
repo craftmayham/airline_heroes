@@ -294,6 +294,21 @@
 		]
 	}
     },
+	"disable_attack": {
+      "type": "palladium:attribute_modifier",
+    "hidden": true,
+      "attribute": "minecraft:generic.attack_damage",
+      "amount": -30,
+      "operation": 0,
+	"conditions": {
+		"enabling": [
+			                  {
+                    "type": "palladium:ability_enabled",
+                    "ability": "gas_form"
+                  }
+		]
+	}
+    },
 	"combustible": {
 	   "type": "airline_heroes:explosion",
 	       "hidden": true,
