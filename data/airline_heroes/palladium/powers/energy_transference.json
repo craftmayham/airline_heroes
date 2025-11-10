@@ -279,6 +279,62 @@
    ]
 }
 },
+"cold_suck_particles": {
+	"type": "palladium:particles",
+	"hidden": true,
+	"emitter": [
+	"airline_heroes:cold_suck"
+],
+      "particle_type": "airline_heroes:cold_suck",
+	  "conditions": {
+		  "enabling": [
+             {
+                    "type": "palladium:ability_enabled",
+                    "ability": "energy_removal"
+                  }
+		  ]
+	  }
+},
+"cold_suck_self_particles": {
+	"type": "palladium:particles",
+	"hidden": true,
+	"emitter": [
+	"airline_heroes:cold_suck_self"
+],
+      "particle_type": "airline_heroes:cold_suck_me",
+	  "conditions": {
+		  "enabling": [
+             {
+                    "type": "palladium:ability_enabled",
+                    "ability": "energy_removal_self"
+                  }
+		  ]
+	  }
+},
+"air_burst_punch": {
+    "type": "palladium:command",
+    "icon": "minecraft:command_block",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "first_tick_commands": [],
+    "last_tick_commands": [],
+    "commands": ["particle airline_heroes:air_punch ^ ^1.5 ^1.5 0 0 0 0 1 force"
+    ],
+	 "conditions": {
+		  "enabling": [
+             {
+                    "type": "palladium:ability_enabled",
+                    "ability": "kinetic_punch"
+                  }
+		  ]
+	  }
+},
+
 "scoreboard_cap": {
       "type": "palladium:command",
       "hidden": true,
