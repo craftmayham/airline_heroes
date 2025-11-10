@@ -242,6 +242,10 @@
 {
     "type": "palladium:ability_on_cooldown",
     "ability": "launch_forward"
+},
+ {
+    "type": "palladium:ability_enabled",
+    "ability": "potential_unleashed"
 }
 
    ]
@@ -452,7 +456,7 @@
     "gui_position": "null",
     "description": "null",
     "attribute": "minecraft:generic.attack_damage",
-    "amount": 20,
+    "amount": 10,
     "operation": 0,
     "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
 	"conditions": {
@@ -478,10 +482,40 @@
     "key_type": "key_bind",
     "needs_empty_hand": false,
     "allow_scrolling_when_crouching": true
-}
+},
+ {
+    "type": "palladium:objective_score",
+    "objective": "airline_heroes.potential_energy",
+    "min_score": 1
+},
+{
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
 	]
 	}
 },
+"kinetic_jaunt_score": {
+      "type": "palladium:command",
+      "hidden": true,
+      "first_tick_commands": [],
+      "last_tick_commands": [],
+      "commands": ["scoreboard players remove @s airline_heroes.potential_energy 25"],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "kinetic_push"
+          }
+        ]
+      }
+    },
+
 "potential_unleashed":
 {
 	    "type": "palladium:command",
