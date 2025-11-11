@@ -1,6 +1,7 @@
 {
   "objectives": [
     "airline_heroes.skill_points",
-	"kinetic_drain"
+	"kinetic_drain",
+	"heat_build_up"
   ]
 }

@@ -1,0 +1,57 @@
+{
+  "name": "Energy Transference",
+  "background": "minecraft:textures/block/red_wool.png",
+  "icon": "minecraft:blaze_powder",
+  "gui_display_type": "list",
+  "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
+
+  "abilities": {
+    "hot_blooded_build_up":{
+	 "type": "palladium:attribute_modifier",
+    "icon": "minecraft:iron_chestplate",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "attribute": "minecraft:generic.armor",
+    "amount": 1,
+    "operation": 0,
+    "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
+	"conditions": {
+        "enabling": [
+          {
+            "type": "palladium:toggle",
+            "cooldown": 0,
+            "key_type": "key_bind",
+            "needs_empty_hand": false,
+            "allow_scrolling_when_crouching": true
+          },
+		  {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+	}
+ },
+
+  "energy_bars": {
+    "heat_build_up": {
+      "max": 2000,
+      "color": "#fc8803",
+      "synced_value": {
+        "type": "score",
+        "objective": "airline_heroes.heat_build_up",
+        "fallback": 0
+      }
+    }
+  }
+}

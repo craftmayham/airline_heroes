@@ -8,7 +8,7 @@
   "abilities": {
     "energy_removal": {
       "type": "airline_heroes:slow_area",
-      "icon": "minecraft:feather",
+      "icon": "airline_heroes:textures/icons/slow_effect.png",
       "title": "Energy Removal",
       "bar_color": "light_gray",
       "hidden": false,
@@ -26,6 +26,15 @@
             "key_type": "key_bind",
             "needs_empty_hand": false,
             "allow_scrolling_when_crouching": true
+          },
+		  {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
           }
         ]
       }
@@ -43,6 +52,7 @@
             "type": "palladium:ability_enabled",
             "ability": "energy_removal_self"
           }
+		  
         ]
       }
     },
@@ -54,7 +64,7 @@
       "bar_color": "light_gray",
       "hidden": false,
       "hidden_in_bar": false,
-      "list_index": -1,
+      "list_index": 0,
       "gui_position": "null",
       "description": "null",
       "conditions": {
@@ -77,7 +87,7 @@
 
     "energy_removal_self_toggle": {
       "type": "palladium:dummy",
-      "icon": "minecraft:blaze_rod",
+      "icon": "airline_heroes:textures/icons/slowfall_emblem.png",
       "conditions": {
         "enabling": [
           {
@@ -100,7 +110,7 @@
 	"kinetic_jaunt":{
 		
     "type": "palladium:attribute_modifier",
-    "icon": "minecraft:iron_chestplate",
+    "icon": "airline_heroes:textures/icons/speed.png",
     "title": "null",
     "bar_color": "light_gray",
     "hidden": false,
@@ -109,7 +119,7 @@
     "gui_position": "null",
     "description": "null",
     "attribute": "minecraft:generic.movement_speed",
-    "amount": 2,
+    "amount": 1.5,
     "operation": 0,
     "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
 	"conditions": {
@@ -189,9 +199,23 @@
 		"conditions": {
 			"enabling":[
 			{
+    "type": "palladium:and",
+    "conditions": [
+	{
     "type": "palladium:has_movement_input"
 },
+{
+    "type": "palladium:not",
+    "conditions": [
+	{
+    "type": "palladium:is_in_water_or_bubble"
+}
+]
+}
 
+]
+},
+	
 			{
 			"type": "palladium:ability_enabled",
 			"ability": "kinetic_jaunt"
@@ -322,7 +346,7 @@
 	"emitter": [
 	"airline_heroes:hot_push"
 ],
-      "particle_type": "airline_heroes:hot_push_out",
+      "particle_type": "airline_heroes:hot_push",
 	  "conditions": {
 		  "enabling": [
              {
@@ -345,6 +369,7 @@
 	
 	"launch_forward": {
       "type": "airline_heroes:launch_player",
+	  "icon":"airline_heroes:textures/icons/dash.png",
       "power": 3.5,
       "conditions": {
          "enabling": 
@@ -359,8 +384,17 @@
 {
     "type": "palladium:objective_score",
     "objective": "airline_heroes.potential_energy",
-    "min_score": 1
- }
+    "min_score": 150
+ },
+ {
+    "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
 ]
        }
     },
@@ -401,7 +435,7 @@
 "kinetic_punch":
  {
     "type": "palladium:attribute_modifier",
-    "icon": "minecraft:iron_chestplate",
+    "icon": "airline_heroes:textures/icons/punch.png",
     "title": "null",
     "bar_color": "light_gray",
     "hidden": false,
@@ -424,7 +458,7 @@
 		 {
     "type": "palladium:objective_score",
     "objective": "airline_heroes.potential_energy",
-    "min_score": 1
+    "min_score": 500
 },
           {
             "type": "palladium:not",
@@ -466,7 +500,8 @@
  },
 "kinetic_push": {
 	"type": "airline_heroes:push_pull",
-	"range": 3,
+	"icon":"airline_heroes:textures/icons/push.png",
+	"range": 4,
 	"motion_scale": 10,
 	"conditions":{
 		"enabling":[
@@ -480,7 +515,7 @@
  {
     "type": "palladium:objective_score",
     "objective": "airline_heroes.potential_energy",
-    "min_score": 1
+    "min_score": 25
 },
 {
             "type": "palladium:not",
@@ -494,7 +529,7 @@
 	]
 	}
 },
-"kinetic_jaunt_score": {
+"kinetic_push_score": {
       "type": "palladium:command",
       "hidden": true,
       "first_tick_commands": [],
@@ -513,17 +548,17 @@
 "potential_unleashed":
 {
 	    "type": "palladium:command",
-    "icon": "minecraft:command_block",
+    "icon": "airline_heroes:textures/icons/potential_unleashed.png",
     "title": "null",
     "bar_color": "light_gray",
     "hidden": false,
     "hidden_in_bar": false,
-    "list_index": -1,
+    "list_index": 5,
     "gui_position": "null",
     "description": "null",
     "first_tick_commands": [],
     "last_tick_commands": [],
-    "commands": ["scoreboard players add @s airline_heroes.potential_energy 2000"],
+    "commands": ["scoreboard players add @s airline_heroes.potential_energy 1000"],
 	"conditions": {
         "enabling": [
     {
