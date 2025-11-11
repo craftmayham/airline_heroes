@@ -1,0 +1,11 @@
+	{
+  "type": "palladium:compound",
+  "layers": [
+    {
+      "type": "geckolib:default",
+  "model": "airline_heroes:geo/shotgun.geo.json",
+  
+  "texture": "airline_heroes:textures/models/shotgun.png"
+	}
+	]
+}

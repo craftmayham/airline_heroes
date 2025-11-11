@@ -1,0 +1,24 @@
+{
+  "name": "Shotgun",
+  "background": "minecraft:textures/block/red_wool.png",
+  "icon": "minecraft:bow",
+  "abilities": {
+    "command_1": {
+      "type": "palladium:command",
+      "commands": [
+        "say Get Shot Bitch"
+      ]
+    },
+    "command_2": {
+      "type": "palladium:command",
+      "commands": [
+        "say Get Double Shot Bitch"
+      ]
+    },
+	"render":
+	{
+    "type": "palladium:render_layer",
+    "render_layer": "airline_heroes:shotgun"
+	}
+  }
+}
