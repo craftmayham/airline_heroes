@@ -22,7 +22,7 @@
     },
 	"bajakaboom":
 	{
-    "type": "airline_heroes:explosion",
+    "type": "airline_heroes:lightning_explosion",
     "icon": {
         "type": "palladium:item",
         "item": "minecraft:air",

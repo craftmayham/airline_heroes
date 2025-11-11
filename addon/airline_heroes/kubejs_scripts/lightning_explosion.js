@@ -1,5 +1,5 @@
 StartupEvents.registry('palladium:abilities', (event) => {
-    event.create('airline_heroes:explosion')
+    event.create('airline_heroes:lightning_explosion')
         .icon(palladium.createItemIcon('palladium:vibranium_circuit'))
         .documentationDescription('Make you Explode')
 
