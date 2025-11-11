@@ -10,7 +10,9 @@ PlayerEvents.loggedIn(event => {
 	
 	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.glow_berries minecraft.used:minecraft.glow_berries`);
 	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.potato minecraft.used:minecraft.potato`);
-	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.rotten_flesh minecraft.used:minecraft.rotten_flesh`);
+	
+	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.heat_build_up dummy`);
+	
 	
 	event.server.runCommandSilent(`execute unless score ${username} airline_heroes.skill_points matches 0.. run scoreboard players set ${username} airline_heroes.skill_points 0`);
 })
