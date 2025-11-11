@@ -316,6 +316,23 @@
 	  }
 },
 
+"push_particles": {
+	"type": "palladium:particles",
+	"hidden": true,
+	"emitter": [
+	"airline_heroes:hot_push"
+],
+      "particle_type": "airline_heroes:hot_push_out",
+	  "conditions": {
+		  "enabling": [
+             {
+                     "type": "palladium:ability_first_tick",
+						"ability": "kinetic_push"
+                  }
+		  ]
+	  }
+},
+
 "scoreboard_cap": {
       "type": "palladium:command",
       "hidden": true,
