@@ -24,12 +24,16 @@ StartupEvents.registry('palladium:abilities', (event) => {
                     explosion.causesFire(false);
                 }
 
+
+        
                 explosion.strength(radius);
                 explosion.exploder(entity);
-                explosion.explosionMode('none');
-
+                explosion.explosionMode('mob');
+                
                 explosion.explode();
-				entity.kill();
+				       if (Math.random() < 0.07) {
+                    entity.kill();
+                }
             }
         });
 });
