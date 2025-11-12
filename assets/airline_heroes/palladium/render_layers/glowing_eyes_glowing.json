@@ -1,4 +1,5 @@
 {
   "type": "palladium:skin_overlay",
-  "texture": "airline_heroes:textures/models/missing_eye.png"
+  "texture": "airline_heroes:textures/models/glowing_eyes_glowing.png",
+  "render_type": "glow"
 }
