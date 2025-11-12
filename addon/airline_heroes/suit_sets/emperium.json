@@ -1,0 +1,23 @@
+{
+  "tooltip": [
+    "A fitting attire for a gun-slinging vigilante."
+  ],
+  "armor_material": "minecraft:iron",
+  "creative_mode_tab": "combat",
+  "chest": {
+    "item_name": "emperium_jacket",
+	"armor_renderer": "airline_heroes:emperium_jacket"
+  },
+  "legs": {
+    "item_name": "emperium_pants",
+	"armor_renderer": "airline_heroes:emperium_pants"
+  },
+  "feet": {
+    "item_name": "emperium_shoes",
+	"armor_renderer": "airline_heroes:emperium_shoes"
+  },
+  "head": {
+    "item_name": "emperium_wig",
+	"armor_renderer": "airline_heroes:emperium_wig"
+  }
+}
