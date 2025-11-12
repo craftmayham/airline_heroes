@@ -38,6 +38,7 @@
     "cause_fire": false,
     "radius": 2,
     "self_damage": 1,
+	"explosion_chance": 7.0,
 	"conditions": {
 		"enabling": [
 		{
