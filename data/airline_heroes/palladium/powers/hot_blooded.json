@@ -21,6 +21,34 @@
     "operation": 0,
     "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1"
 	},
+	"nullify_heat":{
+    "type": "palladium:command",
+    "icon": "minecraft:command_block",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "first_tick_commands": [],
+    "last_tick_commands": [],
+    "commands": [
+        "scoreboard players reset @s airline_heroes.heat_build_up"
+    ],
+	"conditions": {
+        "enabling": [
+		  
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            
+         ]
+        
+      }
+	
+},
 "strength_modifier":{
     "type": "airline_heroes:attribute_modifier",
  "icon": {
@@ -35,8 +63,8 @@
     "list_index": -1,
     "gui_position": "null",
     "description": "null",
-    "score_value": "heat_build_up",
-    "Division_Amount": "1",
+    "score_value": "airline_heroes.heat_build_up",
+    "Division_Amount": "50",
     "Attribute_Type": "minecraft:generic.attack_damage",
     "UUID": "cc154bdc-21f8-11ee-be56-0242ac120002",
     "Attribute_Mod": "addition"
@@ -55,8 +83,8 @@
     "list_index": -1,
     "gui_position": "null",
     "description": "null",
-    "score_value": "heat_build_up",
-    "Division_Amount": "1",
+    "score_value": "airline_heroes.heat_build_up",
+    "Division_Amount": "50",
     "Attribute_Type": "minecraft:generic.max_health",
     "UUID": "cc154bdc-21f8-11ee-be56-0242ac120003",
     "Attribute_Mod": "addition"
@@ -75,8 +103,8 @@
     "list_index": -1,
     "gui_position": "null",
     "description": "null",
-    "score_value": "heat_build_up",
-    "Division_Amount": "1",
+    "score_value": "airline_heroes.heat_build_up",
+    "Division_Amount": "100",
     "Attribute_Type": "minecraft:generic.movement_speed",
     "UUID": "cc154bdc-21f8-11ee-be56-0242ac120004",
     "Attribute_Mod": "addition"
@@ -96,8 +124,8 @@
     "list_index": -1,
     "gui_position": "null",
     "description": "null",
-    "score_value": "heat_build_up",
-    "Division_Amount": "1",
+    "score_value": "airline_heroes.heat_build_up",
+    "Division_Amount": "50",
     "Attribute_Type": "minecraft:generic.armor",
     "UUID": "cc154bdc-21f8-11ee-be56-0242ac120005",
     "Attribute_Mod": "addition"
@@ -114,7 +142,7 @@
     "gui_position": "null",
     "description": "null",
     "attribute": "minecraft:generic.armor",
-    "amount": 10,
+    "amount": 15,
     "operation": 0,
     "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
 	"conditions": {
@@ -231,7 +259,7 @@
 		  	 {
     "type": "palladium:objective_score",
     "objective": "airline_heroes.heat_build_up",
-    "min_score": 100
+    "min_score": 150
 },
     {
     "type": "palladium:action",
@@ -254,7 +282,143 @@
           }
 ]
        }
-    }
+    },
+"heat_healing":{
+    "type": "palladium:healing",
+    "icon": "minecraft:apple",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "frequency": 20,
+    "amount": 1,
+	"conditions": {
+         "enabling": 
+          [
+		  	 {
+    "type": "palladium:objective_score",
+    "objective": "airline_heroes.heat_build_up",
+    "min_score": 50
+},
+
+ {
+    "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+]
+       }
+},
+"jump_explosion":{
+    "type": "airline_heroes:lightning_explosion",
+    "icon": {
+        "type": "palladium:item",
+        "item": "minecraft:air",
+        "count": 0
+    },
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "cause_fire": false,
+    "radius": 6,
+    "self_damage": 0,
+    "explosion_chance": 0,
+	"conditions":{
+		"enabling":[
+{
+    "type": "palladium:ability_first_tick",
+    "ability": "jump"
+}
+		]
+	}
+},
+"ground_slam":{
+	 "type": "airline_heroes:ground_slam",
+    "icon": "minecraft:beacon",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "radius": 5,
+    "speed": 1.5,
+	"conditions": {
+         "enabling": 
+          [
+		  	 {
+    "type": "palladium:objective_score",
+    "objective": "airline_heroes.heat_build_up",
+    "min_score": 150
+},
+    {
+    "type": "palladium:action",
+	"cooldown": 200,
+    "key_type": "key_bind",
+    "needs_empty_hand": false,
+    "allow_scrolling_when_crouching": true
+},
+{
+    "type": "palladium:on_ground"
+},
+ {
+    "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+]
+       }
+},
+"lightning_boost":{
+    "type": "palladium:command",
+    "icon": "minecraft:command_block",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "first_tick_commands": ["scoreboard players add @s airline_heroes.heat_build_up 100"],
+    "last_tick_commands": ["scoreboard players reset @s airline_heroes.struck_by_lighting"],
+    "commands": [],
+	"conditions": {
+         "enabling": 
+          [
+{
+    "type": "palladium:objective_score",
+    "objective": "airline_heroes.struck_by_lighting",
+    "min_score": 1
+ 
+},
+ {
+    "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+]
+       }
+}
 
 	
 	
@@ -262,7 +426,7 @@
 
   "energy_bars": {
     "heat_build_up": {
-      "max": 2000,
+      "max": 500,
       "color": "#fc8803",
       "synced_value": {
         "type": "score",

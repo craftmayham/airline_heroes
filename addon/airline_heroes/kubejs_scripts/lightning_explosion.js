@@ -6,12 +6,14 @@ StartupEvents.registry('palladium:abilities', (event) => {
         .addProperty('cause_fire', 'boolean', false, 'if the explosion create fire')
         .addProperty('radius', 'integer', 1, 'radius of the explosion')
         .addProperty('self_damage', 'integer', 1, 'the damage on yourself')
+		.addProperty('explosion_chance','float',0.07,'chance to kill player')
 
         .firstTick((entity, entry, holder, enabled) => {
             if (enabled && entity.isPlayer()) {
                 const causingfire = entry.getPropertyByName("cause_fire");
                 const radius = entry.getPropertyByName("radius");
                 const self_dmg = entry.getPropertyByName("self_damage");
+				const kill_chance = entry.getPropertyByName("explosion_chance");
 
                 const posX = entity.x;
                 const posY = entity.y;
