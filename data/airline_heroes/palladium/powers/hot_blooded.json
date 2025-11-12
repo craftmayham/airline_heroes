@@ -1,5 +1,5 @@
 {
-  "name": "Energy Transference",
+  "name": "Hot_blooded",
   "background": "minecraft:textures/block/red_wool.png",
   "icon": "minecraft:blaze_powder",
   "gui_display_type": "list",
@@ -58,7 +58,7 @@
     "score_value": "heat_build_up",
     "Division_Amount": "1",
     "Attribute_Type": "minecraft:generic.max_health",
-    "UUID": "cc154bdc-21f8-11ee-be56-0242ac120002",
+    "UUID": "cc154bdc-21f8-11ee-be56-0242ac120003",
     "Attribute_Mod": "addition"
 },
 "speed_modifier":{
@@ -78,7 +78,7 @@
     "score_value": "heat_build_up",
     "Division_Amount": "1",
     "Attribute_Type": "minecraft:generic.movement_speed",
-    "UUID": "cc154bdc-21f8-11ee-be56-0242ac120002",
+    "UUID": "cc154bdc-21f8-11ee-be56-0242ac120004",
     "Attribute_Mod": "addition"
 },
 
@@ -99,7 +99,7 @@
     "score_value": "heat_build_up",
     "Division_Amount": "1",
     "Attribute_Type": "minecraft:generic.armor",
-    "UUID": "cc154bdc-21f8-11ee-be56-0242ac120002",
+    "UUID": "cc154bdc-21f8-11ee-be56-0242ac120005",
     "Attribute_Mod": "addition"
 },
 	
@@ -199,7 +199,7 @@
         "enabling": [
 		  	 {
     "type": "palladium:objective_score",
-    "objective": "airline_heroes.potential_energy",
+    "objective": "airline_heroes.heat_build_up",
     "min_score": 100
 },
           {
@@ -230,7 +230,7 @@
           [
 		  	 {
     "type": "palladium:objective_score",
-    "objective": "airline_heroes.potential_energy",
+    "objective": "airline_heroes.heat_build_up",
     "min_score": 100
 },
     {
