@@ -1,7 +1,7 @@
 {
   "name": "Enhanced Vision",
   "background": "minecraft:textures/block/red_wool.png",
-  "icon": "minecraft:bow",
+  "icon": "minecraft:ender_eye",
   "abilities": {
 	  "night_vision":
 {

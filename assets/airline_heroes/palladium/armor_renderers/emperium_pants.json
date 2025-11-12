@@ -1,0 +1,11 @@
+{
+  "textures": {
+    "normal": "airline_heroes:textures/models/armor/emperium_pants.png",
+    "slim": "airline_heroes:textures/models/armor/emperium_pants.png"
+  },
+  "model_layers": {
+    "normal": "palladium:humanoid#tight_suit",
+    "slim": "palladium:humanoid#tight_suit"
+  },
+  "hide_second_layer": true
+}
