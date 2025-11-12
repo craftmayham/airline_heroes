@@ -81,26 +81,7 @@
     "UUID": "cc154bdc-21f8-11ee-be56-0242ac120002",
     "Attribute_Mod": "addition"
 },
-"speed_modifier":{
-    "type": "airline_heroes:attribute_modifier",
-"icon": {
-        "type": "palladium:item",
-        "item": "minecraft:air",
-        "count": 0
-    },
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
-    "score_value": "heat_build_up",
-    "Division_Amount": "1",
-    "Attribute_Type": "minecraft:generic.movement_speed",
-    "UUID": "cc154bdc-21f8-11ee-be56-0242ac120002",
-    "Attribute_Mod": "addition"
-},
+
 "durability_modifier":{
     "type": "airline_heroes:attribute_modifier",
   "icon": {

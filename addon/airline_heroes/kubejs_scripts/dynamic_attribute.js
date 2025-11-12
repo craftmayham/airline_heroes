@@ -1,7 +1,7 @@
 
 
     StartupEvents.registry('palladium:abilities', (event) => {
-        event.create('airline_heroes:attribute_modifer')
+        event.create('airline_heroes:attribute_modifier')
             .icon(palladium.createItemIcon('palladium:vibranium_circuit'))
             .addProperty("score_value", "string", "Score.Board", "Scoreboard Name")
 			.addProperty("Division_Amount", "string", "1", "The amount the scoreboard value will be divided by")
