@@ -15,7 +15,6 @@ EntityEvents.hurt((event) => {
 
             let pos = hurtEntity.blockPosition().mutable();
             let posfixed = pos.y + 1;
-            player.server.runCommandSilent(`particle airline_heroes:air_punch ${pos.x} ${posfixed} ${pos.z} 0 0 0 0 5 force`);
         }
     }
 
@@ -27,7 +26,15 @@ EntityEvents.hurt((event) => {
         scoreboard.getOrCreatePlayerScore(hurtEntity.username, objective).add(5);
 
         let pos = hurtEntity.blockPosition().mutable();
-        let posfixed = pos.y + 1;
-        hurtEntity.server.runCommandSilent(`particle airline_heroes:air_punch ${pos.x} ${posfixed} ${pos.z} 0 0 0 0 5 force`);
+        let posfixed = pos.y + 1;   
+
+		// let damage_type = event.source.islightning_bolt
+        if (source.isLighting) {
+
+				event.server.runCommandSilent('say ${damage_type}');	
+
+			scoreboard.getOrCreatePlayerScore(hurtEntity.username, scoreboard.getObjective('airline_heroes.struck_by_lightning')).add(1);
+		}
     }
+	
 });

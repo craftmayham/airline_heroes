@@ -2,6 +2,7 @@
   "objectives": [
     "airline_heroes.skill_points",
 	"kinetic_drain",
-	"heat_build_up"
+	"heat_build_up",
+	"struck_by_lightning"
   ]
 }
