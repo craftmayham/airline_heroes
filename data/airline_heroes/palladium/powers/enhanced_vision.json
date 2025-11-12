@@ -55,6 +55,46 @@
 }
 		]
 	}
+},
+"night_vision_eyes": {
+    "type": "palladium:render_layer",
+    "icon": "minecraft:blaze_rod",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "render_layer": "airline_heroes:glowing_eyes_night_vision",
+		"conditions": {
+		"enabling": [
+{
+    "type": "palladium:ability_enabled",
+    "ability": "night_vision"
+}
+		]
+	}
+},
+"glow_vision_eyes": {
+    "type": "palladium:render_layer",
+    "icon": "minecraft:blaze_rod",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "render_layer": "airline_heroes:glowing_eyes_glowing",
+		"conditions": {
+		"enabling": [
+{
+    "type": "palladium:ability_enabled",
+    "ability": "entity_glow"
+}
+		]
+	}
 }
   }
 }
