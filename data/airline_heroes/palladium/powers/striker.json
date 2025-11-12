@@ -32,11 +32,11 @@
     "bar_color": "light_gray",
     "hidden": false,
     "hidden_in_bar": false,
-    "list_index": -1,
+    "list_index": 0,
     "gui_position": "null",
     "description": "null",
     "cause_fire": false,
-    "radius": 1,
+    "radius": 2,
     "self_damage": 1,
 	"conditions": {
 		"enabling": [
@@ -48,6 +48,82 @@
 }
 
     
-  }
+  },
+  "electricdash":{
+	  
+    "type": "palladium:command",
+    "icon": "minecraft:command_block",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": 5,
+    "gui_position": "null",
+    "description": "null",
+    "first_tick_commands": [],
+    "last_tick_commands": [],
+    "commands": [
+	"summon minecraft:lightning_bolt ~ ~ ~"
+        
+    ],
+	"energy_bar_usage": {
+   "energy_bar": "energy_bar_name",
+   "amount": 10
+},
+	"conditions": 
+	
+	{
+	"enabling":[
+	{
+    "type": "palladium:energy_bar",
+    "power": "null",
+    "energy_bar": "energy_bar_name",
+    "min": 1
+},
+{
+    "type": "palladium:held",
+    "cooldown": 0,
+    "key_type": "key_bind",
+    "needs_empty_hand": false
+}
+	]
+	}
+
+  },
+  "ability" : 
+  {
+    "type": "palladium:attribute_modifier",
+    "icon": "minecraft:iron_chestplate",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "attribute": "minecraft:generic.movement_speed",
+    "amount": 1.5,
+    "operation": 0,
+    "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
+	"conditions": 
+	{
+	"enabling":[
+{
+    "type": "palladium:ability_enabled",
+    "ability": "electricdash"
+}
+
+	]
+	}
+
+}
+},
+"energy_bars": {
+   "energy_bar_name": {
+       "max": 500,
+       "auto_increase_per_tick": 10,
+       "auto_increase_interval": 20,
+       "color": "#fc8803"
+   }
 }
 }
