@@ -19,28 +19,109 @@
     "attribute": "minecraft:generic.armor",
     "amount": 1,
     "operation": 0,
-    "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
-	"conditions": {
-        "enabling": [
-          {
-            "type": "palladium:toggle",
-            "cooldown": 0,
-            "key_type": "key_bind",
-            "needs_empty_hand": false,
-            "allow_scrolling_when_crouching": true
-          },
-		  {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:has_effect",
-                "effect": "airline_heroes:nullified"
-              }
-            ]
-          }
-        ]
-      }
+    "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1"
 	},
+"strength_modifier":{
+    "type": "airline_heroes:attribute_modifer",
+ "icon": {
+        "type": "palladium:item",
+        "item": "minecraft:air",
+        "count": 0
+    },
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "score_value": "heat_build_up",
+    "Division_Amount": "1",
+    "Attribute_Type": "minecraft:generic.attack_damage",
+    "UUID": "cc154bdc-21f8-11ee-be56-0242ac120002",
+    "Attribute_Mod": "addition"
+},
+"health_modifier":{
+    "type": "airline_heroes:attribute_modifer",
+    "icon": {
+        "type": "palladium:item",
+        "item": "minecraft:air",
+        "count": 0
+    },
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "score_value": "heat_build_up",
+    "Division_Amount": "1",
+    "Attribute_Type": "minecraft:generic.max_health",
+    "UUID": "cc154bdc-21f8-11ee-be56-0242ac120002",
+    "Attribute_Mod": "addition"
+},
+"speed_modifier":{
+    "type": "airline_heroes:attribute_modifer",
+    "icon": {
+        "type": "palladium:item",
+        "item": "minecraft:air",
+        "count": 0
+    },
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "score_value": "heat_build_up",
+    "Division_Amount": "1",
+    "Attribute_Type": "minecraft:generic.movement_speed",
+    "UUID": "cc154bdc-21f8-11ee-be56-0242ac120002",
+    "Attribute_Mod": "addition"
+},
+"speed_modifier":{
+    "type": "airline_heroes:attribute_modifer",
+"icon": {
+        "type": "palladium:item",
+        "item": "minecraft:air",
+        "count": 0
+    },
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "score_value": "heat_build_up",
+    "Division_Amount": "1",
+    "Attribute_Type": "minecraft:generic.movement_speed",
+    "UUID": "cc154bdc-21f8-11ee-be56-0242ac120002",
+    "Attribute_Mod": "addition"
+},
+"durability_modifier":{
+    "type": "airline_heroes:attribute_modifer",
+  "icon": {
+        "type": "palladium:item",
+        "item": "minecraft:air",
+        "count": 0
+    },
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "score_value": "heat_build_up",
+    "Division_Amount": "1",
+    "Attribute_Type": "minecraft:generic.armor",
+    "UUID": "cc154bdc-21f8-11ee-be56-0242ac120002",
+    "Attribute_Mod": "addition"
+},
+	
 	"block":{
 	"type": "palladium:attribute_modifier",
     "icon": "minecraft:iron_chestplate",
@@ -132,7 +213,32 @@
     "gui_position": "null",
     "description": "null",
     "range": 4,
-    "motion_scale": 1
+    "motion_scale": 1,
+	"conditions": {
+        "enabling": [
+		  	 {
+    "type": "palladium:objective_score",
+    "objective": "airline_heroes.potential_energy",
+    "min_score": 100
+},
+          {
+            "type": "palladium:toggle",
+            "cooldown": 0,
+            "key_type": "key_bind",
+            "needs_empty_hand": false,
+            "allow_scrolling_when_crouching": true
+          },
+		  {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
 },
 "jump": {
       "type": "airline_heroes:launch_player",
@@ -141,6 +247,11 @@
       "conditions": {
          "enabling": 
           [
+		  	 {
+    "type": "palladium:objective_score",
+    "objective": "airline_heroes.potential_energy",
+    "min_score": 100
+},
     {
     "type": "palladium:action",
 	"cooldown": 10,

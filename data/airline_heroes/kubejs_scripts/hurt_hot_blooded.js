@@ -11,7 +11,7 @@ EntityEvents.hurt((event) => {
         let objective = scoreboard.getObjective('airline_heroes.heat_build_up');
 
         if (palladium.abilities.isEnabled(player, "airline_heroes:hot_blooded", "hot_blooded_build_up")) {
-            scoreboard.getOrCreatePlayerScore(player.username, objective).add(500);
+            scoreboard.getOrCreatePlayerScore(player.username, objective).add(5);
 
             let pos = hurtEntity.blockPosition().mutable();
             let posfixed = pos.y + 1;
@@ -24,7 +24,7 @@ EntityEvents.hurt((event) => {
         let scoreboard = hurtEntity.server.getScoreboard();
         let objective = scoreboard.getObjective('airline_heroes.heat_build_up');
 
-        scoreboard.getOrCreatePlayerScore(hurtEntity.username, objective).add(500);
+        scoreboard.getOrCreatePlayerScore(hurtEntity.username, objective).add(5);
 
         let pos = hurtEntity.blockPosition().mutable();
         let posfixed = pos.y + 1;
