@@ -33,5 +33,17 @@ if (progress > 0.0) {
 }
     });
 	
+	    event.registerForPower('airline_heroes/hand_pos', 'airline_heroes:shotgun', 2, (builder) => {
+        const progress = animationUtil.getAnimationTimerAbilityValue(builder.getPlayer(), 'airline_heroes:shotgun', 'hand_pos', builder.getPartialTicks());
+if (progress > 0.0) {	
+                     if (builder.isFirstPerson()) {
+            builder.get('right_arm').setXRotDegrees(-2).animate('easeInOutCubic', progress);
+            builder.get('right_arm').setYRotDegrees(40).animate('easeInOutCubic', progress);
+            builder.get('left_arm').setXRotDegrees(-2).animate('easeInOutCubic', progress);
+            builder.get('left_arm').setYRotDegrees(2).animate('easeInOutCubic', progress);
+        }
+}
+    });
+	
 });
 
