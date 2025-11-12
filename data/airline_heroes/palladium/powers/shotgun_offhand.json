@@ -3,12 +3,6 @@
   "background": "minecraft:textures/block/red_wool.png",
   "icon": "minecraft:bow",
   "abilities": {
-    "command_1": {
-      "type": "palladium:command",
-      "commands": [
-        "say Holstered"
-      ]
-	},
 	"render":
 	{
     "type": "palladium:render_layer",
