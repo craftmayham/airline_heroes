@@ -1,0 +1,14 @@
+{
+  "textures": {
+    "normal": "airline_heroes:textures/models/armor/the_alchemist_hood.png",
+    "slim": "airline_heroes:textures/models/blank.png"
+  },
+  "model_layers": {
+    "normal": "palladium:humanoid#suit",
+    "slim": "palladium:humanoid#suit_slim"
+  },
+  "render_layers": [
+	"airline_heroes:alchemist_opened_hood"
+  ],
+  "hide_second_layer": true
+}

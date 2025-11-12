@@ -1,0 +1,26 @@
+{
+  "tooltip": [
+    "Very Full Metal"
+  ],
+  "armor_material": "minecraft:iron",
+  "creative_mode_tab": "combat",
+  "chest": {
+    "item_name": "alchemist_tunic",
+	"armor_renderer": "airline_heroes:alchemist_tunic"
+  },
+  "legs": {
+    "item_name": "alchemist_pants",
+	"armor_renderer": "airline_heroes:alchemist_pants"
+  },
+  "feet": {
+    "item_name": "alchemist_boots",
+	"armor_renderer": "airline_heroes:alchemist_boots"
+  },
+  "head": {
+    "item_name": "alchemist_cloak",
+	"armor_renderer": "airline_heroes:alchemist_cloak",
+    "openable": true,
+    "opening_time": 6,
+	"openable": true
+  }
+}
