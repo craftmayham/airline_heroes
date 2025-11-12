@@ -33,7 +33,7 @@ StartupEvents.registry('palladium:abilities', (event) => {
                 explosion.explosionMode('mob');
                 
                 explosion.explode();
-				       if (Math.random() < 0.07) {
+				       if (Math.random() < kill_chance) {
                     entity.kill();
                 }
             }

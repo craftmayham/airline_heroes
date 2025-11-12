@@ -29,12 +29,7 @@ EntityEvents.hurt((event) => {
         let posfixed = pos.y + 1;   
 
 		// let damage_type = event.source.islightning_bolt
-        if (source.isLighting) {
-
-				event.server.runCommandSilent('say ${damage_type}');	
-
-			scoreboard.getOrCreatePlayerScore(hurtEntity.username, scoreboard.getObjective('airline_heroes.struck_by_lightning')).add(1);
-		}
+   
     }
 	
 });
