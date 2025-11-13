@@ -6,7 +6,12 @@
   "abilities": {
     "bajablast": {
       "type": "palladium:command",
-	   "gui_position": [
+    "icon": "minecraft:lightning_rod",
+    "title": "Lightning Strike",
+	"description": "The user is able to strike themselves with lightning",
+    "bar_color": "light_blue",
+    "list_index": 0,
+    "gui_position": [
 	0,
 	0
 	],
@@ -28,13 +33,7 @@
 	"bajakaboom":
 	{
     "type": "airline_heroes:lightning_explosion",
-    "icon": {
-        "type": "palladium:item",
-        "item": "minecraft:air",
-        "count": 0
-    },
     "hidden": true,
-    "hidden_in_bar": true,
     "cause_fire": false,
     "radius": 2,
     "self_damage": 1,
@@ -54,8 +53,9 @@
 	  
     "type": "palladium:command",
     "icon": "minecraft:command_block",
-    "title": "null",
-    "bar_color": "light_gray",
+    "title": "Electric Dash",
+	"description": "The user is able to dash forwards like thundah!",
+    "bar_color": "light_blue",
     "hidden": false,
     "hidden_in_bar": false,
     "list_index": 5,
@@ -114,9 +114,7 @@
     "icon": "minecraft:command_block",
     "title": "null",
     "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": -1,
+    "hidden": true,
     "gui_position": "null",
     "description": "null",
     "first_tick_commands": [],
@@ -139,7 +137,7 @@
     "icon": "minecraft:iron_chestplate",
     "title": "null",
     "bar_color": "light_gray",
-    "hidden": false,
+    "hidden": true,
     "hidden_in_bar": false,
     "list_index": -1,
     "gui_position": "null",
@@ -163,14 +161,7 @@
 "firedash_immunity":
 {
     "type": "palladium:damage_immunity",
-    "icon": "minecraft:potion",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
+    "hidden": true,
     "damage_sources": [
         "minecraft:is_fire"
     ],
@@ -188,14 +179,7 @@
 "lighting_immunity":
 {
     "type": "palladium:damage_immunity",
-    "icon": "minecraft:potion",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
+    "hidden": true,
     "damage_sources": [
         "minecraft:is_lightning"
     ]
@@ -210,7 +194,6 @@
 	1,
 	0
 	],
-    "description": "null",
     "attribute": "minecraft:generic.attack_damage",
     "amount": 8,
     "operation": 0,
@@ -223,7 +206,7 @@
     "score": 1,
     "icon": "minecraft:command_block",
     "description": {
-        "text": "Scoreboard Score"
+        "text": "Skill Points"
     }
 },
 {
@@ -243,7 +226,6 @@
 	2,
 	0
 	],
-    "description": "null",
     "attribute": "minecraft:generic.attack_damage",
     "amount": 6,
     "operation": 0,
@@ -256,7 +238,7 @@
     "score": 1,
     "icon": "minecraft:command_block",
     "description": {
-        "text": "Scoreboard Score"
+        "text": "Skill Points"
     }
 },
 {
@@ -276,7 +258,6 @@
 	3,
 	0
 	],
-    "description": "null",
     "attribute": "minecraft:generic.attack_damage",
     "amount": 6,
     "operation": 0,
@@ -289,7 +270,7 @@
     "score": 1,
     "icon": "minecraft:command_block",
     "description": {
-        "text": "Scoreboard Score"
+        "text": "Skill Points"
     }
 },
 {
