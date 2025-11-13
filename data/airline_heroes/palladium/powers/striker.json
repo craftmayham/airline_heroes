@@ -1,7 +1,7 @@
 {
   "name": "Striker",
   "background": "minecraft:textures/block/red_wool.png",
-  "icon": "minecraft:apple",
+  "icon": "minecraft:lightning_rod",
   "gui_display_type": "tree",
   	"ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
   "abilities": {
