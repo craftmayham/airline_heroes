@@ -4,7 +4,8 @@
     {
       "type": "geckolib:default",
   "model": "airline_heroes:geo/opened_hood.geo.json",
-  "texture": "airline_heroes:textures/models/armor/the_alchemist_hood.png"  
+  "texture": "airline_heroes:textures/models/armor/opened_hood.png",
+  "tint": [0.5,1,0.4]
   }
 	]
 }

@@ -1,0 +1,18 @@
+	{
+  "type": "palladium:compound",
+  "layers": [
+	{
+  "model_layer": "palladium:humanoid#suit_slim",
+    "texture": {
+    "variables": {
+      "I": {
+        "type": "palladium:entity_ticks",
+        "divide": 10,
+        "modulo": 7
+      }
+    },
+    "base": "airline_heroes:textures/models/armor/alchemist_hood/#I.png"
+  }
+  }
+	]
+}

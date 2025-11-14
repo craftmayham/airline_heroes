@@ -1,18 +1,14 @@
 {
   "model_layer": "airline_heroes:humanoid#cape",
   "model_type": "palladium:caped_humanoid",
-  "texture": {
-    "base": "airline_heroes:textures/models/cape/#STAGE.png",
+    "texture": {
     "variables": {
-      "STAGE": {
-        "type": "palladium:cape",
-        "bobbing": false,
-        "subtract": 9,
+      "I": {
+        "type": "palladium:entity_ticks",
         "divide": 10,
-        "max": 8,
-        "min": 0,
-        "round": "to_int"
+        "modulo": 7
       }
-    }
+    },
+    "base": "airline_heroes:textures/models/alchemist_cape/#I.png"
   }
 }
