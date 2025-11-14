@@ -13,6 +13,19 @@
     },
     "base": "airline_heroes:textures/models/armor/alchemist_hood/#I.png"
   }
+  },
+  	{
+  "model_layer": "airline_heroes:alchemist_hood_opened",
+    "texture": {
+    "variables": {
+      "I": {
+        "type": "palladium:entity_ticks",
+        "divide": 10,
+        "modulo": 7
+      }
+    },
+    "base": "airline_heroes:textures/models/armor/alchemist_hood/#I.png"
+  }
   }
 	]
 }
