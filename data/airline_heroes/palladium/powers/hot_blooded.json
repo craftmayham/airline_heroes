@@ -109,6 +109,31 @@
     "UUID": "cc154bdc-21f8-11ee-be56-0242ac120004",
     "Attribute_Mod": "addition"
 },
+"stepheight":{
+    "type": "palladium:command",
+    "icon": "minecraft:command_block",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "first_tick_commands": [],
+    "last_tick_commands": [],
+    "commands":["scale set pehkui:step_height 2"],
+		"conditions": {
+			"enabling":[
+			
+			{
+    "type": "palladium:objective_score",
+    "objective": "heat_build_up",
+    "min_score": 25
+}
+		
+			]
+}	
+},
 
 "durability_modifier":{
     "type": "airline_heroes:attribute_modifier",
@@ -424,7 +449,7 @@
     "list_index": -1,
     "gui_position": "null",
     "description": "null",
-    "scale": 1.5
+    "scale": 1.25
 },
 "overheat_1":{
     "type": "palladium:fire_aspect",
