@@ -84,7 +84,7 @@
     "gui_position": "null",
     "description": "null",
     "score_value": "airline_heroes.heat_build_up",
-    "Division_Amount": "50",
+    "Division_Amount": "45",
     "Attribute_Type": "minecraft:generic.max_health",
     "UUID": "cc154bdc-21f8-11ee-be56-0242ac120003",
     "Attribute_Mod": "addition"
@@ -104,7 +104,7 @@
     "gui_position": "null",
     "description": "null",
     "score_value": "airline_heroes.heat_build_up",
-    "Division_Amount": "100",
+    "Division_Amount": "1000",
     "Attribute_Type": "minecraft:generic.movement_speed",
     "UUID": "cc154bdc-21f8-11ee-be56-0242ac120004",
     "Attribute_Mod": "addition"
@@ -125,7 +125,7 @@
     "gui_position": "null",
     "description": "null",
     "score_value": "airline_heroes.heat_build_up",
-    "Division_Amount": "50",
+    "Division_Amount": "45",
     "Attribute_Type": "minecraft:generic.armor",
     "UUID": "cc154bdc-21f8-11ee-be56-0242ac120005",
     "Attribute_Mod": "addition"
@@ -413,7 +413,79 @@
 
 	]
 	}
+},
+"above_average_height":{
+    "type": "palladium:size",
+    "icon": "palladium:textures/icon/size.png",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "scale": 1.5
+},
+"overheat_1":{
+    "type": "palladium:fire_aspect",
+    "icon": "minecraft:flint_and_steel",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "time": 5,
+    "should_stack_time": false,
+    "max_time": 5,
+	"conditions": {
+         "enabling": 
+          [
+		  	 {
+    "type": "palladium:objective_score",
+    "objective": "airline_heroes.heat_build_up",
+    "min_score": 250
 }
+]
+}
+},
+"water_weakness":{
+    "type": "palladium:command",
+    "icon": "minecraft:command_block",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "first_tick_commands": [],
+    "last_tick_commands": [],
+    "commands": [
+		"scoreboard players remove @s airline_heroes.heat_build_up 20" 
+		],
+		"conditions": {
+         "enabling": 
+          [
+		  {
+    "type": "palladium:is_in_water_rain_or_bubble"
+}
+
+	]
+	}
+		
+},
+"scoreboard_cap": {
+      "type": "palladium:command",
+      "hidden": true,
+      "first_tick_commands": [],
+      "last_tick_commands": [],
+      "commands": [
+	  "scoreboard players set @s[scores={airline_heroes.heat_build_up=..-1}] airline_heroes.heat_build_up 0"]
+      }
+
+
 
 
 	
