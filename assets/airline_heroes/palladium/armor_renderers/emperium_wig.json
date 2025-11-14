@@ -1,8 +1,14 @@
 {
   "textures": {
-    "normal": "airline_heroes:textures/models/armor/emperium_wig.png",
-    "slim": "airline_heroes:textures/models/armor/emperium_wig.png"
-	"open": "airline_heroes:textures/models/armor/emperium_wig_open.png"
+    "default": "airline_heroes:textures/models/armor/emperium_wig.png",
+    "open": {
+      "base": "airline_heroes:textures/models/armor/emperium_wig_#X.png",
+      "variables": {
+        "X": {
+          "type": "palladium:openable_equipment_progress"
+        }
+      }
+    }
   },
   "model_layers": {
     "normal": "palladium:humanoid#tight_suit",
