@@ -1,0 +1,5 @@
+{
+    "type": "palladium:default",
+	"should_render_model": false,
+	"max_stack_size": 16
+}

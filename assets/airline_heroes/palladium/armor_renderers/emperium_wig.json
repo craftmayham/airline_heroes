@@ -2,10 +2,11 @@
   "textures": {
     "normal": "airline_heroes:textures/models/armor/emperium_wig.png",
     "slim": "airline_heroes:textures/models/armor/emperium_wig.png"
+	"open": "airline_heroes:textures/models/armor/emperium_wig_open.png"
   },
   "model_layers": {
     "normal": "palladium:humanoid#tight_suit",
     "slim": "palladium:humanoid#tight_suit"
   },
-  "hide_second_layer": false
+  "hide_second_layer": true
 }

@@ -18,6 +18,8 @@
   },
   "head": {
     "item_name": "emperium_wig",
-	"armor_renderer": "airline_heroes:emperium_wig"
+	"armor_renderer": "airline_heroes:emperium_wig",
+	"open": "airline_heroes:emperium_wig_open",
+	"opening_time": 0
   }
 }
