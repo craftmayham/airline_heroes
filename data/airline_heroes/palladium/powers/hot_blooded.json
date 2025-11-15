@@ -109,9 +109,10 @@
     "UUID": "cc154bdc-21f8-11ee-be56-0242ac120004",
     "Attribute_Mod": "addition"
 },
-"stepheight":{
-    "type": "palladium:command",
-    "icon": "minecraft:command_block",
+"fall_damage_immunity":{
+
+    "type": "palladium:damage_immunity",
+    "icon": "minecraft:potion",
     "title": "null",
     "bar_color": "light_gray",
     "hidden": false,
@@ -119,15 +120,16 @@
     "list_index": -1,
     "gui_position": "null",
     "description": "null",
-    "first_tick_commands": [],
-    "last_tick_commands": [],
-    "commands":["scale set pehkui:step_height 2"],
+    "damage_sources": [
+         "minecraft:is_fall"
+    ],
+
 		"conditions": {
 			"enabling":[
 			
 			{
     "type": "palladium:objective_score",
-    "objective": "heat_build_up",
+    "objective": "airline_heroes.heat_build_up",
     "min_score": 25
 }
 		
