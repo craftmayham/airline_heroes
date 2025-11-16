@@ -1,0 +1,50 @@
+{
+    "name": "broodweaver",
+    "background": "minecraft:textures/block/red_wool.png",
+    "icon": "minecraft:lightning_rod",
+    "gui_display_type": "tree",
+    "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
+    "abilities": {
+        
+        "spider lunge": {
+            "type": "airline_heroes:launch_player",
+            "icon": "minecraft:elytra",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "power": 3, 
+            "conditions": {
+                "enabling": [
+                    {
+                    "type": "palladium:action",
+                    "cooldown": 20,
+                    "key_type": "key_bind",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                    },
+                ]
+            }
+        }
+
+        "spider fall": {
+            "type": "palladium:damage_immunity",
+            "hidden": true,
+            "hidden_in_bar": true,
+            "damage_sources": [
+                "minecraft:is_fall"
+            ]
+        }
+    },
+    "energy_bars": {
+        "fluids": {
+           "max": 500,
+           "auto_increase_per_tick": 10,
+           "auto_increase_interval": 20,
+           "color": "#fadd8e6"
+        }
+    }
+}
