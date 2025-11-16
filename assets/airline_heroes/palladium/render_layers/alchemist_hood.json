@@ -15,7 +15,7 @@
   }
   },
   	{
-  "model_layer": "airline_heroes:alchemist_hood_opened",
+  "model_layer": "palladium:humanoid#suit_slim",
     "texture": {
     "variables": {
       "I": {
@@ -24,8 +24,19 @@
         "modulo": 7
       }
     },
-    "base": "airline_heroes:textures/models/armor/alchemist_hood/#I.png"
-  }
+    "base": "airline_heroes:textures/models/armor/alchemist_hood_removable/#I.png"
+  },
+      "conditions": [
+        {
+          "type": "palladium:not",
+          "conditions": [
+	{
+    "type": "palladium:item_in_slot_open",
+    "slot": "head"
+}
+          ]
+        }
+      ]
   }
 	]
 }
