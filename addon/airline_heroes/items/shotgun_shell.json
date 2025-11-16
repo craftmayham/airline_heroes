@@ -1,5 +1,6 @@
 {
     "type": "palladium:default",
+	"creative_mode_tab": "airline_heroes:airline_heroes",
 	"should_render_model": false,
 	"max_stack_size": 16
 }
