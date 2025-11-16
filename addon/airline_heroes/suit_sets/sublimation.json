@@ -3,7 +3,7 @@
     "Sublimation set"
   ],
   "armor_material": "minecraft:diamond",
-  "creative_mode_tab": "combat",
+  "creative_mode_tab": "airline_heroes:airline_heroes",
   "chest": {
     "item_name": "sublimation_jacket",
 	"armor_renderer": "airline_heroes:sublimation_jacket",
