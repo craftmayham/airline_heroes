@@ -1,0 +1,27 @@
+{
+    "item.airline_heroes.aa_jacket": "AA Jacket",
+	"item.airline_heroes.aa_pants": "AA Pants",
+	"item.airline_heroes.aa_shoes": "AA Shoes",
+	
+    "item.airline_heroes.prisoner_jacket": "Prisoner Jacket",
+	"item.airline_heroes.prisoner_pants": "Prisoner Pants",
+	"item.airline_heroes.prisoner_shoes": "Prisoner Shoes",
+	
+	"item.airline_heroes.sublimation_goggles": "Subli-Mate's Goggles",
+	"item.airline_heroes.sublimation_jacket": "Subli-Mate's Jacket",
+	"item.airline_heroes.sublimation_pants": "Subli-Mate's Pants",
+	"item.airline_heroes.sublimation_shoes": "Subli-Mate's Shoes",
+	
+   "item.airline_heroes.alchemist_cloak": "The Alchemist's Cloak",
+	"item.airline_heroes.alchemist_tunic": "The Alchemist's Tunic",
+	"item.airline_heroes.alchemist_pants": "The Alchemist's Pants",
+	"item.airline_heroes.alchemist_boots": "The Alchemist's Boots",
+	
+     "item.airline_heroes.emperium_wig": "Emperium Wig",
+	"item.airline_heroes.emperium_jacket": "Emperium Jacket",
+	"item.airline_heroes.emperium_pants": "Emperium Pants",
+	"item.airline_heroes.emperium_shoes": "Emperium Shoes",
+	
+	"item.airline_heroes.shotgun": "Shotgun",
+	"item.airline_heroes.shotgun_shell": "Shotgun Shell"
+}

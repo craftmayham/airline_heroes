@@ -1,9 +1,9 @@
 {
   "tooltip": [
-    "Very Full Metal"
+    "Oh so very full metal"
   ],
   "armor_material": "minecraft:iron",
-  "creative_mode_tab": "combat",
+  "creative_mode_tab": "airline_heroes:airline_heroes",
   "chest": {
     "item_name": "alchemist_tunic",
 	"armor_renderer": "airline_heroes:alchemist_tunic"
@@ -19,8 +19,7 @@
   "head": {
     "item_name": "alchemist_cloak",
 	"armor_renderer": "airline_heroes:alchemist_cloak",
-    "openable": true,
-    "opening_time": 6,
+    "opening_time": 1,
 	"openable": true
   }
 }

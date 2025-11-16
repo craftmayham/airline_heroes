@@ -72,7 +72,7 @@
     ],
 	"energy_bar_usage": {
    "energy_bar": "energy_bar_name",
-   "amount": 10
+   "amount": 5
 },
 	"conditions": 
 	
@@ -81,7 +81,7 @@
 	{
     "type": "palladium:energy_bar",
     "energy_bar": "energy_bar_name",
-    "min": 1
+    "min": 5
 },
 {
     "type": "palladium:held",
