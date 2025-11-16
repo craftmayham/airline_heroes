@@ -5,14 +5,14 @@
   "gui_display_type": "tree",
   	"ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
   "abilities": {
-	"comedy_tragedy":{
+	"comedy_tragedy_1":{
     "type": "palladium:dummy",
     "icon": "minecraft:blaze_rod",
     "title": "null",
     "bar_color": "light_gray",
     "hidden": false,
     "hidden_in_bar": false,
-    "list_index": -1,
+    "list_index": 4,
     "gui_position": "null",
     "description": "null",
 	"conditions": {
@@ -34,7 +34,59 @@
             ]
           }
 		  
-		]
+		],
+		"unlocking":[
+	{
+    "type": "palladium:not",
+    "conditions": [{
+		
+    "type": "palladium:ability_enabled",
+    "ability": "comedy_tragedy_1"
+}]
+	}
+	]
+	}
+},
+"comedy_tragedy_2":{
+    "type": "palladium:dummy",
+    "icon": "minecraft:blaze_rod",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": 9,
+    "gui_position": "null",
+    "description": "null",
+	"conditions": {
+		"enabling":[
+			{
+    "type": "palladium:toggle",
+    "cooldown": 0,
+    "key_type": "key_bind",
+    "needs_empty_hand": false,
+    "allow_scrolling_when_crouching": true
+},
+		 {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+		  
+		],
+	"unlocking":[
+	{
+    "type": "palladium:not",
+    "conditions": [{
+		
+    "type": "palladium:ability_enabled",
+    "ability": "comedy_tragedy_2"
+}]
+}
+	]
 	}
 },
 	
@@ -201,6 +253,16 @@
 	"conditions": {
 		"enabling":[
 		{
+    "type": "palladium:toggle",
+    "cooldown": 0,
+    "key_type": "key_bind",
+    "needs_empty_hand": false,
+    "allow_scrolling_when_crouching": true
+}
+
+	],
+	"unlocking":[
+	{
 		 "type": "palladium:not",
     "conditions": [		
 	{
@@ -208,10 +270,33 @@
     "ability": "comedy_tragedy"
 }
 ]
-		},
+		}
+	]
+	}
+},
+"comedy_push_away":{
+    
+    "type": "airline_heroes:push_away",
+    "icon": "minecraft:egg",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": 0,
+    "gui_position": "null",
+    "description": "null",
+    "range": -1,
+    "motion_scale": 1,
+	"conditions": {
+		"enabling":[
 		{
-    "type": "palladium:toggle",
-    "cooldown": 0,
+    "type": "palladium:ability_enabled",
+    "ability": "comedy_tragedy"
+},
+{
+    "type": "palladium:activation",
+    "cooldown": 60,
+    "ticks": 30,
     "key_type": "key_bind",
     "needs_empty_hand": false,
     "allow_scrolling_when_crouching": true
@@ -219,7 +304,6 @@
 	]
 	}
 }
-
 
   }
     
