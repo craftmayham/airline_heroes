@@ -1,0 +1,19 @@
+{
+  "tooltip": [
+    "The local prison's uniform"
+  ],
+  "armor_material": "minecraft:diamond",
+  "creative_mode_tab": "airline_heroes:airline_heroes",
+  "chest": {
+    "item_name": "prisoner_jacket",
+	"armor_renderer": "airline_heroes:prisoner_jacket"
+  },
+  "legs": {
+    "item_name": "prisoner_pants",
+	"armor_renderer": "airline_heroes:prisoner_pants"
+  },
+  "feet": {
+    "item_name": "prisoner_shoes",
+	"armor_renderer": "airline_heroes:prisoner_shoes"
+  }
+}

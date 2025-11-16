@@ -3,7 +3,7 @@
     "A fitting attire for a gun-slinging vigilante."
   ],
   "armor_material": "minecraft:iron",
-  "creative_mode_tab": "combat",
+  "creative_mode_tab": "airline_heroes:airline_heroes",
   "chest": {
     "item_name": "emperium_jacket",
 	"armor_renderer": "airline_heroes:emperium_jacket"
