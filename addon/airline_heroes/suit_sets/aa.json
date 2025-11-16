@@ -2,7 +2,7 @@
   "tooltip": [
     "The training outfit of choice for any student"
   ],
-  "armor_material": "minecraft:diamond",
+  "armor_material": "minecraft:iron",
   "creative_mode_tab": "airline_heroes:airline_heroes",
   "chest": {
     "item_name": "aa_jacket",
