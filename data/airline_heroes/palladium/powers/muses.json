@@ -257,8 +257,173 @@
 		}
 	]
 	}
+},
+"comedy_aoe_slowness":{
+    "type": "airline_heroes:potion_aoe",
+    "icon": "minecraft:beacon",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": 0,
+    "gui_position": "null",
+    "description": "null",
+    "radius": 8,
+    "time": 10,
+    "effect": "minecraft:slowness",
+	"conditions": {
+		"enabling":[
+		{
+    "type": "palladium:toggle",
+    "cooldown": 0,
+    "key_type": "key_bind",
+    "needs_empty_hand": false,
+    "allow_scrolling_when_crouching": true
 }
 
+	],
+	"unlocking":[
+	{
+		 "type": "palladium:not",
+    "conditions": [		
+	{
+    "type": "palladium:ability_enabled",
+    "ability": "comedy_tragedy"
+}
+]
+		}
+	]
+	}	
+},
+"comedy_aoe_nausea":{
+    "type": "airline_heroes:potion_aoe",
+    "icon": "minecraft:beacon",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "radius": 8,
+    "time": 10,
+    "effect": "minecraft:nausea",
+	"conditions":{
+		"enabling":[
+		{
+    "type": "palladium:ability_first_tick",
+    "ability": "comedy_aoe_slowness"
+}
+		]
+	}
+	
+
+  },
+"tragedy_aoe_blindness":{
+    "type": "airline_heroes:potion_aoe",
+    "icon": "minecraft:beacon",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": 0,
+    "gui_position": "null",
+    "description": "null",
+    "radius": 8,
+    "time": 10,
+    "effect": "minecraft:blindness",
+	"conditions": {
+		"enabling":[
+		{
+    "type": "palladium:toggle",
+    "cooldown": 0,
+    "key_type": "key_bind",
+    "needs_empty_hand": false,
+    "allow_scrolling_when_crouching": true
+}
+
+	],
+	"unlocking":[
+	{
+    "type": "palladium:ability_enabled",
+    "ability": "comedy_tragedy"
+}
+	]
+	}	
+},
+"tragedy_aoe_speed":{
+    "type": "airline_heroes:potion_aoe",
+    "icon": "minecraft:beacon",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "radius": 8,
+    "time": 10,
+    "effect": "minecraft:speed",
+	"conditions":{
+		"enabling":[
+		{
+    "type": "palladium:ability_first_tick",
+    "ability": "tragedy_aoe_blindess"
+}
+		]
+	}
+  },
+
+"comedy_ult":{
+      "type": "palladium:projectile",
+      "entity_type": "palladium:custom_projectile",
+      "title": "Appearance Combination",
+      "list_index": 2,
+      "velocity": 1.5,
+      "entity_data": {
+        "Damage": 0,
+        "Gravity": 0,
+		"Size": 0.5,
+        "Lifetime": 1200,
+        "DieOnEntityHit": true,
+        "DieOnBlockHit": true,
+       "CommandOnEntityHit": "summon firework_rocket ~ ~ ~ {FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:0,Colors:[I;16711680]}]}}}}",
+       "CommandOnBlockHit": "summon firework_rocket ~ ~ ~ {FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:0,Colors:[I;16711680]}]}}}}",
+        "Appearances": [
+          {
+            "Type": "item",
+            "Item": "minecraft:firework_rocket"
+          },
+          {
+            "Type": "particles",
+            "ParticleType": "minecraft:flame",
+            "Spread": 2.5
+          }
+        ]
+      },
+    "swinging_arm": "main_arm",
+    "damage_from_player": false,
+    "ignore_player_movement": false,	
+	"conditions": {
+		"enabling":[
+		{
+    "type": "palladium:toggle",
+    "cooldown": 0,
+    "key_type": "key_bind",
+    "needs_empty_hand": false,
+    "allow_scrolling_when_crouching": true
+}
+
+	],
+	"unlocking":[
+	{
+    "type": "palladium:ability_enabled",
+    "ability": "comedy_tragedy"
+}
+	]
+	}
+}
+
+
   }
-    
 }
