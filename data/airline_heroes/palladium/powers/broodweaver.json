@@ -5,8 +5,15 @@
     "gui_display_type": "tree",
     "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
     "abilities": {
-        
-        "spider lunge": {
+        "web_immunity": {
+            "type": "palladium:command",
+            "hidden": true,
+            "hidden_in_bar": true,
+            "first_tick_commands": ["tag @s add webimmune"],
+            "last_tick_commands": [],
+            "commands": []
+        },
+        "spider_lunge": {
             "type": "airline_heroes:launch_player",
             "icon": "minecraft:elytra",
             "title": "null",
@@ -16,7 +23,7 @@
             "list_index": -1,
             "gui_position": "null",
             "description": "null",
-            "power": 3, 
+            "power": 2, 
             "conditions": {
                 "enabling": [
                     {
@@ -25,26 +32,110 @@
                     "key_type": "key_bind",
                     "needs_empty_hand": false,
                     "allow_scrolling_when_crouching": true
-                    },
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:on_ground"
+                    }
                 ]
             }
-        }
+        },
 
-        "spider fall": {
+        "spider_fall": {
             "type": "palladium:damage_immunity",
             "hidden": true,
             "hidden_in_bar": true,
             "damage_sources": [
                 "minecraft:is_fall"
             ]
+        },
+        
+        "spider_no_stick": {
+            "type": "palladium:intangibility",
+            "hidden": true,
+            "hidden_in_bar": false,
+            "vertical": true,
+            "whitelist": "airline_heroes:cobweb"
+        },
+        
+        
+        
+        "spider go fast": 
+        {
+            "type": "palladium:attribute_modifier",
+            "hidden": true,
+            "attribute": "minecraft:generic.movement_speed",
+            "amount": 0.1,
+            "operation": 0,
+            "uuid": "2de04b0f-fcc3-4ea2-9e9e-f89ab73f9d5c"
+        },
+            
+        "fluid_shot": {
+            "type": "palladium:projectile",
+            "icon": "minecraft:cobweb",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "entity_type": "palladium:custom_projectile",
+            "entity_data": {
+                "Damage": 4,
+                "Gravity": 0.04,
+                "Size": 1,
+                "CommandOnEntityHit": "function airline_heroes:webhit",
+                "CommandOnBlockHit": "setblock ~ ~ ~ minecraft:cobweb keep",
+                "Appearances": [
+                {
+                    "Type": "item",
+                    "Item": "minecraft:cobweb"
+                }, 
+                {
+                    "Type": "particles",
+                    "ParticleType": "minecraft:cloud",
+                    "Spread": 2.5
+                }
+                ]
+            },
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 10,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:energy_bar",
+                        "energy_bar": "fluids",
+                        "min": 100,
+                        "max": 2147483647
+                    }
+                ]
+            },
+            "energy_bar_usage": {
+                "energy_bar": "fluids",
+                "amount": 100
+            },
+            "inaccuracy": 0,
+            "velocity": 1.4,
+            "swinging_arm": "none",
+            "damage_from_player": false,
+            "ignore_player_movement": false
         }
     },
     "energy_bars": {
         "fluids": {
            "max": 500,
-           "auto_increase_per_tick": 10,
-           "auto_increase_interval": 20,
-           "color": "#fadd8e6"
+           "auto_increase_per_tick": 5,
+           "auto_increase_interval": 1,
+           "color": "#FFFFFF"
         }
     }
 }

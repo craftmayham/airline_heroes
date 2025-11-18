@@ -1,0 +1,2 @@
+effect give @e[distance=0..4,tag=!webimmune, limit=1, sort=nearest] minecraft:slowness 5 100 false
+execute at @e[distance=0..4,tag=!webimmune, type=!palladium:custom_projectile, type=!minecraft:item, limit=1, sort=nearest] run fill ~ ~ ~ ~ ~1 ~ minecraft:cobweb
