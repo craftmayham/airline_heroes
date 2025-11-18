@@ -523,6 +523,11 @@
                   },
 				  				  {
     "type": "palladium:crouching"
+},
+{
+    "type": "palladium:interval",
+    "active_ticks": 1,
+    "disabled_ticks": 60
 }
 		]
 	}

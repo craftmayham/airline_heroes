@@ -1,5 +1,9 @@
 let Minecraft = Java.loadClass('net.minecraft.client.Minecraft');
 const RenderSystem = Java.loadClass('com.mojang.blaze3d.systems.RenderSystem');
+const InventoryScreen = Java.loadClass('net.minecraft.client.gui.screens.inventory.InventoryScreen');
+const Quaternionf = Java.loadClass('org.joml.Quaternionf');
+
+
 
 PalladiumEvents.renderPowerScreen(e => {
     let entity = Minecraft.getInstance().player;
@@ -15,5 +19,7 @@ PalladiumEvents.renderPowerScreen(e => {
 
         // Draw the score as text
         palladium.gui.drawString(e.guiGraphics, Component.string(skill_points), ((width) - 147), ((height) - 51), 0xFFFFFF);
+		let yaw = -(entity.yBodyRot + 20 * JavaMath.PI / 180);
+   InventoryScreen.renderEntityInInventory(e.guiGraphics, width / 2 - width * 0.4, height / 2 - height * 0.3, 20, new Quaternionf(Math.cos(0.5 * yaw), 0, -Math.sin(0.5 * yaw), 0), null, entity);
     }
 });

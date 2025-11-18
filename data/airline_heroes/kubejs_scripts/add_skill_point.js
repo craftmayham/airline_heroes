@@ -3,7 +3,9 @@
 // Listen for when a player completes an advancement
 PlayerEvents.advancement(event => {
     let player = event.player;
-
-    palladium.scoreboard.addScore(player, 'airline_heroes.skill_points', 1);
+    
+	let scoreboard = player.server.getScoreboard();
+    let objective = scoreboard.getObjective('airline_heroes.skill_points');
+    scoreboard.getOrCreatePlayerScore(player.username, objective).add(1);
     
 });

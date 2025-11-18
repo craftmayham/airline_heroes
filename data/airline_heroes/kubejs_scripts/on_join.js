@@ -14,5 +14,4 @@ PlayerEvents.loggedIn(event => {
 	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.heat_build_up dummy`);
 	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.struck_by_lightning dummy`);	
 	
-	event.server.runCommandSilent(`execute unless score ${username} airline_heroes.skill_points matches 0.. run scoreboard players set ${username} airline_heroes.skill_points 0`);
 })
