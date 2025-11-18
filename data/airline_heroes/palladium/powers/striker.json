@@ -28,8 +28,8 @@
     "needs_empty_hand": false,
     "allow_scrolling_when_crouching": true
 }
-		]
 	}
+		]
     },
 	"bajakaboom":
 	{
@@ -47,10 +47,41 @@
 }
 ]
 }
-
-    
-  },
-  "electricdash":{
+	},
+  "bajasuperblast": 
+  {
+    "type": "airline_heroes:lightning_explosion",
+    "icon": {
+        "type": "palladium:item",
+        "item": "minecraft:air",
+        "count": 0
+    },
+    "title": "bigkaboom"
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "description": "a super charge explosion, similar to baja blast",
+    "cause_fire": true,
+    "radius": 5,
+    "self_damage": 1,
+    "explosion_chance": 0
+	 "commands": [
+        "summon minecraft:lightning_bolt ~ ~ ~"
+      ],
+	"conditions": 
+		"enabling": [ 
+		{
+    "type": "palladium:action",
+    "cooldown": 100,
+    "key_type": "key_bind",
+    "needs_empty_hand": false,
+    "allow_scrolling_when_crouching": true
+		]
+		}
+},
+  "electricdash":
+  {
 	  
     "type": "palladium:command",
     "icon": "minecraft:string",
@@ -73,6 +104,7 @@
 	"energy_bar_usage": {
    "energy_bar": "energy_bar_name",
    "amount": 5
+	}
 },
 	"conditions": 
 	
@@ -99,15 +131,12 @@
     "description": {
         "text": "Skill Points"
     }
-},
-{
+
     "type": "palladium:ability_unlocked",
     "ability": "bajablast"
-}
 		]
 	}
-
-  },
+},
   "autojump_dash":{
     "type": "palladium:command",
     "icon": "minecraft:command_block",
@@ -126,7 +155,6 @@
 }
 
             ]
-}
 },
   "electricdash_speed" : 
   {

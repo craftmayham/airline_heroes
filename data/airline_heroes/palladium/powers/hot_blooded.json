@@ -358,7 +358,7 @@
     "gui_position": "null",
     "description": "null",
     "cause_fire": false,
-    "radius": 3,
+    "radius": 1,
     "self_damage": 0,
     "explosion_chance": 0,
 	"conditions":{
