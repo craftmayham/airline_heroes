@@ -851,7 +851,19 @@
 }
 		]
       }
-}	
+},
+"dual_wielding":
+{
+    "type": "palladium:dual_wielding",
+    "icon": "minecraft:blaze_rod",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null"
+}
 },
   "energy_bars": {
     "golden_carrot": {

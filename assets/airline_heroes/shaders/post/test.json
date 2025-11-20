@@ -1,0 +1,37 @@
+{
+    "targets": [
+        "swap"
+    ],
+    "passes": [
+        {
+            "name": "color_convolve",
+            "intarget": "minecraft:main",
+            "outtarget": "swap",
+            "uniforms": [
+                {
+                    "name": "Saturation",
+                    "values": [ 0 ]
+                },
+				     {
+                    "name": "Contrast",
+                    "values": [ 7 ]
+                }
+            ]
+        },
+        {
+            "name": "blit",
+            "intarget": "swap",
+            "outtarget": "minecraft:main"
+        },
+		        {
+            "name": "outline_soft",
+            "intarget": "swap",
+            "outtarget": "minecraft:main"
+        },
+        {
+            "name": "blit",
+            "intarget": "minecraft:main",
+            "outtarget": "swap"
+        }
+    ]
+}
