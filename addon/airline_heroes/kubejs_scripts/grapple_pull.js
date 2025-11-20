@@ -1,3 +1,4 @@
+let ClientboundSetEntityMotionPacket = Java.loadClass('net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket');
 StartupEvents.registry('palladium:abilities', event => {
     event.create('airline_heroes:nearby_block')
         .addProperty('force', 'float', 1.6, 'pull strength')
@@ -5,16 +6,17 @@ StartupEvents.registry('palladium:abilities', event => {
 
         .tick((entity, entry, holder, enabled) => {
     // Raycast up to 40 blocks
-    const hit = player.rayTrace(entry.getPropertyByName('range'), true);
+	let range = entry.getPropertyByName('range')
+    const hit = entity.getLookAngle().entity;
     if (!hit || !hit.block) return; // must hit a block
 
     let bx = hit.block.x + 0.5;
     let by = hit.block.y + 0.5;
     let bz = hit.block.z + 0.5;
 
-    let px = player.x;
-    let py = player.y + 1.0;
-    let pz = player.z;
+    let px = entity.x;
+    let py = entity.y + 1.0;
+    let pz = entity.z;
 
     // Direction vector
     let dx = bx - px;
@@ -33,7 +35,7 @@ StartupEvents.registry('palladium:abilities', event => {
     const force = entry.getPropertyByName('force');
 
     // Apply motion
-    player.setDeltaMovement(dx * force, dy * force, dz * force);
+    entity.setDeltaMovement(dx * force, dy * force, dz * force);
 	});
 });
 
