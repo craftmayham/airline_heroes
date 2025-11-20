@@ -28,8 +28,8 @@
     "needs_empty_hand": false,
     "allow_scrolling_when_crouching": true
 }
+	]
 	}
-		]
     },
 	"bajakaboom":
 	{
@@ -56,7 +56,7 @@
         "item": "minecraft:air",
         "count": 0
     },
-    "title": "bigkaboom"
+    "title": "bigkaboom",
     "bar_color": "light_gray",
     "hidden": false,
     "hidden_in_bar": false,
@@ -65,11 +65,11 @@
     "cause_fire": true,
     "radius": 5,
     "self_damage": 1,
-    "explosion_chance": 0
+    "explosion_chance": 0,
 	 "commands": [
         "summon minecraft:lightning_bolt ~ ~ ~"
       ],
-	"conditions": 
+	"conditions": {
 		"enabling": [ 
 		{
     "type": "palladium:action",
@@ -77,8 +77,9 @@
     "key_type": "key_bind",
     "needs_empty_hand": false,
     "allow_scrolling_when_crouching": true
-		]
 		}
+	]
+	}
 },
   "electricdash":
   {
@@ -104,8 +105,8 @@
 	"energy_bar_usage": {
    "energy_bar": "energy_bar_name",
    "amount": 5
-	}
-},
+	},
+	
 	"conditions": 
 	
 	{
@@ -129,11 +130,14 @@
     "score": 1,
     "icon": "minecraft:command_block",
     "description": {
-        "text": "Skill Points"
-    }
-
+        "text": "Skill Points",
+    
+	
     "type": "palladium:ability_unlocked",
     "ability": "bajablast"
+	}
+		
+		}
 		]
 	}
 },
@@ -306,5 +310,6 @@
        "auto_increase_interval": 20,
        "color": "#fadd8e6"
    }
+}
 }
 }
