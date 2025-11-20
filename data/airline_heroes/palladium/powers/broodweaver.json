@@ -36,7 +36,18 @@
                 ],
                 "unlocking": [
                     {
-                        "type": "palladium:on_ground"
+                        "type": "palladium:or",
+                        "conditions": [
+                            {
+                                "type": "palladium:on_ground"
+                            },
+                            {
+                                "type": "airline_heroes:nearby_wall",
+                                "blockID": "minecraft:air",
+                                "search_range": 1,
+                                "amount": 1
+                            }
+                        ]
                     }
                 ]
             }
@@ -59,8 +70,88 @@
             "whitelist": "airline_heroes:cobweb"
         },
         
+        "spider_climb": {
+            "type": "airline_heroes:launch_player",
+            "icon": "minecraft:vine",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "power": 0.4,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:has_movement_input"
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_enabled",
+                                "power": "null",
+                                "ability": "spider_lunge"
+                            },
+                            {
+                                "type": "palladium:on_ground"
+                            }
+                        ]
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "airline_heroes:nearby_wall",
+                        "blockID": "minecraft:air",
+                        "search_range": 1,
+                        "amount": 1
+                    }
+                ]
+            }
+        },
+
+        "spider_stick": {
+            "type": "airline_heroes:freeze_player",
+            "icon": "minecraft:slime_ball",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "airline_heroes:nearby_wall",
+                        "blockID": "minecraft:air",
+                        "search_range": 1,
+                        "amount": 1
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_enabled",
+                                "power": "null",
+                                "ability": "spider_lunge"
+                            },
+                            {
+                                "type": "palladium:ability_enabled",
+                                "power": "null",
+                                "ability": "spider_climb"
+                            },
+                            {
+                                "type": "palladium:on_ground"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
         
-        
+
         "spider go fast": 
         {
             "type": "palladium:attribute_modifier",
@@ -89,15 +180,15 @@
                 "CommandOnEntityHit": "function airline_heroes:webhit",
                 "CommandOnBlockHit": "setblock ~ ~ ~ minecraft:cobweb keep",
                 "Appearances": [
-                {
-                    "Type": "item",
-                    "Item": "minecraft:cobweb"
-                }, 
-                {
-                    "Type": "particles",
-                    "ParticleType": "minecraft:cloud",
-                    "Spread": 2.5
-                }
+                    {
+                        "Type": "item",
+                        "Item": "minecraft:cobweb"
+                    }, 
+                    {
+                        "Type": "particles",
+                        "ParticleType": "minecraft:cloud",
+                        "Spread": 2.5
+                    }
                 ]
             },
             "conditions": {
