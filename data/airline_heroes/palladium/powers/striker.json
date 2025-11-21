@@ -54,7 +54,7 @@
     "title": "Lightning Crash",
 	"description": "The user is able to summon a large bolt of lightning shattering the earth below",
     "bar_color": "light_blue",
-    "list_index": 2,
+    "list_index": 10,
     "gui_position": [
 	0,
 	-2
