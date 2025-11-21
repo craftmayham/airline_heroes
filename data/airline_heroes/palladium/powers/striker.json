@@ -90,7 +90,7 @@
     "type": "airline_heroes:lightning_explosion",
     "hidden": true,
     "cause_fire": true,
-    "radius": 15,
+    "radius": 40,
     "self_damage": 1,
 	"explosion_chance": 0,
 	"conditions": {
