@@ -98,6 +98,14 @@
                         "type": "palladium:ability_enabled",
                         "power": "null",
                         "ability": "spider_toggle"
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:on_ground"
+                            }
+                        ]
                     }
                 ]
             }
@@ -133,6 +141,9 @@
                                 "type": "palladium:ability_enabled",
                                 "power": "null",
                                 "ability": "spider_climb"
+                            },
+                            {
+                                "type": "palladium:on_ground"
                             }
                         ]
                     }
