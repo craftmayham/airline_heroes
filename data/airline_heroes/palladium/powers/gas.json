@@ -534,14 +534,7 @@
 },
 "float": {
     "type": "palladium:attribute_modifier",
-    "icon": "airline_heroes:textures/icons/health_upgrade_1.png",
-    "title": "Float",
-    "bar_color": "light_gray",
-    "list_index": 1,
-    "gui_position": [
-	0,
-	1
-	],
+    "hidden": true,
     "attribute": "porting_lib:entity_gravity",
     "amount": -0.085,
     "operation": 0,
@@ -559,13 +552,10 @@
     "type": "palladium:attribute_modifier",
     "icon": "airline_heroes:textures/icons/health_upgrade_1.png",
     "title": "Health Increase 1",
-    "bar_color": "light_gray",
-    "list_index": 1,
-    "gui_position": [
+	 "gui_position": [
 	0,
 	1
 	],
-    "description": "null",
     "attribute": "minecraft:generic.max_health",
     "amount": 8,
     "operation": 0,
@@ -592,13 +582,10 @@
     "type": "palladium:attribute_modifier",
     "icon": "airline_heroes:textures/icons/health_upgrade_2.png",
     "title": "Health Increase 2",
-    "bar_color": "light_gray",
-    "list_index": 2,
-    "gui_position": [
+	"gui_position": [
 	0,
 	2
 	],
-    "description": "null",
     "attribute": "minecraft:generic.max_health",
     "amount": 6,
     "operation": 0,
@@ -625,13 +612,10 @@
     "type": "palladium:attribute_modifier",
     "icon": "airline_heroes:textures/icons/health_upgrade_3.png",
     "title": "Health Increase 3",
-    "bar_color": "light_gray",
-    "list_index": 3,
-    "gui_position": [
+	"gui_position": [
 	0,
 	3
 	],
-    "description": "null",
     "attribute": "minecraft:generic.max_health",
     "amount": 6,
     "operation": 0,
@@ -658,15 +642,12 @@
     "type": "palladium:attribute_modifier",
     "icon": "airline_heroes:textures/icons/power_upgrade_1.png",
     "title": "Power Increase 1",
-    "bar_color": "light_gray",
-    "list_index": 1,
-    "gui_position": [
+	"gui_position": [
 	1,
 	0
 	],
-    "description": "null",
-    "attribute": "minecraft:generic.attack_damage",
-    "amount": 8,
+    "attribute": "palladium:punch_damage",
+    "amount": 10,
     "operation": 0,
 	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e4",
 	 "conditions": {
@@ -691,15 +672,12 @@
     "type": "palladium:attribute_modifier",
     "icon": "airline_heroes:textures/icons/power_upgrade_2.png",
     "title": "Power Increase 2",
-    "bar_color": "light_gray",
-    "list_index": 2,
-    "gui_position": [
+	"gui_position": [
 	2,
 	0
 	],
-    "description": "null",
-    "attribute": "minecraft:generic.attack_damage",
-    "amount": 6,
+    "attribute": "palladium:punch_damage",
+    "amount": 5,
     "operation": 0,
 	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e5",
 	 "conditions": {
@@ -724,15 +702,12 @@
     "type": "palladium:attribute_modifier",
     "icon": "airline_heroes:textures/icons/power_upgrade_3.png",
     "title": "Power Increase 3",
-    "bar_color": "light_gray",
-    "list_index": 3,
-    "gui_position": [
+	"gui_position": [
 	3,
 	0
 	],
-    "description": "null",
-    "attribute": "minecraft:generic.attack_damage",
-    "amount": 6,
+    "attribute": "palladium:punch_damage",
+    "amount": 4,
     "operation": 0,
 	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e6",
 	 "conditions": {
@@ -757,18 +732,20 @@
     "type": "palladium:attribute_modifier",
     "icon": "airline_heroes:textures/icons/endurance_upgrade_1.png",
     "title": "Endurance Increase 1",
-    "bar_color": "light_gray",
-    "list_index": 1,
-    "gui_position": [
+	"gui_position": [
 	-1,
 	0
 	],
-    "description": "null",
     "attribute": "minecraft:generic.movement_speed",
     "amount": 0.02,
     "operation": 0,
 	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e7",
 	 "conditions": {
+		"enabling": [
+		{
+       "type": "palladium:sprinting"
+        }
+		],
 		"unlocking": [
 		{
     "type": "palladium:scoreboard_score_buyable",
@@ -790,18 +767,20 @@
     "type": "palladium:attribute_modifier",
     "icon": "airline_heroes:textures/icons/endurance_upgrade_2.png",
     "title": "Endurance Increase 2",
-    "bar_color": "light_gray",
-    "list_index": 2,
-    "gui_position": [
+	"gui_position": [
 	-2,
 	0
 	],
-    "description": "null",
     "attribute": "minecraft:generic.movement_speed",
     "amount": 0.02,
     "operation": 0,
 	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e8",
 	 "conditions": {
+		"enabling": [
+		{
+    "type": "palladium:sprinting"
+      }
+		],
 		"unlocking": [
 		{
     "type": "palladium:scoreboard_score_buyable",
@@ -823,18 +802,20 @@
     "type": "palladium:attribute_modifier",
     "icon": "airline_heroes:textures/icons/endurance_upgrade_3.png",
     "title": "Endurance Increase 3",
-    "bar_color": "light_gray",
-    "list_index": 3,
-    "gui_position": [
+	 "gui_position": [
 	-3,
 	0
 	],
-    "description": "null",
     "attribute": "minecraft:generic.movement_speed",
     "amount": 0.02,
     "operation": 0,
 	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e9",
 	 "conditions": {
+		"enabling": [
+		{
+    "type": "palladium:sprinting"
+}
+		],
 		"unlocking": [
 		{
     "type": "palladium:scoreboard_score_buyable",
@@ -851,7 +832,63 @@
 }
 		]
       }
-}	
+},
+"mining_upgrade_1": {
+    "type": "palladium:attribute_modifier",
+    "hidden": true,
+    "attribute": "palladium:destroy_speed",
+    "amount": 1,
+    "operation": 0,
+	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e7",
+	 	 "conditions": {
+			 "conditions": {
+		  "enabling": [
+             {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "endurance_upgrade_1"
+                  }
+		  ]
+	  }
+      }
+},
+"mining_upgrade_2": {
+    "type": "palladium:attribute_modifier",
+    "hidden": true,
+    "attribute": "palladium:destroy_speed",
+    "amount": 1,
+    "operation": 0,
+	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e8",
+		 "conditions": {
+		  "enabling": [
+             {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "endurance_upgrade_2"
+                  }
+		  ]
+	  }
+},
+"mining_upgrade_3": {
+    "type": "palladium:attribute_modifier",
+    "hidden": true,
+    "attribute": "palladium:destroy_speed",
+    "amount": 1,
+    "operation": 0,
+	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e9",
+			 "conditions": {
+		  "enabling": [
+             {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "endurance_upgrade_3"
+                  }
+		  ]
+	  }
+},
+"set_name_description": {
+	"type": "airline_heroes:set_name_description",
+	"hidden": true,
+	"power_name": "Sublimation",
+	"power_description": "The user is able to transform their whole body into a gas"
+}
 },
   "energy_bars": {
     "golden_carrot": {

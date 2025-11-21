@@ -1,0 +1,38 @@
+{
+  "name": "Bouncy Ball",
+  "background": "minecraft:textures/block/red_wool.png",
+  "icon": "minecraft:bow",
+  "abilities": {
+ "bounce_ball": {
+      "type": "palladium:projectile",
+      "entity_type": "palladium:custom_projectile",
+      "title": "Bouncy Ball",
+      "list_index": 0,
+      "velocity": 2,
+      "entity_data": {
+        "Damage": 1,
+        "Gravity": 0.05,
+		"Size": 1,
+		"Lifetime": 70,
+        "DieOnEntityHit": false,
+        "DieOnBlockHit": false,
+		"CommandOnBlockHit": "execute as @s run function airline_heroes:bounce",
+        "Appearances": [
+          {
+            "Type": "item",
+            "Item": "airline_heroes:bouncy_ball"
+          }
+        ]
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "key_type": "right_click",
+            "needs_empty_hand": false
+          }
+        ]
+      }
+    }
+  }
+}

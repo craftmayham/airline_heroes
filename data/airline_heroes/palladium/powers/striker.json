@@ -28,8 +28,8 @@
     "needs_empty_hand": false,
     "allow_scrolling_when_crouching": true
 }
+	]
 	}
-		]
     },
 	"bajakaboom":
 	{
@@ -48,28 +48,21 @@
 ]
 }
 	},
-  "bajasuperblast": 
-  {
-    "type": "airline_heroes:lightning_explosion",
-    "icon": {
-        "type": "palladium:item",
-        "item": "minecraft:air",
-        "count": 0
-    },
-    "title": "bigkaboom"
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": -1,
-    "description": "a super charge explosion, similar to baja blast",
-    "cause_fire": true,
-    "radius": 5,
-    "self_damage": 1,
-    "explosion_chance": 0
-	 "commands": [
+	    "bajasuperblast_lightning": {
+      "type": "palladium:command",
+    "icon": "minecraft:lightning_rod",
+    "title": "Lightning Crash",
+	"description": "The user is able to summon a large bolt of lightning shattering the earth below",
+    "bar_color": "light_blue",
+    "list_index": 10,
+    "gui_position": [
+	0,
+	-2
+	],
+      "commands": [
         "summon minecraft:lightning_bolt ~ ~ ~"
       ],
-	"conditions": 
+	"conditions": {
 		"enabling": [ 
 		{
     "type": "palladium:action",
@@ -77,9 +70,38 @@
     "key_type": "key_bind",
     "needs_empty_hand": false,
     "allow_scrolling_when_crouching": true
+}
+	],
+		"unlocking": [
+		{
+    "type": "palladium:scoreboard_score_buyable",
+    "objective": "airline_heroes.skill_points",
+    "score": 1
+		},
+	{	
+    "type": "palladium:ability_unlocked",
+    "ability": "electricdash"
+	}
 		]
-		}
-},
+	}
+    },
+  "bajasuperblast": 
+  {
+    "type": "airline_heroes:lightning_explosion",
+    "hidden": true,
+    "cause_fire": true,
+    "radius": 40,
+    "self_damage": 1,
+	"explosion_chance": 0,
+	"conditions": {
+		"enabling": [
+		{
+    "type": "palladium:ability_enabled",
+    "ability": "bajasuperblast_lightning"
+}
+]
+}
+	},
   "electricdash":
   {
 	  
@@ -104,10 +126,9 @@
 	"energy_bar_usage": {
    "energy_bar": "energy_bar_name",
    "amount": 5
-	}
-},
-	"conditions": 
+	},
 	
+	"conditions": 
 	{
 	"enabling":[
 	{
@@ -126,14 +147,12 @@
 		{
     "type": "palladium:scoreboard_score_buyable",
     "objective": "airline_heroes.skill_points",
-    "score": 1,
-    "icon": "minecraft:command_block",
-    "description": {
-        "text": "Skill Points"
-    }
-
+    "score": 1
+		},
+	{	
     "type": "palladium:ability_unlocked",
     "ability": "bajablast"
+	}
 		]
 	}
 },
@@ -148,13 +167,13 @@
     "commands":["scale set pehkui:step_height 5"],
         "conditions": {
             "enabling":[
-
             {
             "type": "palladium:ability_enabled",
             "ability": "electricdash"
 }
 
             ]
+		}
 },
   "electricdash_speed" : 
   {
