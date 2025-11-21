@@ -85,19 +85,6 @@
                 "enabling": [
                     {
                         "type": "palladium:has_movement_input"
-                    },
-                    {
-                        "type": "palladium:not",
-                        "conditions": [
-                            {
-                                "type": "palladium:ability_enabled",
-                                "power": "null",
-                                "ability": "spider_lunge"
-                            },
-                            {
-                                "type": "palladium:on_ground"
-                            }
-                        ]
                     }
                 ],
                 "unlocking": [
@@ -106,6 +93,11 @@
                         "blockID": "minecraft:air",
                         "search_range": 1,
                         "amount": 1
+                    },
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "spider_toggle"
                     }
                 ]
             }
@@ -141,11 +133,39 @@
                                 "type": "palladium:ability_enabled",
                                 "power": "null",
                                 "ability": "spider_climb"
-                            },
-                            {
-                                "type": "palladium:on_ground"
                             }
                         ]
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "spider_toggle"
+                    }
+                ]
+            }
+        },
+        
+        
+        "spider_toggle": {
+            "type": "palladium:dummy",
+            "icon": "minecraft:vine",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
                     }
                 ]
             }
@@ -174,7 +194,7 @@
             "description": "null",
             "entity_type": "palladium:custom_projectile",
             "entity_data": {
-                "Damage": 4,
+                "Damage": 0,
                 "Gravity": 0.04,
                 "Size": 1,
                 "CommandOnEntityHit": "function airline_heroes:webhit",
@@ -221,6 +241,9 @@
             "ignore_player_movement": false
         }
     },
+    
+    
+    
     "energy_bars": {
         "fluids": {
            "max": 500,
