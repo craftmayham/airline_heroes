@@ -10,9 +10,12 @@
             "hidden": true,
             "hidden_in_bar": true,
             "first_tick_commands": ["tag @s add webimmune"],
-            "last_tick_commands": [],
-            "commands": []
+            "last_tick_commands": ["tag @s remove webimmune"],
+            "commands": ["effect clear @s minecraft:poison"]
         },
+        
+        
+        
         "spider_lunge": {
             "type": "airline_heroes:launch_player",
             "icon": "minecraft:elytra",
@@ -27,14 +30,13 @@
             "conditions": {
                 "enabling": [
                     {
-                    "type": "palladium:action",
-                    "cooldown": 20,
-                    "key_type": "key_bind",
-                    "needs_empty_hand": false,
-                    "allow_scrolling_when_crouching": true
-                    }
-                ],
-                "unlocking": [
+                        "type": "palladium:activation",
+                        "cooldown": 10,
+                        "ticks": 10,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    },
                     {
                         "type": "palladium:or",
                         "conditions": [
@@ -75,8 +77,8 @@
             "icon": "minecraft:vine",
             "title": "null",
             "bar_color": "light_gray",
-            "hidden": false,
-            "hidden_in_bar": false,
+            "hidden": true,
+            "hidden_in_bar": true,
             "list_index": -1,
             "gui_position": "null",
             "description": "null",
@@ -104,6 +106,11 @@
                         "conditions": [
                             {
                                 "type": "palladium:on_ground"
+                            },
+                            {
+                                "type": "palladium:ability_enabled",
+                                "power": "null",
+                                "ability": "spider_lunge"
                             }
                         ]
                     }
@@ -136,11 +143,6 @@
                                 "type": "palladium:ability_enabled",
                                 "power": "null",
                                 "ability": "spider_lunge"
-                            },
-                            {
-                                "type": "palladium:ability_enabled",
-                                "power": "null",
-                                "ability": "spider_climb"
                             },
                             {
                                 "type": "palladium:on_ground"
@@ -193,6 +195,154 @@
             "uuid": "2de04b0f-fcc3-4ea2-9e9e-f89ab73f9d5c"
         },
             
+        "fluid_cleanup": {
+            "type": "palladium:command",
+            "icon": "minecraft:red_wool",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "fill ~-5 ~-4 ~-5 ~5 ~6 ~5 minecraft:air replace minecraft:cobweb"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ]
+            }
+        },
+            
+        "fluid_splooge": {
+            "type": "palladium:command",
+            "icon": "minecraft:stone_brick_wall",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "function airline_heroes:web_splooge"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 60,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:energy_bar",
+                        "energy_bar": "fluids",
+                        "min": 350,
+                        "max": 2147483647
+                    }
+                ]
+            },
+            "energy_bar_usage": {
+                "energy_bar": "fluids",
+                "amount": 350
+            }
+        },
+
+        "fluid_wall": {
+            "type": "palladium:command",
+            "icon": "minecraft:mossy_cobblestone_wall",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "fill ^-6 ^ ^2 ^6 ^4 ^3 minecraft:cobweb replace minecraft:air"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 60,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:energy_bar",
+                        "energy_bar": "fluids",
+                        "min": 200,
+                        "max": 2147483647
+                    }
+                ]
+            },
+            "energy_bar_usage": {
+                "energy_bar": "fluids",
+                "amount": 200
+            }
+        },
+        
+        "fluid_leak": {
+            "type": "palladium:command",
+            "icon": "minecraft:milk_bucket",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "fill ~-2 ~ ~-2 ~2 ~ ~2 minecraft:cobweb replace minecraft:air"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:energy_bar",
+                        "energy_bar": "fluids",
+                        "min": 10,
+                        "max": 2147483647
+                    }
+                ]
+            },
+            "energy_bar_usage": {
+                "energy_bar": "fluids",
+                "amount": 10
+            }
+        },
+        
         "fluid_shot": {
             "type": "palladium:projectile",
             "icon": "minecraft:cobweb",
@@ -222,7 +372,8 @@
                     }
                 ]
             },
-            "conditions": {
+            
+        "conditions": {
                 "enabling": [
                     {
                         "type": "palladium:action",
