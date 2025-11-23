@@ -510,7 +510,8 @@
       "first_tick_commands": [],
       "last_tick_commands": [],
       "commands": [
-	  "scoreboard players set @s[scores={airline_heroes.heat_build_up=..-1}] airline_heroes.heat_build_up 0"]
+	  "scoreboard players set @s[scores={airline_heroes.heat_build_up=..-1}] airline_heroes.heat_build_up 0",
+	  "scoreboard players set @s[scores={airline_heroes.heat_build_up_timer=..-1}] airline_heroes.heat_build_up_timer 0"]
       },
 	"grab":{
     "type": "airline_heroes:telekinesis",
@@ -560,7 +561,7 @@
       }
 	
 },
-"heat_passive_cooldown":{
+"heat_timer":{
     "type": "palladium:command",
     "icon": "minecraft:command_block",
     "title": "null",
@@ -573,10 +574,37 @@
     "first_tick_commands": [],
     "last_tick_commands": [],
     "commands": [
-        "scoreboard players remove @s airline_heroes.heat_build_up 1"
-    ]
-	
+		"scoreboard players remove @s airline_heroes.heat_build_up_timer 1" 
+		]
+},
+"heat_cooldown":{
+    "type": "palladium:command",
+    "icon": "minecraft:command_block",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "first_tick_commands": [],
+    "last_tick_commands": [],
+    "commands": [
+		"scoreboard players remove @s airline_heroes.heat_build_up 1" 
+		],
+	"conditions":{
+		"enabling":[
+		{
+    "type": "palladium:objective_score",
+    "objective": "airline_heroes.heat_build_up_timer",
+    "max_score": 1
 }
+		]
+	}
+}
+	
+		
+
 
 
 
