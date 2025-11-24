@@ -242,7 +242,7 @@
                 "enabling": [
                     {
                         "type": "palladium:action",
-                        "cooldown": 60,
+                        "cooldown": 250 ,
                         "key_type": "key_bind",
                         "needs_empty_hand": false,
                         "allow_scrolling_when_crouching": true
@@ -282,7 +282,7 @@
                 "enabling": [
                     {
                         "type": "palladium:action",
-                        "cooldown": 60,
+                        "cooldown": 100,
                         "key_type": "key_bind",
                         "needs_empty_hand": false,
                         "allow_scrolling_when_crouching": true
@@ -292,7 +292,7 @@
                     {
                         "type": "palladium:energy_bar",
                         "energy_bar": "fluids",
-                        "min": 200,
+                        "min": 300,
                         "max": 2147483647
                     }
                 ]
@@ -357,7 +357,7 @@
             "entity_data": {
                 "Damage": 0,
                 "Gravity": 0.04,
-                "Size": 1,
+                "Size": 0.5,
                 "CommandOnEntityHit": "function airline_heroes:webhit",
                 "CommandOnBlockHit": "setblock ~ ~ ~ minecraft:cobweb keep",
                 "Appearances": [
@@ -410,7 +410,7 @@
     "energy_bars": {
         "fluids": {
            "max": 500,
-           "auto_increase_per_tick": 5,
+           "auto_increase_per_tick": 3,
            "auto_increase_interval": 1,
            "color": "#FFFFFF"
         }
