@@ -90,7 +90,7 @@
     "type": "airline_heroes:lightning_explosion",
     "hidden": true,
     "cause_fire": true,
-    "radius": 40,
+    "radius": 20,
     "self_damage": 1,
 	"explosion_chance": 0,
 	"conditions": {
@@ -103,54 +103,54 @@
 	}
 },
 	"bajasuperduperblast_lightning": {
-    "type": "palladium:command",
-    "icon": "minecraft:firework_rocket",
-    "title": "Lightning Crash",
-	"description": "The user is able to summon a large bolt of lightning shattering the earth below",
-    "bar_color": "light_blue",
-    "list_index": 15,
-    "gui_position": [
-	0,
-	-3
-	],
-      "commands": [
-        "summon minecraft:lightning_bolt ~ ~ ~"
-      ],
-	  "energy_bar_usage": {
-   "energy_bar": "energy_bar_name",
-   "amount": 500
-    },
-	"conditions": {
-		"enabling": [ 
-		{
-            "type": "palladium:action",
-            "cooldown": 100,
-            "key_type": "key_bind",
-            "needs_empty_hand": false,
-            "allow_scrolling_when_crouching": true
-        }
-            ],
-		"unlocking": [
-		{
-            "type": "palladium:scoreboard_score_buyable",
-            "objective": "airline_heroes.skill_points",
-            "score": 1
-    
-		},
-        {
-            "type": "palladium:energy_bar",
-            "power": "null",
-            "energy_bar": "energy_bar_name",
-            "min": 490,
-            "max": 2147483647
+        "type": "palladium:command",
+        "icon": "minecraft:firework_rocket",
+        "title": "Lightning Crash",
+        "description": "The user is able to summon a large bolt of lightning shattering the earth below",
+        "bar_color": "light_blue",
+        "list_index": 15,
+        "gui_position": [
+            0,
+            -3
+        ],
+        "commands": [
+            "summon minecraft:lightning_bolt ~ ~ ~"
+        ],
+       "energy_bar_usage": {
+       "energy_bar": "energy_bar_name",
+       "amount": 500
         },
-        {	
-            "type": "palladium:ability_unlocked",
-            "ability": "superbajablast"
+        "conditions": {
+            "enabling": [ 
+                {
+                    "type": "palladium:action",
+                    "cooldown": 100,
+                    "key_type": "key_bind",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                },
+                {
+                    "type": "palladium:energy_bar",
+                    "power": "null",
+                    "energy_bar": "energy_bar_name",
+                    "min": 490,
+                    "max": 2147483647
+                }
+            ],
+            "unlocking": [
+                {
+                    "type": "palladium:scoreboard_score_buyable",
+                    "objective": "airline_heroes.skill_points",
+                    "score": 1
+            
+                },
+
+                {	
+                    "type": "palladium:ability_unlocked",
+                    "ability": "superbajablast"
+                }	
+            ]
         }
-	
-		]
-	}
     },
   "bajasuperduperblast": 
   {
