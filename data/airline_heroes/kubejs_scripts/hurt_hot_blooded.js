@@ -22,14 +22,19 @@ EntityEvents.hurt((event) => {
     if (hurtEntity.player && palladium.abilities.isEnabled(hurtEntity, "airline_heroes:hot_blooded", "hot_blooded_build_up")) {
         let scoreboard = hurtEntity.server.getScoreboard();
         let objective = scoreboard.getObjective('airline_heroes.heat_build_up');
+		let objective_1 = scoreboard.getObjective('airline_heroes.heat_build_up_timer')
 
         scoreboard.getOrCreatePlayerScore(hurtEntity.username, objective).add(5);
+		scoreboard.getOrCreatePlayerScore(hurtEntity.username, objective_1).setScore(1000);
 
         let pos = hurtEntity.blockPosition().mutable();
-        let posfixed = pos.y + 1;   
+        let posfixed = pos.y + 1;  
+	
 
 		// let damage_type = event.source.islightning_bolt
    
     }
 	
 });
+
+
