@@ -384,6 +384,12 @@
 }
 		]
       }
+},
+"set_name_description": {
+	"type": "airline_heroes:set_name_description",
+	"hidden": true,
+	"power_name": "Striker",
+	"power_description": "The user is able to strike themselves with lightning"
 }
 },
 "energy_bars": {
