@@ -1,0 +1,11 @@
+{
+  "textures": {
+    "normal": "airline_heroes:textures/models/armor/alchemist_pants_v2.png",
+    "slim": "airline_heroes:textures/models/armor/alchemist_pants_v2.png"
+  },
+  "model_layers": {
+    "normal": "palladium:humanoid#suit",
+    "slim": "palladium:humanoid#tight_suit_slim"
+  },
+  "hide_second_layer": true
+}

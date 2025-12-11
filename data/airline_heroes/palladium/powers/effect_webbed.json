@@ -1,0 +1,38 @@
+{
+  "name": "Webbed",
+  "background": "minecraft:textures/block/cobweb.png",
+  "icon": "minecraft:cobweb",
+  "abilities": {
+		"freeze_player": {
+      "type": "airline_heroes:launch_player",
+	  "icon":"airline_heroes:textures/icons/dash.png",
+      "power": 0
+},
+"remove_effect": {
+    "type": "palladium:command",
+    "icon": "minecraft:command_block",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "first_tick_commands": [],
+    "last_tick_commands": [],
+    "commands": [
+        "superpower remove airline_heroes:effect_webbed @s"
+    ],
+	"conditions": {
+		"unlocking": [
+		{
+    "type": "palladium:ability_ticks",
+    "ability": "freeze_player",
+    "min": 100,
+    "max": 1000
+}
+		]
+	}
+}
+  }
+}

@@ -8,7 +8,7 @@
     "slim": "palladium:humanoid#suit_slim"
   },
   "render_layers": [
-	"airline_heroes:alchemist_cape",
-	"airline_heroes:alchemist_hood"
+	"airline_heroes:alchemist_cape_ripped",
+	"airline_heroes:alchemist_hood_ripped"
   ]
 }

@@ -1,0 +1,39 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.minecraft:player#main",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "armorHead",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "scarf",
+					"parent": "armorHead",
+					"pivot": [0.5, 29, 0],
+					"rotation": [134.76954, 85.29463, 176.67834],
+					"cubes": [
+						{"origin": [-4.5, 27, -5], "size": [10, 4, 10], "pivot": [0.5, 29, 0], "rotation": [10, 0, 0], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "wave",
+					"parent": "scarf",
+					"pivot": [0.5, 29, 0],
+					"cubes": [
+						{"origin": [-3.5, 28.38086, 3.99714], "size": [0, 3, 7], "pivot": [-3.5, 29.25, 5], "rotation": [17.5, 0, 0], "uv": [0, 7]},
+						{"origin": [4.5, 28.38086, 3.99714], "size": [0, 3, 7], "pivot": [4.5, 29.25, 5], "rotation": [17.5, 0, 0], "uv": [0, 7]}
+					]
+				}
+			]
+		}
+	]
+}

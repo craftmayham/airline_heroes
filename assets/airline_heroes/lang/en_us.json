@@ -17,7 +17,12 @@
 	"item.airline_heroes.alchemist_pants": "The Alchemist's Pants",
 	"item.airline_heroes.alchemist_boots": "The Alchemist's Boots",
 	
-     "item.airline_heroes.emperium_wig": "Emperium Wig",
+	"item.airline_heroes.alchemist_cloak_v2": "The Alchemist's Cloak(V2)",
+	"item.airline_heroes.alchemist_tunic_v2": "The Alchemist's Tunic(V2)",
+	"item.airline_heroes.alchemist_pants_v2": "The Alchemist's Pants(V2)",
+	"item.airline_heroes.alchemist_boots_v2": "The Alchemist's Boots(V2)",
+	
+    "item.airline_heroes.emperium_wig": "Emperium Wig",
 	"item.airline_heroes.emperium_jacket": "Emperium Jacket",
 	"item.airline_heroes.emperium_pants": "Emperium Pants",
 	"item.airline_heroes.emperium_shoes": "Emperium Shoes",

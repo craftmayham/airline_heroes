@@ -1,0 +1,27 @@
+{
+  "tooltip": [
+    "A redone mechanics uniform"
+  ],
+  "armor_material": "minecraft:diamond",
+    "opened_sound": "minecraft:item.armor.equip_leather",
+    "closed_sound": "minecraft:item.armor.equip_leather",
+  "creative_mode_tab": "airline_heroes:airline_heroes",
+  "chest": {
+    "item_name": "sublimation_jacket_v2",
+	"armor_renderer": "airline_heroes:sublimation_jacket_v2"
+  },
+  "legs": {
+    "item_name": "sublimation_pants_v2",
+	"armor_renderer": "airline_heroes:sublimation_pants_v2"
+  },
+  "feet": {
+    "item_name": "sublimation_shoes_v2",
+	"armor_renderer": "airline_heroes:sublimation_shoes"
+  },
+  "head": {
+    "item_name": "sublimation_goggles_v2",
+	"armor_renderer": "airline_heroes:sublimation_goggles_v2",
+    "opening_time": 6,
+	"openable": true
+  }
+}

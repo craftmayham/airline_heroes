@@ -1,0 +1,11 @@
+{
+  "textures": {
+    "normal": "airline_heroes:textures/models/armor/sublimation_jacket_v2.png",
+    "slim": "airline_heroes:textures/models/armor/sublimation_jacket_v2.png"
+  },
+  "model_layers": {
+    "normal": "palladium:humanoid#suit",
+    "slim": "palladium:humanoid#suit_slim"
+  },
+  "hide_second_layer": true
+}

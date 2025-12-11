@@ -1,0 +1,7 @@
+{
+  "textures": "airline_heroes:textures/models/blank.png",
+  "model_layers": "palladium:humanoid#suit",
+    "render_layers": [
+    "airline_heroes:scarf_headwrap"
+  ]
+}

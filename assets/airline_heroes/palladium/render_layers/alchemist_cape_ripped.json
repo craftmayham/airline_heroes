@@ -1,0 +1,14 @@
+{
+  "model_layer": "airline_heroes:humanoid#cape",
+  "model_type": "palladium:caped_humanoid",
+    "texture": {
+    "variables": {
+      "I": {
+        "type": "palladium:entity_ticks",
+        "divide": 10,
+        "modulo": 7
+      }
+    },
+    "base": "airline_heroes:textures/models/alchemist_cape_ripped/#I.png"
+  }
+}

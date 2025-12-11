@@ -3,7 +3,7 @@
   "layers": [
     {
       "type": "geckolib:default",
-  "model": "airline_heroes:geo/scarf.geo.json",
+  "model": "airline_heroes:geo/scarf_headwrap.geo.json",
         "conditions": [
         {
           "type": "palladium:not",
@@ -30,7 +30,7 @@
 	},
 	    {
       "type": "geckolib:default",
-  "model": "airline_heroes:geo/scarf.geo.json",
+  "model": "airline_heroes:geo/scarf_headwrap.geo.json",
          "conditions": [
         {
           "type": "palladium:is_moving"
@@ -56,12 +56,8 @@
       ]
 	},
 	{
-  "model_layer": "palladium:humanoid#suit",
+  "model_layer": "airline_heroes:hanging_goggles",
   "texture": "airline_heroes:textures/models/armor/sublimation_goggles.png"
-  },
-  	{
-  "model_layer": "airline_heroes:mac_box",
-  "texture": "airline_heroes:textures/models/armor/mac_box.png"
-  }
+}
 	]
 }

@@ -1,3 +1,3 @@
-effect give @e[distance=0..5,tag=!webimmune, type=!minecraft:item, type=!palladium:custom_projectile, limit=1, type=!minecraft:arrow, sort=nearest] minecraft:slowness 5 100 false
 execute at @e[distance=0..5, tag=!webimmune, type=!palladium:custom_projectile, limit=1, type=!minecraft:item, type=!minecraft:arrow, sort=nearest] run fill ~ ~ ~ ~ ~1 ~ minecraft:cobweb
-damage @e[distance=0..5, tag=!webimmune, type=!palladium:custom_projectile, limit=1, type=!minecraft:item, type=!minecraft:arrow, sort=nearest] 5 minecraft:player_attack
+superpower add airline_heroes:effect_webbed @e[distance=0..5, tag=!webimmune, type=!palladium:custom_projectile, limit=1, type=!minecraft:item, type=!minecraft:arrow, sort=nearest] 
+damage @e[distance=0..5, tag=!webimmune, type=!palladium:custom_projectile, limit=1, type=!minecraft:item, type=!minecraft:arrow, sort=nearest] 5 minecraft:player_attack by @p[tag=webimmune,sort=nearest,limit=1]
