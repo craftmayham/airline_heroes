@@ -8,6 +8,96 @@
 	  "icon":"airline_heroes:textures/icons/dash.png",
       "power": 0
 },
+"overlay": {
+    "type": "palladium:gui_overlay",
+    "icon": "minecraft:blaze_rod",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "texture": "minecraft:textures/block/cobweb.png",
+    "texture_width": 16,
+    "texture_height": 16,
+    "translate": [
+        0,
+        -20,
+        0
+    ],
+    "rotate": [
+        25,
+        0,
+        0
+    ],
+    "scale": [
+        15,
+        15,
+        15
+    ],
+    "alignment": "center"
+},
+"overlay_2": {
+    "type": "palladium:gui_overlay",
+    "icon": "minecraft:blaze_rod",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "texture": "minecraft:textures/block/cobweb.png",
+    "texture_width": 16,
+    "texture_height": 16,
+    "translate": [
+        100,
+        -20,
+        0
+    ],
+    "rotate": [
+        0,
+        0,
+        75
+    ],
+    "scale": [
+        3,
+        3,
+        3
+    ],
+    "alignment": "bottom_left"
+},
+"overlay_3": {
+    "type": "palladium:gui_overlay",
+    "icon": "minecraft:blaze_rod",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "texture": "minecraft:textures/block/cobweb.png",
+    "texture_width": 16,
+    "texture_height": 16,
+    "translate": [
+        -20,
+        0,
+        0
+    ],
+    "rotate": [
+        -35,
+        0,
+        0
+    ],
+    "scale": [
+        5,
+        5,
+        5
+    ],
+    "alignment": "top_right"
+},
 "remove_effect": {
     "type": "palladium:command",
     "icon": "minecraft:command_block",
