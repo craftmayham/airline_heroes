@@ -9,7 +9,6 @@ StartupEvents.registry('palladium:abilities', event => {
  .tick((entity, entry, holder, enabled) => {
             // Only active when toggled on
             if (!enabled) return;
-            if (!entity.level || entity.level.isClientSide()) return;
  
             const lookVec = entity.getLookAngle(); // Vec3d
             const launchPower = entry.getPropertyByName('power');
