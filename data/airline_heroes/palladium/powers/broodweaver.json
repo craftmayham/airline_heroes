@@ -11,10 +11,8 @@
             "hidden_in_bar": true,
             "first_tick_commands": ["tag @s add webimmune"],
             "last_tick_commands": ["tag @s remove webimmune"],
-            "commands": ["effect clear @s minecraft:poison"]
+            "commands": ["function airline_heroes:spider_immune"]
         },
-        
-        
         
         "spider_lunge": {
             "type": "airline_heroes:launch_player",
@@ -235,9 +233,7 @@
             "description": "null",
             "first_tick_commands": [],
             "last_tick_commands": [],
-            "commands": [
-                "function airline_heroes:web_splooge"
-            ],
+            "commands": ["function airline_heroes:web_splooge"],
             "conditions": {
                 "enabling": [
                     {
@@ -263,6 +259,44 @@
             }
         },
 
+        "fluid_ring": {
+            "type": "palladium:command",
+            "icon": "minecraft:iron_block",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": ["function airline_heroes:web_dome"],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 120 ,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:energy_bar",
+                        "energy_bar": "fluids",
+                        "min": 275,
+                        "max": 2147483647
+                    }
+                ]
+            },
+            "energy_bar_usage": {
+                "energy_bar": "fluids",
+                "amount": 275
+            }
+        },
+        
         "fluid_wall": {
             "type": "palladium:command",
             "icon": "minecraft:mossy_cobblestone_wall",
@@ -276,13 +310,13 @@
             "first_tick_commands": [],
             "last_tick_commands": [],
             "commands": [
-                "fill ^-6 ^ ^2 ^6 ^4 ^3 minecraft:cobweb replace minecraft:air"
+                "fill ^-5 ^ ^2 ^5 ^3 ^3 minecraft:cobweb replace minecraft:air"
             ],
             "conditions": {
                 "enabling": [
                     {
                         "type": "palladium:action",
-                        "cooldown": 100,
+                        "cooldown": 80,
                         "key_type": "key_bind",
                         "needs_empty_hand": false,
                         "allow_scrolling_when_crouching": true
@@ -292,14 +326,14 @@
                     {
                         "type": "palladium:energy_bar",
                         "energy_bar": "fluids",
-                        "min": 300,
+                        "min": 150,
                         "max": 2147483647
                     }
                 ]
             },
             "energy_bar_usage": {
                 "energy_bar": "fluids",
-                "amount": 200
+                "amount": 150
             }
         },
         
@@ -355,7 +389,7 @@
             "description": "null",
             "entity_type": "palladium:custom_projectile",
             "entity_data": {
-                "Damage": 0,
+                "Damage": 5,
                 "Gravity": 0.04,
                 "Size": 0.5,
                 "CommandOnEntityHit": "function airline_heroes:webhit",
