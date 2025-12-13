@@ -1,0 +1,58 @@
+{
+  "type": "palladium:compound",
+  "layers": [
+  {
+  "type": "palladium:skin_overlay",
+  "texture": "airline_heroes:textures/models/missing_eye.png"
+},
+    {
+  "model_layer": "palladium:humanoid#suit",
+        "texture": {
+        "base": "airline_heroes:textures/models/half_mass_overlay.png",
+        "transformers": [
+          {
+            "type": "palladium:alpha_mask",
+            "mask": "airline_heroes:textures/models/alpha_masks/half_mass_overlay/half_mass_overlay_#TIMER.png"
+          }
+        ],
+        "variables": {
+          "TIMER": {
+            "type": "palladium:animation_timer_ability",
+            "power": "airline_heroes:gas",
+            "ability": "half_mass_interpolate"
+          }
+        }
+      }
+  },
+  {
+  "type": "palladium:skin_overlay",
+  "texture": "airline_heroes:textures/models/eyes_half_mass.png",
+  "render_type": "glow"
+},
+{
+  "model_layer": "airline_heroes:half_mass_eye",
+  "texture": "airline_heroes:textures/models/half_mass_eye.png",
+  "render_type": "glow"
+},
+{
+  "model_layer": "airline_heroes:half_mass_text",
+        "texture": {
+        "base": "airline_heroes:textures/models/half_mass_text.png",
+        "transformers": [
+          {
+            "type": "palladium:alpha_mask",
+            "mask": "airline_heroes:textures/models/alpha_masks/half_mass_text/half_mass_text_#TIMER.png"
+          }
+        ],
+        "variables": {
+          "TIMER": {
+            "type": "palladium:animation_timer_ability",
+            "power": "airline_heroes:gas",
+            "ability": "half_mass_text"
+          }
+        }
+      },
+  "render_type": "glow"
+}
+  ]
+}
