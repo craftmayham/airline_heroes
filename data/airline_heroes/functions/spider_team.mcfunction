@@ -1,4 +1,2 @@
-team add spiders "Spider & Friends"
+team add spiders "spiders"
 team modify spiders collisionRule never
-team modify spider prefix "Spider Friend " 
-team modify spiders nametagVisibility always

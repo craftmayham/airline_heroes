@@ -1,0 +1,9 @@
+{
+  "type": "palladium:compound",
+  "layers": [
+    {
+      "model_layer": "airline_heroes:child",
+      "texture": "airline_heroes:textures/models/spider.png"
+    }
+  ]
+}

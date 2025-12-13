@@ -21,7 +21,7 @@
             "bar_color": "light_gray",
             "hidden": false,
             "hidden_in_bar": false,
-            "list_index": -1,
+            "list_index": 1,
             "gui_position": "null",
             "description": "null",
             "power": 2, 
@@ -166,7 +166,7 @@
             "bar_color": "light_gray",
             "hidden": false,
             "hidden_in_bar": false,
-            "list_index": -1,
+            "list_index": 5,
             "gui_position": "null",
             "description": "null",
             "conditions": {
@@ -427,7 +427,7 @@
             "description": "null",
             "entity_type": "palladium:custom_projectile",
             "entity_data": {
-                "Damage": 5,
+                "Damage": 0,
                 "Gravity": 0.04,
                 "Size": 0.5,
                 "CommandOnEntityHit": "function airline_heroes:webhit",

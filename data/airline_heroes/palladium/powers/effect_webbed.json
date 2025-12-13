@@ -118,7 +118,7 @@
 		{
     "type": "palladium:ability_ticks",
     "ability": "freeze_player",
-    "min": 100,
+    "min": 20,
     "max": 1000
 }
 		]
