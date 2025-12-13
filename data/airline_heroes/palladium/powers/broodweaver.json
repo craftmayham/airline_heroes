@@ -200,7 +200,7 @@
             "bar_color": "light_gray",
             "hidden": false,
             "hidden_in_bar": false,
-            "list_index": -1,
+            "list_index": 10,
             "gui_position": "null",
             "description": "null",
             "first_tick_commands": [],
@@ -228,7 +228,7 @@
             "bar_color": "light_gray",
             "hidden": false,
             "hidden_in_bar": false,
-            "list_index": -1,
+            "list_index": 8,
             "gui_position": "null",
             "description": "null",
             "first_tick_commands": [],
@@ -259,6 +259,44 @@
             }
         },
 
+        "WeboLaD": {
+            "type": "palladium:command",
+            "icon": "minecraft:stone_brick_wall",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 9,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": ["function airline_heroes:web_of_life_and_destiny"],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 250 ,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:energy_bar",
+                        "energy_bar": "fluids",
+                        "min": 350,
+                        "max": 2147483647
+                    }
+                ]
+            },
+            "energy_bar_usage": {
+                "energy_bar": "fluids",
+                "amount": 350
+            }
+        },
+        
         "fluid_ring": {
             "type": "palladium:command",
             "icon": "minecraft:iron_block",
@@ -266,7 +304,7 @@
             "bar_color": "light_gray",
             "hidden": false,
             "hidden_in_bar": false,
-            "list_index": -1,
+            "list_index": 7,
             "gui_position": "null",
             "description": "null",
             "first_tick_commands": [],
@@ -304,7 +342,7 @@
             "bar_color": "light_gray",
             "hidden": false,
             "hidden_in_bar": false,
-            "list_index": -1,
+            "list_index": 6,
             "gui_position": "null",
             "description": "null",
             "first_tick_commands": [],

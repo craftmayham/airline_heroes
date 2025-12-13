@@ -34,7 +34,7 @@ fill ~-4 ~ ~-4 ~-4 ~1 ~4 minecraft:cobweb replace minecraft:air
 fill ~-4 ~ ~-4 ~4 ~1 ~-4 minecraft:cobweb replace minecraft:air
 
 fill ~4 ~2 ~-3 ~4 ~2 ~3 minecraft:cobweb replace minecraft:air
-fill ~-3 ~2 ~4 ~2 ~2 ~4 minecraft:cobweb replace minecraft:air
+fill ~-3 ~2 ~4 ~3 ~2 ~4 minecraft:cobweb replace minecraft:air
 fill ~-4 ~2 ~-3 ~-4 ~2 ~3 minecraft:cobweb replace minecraft:air
 fill ~-3 ~2 ~-4 ~3 ~2 ~-4 minecraft:cobweb replace minecraft:air
 
