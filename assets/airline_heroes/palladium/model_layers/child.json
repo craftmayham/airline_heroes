@@ -1,0 +1,70 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.minecraft:wolf#main",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "head",
+					"pivot": [-1, 10.5, -7]
+				},
+				{
+					"name": "real_head",
+					"parent": "head",
+					"pivot": [-1, 10.5, -7]
+				},
+				{
+					"name": "spider_head",
+					"parent": "real_head",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-4, 5, -11], "size": [8, 8, 8], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "right_front_leg",
+					"pivot": [-2.5, 8, -4]
+				},
+				{
+					"name": "right_hind_leg",
+					"pivot": [-2.5, 8, 7]
+				},
+				{
+					"name": "upper_body",
+					"pivot": [-1, 10, -3],
+					"rotation": [90, 0, 0]
+				},
+				{
+					"name": "tail",
+					"pivot": [-1, 12, 8],
+					"rotation": [36, 0, 0]
+				},
+				{
+					"name": "real_tail",
+					"parent": "tail",
+					"pivot": [-1, 12, 8]
+				},
+				{
+					"name": "left_hind_leg",
+					"pivot": [0.5, 8, 7]
+				},
+				{
+					"name": "body",
+					"pivot": [0, 10, 2],
+					"rotation": [90, 0, 0]
+				},
+				{
+					"name": "left_front_leg",
+					"pivot": [0.5, 8, -4]
+				}
+			]
+		}
+	]
+}
