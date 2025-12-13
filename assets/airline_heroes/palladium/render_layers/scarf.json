@@ -58,10 +58,6 @@
 	{
   "model_layer": "palladium:humanoid#suit",
   "texture": "airline_heroes:textures/models/armor/sublimation_goggles.png"
-  },
-  	{
-  "model_layer": "airline_heroes:mac_box",
-  "texture": "airline_heroes:textures/models/armor/mac_box.png"
   }
 	]
 }

@@ -192,6 +192,35 @@
         ]
       }
 	},
+	"block_animation": {
+    "type": "palladium:animation_timer",
+    "hidden": true,
+    "start_value": 0,
+    "max_value": 10,
+	"conditions": {
+		"enabling": [
+	{
+	"type": "palladium:ability_enabled",
+    "ability": "block"
+          }
+		]
+	}
+},
+"block_both_arms":
+{
+    "type": "palladium:show_both_arms",
+    "hidden": true,
+		"conditions": {
+		"enabling": [
+	{
+	"type": "palladium:animation_timer_ability",
+    "ability": "block_animation",
+	"min": 1,
+	"max": 10
+          }
+		]
+	}
+},
 	"parry":{
 	    "type": "palladium:damage_immunity",
     "icon": "minecraft:potion",
@@ -238,7 +267,7 @@
       
 	}
 	},
-	"Hulk_clap":{
+	"hulk_clap": {
     "type": "airline_heroes:push_pull",
     "icon": "minecraft:egg",
     "title": "null",
@@ -250,7 +279,30 @@
     "description": "null",
     "range": 10,
     "motion_scale": 2,
-	"conditions": {
+		"conditions": {
+		"enabling": [
+	{
+	"type": "palladium:animation_timer_ability",
+    "ability": "hulk_clap_animation",
+	"min": 5,
+	"max": 5
+          }
+		]
+	}
+},
+"hulk_clap_animation":{
+    "type": "palladium:animation_timer",
+	    "icon": "minecraft:beacon",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "start_value": 0,
+    "max_value": 5,
+		"conditions": {
         "enabling": [
 		  	 {
     "type": "palladium:objective_score",
@@ -373,7 +425,27 @@
 },
 "ground_slam":{
 	 "type": "airline_heroes:ground_slam",
-    "icon": "minecraft:beacon",
+    "hidden": true,
+    "radius": 5,
+    "speed": 1.5,
+	"conditions": {
+         "enabling": 
+          [
+		  	 	{
+	"type": "palladium:animation_timer_ability",
+    "ability": "ground_slam_animation",
+	"min": 5,
+	"max": 5
+          },
+		  {
+    "type": "palladium:on_ground"
+}
+]
+       }
+},
+	"ground_slam_animation": {
+    "type": "palladium:animation_timer",
+	    "icon": "minecraft:beacon",
     "title": "null",
     "bar_color": "light_gray",
     "hidden": false,
@@ -381,8 +453,8 @@
     "list_index": -1,
     "gui_position": "null",
     "description": "null",
-    "radius": 5,
-    "speed": 1.5,
+    "start_value": 0,
+    "max_value": 5,
 	"conditions": {
          "enabling": 
           [
@@ -391,15 +463,13 @@
     "objective": "airline_heroes.heat_build_up",
     "min_score": 150
 },
-    {
-    "type": "palladium:action",
-	"cooldown": 200,
+{
+    "type": "palladium:activation",
+    "cooldown": 200,
+    "ticks": 5,
     "key_type": "key_bind",
     "needs_empty_hand": false,
     "allow_scrolling_when_crouching": true
-},
-{
-    "type": "palladium:on_ground"
 },
  {
     "type": "palladium:not",
@@ -410,6 +480,80 @@
               }
             ]
           }
+]
+       }
+},
+"ground_slam_particles": {
+    "type": "palladium:command",
+    "hidden": true,
+    "first_tick_commands": [],
+    "last_tick_commands": [],
+    "commands": [
+		    "particle block dirt ~ ~ ~ 5 0.5 5 1 10 force",
+			"particle minecraft:explosion"
+    ],
+		"conditions": {
+         "enabling": 
+          [
+		  	 	{
+	"type": "palladium:animation_timer_ability",
+    "ability": "ground_slam_animation",
+	"min": 5,
+	"max": 5
+          },
+		  {
+    "type": "palladium:on_ground"
+}
+]
+       }
+},
+"ground_slam_sound":
+{
+    "type": "palladium:play_sound",
+    "hidden": true,
+    "sound": "minecraft:entity.generic.explode",
+    "volume": 2,
+    "pitch": 0.5,
+    "looping": false,
+    "play_self": true,
+    "play_others": true,
+		"conditions": {
+         "enabling": 
+          [
+		  	 	{
+	"type": "palladium:animation_timer_ability",
+    "ability": "ground_slam_animation",
+	"min": 5,
+	"max": 5
+          },
+		  {
+    "type": "palladium:on_ground"
+}
+]
+       }
+},
+"ground_slam_break_sound":
+{
+    "type": "palladium:play_sound",
+    "hidden": true,
+    "sound": "minecraft:block.stone.break",
+    "volume": 2,
+    "pitch": 0.8,
+    "looping": false,
+    "play_self": true,
+    "play_others": true,
+		"conditions": {
+         "enabling": 
+          [
+		  	 	{
+	"type": "palladium:animation_timer_ability",
+    "ability": "ground_slam_animation",
+	"min": 5,
+	"max": 5
+          },
+		  {
+    "type": "palladium:on_ground"
+}
 ]
        }
 },
@@ -525,7 +669,7 @@
     "description": "null",
     "scrollable": false,
     "damage": 2,
-    "range": 1,
+    "range": 1.5,
     "strength": 0.8,
     "particle": "minecraft:enchant",
     "dust": false,
@@ -560,6 +704,35 @@
         ]
       }
 	
+},
+"grab_animation": {
+    "type": "palladium:animation_timer",
+    "hidden": true,
+    "start_value": 0,
+    "max_value": 10,
+	"conditions": {
+		"enabling": [
+	{
+	"type": "palladium:ability_enabled",
+    "ability": "grab"
+          }
+		]
+	}
+},
+"grab_both_arms":
+{
+    "type": "palladium:show_both_arms",
+    "hidden": true,
+		"conditions": {
+		"enabling": [
+	{
+	"type": "palladium:animation_timer_ability",
+    "ability": "grab_animation",
+	"min": 1,
+	"max": 10
+          }
+		]
+	}
 },
 "heat_timer":{
     "type": "palladium:command",
