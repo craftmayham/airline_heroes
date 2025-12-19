@@ -7,8 +7,10 @@ StartupEvents.registry("palladium:abilities", event => {
         .addProperty("scrollable", "boolean", false, "For if you intend to use the tele_valchange ability to make this scrollable.")
         .addProperty("damage", "float", 2, "The damage to apply when hitting an entity via telekinesis.")
         .addProperty("range", "integer", 8, "The default range of the ability.")
+		.addProperty("range_of_grab", "integer", 8, "The default range of the ability.")
         .addProperty("strength", "float", 0.8, "The default strength/speed of the telekinesis.")
         .addProperty("particle", "string", "minecraft:enchant", "The ID of the particle you want to summon around the entity.")
+		.addProperty("show_particle", "boolean", true, "Whether or not you'd like to have particles.")
         .addProperty("dust", "boolean", true, "Whether or not you'd like to have dust particles around the grabbed entity.")
         .addProperty("other_rgbs", "string", "null", "The rgbs values for the other particle if it is colorable. Values are: red, green, blue, size. (Leave null if not colorable)")
         .addProperty("other_count", "integer", 1, "The number of particles to spawn.")
@@ -30,18 +32,20 @@ StartupEvents.registry("palladium:abilities", event => {
         })
         .tick((entity, entry, holder, enabled) => {
             const range = entry.getPropertyByName(`scrollable`) == false ? `range` : `cur_range`;
+			const range_of_grab = entry.getPropertyByName(`range_of_grab`);
             const strength = entry.getPropertyByName(`scrollable`) == false ? `strength` : `cur_strength`;
             const rgbs = entry.getPropertyByName(`dust_rgbs`);
             const particle = entry.getPropertyByName(`other_rgbs`) == "null" ? entry.getPropertyByName(`particle`) : entry.getPropertyByName(`particle`) + " " + entry.getPropertyByName(`other_rgbs`);
             if (enabled) {
                 let heldEntity = getHeldEntity(entity.level, entry);
                 if (heldEntity == null) return;
-                let targetPos = entity.getEyePosition().add(entity.getLookAngle().scale(entry.getPropertyByName(range)));
+                let targetPos = entity.getEyePosition().add(entity.getLookAngle().scale(range_of_grab));
                 let boundingBox = entity.getBoundingBox();
 
                 heldEntity.setDeltaMovement(targetPos.subtract(heldEntity.getEyePosition()).scale(entry.getPropertyByName(strength)));
                 heldEntity.resetFallDistance();
 
+           if (entry.getPropertyByName(`show_particle`) == true) {
                 entity.level.sendParticles(
                     particle,
                     heldEntity.x, heldEntity.y + 0.5 * boundingBox.getYsize(), heldEntity.z,
@@ -59,6 +63,7 @@ StartupEvents.registry("palladium:abilities", event => {
                     );
                 }
             }
+			}
         })
         .lastTick((entity, entry, holder, enabled) => {
             entry.setUniquePropertyByName(`held_entity`, $Util.NIL_UUID);

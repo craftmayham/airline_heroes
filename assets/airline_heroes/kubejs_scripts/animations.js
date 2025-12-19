@@ -143,26 +143,7 @@ if (!builder.isFirstPerson()) {
 }
 }
     });
-			    event.registerForPower('airline_heroes/grab_animation', 'airline_heroes:hot_blooded', 10, (builder) => {
-        const progress = animationUtil.getAnimationTimerAbilityValue(builder.getPlayer(), 'airline_heroes:hot_blooded', 'grab_animation', builder.getPartialTicks());
-if (progress > 0.0) {
-if (!builder.isFirstPerson()) {
-	  builder.get('left_arm')	
-           				 
-                     .rotateY(0.4)	
-					  .rotateX(-1.5)
-                      .rotateZ(0)						  
-					.animate('InOutCubic', progress);  
-} else {
-		  builder.get('left_arm')	
-                     .setY(1)		  
-                     .rotateY(0)	
-					  .rotateX(-0.5)
-                      .rotateZ(0)						  
-					.animate('InOutCubic', progress); 
-}
-}
-    });
+
 	
 	
         event.registerForPower('airline_heroes/ground_slam_animation', 'airline_heroes:hot_blooded', 5, (builder) => {
@@ -206,20 +187,62 @@ if (progress < 0.8) {
 					.animate('InOutCubic', progress);
 }
 } else {
+	if (progress < 0.8) {
 		  builder.get('left_arm')	
-                     .setY(4)
-                     .setZ(0)					 
-                     .rotateY(0)	
-					  .rotateX(-1)
-                      .rotateZ(0)						  
+					  .rotateX(-0.4)
+                       .rotateY(0.5)					  
 					.animate('InOutCubic', progress); 
       builder.get('right_arm')		
-                      .setY(4)
-                      .setZ(0)					  
-                     .rotateY(0)	
-					  .rotateX(-1)
-                      .rotateZ(0)						  
+                          .setY(3)		  
+					  .rotateX(-0.4)
+                        .rotateY(-0.5)					  
 					.animate('InOutCubic', progress); 
+} else {
+			  builder.get('left_arm')
+                          .setX(-6)
+						 .rotateX(-0.4)	
+                           .rotateY(0.5)						 
+					.animate('InOutCubic', progress); 
+      builder.get('right_arm')			
+	                      .setX(6)					  
+						  .rotateX(-0.4)	
+                          .rotateY(-0.5)						  
+					.animate('InOutCubic', progress); 
+}
+}
+}
+    });
+	
+		    event.registerForPower('airline_heroes/jump_animation', 'airline_heroes:hot_blooded', 10, (builder) => {
+        const progress = animationUtil.getAnimationTimerAbilityValue(builder.getPlayer(), 'airline_heroes:hot_blooded', 'jump_animation', builder.getPartialTicks());
+if (progress > 0.0) {
+if (!builder.isFirstPerson()) {	
+	  builder.get('left_arm')					 
+                     .rotateZ(-0.8)						  
+					.animate('InOutCubic', progress); 
+      builder.get('right_arm')							  
+                     .rotateZ(0.8)						  
+					.animate('InOutCubic', progress); 
+}
+}
+    });
+	
+			    event.registerForPower('airline_heroes/launch_forward_animation', 'airline_heroes:energy_transference', 5, (builder) => {
+        const progress = animationUtil.getAnimationTimerAbilityValue(builder.getPlayer(), 'airline_heroes:energy_transference', 'launch_forward_animation', builder.getPartialTicks());
+if (progress > 0.0) {
+if (!builder.isFirstPerson()) {	
+	  builder.get('left_arm')					 
+                     .setXRot(1.5)
+					.animate('EaseOutBounce', progress); 
+      builder.get('right_arm')							  
+                     .setXRot(1.5)						  
+					.animate('EaseOutBounce', progress); 
+		  builder.get('left_leg')					 
+                     .setXRot(0.3)
+					.animate('EaseOutBounce', progress); 
+      builder.get('right_leg')							  
+                     .setXRot(-0.4)						  
+					.animate('EaseOutBounce', progress); 				
 }
 }
     });

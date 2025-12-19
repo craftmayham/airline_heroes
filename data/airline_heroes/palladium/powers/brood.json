@@ -1,0 +1,20 @@
+{
+  "name": "Brood",
+  "background": "minecraft:textures/block/red_wool.png",
+  "icon": "minecraft:apple",
+  "abilities": {
+    "command_1": {
+      "type": "palladium:command",
+      "commands": [
+        "say Hello World"
+      ]
+    },
+    "command": {
+      "type": "palladium:command",
+      "commands_2": [
+        "say Hello World Again"
+      ]
+    }
+  }
+}
+

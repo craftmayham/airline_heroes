@@ -161,11 +161,9 @@
 	"block":{
 	"type": "palladium:attribute_modifier",
     "icon": "minecraft:iron_chestplate",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": -1,
+    "title": "Block",
+    "bar_color": "orange",
+    "list_index": 0,
     "gui_position": "null",
     "description": "null",
     "attribute": "minecraft:generic.armor",
@@ -176,10 +174,14 @@
         "enabling": [
           {
             "type": "palladium:held",
-            "cooldown": 0,
-            "key_type": "key_bind",
+            "cooldown": 60,
+            "key_type": "right_click",
             "needs_empty_hand": false
           },
+		  {
+    "type": "palladium:empty_slot",
+    "slot": "offhand"
+},
 		  {
             "type": "palladium:not",
             "conditions": [
@@ -223,14 +225,7 @@
 },
 	"parry":{
 	    "type": "palladium:damage_immunity",
-    "icon": "minecraft:potion",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
+    "hidden": true,
     "damage_sources": [
        "airline_heroes:all_damage_for_reals"
     ],
@@ -269,14 +264,7 @@
 	},
 	"hulk_clap": {
     "type": "airline_heroes:push_pull",
-    "icon": "minecraft:egg",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
+    "hidden": true,
     "range": 10,
     "motion_scale": 2,
 		"conditions": {
@@ -290,14 +278,109 @@
 		]
 	}
 },
+"hulk_clap_particle": {
+      "type": "palladium:projectile",
+      "entity_type": "palladium:custom_projectile",
+      "hidden": true,
+      "velocity": 2,
+      "entity_data": {
+        "Damage": 0,
+        "Gravity": 0,
+		"Lifetime": 300,
+        "Appearances": [
+          {
+            "Type": "particles",
+            "ParticleType": "minecraft:cloud",
+            "Spread": 2.5
+          },
+		           {
+            "Type": "particles",
+            "ParticleType": "minecraft:cloud",
+            "Spread": 1.0
+          },
+          {
+            "Type": "particles",
+            "ParticleType": "minecraft:cloud",
+            "Spread": 1.5
+          },
+		           {
+            "Type": "particles",
+            "ParticleType": "minecraft:cloud",
+            "Spread": 0.5
+          } 		  
+        ]
+      },
+	      "swinging_arm": "none",
+      "conditions": {
+        "enabling": [
+	{
+	"type": "palladium:animation_timer_ability",
+    "ability": "hulk_clap_animation",
+	"min": 5,
+	"max": 5
+          }
+        ]
+      }
+    },
+	"hulk_clap_sound_wind":
+{
+    "type": "palladium:play_sound",
+    "hidden": true,
+    "sound": "minecraft:item.elytra.flying",
+    "volume": 2,
+    "pitch": 2,
+          "conditions": {
+        "enabling": [
+	{
+	"type": "palladium:animation_timer_ability",
+    "ability": "hulk_clap_animation",
+	"min": 5,
+	"max": 5
+          }
+        ]
+      }
+},
+	"hulk_clap_sound_sweep":
+{
+    "type": "palladium:play_sound",
+    "hidden": true,
+    "sound": "minecraft:entity.player.attack.sweep",
+    "volume": 2,
+    "pitch": 0.8,
+          "conditions": {
+        "enabling": [
+	{
+	"type": "palladium:animation_timer_ability",
+    "ability": "hulk_clap_animation",
+	"min": 5,
+	"max": 5
+          }
+        ]
+      }
+},
+"hulk_clap_both_arms":
+{
+    "type": "palladium:show_both_arms",
+    "hidden": true,
+		"conditions": {
+		"enabling": [
+	{
+	"type": "palladium:animation_timer_ability",
+    "ability": "hulk_clap_animation",
+	"min": 1,
+	"max": 5
+          }
+		]
+	}
+},
 "hulk_clap_animation":{
     "type": "palladium:animation_timer",
 	    "icon": "minecraft:beacon",
-    "title": "null",
-    "bar_color": "light_gray",
+    "title": "Clap",
+    "bar_color": "orange",
     "hidden": false,
     "hidden_in_bar": false,
-    "list_index": -1,
+    "list_index": 1,
     "gui_position": "null",
     "description": "null",
     "start_value": 0,
@@ -332,6 +415,13 @@
 "jump": {
       "type": "airline_heroes:launch_player",
 	  "icon":"airline_heroes:textures/icons/dash.png",
+    "title": "Explosive Leap",
+    "bar_color": "orange",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": 4,
+    "gui_position": "null",
+    "description": "null",
       "power": 3.5,
       "conditions": {
          "enabling": 
@@ -363,16 +453,24 @@
 ]
        }
     },
+		"jump_animation": {
+    "type": "palladium:animation_timer",
+    "hidden": true,
+    "start_value": 0,
+    "max_value": 10,
+	"conditions": {
+         "enabling": 
+          [
+		  	 {
+    "type": "palladium:ability_on_cooldown",
+    "ability": "jump"
+			 }
+]
+       }
+},
 "heat_healing":{
     "type": "palladium:healing",
-    "icon": "minecraft:apple",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
+    "hidden": true,
     "frequency": 20,
     "amount": 1,
 	"conditions": {
@@ -398,18 +496,7 @@
 },
 "jump_explosion":{
     "type": "airline_heroes:lightning_explosion",
-    "icon": {
-        "type": "palladium:item",
-        "item": "minecraft:air",
-        "count": 0
-    },
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
+    "hidden": true,
     "cause_fire": false,
     "radius": 1,
     "self_damage": 0,
@@ -446,11 +533,11 @@
 	"ground_slam_animation": {
     "type": "palladium:animation_timer",
 	    "icon": "minecraft:beacon",
-    "title": "null",
-    "bar_color": "light_gray",
+    "title": "Ground Slam",
+    "bar_color": "yellow",
     "hidden": false,
     "hidden_in_bar": false,
-    "list_index": -1,
+    "list_index": 2,
     "gui_position": "null",
     "description": "null",
     "start_value": 0,
@@ -588,26 +675,12 @@
 },
 "above_average_height":{
     "type": "palladium:size",
-    "icon": "palladium:textures/icon/size.png",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
+    "hidden": true,
     "scale": 1.25
 },
 "overheat_1":{
     "type": "palladium:fire_aspect",
-    "icon": "minecraft:flint_and_steel",
-    "title": "null",
-    "bar_color": "light_gray",
     "hidden": true,
-    "hidden_in_bar": true,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
     "time": 5,
     "should_stack_time": false,
     "max_time": 5,
@@ -624,14 +697,7 @@
 },
 "water_weakness":{
     "type": "palladium:command",
-    "icon": "minecraft:command_block",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
+    "hidden": true,
     "first_tick_commands": [],
     "last_tick_commands": [],
     "commands": [
@@ -660,25 +726,19 @@
 	"grab":{
     "type": "airline_heroes:telekinesis",
     "icon": "minecraft:player_head",
-    "title": "null",
-    "bar_color": "light_gray",
+    "title": "Grab",
+    "bar_color": "orange",
     "hidden": false,
     "hidden_in_bar": false,
-    "list_index": -1,
+    "list_index": 3,
     "gui_position": "null",
     "description": "null",
     "scrollable": false,
     "damage": 2,
-    "range": 1.5,
+    "range": 3,
+	"range_of_grab": 1,
     "strength": 0.8,
-    "particle": "minecraft:enchant",
-    "dust": false,
-    "other_rgbs": "null",
-    "other_count": 1,
-    "other_speed": 1,
-    "dust_rgbs": "1 1 1 1",
-    "dust_count": 1,
-    "dust_speed": 1,
+	"show_particle": false,
 	"conditions": {
         "enabling": [
           {
@@ -734,16 +794,27 @@
 		]
 	}
 },
+"grab_aim":
+{
+    "type": "palladium:aim",
+    "icon": "minecraft:blaze_rod",
+    "time": 5,
+    "arm": "off_arm",
+    "hidden": true,
+		"conditions": {
+		"enabling": [
+	{
+	"type": "palladium:animation_timer_ability",
+    "ability": "grab_animation",
+	"min": 1,
+	"max": 10
+          }
+		]
+	}
+},
 "heat_timer":{
     "type": "palladium:command",
-    "icon": "minecraft:command_block",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
+    "hidden": true,
     "first_tick_commands": [],
     "last_tick_commands": [],
     "commands": [
@@ -752,14 +823,7 @@
 },
 "heat_cooldown":{
     "type": "palladium:command",
-    "icon": "minecraft:command_block",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
+    "hidden": true,
     "first_tick_commands": [],
     "last_tick_commands": [],
     "commands": [

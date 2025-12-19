@@ -398,6 +398,21 @@
 ]
        }
     },
+			"launch_forward_animation": {
+    "type": "palladium:animation_timer",
+    "hidden": true,
+    "start_value": 0,
+    "max_value": 5,
+	"conditions": {
+         "enabling": 
+          [
+		  	 {
+    "type": "palladium:ability_on_cooldown",
+    "ability": "launch_forward"
+			 }
+]
+       }
+},
     "launch_forward_trail":
     {
     "type": "palladium:trail",
