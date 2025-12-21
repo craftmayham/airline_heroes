@@ -5,12 +5,12 @@ StartupEvents.registry('palladium:condition_serializer', (event) => {
     .addProperty('min_hunger', 'integer', 1, 'Minimum hunger level to pass')
     .addProperty('max_hunger', 'integer', 20, 'Maximum hunger level to pass')
     .test((entity, props) => {
-      // Ensure entity is a player
+      // Entity is player
       if (!entity.isPlayer()) {
                 return false;
        }
 
-      // Get hunger (food level)
+      // Get hunger
       const hunger = entity.foodData.foodLevel;
 
       // Check if within range

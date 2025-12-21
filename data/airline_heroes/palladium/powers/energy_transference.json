@@ -1,7 +1,7 @@
 {
   "name": "Energy Transference",
   "background": "minecraft:textures/block/red_wool.png",
-  "icon": "minecraft:blaze_powder",
+  "icon": "airline_heroes:textures/icons/energy_transference_icon.png",
   "gui_display_type": "list",
   "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
 

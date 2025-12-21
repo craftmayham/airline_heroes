@@ -1,0 +1,16 @@
+{
+  "textures": [
+    "airline_heroes:blank_frame",
+	"airline_heroes:miss_3",
+	"airline_heroes:miss_2",
+	"airline_heroes:miss_1",
+	"airline_heroes:miss_0",
+		"airline_heroes:miss_0",
+			"airline_heroes:miss_0",
+				"airline_heroes:miss_0",
+	"airline_heroes:miss_1",
+	"airline_heroes:miss_2",
+	"airline_heroes:miss_3",
+	    "airline_heroes:blank_frame"
+  ]
+}

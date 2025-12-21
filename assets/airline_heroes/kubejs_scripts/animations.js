@@ -114,16 +114,16 @@ if (!builder.isFirstPerson()) {
 	  builder.get('left_arm')	
                      .setY(4)
                      .setZ(-2)					 
-                     .rotateY(0.5)	
-					  .rotateX(-2.4)
-                      .rotateZ(0)						  
+                     .setYRot(0.5)	
+					  .setXRot(-2.4)
+                      .setZRot(0)						  
 					.animate('InOutCubic', progress); 
       builder.get('right_arm')		
                       .setY(4)
                       .setZ(-2)					  
-                     .rotateY(-0.5)	
-					  .rotateX(-2.4)
-                      .rotateZ(0)						  
+                     .setYRot(-0.5)	
+					  .setXRot(-2.4)
+                      .setZRot(0)						  
 					.animate('InOutCubic', progress); 
 } else {
 		  builder.get('left_arm')	

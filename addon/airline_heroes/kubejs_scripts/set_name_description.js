@@ -6,7 +6,6 @@ StartupEvents.registry('palladium:abilities', event => {
         .addProperty('power_name', 'string', 'Example Name', 'Superpower name used in skill tree')
 		.addProperty('power_description', 'string', 'Example Description', 'Superpower description used in skill tree')
         .firstTick((entity, entry, holder, enabled) => {
-            // Only active when toggled on
             if (!enabled) return;
             if (!entity.level || entity.level.isClientSide()) return;
 
