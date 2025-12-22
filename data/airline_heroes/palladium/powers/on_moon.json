@@ -1,0 +1,71 @@
+{
+  "name": "on_moon",
+    "background": "minecraft:textures/block/stone.png",
+  "icon": "minecraft:stone",
+  "hidden": true,
+  "abilities": {
+"gravity": {
+    "type": "palladium:attribute_modifier",
+    "attribute": "porting_lib:entity_gravity",
+    "amount": -0.07,
+    "operation": 0,
+    "uuid": "f678e0f7-97e1-42d8-9548-9592e185ff29"
+},
+"no_fall": {
+    "type": "palladium:damage_immunity",
+    "damage_sources": [
+        "minecraft:is_fall"
+    ]
+},
+"suffocation": {
+    "type": "palladium:command",
+    "first_tick_commands": [],
+    "last_tick_commands": [],
+    "commands": [
+        "damage @s 1 minecraft:out_of_world"
+    ],
+	"conditions": {
+		"enabling": [
+		{
+    "type": "palladium:interval",
+    "active_ticks": 1,
+    "disabled_ticks": 20
+},
+		{
+    "type": "palladium:not",
+    "conditions": [
+{
+    "type": "palladium:item_in_slot",
+    "item": {
+        "item": "minecraft:iron_helmet"
+    },
+    "slot": "head"
+}
+		]
+		}
+		]
+	}
+},
+"remove_on_moon": {
+    "type": "palladium:command",
+    "first_tick_commands": [],
+    "last_tick_commands": [],
+    "commands": [
+        "superpower remove airline_heroes:on_moon @s"
+    ],
+	"conditions": {
+		"unlocking": [
+		{
+    "type": "palladium:not",
+    "conditions": [
+{
+    "type": "palladium:dimension",
+    "dimension": "airline_heroes:the_moon"
+}
+		]
+		}
+		]
+	}
+}
+}
+}

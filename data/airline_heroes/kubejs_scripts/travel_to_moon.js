@@ -13,6 +13,7 @@ PlayerEvents.tick(event => {
       player.yaw,
       player.pitch
     )
+	palladium.superpowers.addSuperpower(player, "airline_heroes:on_moon")
   }
     if (dim == "airline_heroes:the_moon") {
     player.teleportTo(
