@@ -2,47 +2,100 @@
   "name": "Polarity",
   "background": "airline_heroes:textures/icons/push_pull.png",
   "icon": "airline_heroes:textures/icons/push_pull.png",
+  "energy_bars": {
+    "infinity": {
+      "max": 50,
+      "auto_increase_per_tick": 1,
+      "auto_increase_interval": 20,
+      "color": "#A103FC"
+    }
+  },
   "abilities": {
     "gui": {
-        "type": "airline_heroes:set_name_description",
-        "title": "null",
-        "hidden": true,
-        "hidden_in_bar": true,
-        "list_index": -1,
-        "power_name": "Polarity",
-        "power_description": "Allows you to Attract and repel"
+      "type": "airline_heroes:set_name_description",
+      "title": "null",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "power_name": "Polarity",
+      "power_description": "Allows you to Attract and repel"
     },
     "start": {
-        "type": "palladium:dummy",
-        "icon": "airline_heroes:textures/icons/push_pull.png",
-        "title": "Polarity",
-        "bar_color": "light_gray",
-        "hidden_in_bar": true,
-        "list_index": -1,
-        "gui_position": "null",
-        "description": "Controls the Attraction and Repulsion of Things",
-        "conditions": {
-            "enabling": [],
-            "unlocking": [
-                {
-                    "type": "palladium:experience_level_buyable",
-                    "xp_level": 0,
-                    "flat_levels": true
-                },
-                {
-                "type": "palladium:not",
-                "conditions": [
-                  {
-                    "type": "palladium:has_effect",
-                    "effect": "airline_heroes:nullified"
-                  }
-                ]
+      "type": "palladium:dummy",
+      "icon": "airline_heroes:textures/icons/push_pull.png",
+      "title": "Polarity",
+      "bar_color": "light_gray",
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "Controls the Attraction and Repulsion of Things",
+      "conditions": {
+        "enabling": [],
+        "unlocking": [
+          {
+            "type": "palladium:experience_level_buyable",
+            "xp_level": 0,
+            "flat_levels": true
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
               }
             ]
-        }
+          }
+        ]
+      }
+    },
+    "infinity": {
+      "type": "airline_heroes:push_away",
+      "icon": "airline_heroes:textures/icons/infinity.png",
+      "title": "Infinity",
+      "gui_position": [1, -2],
+      "bar_color": "light_gray",
+      "list_index": 3,
+      "range": 2,
+      "motion_scale": 0.5,
+      "energy_bar_usage": {
+        "energy_bar": "infinity",
+        "amount": 1
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:toggle",
+            "cooldown": 0,
+            "key_type": "key_bind",
+            "needs_empty_hand": false
+          },
+          {
+            "type": "palladium:energy_bar",
+            "energy_bar": "infinity",
+            "min": 1
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Scoreboard Score"
+            }
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "start"
+          }
+        ]
+      }
     },
     "push": {
-      "type": "airline_heroes:push_away",
+      "type": "airline_heroes:push_pull",
       "icon": "airline_heroes:textures/icons/minus.png",
       "title": "Push",
       "bar_color": "light_gray",
@@ -95,12 +148,12 @@
           }
         ],
         "unlocking": [
-            {
-                "type": "palladium:ability_unlocked",
-                "power": "null",
-                "ability": "start"
-            },
-            {
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "start"
+          },
+          {
             "type": "palladium:not",
             "conditions": [
               {
@@ -114,7 +167,7 @@
       }
     },
     "push_2": {
-      "type": "airline_heroes:push_away",
+      "type": "airline_heroes:push_pull",
       "icon": "airline_heroes:textures/icons/minus.png",
       "title": "Push",
       "bar_color": "light_gray",
@@ -131,12 +184,12 @@
           }
         ],
         "unlocking": [
-            {
-                "type": "palladium:ability_unlocked",
-                "power": "null",
-                "ability": "power_upgrade_1"
-            },
-            {
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "power_upgrade_1"
+          },
+          {
             "type": "palladium:not",
             "conditions": [
               {
@@ -167,12 +220,12 @@
           }
         ],
         "unlocking": [
-            {
-                "type": "palladium:ability_unlocked",
-                "power": "null",
-                "ability": "power_upgrade_1"
-            },
-            {
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "power_upgrade_1"
+          },
+          {
             "type": "palladium:not",
             "conditions": [
               {
@@ -186,7 +239,7 @@
       }
     },
     "push_3": {
-      "type": "airline_heroes:push_away",
+      "type": "airline_heroes:push_pull",
       "icon": "airline_heroes:textures/icons/minus.png",
       "title": "Push",
       "bar_color": "light_gray",
@@ -203,12 +256,12 @@
           }
         ],
         "unlocking": [
-            {
-                "type": "palladium:ability_unlocked",
-                "power": "null",
-                "ability": "power_upgrade_2"
-            },
-            {
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "power_upgrade_2"
+          },
+          {
             "type": "palladium:not",
             "conditions": [
               {
@@ -239,12 +292,12 @@
           }
         ],
         "unlocking": [
-            {
-                "type": "palladium:ability_unlocked",
-                "power": "null",
-                "ability": "power_upgrade_2"
-            },
-            {
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "power_upgrade_2"
+          },
+          {
             "type": "palladium:not",
             "conditions": [
               {
@@ -258,7 +311,7 @@
       }
     },
     "push_4": {
-      "type": "airline_heroes:push_away",
+      "type": "airline_heroes:push_pull",
       "icon": "airline_heroes:textures/icons/minus.png",
       "title": "Push",
       "bar_color": "light_gray",
@@ -275,11 +328,11 @@
           }
         ],
         "unlocking": [
-            {
-                "type": "palladium:ability_unlocked",
-                "power": "null",
-                "ability": "power_upgrade_3"
-            }
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "power_upgrade_3"
+          }
         ]
       }
     },
@@ -301,11 +354,126 @@
           }
         ],
         "unlocking": [
-            {
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "power_upgrade_3"
+          }
+        ]
+      }
+    },
+    "launch": {
+      "type": "airline_heroes:pull",
+      "icon": "airline_heroes:textures/icons/launch_1.png",
+      "title": "Launch",
+      "gui_position": [1, -1],
+      "bar_color": "light_gray",
+      "list_index": 2,
+      "motion_scale": 2,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "start"
+          },
+          {
+            "type": "palladium:action",
+            "key_type": "key_bind",
+            "needs_empty_hand": false
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "power_upgrade_1"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
                 "type": "palladium:ability_unlocked",
                 "power": "null",
-                "ability": "power_upgrade_3"
-            }
+                "ability": "launch_2"
+              },
+              {
+                "type": "palladium:ability_unlocked",
+                "power": "null",
+                "ability": "launch_3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "launch_2": {
+      "type": "airline_heroes:pull",
+      "icon": "airline_heroes:textures/icons/launch_2.png",
+      "title": "Launch",
+      "gui_position": [2, -1],
+      "bar_color": "light_gray",
+      "list_index": 2,
+      "motion_scale": 4,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "start"
+          },
+          {
+            "type": "palladium:action",
+            "key_type": "key_bind",
+            "needs_empty_hand": false
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "power_upgrade_2"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_unlocked",
+                "power": "null",
+                "ability": "launch_3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "launch_3": {
+      "type": "airline_heroes:pull",
+      "icon": "airline_heroes:textures/icons/launch.png",
+      "title": "Launch",
+      "gui_position": [3, -1],
+      "bar_color": "light_gray",
+      "list_index": 2,
+      "motion_scale": 6,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "start"
+          },
+          {
+            "type": "palladium:action",
+            "key_type": "key_bind",
+            "needs_empty_hand": false
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "power_upgrade_3"
+          }
         ]
       }
     },
