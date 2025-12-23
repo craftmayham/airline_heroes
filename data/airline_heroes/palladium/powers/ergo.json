@@ -1,0 +1,10 @@
+{
+  "name": "Ergokinesis",
+  "background": "minecraft:textures/block/green_wool.png",
+  "icon": "airline_heroes:textures/icons/luck_icon.png",
+  "gui_display_type": "tree",
+  "ability_bar_texture": "minecraft:poppy",
+  "abilities": {
+
+  }
+}

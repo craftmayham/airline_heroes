@@ -4,8 +4,8 @@
   "icon": "airline_heroes:textures/icons/push_pull.png",
   "energy_bars": {
     "infinity": {
-      "max": 50,
-      "auto_increase_per_tick": 1,
+      "max": 500,
+      "auto_increase_per_tick": 10,
       "auto_increase_interval": 20,
       "color": "#A103FC"
     }
@@ -73,7 +73,7 @@
           {
             "type": "palladium:energy_bar",
             "energy_bar": "infinity",
-            "min": 1
+            "min": 5
           }
         ],
         "unlocking": [
