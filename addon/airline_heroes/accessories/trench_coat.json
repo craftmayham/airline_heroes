@@ -1,0 +1,7 @@
+{
+  "type": "palladium:overlay",
+  "model_layer": "palladium:humanoid#tight_suit",
+  "texture": "airline_heroes:textures/models/trench_coat/trench_coat.png",
+  "slot": "airline_heroes:trench_coat",
+  "disable_rendering": false
+}

@@ -190,7 +190,7 @@
             "Size": 1.2,
             "Lifetime": 20,
             "ExplosionRadius": 3,
-            "ExplosionBlockInteraction": "drop",
+            "ExplosionBlockInteraction": "break",
             "DieOnEntityHit": true,
             "DieOnBlockHit": true,
             "Appearances": [
