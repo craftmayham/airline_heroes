@@ -38,8 +38,10 @@ StartupEvents.registry("palladium:abilities", (event) => {
             ) {
               entity.tags.add(tag);
               palladium.superpowers.addSuperpower(target, p);
+              palladium.superpowers.removeSuperpower(entity, p);
             } else return;
           });
+          
         }
       }
     });
