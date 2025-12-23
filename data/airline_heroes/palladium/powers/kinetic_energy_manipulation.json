@@ -35,13 +35,97 @@
             "execute if score @s airline_heroes.kinetic_energy matches 4000.. run scoreboard players set @s airline_heroes.kinetic_energy 4000"
         ],
         "gui_position": [0,0],
-        "description": "You're constantly generating kinetic energy.",
+        "description": "You're constantly generating kinetic energy. Can be expeld to do aoe damage",
         "conditions": {
             "unlocking": [
                 {
                     "type": "airline_heroes:has_hunger",
                     "min_hunger": 1,
                     "max_hunger": 20
+                }
+            ]
+        }
+    },
+    "kinetic_energy_expulsion_dummy": {
+        "type": "palladium:dummy",
+        "icon": "airline_heroes:textures/icons/kinetic_energy_expulsion_icon.png",
+        "title": "Kinetic Energy Expulsion",
+        "hidden": true,
+        "list_index": 0,
+        "description": "Imbue kinetic energy into whatever you're holding.",
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:action",
+                    "cooldown": 0,
+                    "key_type": "key_bind",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }
+            ],
+            "unlocking": [
+                {
+                    "type": "airline_heroes:has_hunger",
+                    "min_hunger": 1,
+                    "max_hunger": 20
+                },
+                {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "kinetic_energy_generation"
+                }
+            ]
+        }
+    },
+    "kinetic_energy_expulsion": {
+        "type": "airline_heroes:scoreboard_aoe_damage",
+        "hidden": true,
+        "radius": 10,
+        "default_damage": "3.0",
+        "scoreboard_objective": "airline_heroes.kinetic_energy",
+        "score_divisor": "50.0",
+        "fire_seconds": "0.0",
+        "reset_score_after_use": "true",
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "kinetic_energy_expulsion_dummy"
+                }
+            ]
+        }
+    },
+    "kinetic_energy_expulsion_commands": {
+        "type": "palladium:command",
+        "hidden": true,
+        "first_tick_commands": [
+            "particle minecraft:dust 0.6 0.08 0.78 3 ~ ~ ~ 2 2 2 1 100"
+        ],
+        "last_tick_commands": [],
+        "commands": [],
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "kinetic_energy_expulsion_dummy"
+                }
+            ]
+        }
+    },
+    "kinetic_energy_expulsion_sound": {
+        "type": "palladium:play_sound",
+        "hidden": true,
+        "hidden_in_bar": true,
+        "sound": "minecraft:entity.generic.explode",
+        "volume": 1,
+        "pitch": 2,
+        "looping": false,
+        "play_self": true,
+        "play_others": true,
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "kinetic_energy_expulsion_dummy"
                 }
             ]
         }
@@ -254,7 +338,7 @@
     },
     "charge_legs_dummy": {
         "type": "palladium:dummy",
-        "icon": "minecraft:blaze_rod",
+        "icon": "airline_heroes:textures/icons/charged_legs_icon.png",
         "title": "Imbue Kinetic Energy - Legs",
         "hidden": false,
         "list_index": 2,
@@ -268,17 +352,17 @@
                     "key_type": "key_bind",
                     "needs_empty_hand": false,
                     "allow_scrolling_when_crouching": true
-                },
-                {
-                    "type": "palladium:objective_score",
-                    "objective": "airline_heroes.kinetic_energy",
-                    "min_score": 5
                 }
             ],
             "unlocking": [
                 {
                     "type": "palladium:ability_unlocked",
                     "ability": "kinetic_energy_generation"
+                },
+                {
+                    "type": "palladium:objective_score",
+                    "objective": "airline_heroes.kinetic_energy",
+                    "min_score": 5
                 }
             ]
         }
@@ -362,7 +446,7 @@
     },
     "charge_arms_dummy": {
         "type": "palladium:dummy",
-        "icon": "minecraft:blaze_rod",
+        "icon": "airline_heroes:textures/icons/charged_arms_icon.png",
         "title": "Imbue Kinetic Energy - Arms",
         "hidden": false,
         "list_index": 3,
@@ -376,17 +460,17 @@
                     "key_type": "key_bind",
                     "needs_empty_hand": false,
                     "allow_scrolling_when_crouching": true
-                },
-                {
-                    "type": "palladium:objective_score",
-                    "objective": "airline_heroes.kinetic_energy",
-                    "min_score": 100
                 }
             ],
             "unlocking": [
                 {
                     "type": "palladium:ability_unlocked",
                     "ability": "kinetic_energy_generation"
+                },
+                {
+                    "type": "palladium:objective_score",
+                    "objective": "airline_heroes.kinetic_energy",
+                    "min_score": 100
                 }
             ]
         }
