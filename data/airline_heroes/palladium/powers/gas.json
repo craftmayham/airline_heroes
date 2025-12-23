@@ -1107,6 +1107,46 @@
 		  ]
 	  }
 },
+"half_mass_transformation_sound":
+{
+    "type": "palladium:play_sound",
+    "hidden": true,
+    "sound": "airline_heroes:half_mass_form",
+    "volume": 1,
+    "pitch": 1,
+    "looping": false,
+    "play_self": false,
+    "play_others": false,
+			  "conditions": {
+		  "enabling": [
+{
+    "type": "palladium:ability_enabled",
+    "ability": "half_mass_form"
+}
+		  ]
+	  }
+},
+"half_mass_transformation_pop":
+{
+    "type": "palladium:play_sound",
+    "hidden": true,
+    "sound": "minecraft:block.fire.extinguish",
+    "volume": 1,
+    "pitch": 0.7,
+    "looping": false,
+    "play_self": false,
+    "play_others": false,
+		  "conditions": {
+		  "enabling": [
+             {
+                    "type": "palladium:animation_timer_ability",
+                    "ability": "half_mass_animation",
+					"min": 49,
+					"max": 49
+			 }
+		  ]
+	  }
+},
 "half_mass_speed": {
     "type": "palladium:attribute_modifier",
     "hidden": true,
@@ -1166,61 +1206,5 @@
 		  ]
 	  }
 }
-},
-  "energy_bars": {
-    "golden_carrot": {
-      "max": 25,
-      "color": "#FFE900",
-      "synced_value": {
-        "type": "score",
-        "objective": "airline_heroes.golden_carrot",
-        "fallback": 0
-      }
-    },
-	    "cake": {
-      "max": 25,
-      "color": "#FCF5DF",
-      "synced_value": {
-        "type": "score",
-        "objective": "airline_heroes.cake",
-        "fallback": 0
-      }
-    },
-	    "melon": {
-      "max": 25,
-      "color": "#FF2B30",
-      "synced_value": {
-        "type": "score",
-        "objective": "airline_heroes.melon",
-        "fallback": 0
-      }
-    },
-	    "glow_berries": {
-      "max": 25,
-      "color": "#C1C42E",
-      "synced_value": {
-        "type": "score",
-        "objective": "airline_heroes.glow_berries",
-        "fallback": 0
-      }
-    },
-	    "potato": {
-      "max": 25,
-      "color": "#C69539",
-      "synced_value": {
-        "type": "score",
-        "objective": "airline_heroes.potato",
-        "fallback": 0
-      }
-    },
-	    "rotten_flesh": {
-      "max": 25,
-      "color": "#00C42E",
-      "synced_value": {
-        "type": "score",
-        "objective": "airline_heroes.rotten_flesh",
-        "fallback": 0
-      }
-    }
-  }
+}
 }

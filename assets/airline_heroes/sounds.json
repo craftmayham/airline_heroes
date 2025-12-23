@@ -1,0 +1,7 @@
+{
+	"half_mass_form":
+	{
+		"category": "player",
+		"sounds": [{ "name": "airline_heroes:half_mass_form"}]
+	}
+}
