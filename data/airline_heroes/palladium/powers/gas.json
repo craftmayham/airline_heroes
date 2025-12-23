@@ -1107,6 +1107,46 @@
 		  ]
 	  }
 },
+"half_mass_transformation_sound":
+{
+    "type": "palladium:play_sound",
+    "hidden": true,
+    "sound": "airline_heroes:half_mass_form",
+    "volume": 1,
+    "pitch": 1,
+    "looping": false,
+    "play_self": false,
+    "play_others": false,
+			  "conditions": {
+		  "enabling": [
+{
+    "type": "palladium:ability_enabled",
+    "ability": "half_mass_form"
+}
+		  ]
+	  }
+},
+"half_mass_transformation_pop":
+{
+    "type": "palladium:play_sound",
+    "hidden": true,
+    "sound": "minecraft:block.fire.extinguish",
+    "volume": 1,
+    "pitch": 0.7,
+    "looping": false,
+    "play_self": false,
+    "play_others": false,
+		  "conditions": {
+		  "enabling": [
+             {
+                    "type": "palladium:animation_timer_ability",
+                    "ability": "half_mass_animation",
+					"min": 49,
+					"max": 49
+			 }
+		  ]
+	  }
+},
 "half_mass_speed": {
     "type": "palladium:attribute_modifier",
     "hidden": true,
