@@ -1,0 +1,19 @@
+{
+  "tooltip": [
+    "Very wild."
+  ],
+  "armor_material": "minecraft:iron",
+  "creative_mode_tab": "airline_heroes:airline_heroes",
+  "chest": {
+    "item_name": "wildcard_chestplate",
+	"armor_renderer": "airline_heroes:wildcard_chestplate"
+  },
+  "legs": {
+    "item_name": "wildcard_leggings",
+	"armor_renderer": "airline_heroes:wildcard_leggings"
+  },
+  "feet": {
+    "item_name": "wildcard_boots",
+	"armor_renderer": "airline_heroes:wildcard_boots"
+  }
+}
