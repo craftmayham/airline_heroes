@@ -246,5 +246,13 @@ if (!builder.isFirstPerson()) {
 }
 }
     });
+			    event.registerForPower('airline_heroes/big_head_animation', 'airline_heroes:mob_big_head', 1, (builder) => {
+        const progress = animationUtil.getAnimationTimerAbilityValue(builder.getPlayer(), 'airline_heroes:mob_big_head', 'big_head_animation', builder.getPartialTicks());
+if (progress > 0.0) {
+	  builder.get('head')					 
+                     .scaleY(1.8)
+					.animate('EaseOutBounce', progress); 			
+}
+    });
 });
 
