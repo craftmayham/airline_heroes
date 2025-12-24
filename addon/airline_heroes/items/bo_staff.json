@@ -1,0 +1,8 @@
+{
+    "type": "palladium:default",
+	"creative_mode_tab": "airline_heroes:airline_heroes",
+	"should_render_model": true,
+	"tier": "minecraft:iron",
+	"base_damage": 5,
+	"attack_speed": -2.4
+}
