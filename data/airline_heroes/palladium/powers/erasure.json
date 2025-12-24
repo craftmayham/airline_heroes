@@ -1,0 +1,47 @@
+{
+  "name": "Erasure",
+  "background": "minecraft:textures/block/red_wool.png",
+  "icon": "airline_heroes:textures/mob_effect/nullified.png",
+  "gui_display_type": "tree",
+  "abilities": {
+    "act": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "list_index": -1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:held",
+            "cooldown": 0,
+            "key_type": "key_bind",
+            "needs_empty_hand": false
+          }
+        ],
+        "unlocking": []
+      }
+    },
+    "erasure": {
+      "type": "airline_heroes:erasure",
+      "icon": "airline_heroes:textures/mob_effect/nullified.png",
+      "title": "Erasure",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "bar_color": "light_gray",
+      "list_index": -1,
+      "time": 120,
+      "range": 5,
+      "effect": "airline_heroes:nullified",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "act"
+          }
+        ],
+        "unlocking": []
+      }
+    }
+  }
+}

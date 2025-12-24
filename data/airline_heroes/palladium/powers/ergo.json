@@ -357,6 +357,24 @@
         ]
       }
     },
+    "health_awaken": {
+      "type": "palladium:attribute_modifier",
+      "icon": "airline_heroes:textures/icons/health_upgrade_3.png",
+      "title": "Health Increase 3",
+      "hidden": true,
+      "attribute": "minecraft:generic.max_health",
+      "amount": 5,
+      "operation": 0,
+      "uuid": "84c2988c-f303-4707-84e8-8e2989b7a6dd",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "awaken_dummy"
+          }
+        ]
+      }
+    },
     "power_upgrade_1": {
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/power_upgrade_1.png",
@@ -434,6 +452,24 @@
           {
             "type": "palladium:ability_unlocked",
             "ability": "power_upgrade_2"
+          }
+        ]
+      }
+    },
+    "power_awaken": {
+      "type": "palladium:attribute_modifier",
+      "icon": "airline_heroes:textures/icons/power_upgrade_3.png",
+      "title": "Power Increase 3",
+      "hidden": true,
+      "attribute": "palladium:punch_damage",
+      "amount": 5,
+      "operation": 0,
+      "uuid": "c11fc2f5-f689-4740-96ee-6d201b3572e0",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "awaken_dummy"
           }
         ]
       }
@@ -534,6 +570,29 @@
         ]
       }
     },
+    "endurance_awaken": {
+      "type": "palladium:attribute_modifier",
+      "icon": "airline_heroes:textures/icons/endurance_upgrade_3.png",
+      "title": "Endurance Increase 3",
+      "hidden": true,
+      "attribute": "minecraft:generic.movement_speed",
+      "amount": 0.02,
+      "operation": 0,
+      "uuid": "77d75863-441a-4d2a-b5d9-b743f1c03298",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:sprinting"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "awaken_dummy"
+          }
+        ]
+      }
+    },
     "mining_upgrade_1": {
       "type": "palladium:attribute_modifier",
       "hidden": true,
@@ -580,6 +639,22 @@
           {
             "type": "palladium:ability_unlocked",
             "ability": "endurance_upgrade_3"
+          }
+        ]
+      }
+    },
+    "mining_awaken": {
+      "type": "palladium:attribute_modifier",
+      "hidden": true,
+      "attribute": "palladium:destroy_speed",
+      "amount": 1,
+      "operation": 0,
+      "uuid": "18532cc1-4f54-41da-975a-2c1da756c703",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "awaken_dummy"
           }
         ]
       }
