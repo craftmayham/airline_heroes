@@ -22,9 +22,12 @@
         "airline_heroes:brood",
         "airline_heroes:hot_blooded",
         "airline_heroes:muses",
-        "airline_heroes:impact_frame",
+        "airline_heroes:kinetic_energy_manipulation",
         "airline_heroes:enhanced_vison",
-        "airline_heroes:energy_transference"
+        "airline_heroes:energy_transference",
+        "airline_heroes:ergo",
+        "airline_heroes:push_pull",
+        "airline_heroes:striker"
       ],
       "player_only": true,
       "tag": "airline_heroes.pastuser",
