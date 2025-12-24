@@ -1,0 +1,11 @@
+{
+  "textures": {
+    "normal": "airline_heroes:textures/models/wildcard_suit/wildcard_chestplate.png",
+    "slim": "airline_heroes:textures/models/wildcard_suit/wildcard_chestplate.png"
+  },
+  "model_layers": {
+    "normal": "palladium:humanoid#suit",
+    "slim": "palladium:humanoid#suit_slim"
+  },
+  "hide_second_layer": true
+}
