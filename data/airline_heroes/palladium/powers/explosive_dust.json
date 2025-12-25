@@ -1,0 +1,211 @@
+{
+    "name": "Explosive Dust",
+    "background": "minecraft:textures/block/iron_block.png",
+    "persistent_data": true,
+    "icon": "minecraft:command_block",
+    "abilities": {
+        "close_range_explosion_dummy": {
+            "type": "palladium:dummy",
+            "icon": "minecraft:blaze_rod",
+            "title": "Clsoe Range Explosion",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 0,
+            "gui_position": [0,0],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:has_effect",
+                                "effect": "airline_heroes:nullified"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "close_range_explosion_commands": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [
+                "execute anchored eyes run summon minecraft:tnt ^ ^ ^5"
+            ],
+            "last_tick_commands": [],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "close_range_explosion_dummy"
+                    }
+                ]
+            }
+        },
+        "explosive_landmines_dummy": {
+            "type": "palladium:dummy",
+            "icon": "minecraft:blaze_rod",
+            "title": "Explosive Landmines",
+            "hidden": false,
+            "list_index": 1,
+            "gui_position": [0,-1],
+            "description": "null",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "close_range_explosion_dummy"
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:crouching"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "explosive_landmines_commands": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [
+                "summon minecraft:armor_stand ~ ~ ~ {Invisible:true,NoBasePlate:true,NoGravity:true,Small:true,DisabledSlots:4144959,Tags:[\"Explosive.Landmine\"]}",
+                "superpower set airline_heroes:explosive_landmine_effect @e[type=minecraft:armor_stand,tag=Explosive.Landmine]"
+            ],
+            "last_tick_commands": [],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "explosive_landmines_dummy"
+                    }
+                ]
+            }
+        },
+        "detonate_explosive_landmines_dummy": {
+            "type": "palladium:dummy",
+            "icon": "minecraft:tnt",
+            "title": "Detonate",
+            "hidden": true,
+            "list_index": 1,
+            "gui_position": [0,-1],
+            "description": "null",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "close_range_explosion_dummy"
+                    },
+                    {
+                        "type": "palladium:crouching"
+                    }
+                ]
+            }
+        },
+        "detonate_explosive_landmines_commands": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [
+                "tag @e[type=minecraft:armor_stand,tag=Explosive.Landmine] add Detonate"
+            ],
+            "last_tick_commands": [],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "detonate_explosive_landmines_dummy"
+                    }
+                ]
+            }
+        },
+        "explosion_immunity": {
+            "type": "palladium:damage_immunity",
+            "hidden": true,
+            "damage_sources": [
+                "minecraft:is_explosion"
+            ]
+        },
+        "explosive_shot_dummy": {
+            "type": "palladium:dummy",
+            "icon": "minecraft:blaze_rod",
+            "title": "Explosive Shot",
+            "hidden": false,
+            "list_index": 2,
+            "gui_position": [0,-2],
+            "description": "null",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "close_range_explosion_dummy"
+                    }
+                ]
+            }
+        },
+        "explosive_shot_commands": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [
+                "function airline_heroes:explosive_shot",
+                "superpower set airline_heroes:explosive_shot_effect @e[type=minecraft:armor_stand,tag=Explosive.Shot]"
+            ],
+            "last_tick_commands": [],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "explosive_shot_dummy"
+                    }
+                ]
+            }
+        },
+        "set_name_description": {
+            "type": "airline_heroes:set_name_description",
+            "hidden": true,
+            "power_name": "Explosive Dust",
+            "power_description": "The user can explode small particles in the air"
+        }
+    }
+}
