@@ -1,21 +1,57 @@
 {
-  "name": "One For All",
+  "name": "All For One",
   "background": "minecraft:textures/block/light_blue_wool.png",
-  "icon": "airline_heroes:textures/icons/ofa.png",
+  "icon": "airline_heroes:textures/icons/afo.png",
   "gui_display_type": "tree",
   "abilities": {
-    "transfer": {
-      "type": "airline_heroes:power_transferal",
-      "icon": "airline_heroes:textures/icons/ofa.png",
-      "title": "One For All",
-      "gui_position": [0, 0],
-      "bar_color": "light_gray",
+    "gui": {
+      "type": "airline_heroes:set_name_description",
+      "title": "null",
+      "hidden": true,
+      "hidden_in_bar": true,
       "list_index": -1,
-      "description": "Transfers and stores abilities of users",
+      "power_name": "All For One",
+      "power_description": "Allows you to take and give people abilities"
+    },
+    "start": {
+      "type": "palladium:dummy",
+      "icon": "airline_heroes:textures/icons/afo.png",
+      "title": "All For One",
+      "bar_color": "light_gray",
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "Able to steal others power",
+      "conditions": {
+        "enabling": [],
+        "unlocking": [
+          {
+            "type": "palladium:experience_level_buyable",
+            "xp_level": 0,
+            "flat_levels": true
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "steal": {
+      "type": "airline_heroes:afo_steal",
+      "icon": "airline_heroes:textures/icons/afo.png",
+      "title": "Steal",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": -1,
       "range": 5,
       "whitelist": [
-        "airline_heroes:ofa",
-        "airline_heroes:push_pull",
         "airline_heroes:luck",
         "airline_heroes:gas",
         "airline_heroes:broodweaver",
@@ -29,13 +65,61 @@
         "airline_heroes:push_pull",
         "airline_heroes:striker"
       ],
-      "player_only": true,
-      "tag": "airline_heroes.pastuser",
+      "max": 5,
       "conditions": {
         "enabling": [
           {
             "type": "palladium:action",
-            "key_type": "key_bind"
+            "cooldown": 0,
+            "key_type": "key_bind",
+            "needs_empty_hand": false,
+            "allow_scrolling_when_crouching": true
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "start"
+          }
+        ]
+      }
+    },
+    "transfer": {
+      "type": "airline_heroes:afo_transfer",
+      "icon": "minecraft:barrier",
+      "title": "Transfer",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": -1,
+      "range": 5,
+      "whitelist": [
+        "airline_heroes:luck",
+        "airline_heroes:gas",
+        "airline_heroes:broodweaver",
+        "airline_heroes:brood",
+        "airline_heroes:hot_blooded",
+        "airline_heroes:muses",
+        "airline_heroes:kinetic_energy_manipulation",
+        "airline_heroes:enhanced_vison",
+        "airline_heroes:energy_transference",
+        "airline_heroes:ergo",
+        "airline_heroes:striker"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "cooldown": 0,
+            "key_type": "key_bind",
+            "needs_empty_hand": false,
+            "allow_scrolling_when_crouching": true
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "start"
           }
         ]
       }
@@ -62,7 +146,7 @@
           },
           {
             "type": "palladium:ability_unlocked",
-            "ability": "transfer"
+            "ability": "start"
           }
         ]
       }
@@ -143,7 +227,7 @@
           },
           {
             "type": "palladium:ability_unlocked",
-            "ability": "transfer"
+            "ability": "start"
           }
         ]
       }
@@ -229,7 +313,7 @@
           },
           {
             "type": "palladium:ability_unlocked",
-            "ability": "transfer"
+            "ability": "start"
           }
         ]
       }

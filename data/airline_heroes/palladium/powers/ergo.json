@@ -170,7 +170,7 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/wings.png",
       "title": "Flight",
-      "gui_position": [0, -1],
+      "gui_position": [1, -1],
       "bar_color": "light_gray",
       "hidden": false,
       "list_index": -1,
@@ -204,6 +204,10 @@
           {
             "type": "palladium:ability_unlocked",
             "ability": "start"
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "power_upgrade_1"
           }
         ]
       }
@@ -235,7 +239,7 @@
       "title": "Awaken",
       "bar_color": "light_gray",
       "list_index": 1,
-      "gui_position": [0, -2],
+      "gui_position": [2, -1],
       "conditions": {
         "enabling": [
           {
@@ -256,6 +260,10 @@
           {
             "type": "palladium:ability_unlocked",
             "ability": "flight"
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "power_upgrade_2"
           }
         ]
       }

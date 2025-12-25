@@ -1,7 +1,7 @@
 StartupEvents.registry("palladium:abilities", (event) => {
   //Power Transferal
   event
-    .create("airline_heroes:ofa")
+    .create("airline_heroes:power_transferal")
     .addProperty("range", "integer", 5, "range to pass the power from")
     .addProperty(
       "whitelist",
@@ -36,12 +36,11 @@ StartupEvents.registry("palladium:abilities", (event) => {
               palladium.superpowers.hasSuperpower(entity, p) &&
               !palladium.superpowers.hasSuperpower(target, p)
             ) {
-              entity.tags.add(tag);
               palladium.superpowers.addSuperpower(target, p);
               palladium.superpowers.removeSuperpower(entity, p);
             } else return;
           });
-          
+          entity.tags.add(tag);
         }
       }
     });
