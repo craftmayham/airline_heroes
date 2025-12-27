@@ -1,1210 +1,1306 @@
 {
-  "name": "Gas",
-  "background": "minecraft:textures/block/red_wool.png",
-  "icon": "airline_heroes:textures/icons/sublimation_icon.png",
-      "gui_display_type": "tree",
-	"ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
-  "abilities": {
-	  "gas_form":
-{
-      "type": "palladium:dummy",
-	"icon": "airline_heroes:textures/icons/sublimation_gas_form.png",
-	"title": "Gas Form",
-	"bar_color": "pink",
-	"list_index": 0,
-	"description": "The user sublimates into a cloud of gas.",
-	    "gui_position": [
-	0,
-	0
-	],
-	      "conditions": {
-        "enabling": [
-		{
-			"type": "airline_heroes:has_hunger",
-			"min_hunger": 1,
-			"max_hunger": 20
-		},
-          {
-            "type": "palladium:toggle",
-            "cooldown": 0,
-			"key_type": "key_bind"
-          },
-		  {
-    "type": "palladium:not",
-    "conditions": [
-	             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "half_mass_form"
-                  },
-	  {
-    "type": "palladium:has_effect",
-    "effect": "airline_heroes:nullified"
-}				  
-	]
-}
-        ]
-      }
-},
-	"vibrate": {
-    "type": "palladium:vibrate",
-    "hidden": true,
-	"conditions": {
-		"enabling": [
-			                  {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  }
-		]
-	}
-},
-"gas_form_render": 
-{
-    "type": "palladium:render_layer",
-    "hidden": true,
-    "render_layer": "airline_heroes:gas_form",
-	"conditions": {
-	"enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  },
-		     {
-		          "type": "palladium:not",
-				  "conditions": [
-				  {
-    "type": "palladium:ability_unlocked",
-    "ability": "half_mass_form"
-}
-				  ]
-			}
-	]
-	}
-},
-"gas_form_missing_eye_render": 
-{
-    "type": "palladium:render_layer",
-    "hidden": true,
-    "render_layer": "airline_heroes:gas_form_missing_eye",
-	"conditions": {
-	"enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  },
-		     				  {
-    "type": "palladium:ability_unlocked",
-    "ability": "half_mass_form"
-}
-	]
-	}
-},
-"gas_form_animation": 
-{
+    "name": "Gas",
+    "background": "minecraft:textures/block/red_wool.png",
+    "icon": "airline_heroes:textures/icons/sublimation_icon.png",
+    "gui_display_type": "tree",
+    "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
+    "abilities": {
+        "gas_form": {
+            "type": "palladium:dummy",
+            "icon": "airline_heroes:textures/icons/sublimation_gas_form.png",
+            "title": "Gas Form",
+            "bar_color": "pink",
+            "list_index": 0,
+            "description": "The user sublimates into a cloud of gas.",
+            "gui_position": [
+                0,
+                0
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "airline_heroes:has_hunger",
+                        "min_hunger": 1,
+                        "max_hunger": 20
+                    },
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 0,
+                        "key_type": "key_bind"
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_enabled",
+                                "ability": "half_mass_form"
+                            },
+                            {
+                                "type": "palladium:has_effect",
+                                "effect": "airline_heroes:nullified"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "vibrate": {
+            "type": "palladium:vibrate",
+            "hidden": true,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    }
+                ]
+            }
+        },
+        "gas_form_render": {
+            "type": "palladium:render_layer",
+            "hidden": true,
+            "render_layer": "airline_heroes:gas_form",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_unlocked",
+                                "ability": "half_mass_form"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "gas_form_missing_eye_render": {
+            "type": "palladium:render_layer",
+            "hidden": true,
+            "render_layer": "airline_heroes:gas_form_missing_eye",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "half_mass_form"
+                    }
+                ]
+            }
+        },
+        "gas_form_animation": {
+            "type": "palladium:animation_timer",
+            "icon": "minecraft:blaze_rod",
+            "hidden": true,
+            "start_value": 0,
+            "max_value": 10,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    }
+                ]
+            }
+        },
+        "particles": {
+            "type": "palladium:particles",
+            "hidden": true,
+            "emitter": [
+                "airline_heroes:body"
+            ],
+            "particle_type": "airline_heroes:pink_smoke",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    }
+                ]
+            }
+        },
+        "particles_large": {
+            "type": "palladium:particles",
+            "hidden": true,
+            "emitter": [
+                "airline_heroes:big_cloud"
+            ],
+            "particle_type": "airline_heroes:pink_smoke",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    },
+                    {
+                        "type": "palladium:crouching"
+                    }
+                ]
+            }
+        },
+        "size_down": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "scale set pehkui:hitbox_height 0.5",
+                "scale set pehkui:eye_height 0.5"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    }
+                ]
+            }
+        },
+        "size_up": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "scale set pehkui:hitbox_height 1",
+                "scale set pehkui:eye_height 1"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_enabled",
+                                "ability": "gas_form"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "passthru": {
+            "type": "palladium:intangibility",
+            "hidden": true,
+            "vertical": false,
+            "whitelist": "airline_heroes:has_holes",
+            "blacklist": "null",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    }
+                ]
+            }
+        },
+        "restrict_items": {
+            "type": "palladium:restrict_slots",
+            "hidden": true,
+            "slots": [
+                "mainhand",
+                "offhand"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    }
+                ]
+            }
+        },
+        "restrict_armor": {
+            "type": "palladium:restrict_slots",
+            "hidden": true,
+            "slots": [
+                "feet",
+                "legs",
+                "chest",
+                "head"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:or",
+                                "conditions": [
+                                    {
+                                        "type": "palladium:wears_suit_set",
+                                        "suit_set": "airline_heroes:sublimation"
+                                    },
+                                    {
+                                        "type": "palladium:wears_suit_set",
+                                        "suit_set": "airline_heroes:sublimation_v2"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "restrict_scroll": {
+            "type": "palladium:disable_hotbar_scroll",
+            "hidden": true,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    }
+                ]
+            }
+        },
+        "damage_immunity": {
+            "type": "palladium:damage_immunity",
+            "hidden": true,
+            "damage_sources": [
+                "airline_heroes:all_damage"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    }
+                ]
+            }
+        },
+        "levitation": {
+            "type": "palladium:attribute_modifier",
+            "hidden": true,
+            "attribute": "palladium:levitation_speed",
+            "amount": 0.8,
+            "operation": 0,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    }
+                ]
+            }
+        },
+        "disable_attack": {
+            "type": "palladium:attribute_modifier",
+            "hidden": true,
+            "attribute": "minecraft:generic.attack_damage",
+            "amount": -30,
+            "operation": 0,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    }
+                ]
+            }
+        },
+        "combustible": {
+            "type": "airline_heroes:explosion",
+            "hidden": true,
+            "radius": 2,
+            "cause_fire": true,
+            "self_damage": 100,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    },
+                    {
+                        "type": "palladium:is_on_fire"
+                    }
+                ]
+            }
+        },
+        "golden_carrot": {
+            "type": "airline_heroes:potion_aoe",
+            "hidden": true,
+            "radius": 5,
+            "time": 1200,
+            "effect": "minecraft:regeneration",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    },
+                    {
+                        "type": "palladium:energy_bar",
+                        "energy_bar": "golden_carrot",
+                        "min": 1
+                    },
+                    {
+                        "type": "palladium:crouching"
+                    }
+                ]
+            }
+        },
+        "cake": {
+            "type": "airline_heroes:potion_aoe",
+            "hidden": true,
+            "radius": 5,
+            "time": 1200,
+            "effect": "minecraft:speed",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    },
+                    {
+                        "type": "palladium:energy_bar",
+                        "energy_bar": "cake",
+                        "min": 1
+                    },
+                    {
+                        "type": "palladium:crouching"
+                    }
+                ]
+            }
+        },
+        "melon": {
+            "type": "airline_heroes:potion_aoe",
+            "hidden": true,
+            "radius": 5,
+            "time": 1200,
+            "effect": "minecraft:strength",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    },
+                    {
+                        "type": "palladium:energy_bar",
+                        "energy_bar": "melon",
+                        "min": 1
+                    },
+                    {
+                        "type": "palladium:crouching"
+                    }
+                ]
+            }
+        },
+        "glow_berries": {
+            "type": "airline_heroes:potion_aoe",
+            "hidden": true,
+            "radius": 5,
+            "time": 1200,
+            "effect": "minecraft:blindness",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    },
+                    {
+                        "type": "palladium:energy_bar",
+                        "energy_bar": "glow_berries",
+                        "min": 1
+                    },
+                    {
+                        "type": "palladium:crouching"
+                    }
+                ]
+            }
+        },
+        "potato": {
+            "type": "airline_heroes:potion_aoe",
+            "hidden": true,
+            "radius": 5,
+            "time": 1200,
+            "effect": "minecraft:nausea",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    },
+                    {
+                        "type": "palladium:energy_bar",
+                        "energy_bar": "potato",
+                        "min": 1
+                    },
+                    {
+                        "type": "palladium:crouching"
+                    }
+                ]
+            }
+        },
+        "rotten_flesh": {
+            "type": "airline_heroes:potion_aoe",
+            "hidden": true,
+            "radius": 5,
+            "time": 1200,
+            "effect": "minecraft:poison",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    },
+                    {
+                        "type": "palladium:energy_bar",
+                        "energy_bar": "rotten_flesh",
+                        "min": 1
+                    },
+                    {
+                        "type": "palladium:crouching"
+                    }
+                ]
+            }
+        },
+        "exhaust": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [
+                "say on",
+                "particle minecraft:cloud ~ ~1.3 ~ 0.3 0.2 0.3 0.05 10 force",
+                "playsound minecraft:block.fire.extinguish master @a ~ ~ ~ 1 1.8"
+            ],
+            "last_tick_commands": [
+                "say off",
+                "particle minecraft:cloud ~ ~1.3 ~ 0.3 0.2 0.3 0.05 10 force",
+                "playsound minecraft:block.fire.extinguish master @a ~ ~ ~ 1 1.8"
+            ],
+            "commands": [
+                "effect give @s minecraft:hunger 1 4 true",
+                "scoreboard players set @s[scores={airline_heroes.golden_carrot=26..}] airline_heroes.golden_carrot 25",
+                "scoreboard players set @s[scores={airline_heroes.cake=26..}] airline_heroes.cake 25",
+                "scoreboard players set @s[scores={airline_heroes.melon=26..}] airline_heroes.melon 25",
+                "scoreboard players set @s[scores={airline_heroes.glow_berry=26..}] airline_heroes.glow_berry 25",
+                "scoreboard players set @s[scores={airline_heroes.potato=26..}] airline_heroes.potato 25",
+                "scoreboard players set @s[scores={airline_heroes.rotten_flesh=26..}] airline_heroes.rotten_flesh 25"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    }
+                ]
+            }
+        },
+        "food_decrease": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "effect give @s minecraft:hunger 1 16 true",
+                "scoreboard players remove @s[scores={airline_heroes.golden_carrot=1..}] airline_heroes.golden_carrot 1",
+                "scoreboard players remove @s[scores={airline_heroes.cake=1..}] airline_heroes.cake 1",
+                "scoreboard players remove @s[scores={airline_heroes.melon=1..}] airline_heroes.melon 1",
+                "scoreboard players remove @s[scores={airline_heroes.glow_berry=1..}] airline_heroes.glow_berry 1",
+                "scoreboard players remove @s[scores={airline_heroes.potato=1..}] airline_heroes.potato 1",
+                "scoreboard players remove @s[scores={airline_heroes.rotten_flesh=1..}] airline_heroes.rotten_flesh 1"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    },
+                    {
+                        "type": "palladium:crouching"
+                    },
+                    {
+                        "type": "palladium:interval",
+                        "active_ticks": 1,
+                        "disabled_ticks": 60
+                    }
+                ]
+            }
+        },
+        "float": {
+            "type": "palladium:attribute_modifier",
+            "hidden": true,
+            "attribute": "porting_lib:entity_gravity",
+            "amount": -0.085,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    }
+                ]
+            }
+        },
+        "health_upgrade_1": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/health_upgrade_1.png",
+            "title": "Health Increase 1",
+            "gui_position": [
+                0,
+                1
+            ],
+            "attribute": "minecraft:generic.max_health",
+            "amount": 8,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Scoreboard Score"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "gas_form"
+                    }
+                ]
+            }
+        },
+        "health_upgrade_2": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/health_upgrade_2.png",
+            "title": "Health Increase 2",
+            "gui_position": [
+                0,
+                2
+            ],
+            "attribute": "minecraft:generic.max_health",
+            "amount": 6,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e2",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Scoreboard Score"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "health_upgrade_1"
+                    }
+                ]
+            }
+        },
+        "health_upgrade_3": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/health_upgrade_3.png",
+            "title": "Health Increase 3",
+            "gui_position": [
+                0,
+                3
+            ],
+            "attribute": "minecraft:generic.max_health",
+            "amount": 6,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e3",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Scoreboard Score"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "health_upgrade_2"
+                    }
+                ]
+            }
+        },
+        "power_upgrade_1": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/power_upgrade_1.png",
+            "title": "Power Increase 1",
+            "gui_position": [
+                1,
+                0
+            ],
+            "attribute": "palladium:punch_damage",
+            "amount": 10,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e4",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Scoreboard Score"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "gas_form"
+                    }
+                ]
+            }
+        },
+        "power_upgrade_2": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/power_upgrade_2.png",
+            "title": "Power Increase 2",
+            "gui_position": [
+                2,
+                0
+            ],
+            "attribute": "palladium:punch_damage",
+            "amount": 5,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e5",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Scoreboard Score"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "power_upgrade_1"
+                    }
+                ]
+            }
+        },
+        "power_upgrade_3": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/power_upgrade_3.png",
+            "title": "Power Increase 3",
+            "gui_position": [
+                3,
+                0
+            ],
+            "attribute": "palladium:punch_damage",
+            "amount": 4,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e6",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Scoreboard Score"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "power_upgrade_2"
+                    }
+                ]
+            }
+        },
+        "endurance_upgrade_1": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/endurance_upgrade_1.png",
+            "title": "Endurance Increase 1",
+            "gui_position": [
+                -1,
+                0
+            ],
+            "attribute": "minecraft:generic.movement_speed",
+            "amount": 0.02,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e7",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:sprinting"
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Scoreboard Score"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "gas_form"
+                    }
+                ]
+            }
+        },
+        "endurance_upgrade_2": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/endurance_upgrade_2.png",
+            "title": "Endurance Increase 2",
+            "gui_position": [
+                -2,
+                0
+            ],
+            "attribute": "minecraft:generic.movement_speed",
+            "amount": 0.02,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e8",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:sprinting"
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Scoreboard Score"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "endurance_upgrade_1"
+                    }
+                ]
+            }
+        },
+        "endurance_upgrade_3": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/endurance_upgrade_3.png",
+            "title": "Endurance Increase 3",
+            "gui_position": [
+                -3,
+                0
+            ],
+            "attribute": "minecraft:generic.movement_speed",
+            "amount": 0.02,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e9",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:sprinting"
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Scoreboard Score"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "endurance_upgrade_2"
+                    }
+                ]
+            }
+        },
+        "mining_upgrade_1": {
+            "type": "palladium:attribute_modifier",
+            "hidden": true,
+            "attribute": "palladium:destroy_speed",
+            "amount": 1,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e7",
+            "conditions": {
+                "conditions": {
+                    "enabling": [
+                        {
+                            "type": "palladium:ability_unlocked",
+                            "ability": "endurance_upgrade_1"
+                        }
+                    ]
+                }
+            }
+        },
+        "mining_upgrade_2": {
+            "type": "palladium:attribute_modifier",
+            "hidden": true,
+            "attribute": "palladium:destroy_speed",
+            "amount": 1,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e8",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "endurance_upgrade_2"
+                    }
+                ]
+            }
+        },
+        "mining_upgrade_3": {
+            "type": "palladium:attribute_modifier",
+            "hidden": true,
+            "attribute": "palladium:destroy_speed",
+            "amount": 1,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e9",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "endurance_upgrade_3"
+                    }
+                ]
+            }
+        },
+        "set_name_description": {
+            "type": "airline_heroes:set_name_description",
+            "hidden": true,
+            "power_name": "Sublimation",
+            "power_description": "The user is able to transform their whole body into a gas"
+        },
+        "half_mass_form": {
+            "type": "palladium:dummy",
+            "icon": "minecraft:blaze_rod",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": [
+                0,
+                -1
+            ],
+            "description": "null",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_enabled",
+                                "ability": "gas_form"
+                            },
+                            {
+                                "type": "palladium:has_effect",
+                                "effect": "airline_heroes:nullified"
+                            }
+                        ]
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Scoreboard Score"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "gas_form"
+                    }
+                ]
+            }
+        },
+        "missing_eye": {
+            "type": "palladium:render_layer",
+            "hidden": true,
+            "render_layer": "airline_heroes:eyes_missing",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "half_mass_form"
+                    }
+                ]
+            }
+        },
+        "half_mass_animation": {
+            "type": "palladium:animation_timer",
+            "hidden": true,
+            "start_value": 0,
+            "max_value": 50,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "half_mass_form"
+                    }
+                ]
+            }
+        },
+        "half_mass_interpolate": {
+            "type": "palladium:animation_timer",
+            "hidden": true,
+            "start_value": 0,
+            "max_value": 15,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "half_mass_form"
+                    }
+                ]
+            }
+        },
+        "half_mass_text": {
+            "type": "palladium:animation_timer",
+            "hidden": true,
+            "start_value": 0,
+            "max_value": 31,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "half_mass_form"
+                    }
+                ]
+            }
+        },
+        "half_mass_render": {
+            "type": "palladium:render_layer",
+            "hidden": true,
+            "render_layer": "airline_heroes:half_mass_form",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "half_mass_form"
+                    }
+                ]
+            }
+        },
+        "half_mass_eye_particles": {
+            "type": "palladium:particles",
+            "hidden": true,
+            "emitter": [
+                "airline_heroes:left_eye"
+            ],
+            "particle_type": "airline_heroes:pink_smoke",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "half_mass_form"
+                    }
+                ]
+            }
+        },
+        "half_mass_arm_particles": {
+            "type": "palladium:particles",
+            "hidden": true,
+            "emitter": [
+                "airline_heroes:left_arm"
+            ],
+            "particle_type": "airline_heroes:pink_smoke",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "half_mass_form"
+                    }
+                ]
+            }
+        },
+        "half_mass_leg_particles": {
+            "type": "palladium:particles",
+            "hidden": true,
+            "emitter": [
+                "airline_heroes:left_leg"
+            ],
+            "particle_type": "airline_heroes:pink_smoke",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "half_mass_form"
+                    }
+                ]
+            }
+        },
+        "half_mass_body_particles": {
+            "type": "palladium:particles",
+            "hidden": true,
+            "emitter": [
+                "airline_heroes:left_body"
+            ],
+            "particle_type": "airline_heroes:pink_smoke",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "half_mass_form"
+                    },
+                    {
+                        "type": "palladium:interval",
+                        "active_ticks": 1,
+                        "disabled_ticks": 1
+                    }
+                ]
+            }
+        },
+        "half_mass_transformation_attribute": {
+            "type": "palladium:attribute_modifier",
+            "hidden": true,
+            "attribute": "minecraft:generic.movement_speed",
+            "amount": -1,
+            "operation": 2,
+            "uuid": "698be4fb-af04-42f2-8948-e6ccdc0d99e1",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:animation_timer_ability",
+                        "ability": "half_mass_animation",
+                        "min": 1,
+                        "max": 49
+                    }
+                ]
+            }
+        },
+        "half_mass_transformation_sound": {
+            "type": "palladium:play_sound",
+            "hidden": true,
+            "sound": "airline_heroes:half_mass_form",
+            "volume": 1,
+            "pitch": 1,
+            "looping": false,
+            "play_self": false,
+            "play_others": false,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "half_mass_form"
+                    }
+                ]
+            }
+        },
+        "half_mass_transformation_pop": {
+            "type": "palladium:play_sound",
+            "hidden": true,
+            "sound": "minecraft:block.fire.extinguish",
+            "volume": 1,
+            "pitch": 0.7,
+            "looping": false,
+            "play_self": false,
+            "play_others": false,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:animation_timer_ability",
+                        "ability": "half_mass_animation",
+                        "min": 49,
+                        "max": 49
+                    }
+                ]
+            }
+        },
+        "half_mass_speed": {
+            "type": "palladium:attribute_modifier",
+            "hidden": true,
+            "attribute": "minecraft:generic.movement_speed",
+            "amount": 1.5,
+            "operation": 2,
+            "uuid": "798be4fb-af04-42f2-8948-e6ccdc0d99e1",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "half_mass_form"
+                    }
+                ]
+            }
+        },
+        "half_mass_gravity": {
+            "type": "palladium:attribute_modifier",
+            "hidden": true,
+            "attribute": "porting_lib:entity_gravity",
+            "amount": -0.07,
+            "operation": 0,
+            "uuid": "798be4fb-af04-42f2-8948-e6ccdc0d99e1",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "half_mass_form"
+                    }
+                ]
+            }
+        },
+        "half_mass_no_fall": {
+            "type": "palladium:damage_immunity",
+            "hidden": true,
+            "damage_sources": [
+                "minecraft:is_fall"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "half_mass_form"
+                    }
+                ]
+            }
+        },
+        "half_mass_dual_wielding": {
+            "type": "palladium:dual_wielding",
+            "hidden": true,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "half_mass_form"
+                    }
+                ]
+            }
+        },
+        "half_mass_dummy": {
+            "type": "palladium:dummy",
+            "icon": "minecraft:blaze_rod",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:activation",
+                        "cooldown": 0,
+                        "ticks": 60,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ]
+            }
+        },
+        "half_mass_behind_you_timer":
+   {
     "type": "palladium:animation_timer",
     "icon": "minecraft:blaze_rod",
+    "title": "null",
+    "bar_color": "light_gray",
     "hidden": true,
+    "hidden_in_bar": true,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
     "start_value": 0,
-    "max_value": 10,
-		"conditions": {
-	"enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  }
-	]
-	}
+    "max_value": 60,
+                "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "half_mass_dummy"
+                    }
+                ]
+            }
 },
-"particles": {
-	"type": "palladium:particles",
-	"hidden": true,
-	"emitter": [
-	"airline_heroes:body"
-],
-      "particle_type": "airline_heroes:pink_smoke",
-	  "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  }
-		  ]
-	  }
-},
-"particles_large": {
-	"type": "palladium:particles",
-	"hidden": true,
-	"emitter": [
-	"airline_heroes:big_cloud"
-],
-      "particle_type": "airline_heroes:pink_smoke",
-	  "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  },
-				  {
-    "type": "palladium:crouching"
-}
-		  ]
-	  }
-},
-"size_down": {
-    "type": "palladium:command",
-    "hidden": true,
-    "first_tick_commands": [],
-    "last_tick_commands": [],
-    "commands": [
-        "scale set pehkui:hitbox_height 0.5",
-		"scale set pehkui:eye_height 0.5"
-    ],
-		  "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  }
-		  ]
-	  }
-},
-"size_up":
-{
-    "type": "palladium:command",
-    "hidden": true,
-    "first_tick_commands": [],
-    "last_tick_commands": [],
-    "commands": [
-        "scale set pehkui:hitbox_height 1",
-		"scale set pehkui:eye_height 1"
-    ],
-		  "conditions": {
-		  "enabling": [
-             {
-				     "type": "palladium:not",
-    "conditions": [
-	{
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-	}
-	]
-                  }
-		  ]
-	  }
-},
-"passthru": {
-    "type": "palladium:intangibility",
-    "hidden": true,
-    "vertical": false,
-    "whitelist": "airline_heroes:has_holes",
-    "blacklist": "null",
-			  "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  }
-		  ]
-	  }
-},
-"restrict_items": {
-    "type": "palladium:restrict_slots",
-    "hidden": true,
-    "slots": [
-        "mainhand",
-		"offhand"
-    ],
-		  "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  }
-		  ]
-	  }
-},
-"restrict_armor": {
-    "type": "palladium:restrict_slots",
-	  "hidden": true,
-    "slots": [
-		"feet",
-		"legs",
-		"chest",
-		"head"
-    ],
-		  "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  },
-{
-    "type": "palladium:not",
-    "conditions": [
-	{
-    "type": "palladium:or",
-    "conditions": [
-	{
-    "type": "palladium:wears_suit_set",
-    "suit_set": "airline_heroes:sublimation"
-},
-	{
-    "type": "palladium:wears_suit_set",
-    "suit_set": "airline_heroes:sublimation_v2"
-}
-	]
-}
-	]
-}
-		  ]
-	  }
-},
-"restrict_scroll": {
-    "type": "palladium:disable_hotbar_scroll",
-    "hidden": true,
-			  "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  }
-		  ]
-	  }
-},
-"damage_immunity":
-{
-    "type": "palladium:damage_immunity",
-	 "hidden": true,
-    "damage_sources": [
-  "airline_heroes:all_damage"
-],
-	"conditions": {
-		"enabling": [
-			                  {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  }
-		]
-	}
-},
-    "levitation": {
-      "type": "palladium:attribute_modifier",
-    "hidden": true,
-      "attribute": "palladium:levitation_speed",
-      "amount": 0.8,
-      "operation": 0,
-	"conditions": {
-		"enabling": [
-			                  {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  }
-		]
-	}
-    },
-	"disable_attack": {
-      "type": "palladium:attribute_modifier",
-    "hidden": true,
-      "attribute": "minecraft:generic.attack_damage",
-      "amount": -30,
-      "operation": 0,
-	"conditions": {
-		"enabling": [
-			                  {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  }
-		]
-	}
-    },
-	"combustible": {
-	   "type": "airline_heroes:explosion",
-	       "hidden": true,
-    "radius": 2,
-    "cause_fire": true,
-    "self_damage": 100,
-	  "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  },
-				  {
-    "type": "palladium:is_on_fire"
-}
-		  ]
-	  }
-},
-"golden_carrot": {
-	   "type": "airline_heroes:potion_aoe",
-	       "hidden": true,
-    "radius": 5,
-	"time": 1200,
-	"effect": "minecraft:regeneration",
-	  "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  },
-				  {
-    "type": "palladium:energy_bar",
-    "energy_bar": "golden_carrot",
-    "min": 1
-},
-				  {
-    "type": "palladium:crouching"
-}
-		  ]
-	  }
-},
-"cake": {
-	   "type": "airline_heroes:potion_aoe",
-	       "hidden": true,
-    "radius": 5,
-	"time": 1200,
-	"effect": "minecraft:speed",
-	  "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  },
-				  {
-    "type": "palladium:energy_bar",
-    "energy_bar": "cake",
-    "min": 1
-},
-				  {
-    "type": "palladium:crouching"
-}
-		  ]
-	  }
-},
-"melon": {
-	   "type": "airline_heroes:potion_aoe",
-	       "hidden": true,
-    "radius": 5,
-	"time": 1200,
-	"effect": "minecraft:strength",
-	  "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  },
-				  {
-    "type": "palladium:energy_bar",
-    "energy_bar": "melon",
-    "min": 1
-},
-				  {
-    "type": "palladium:crouching"
-}
-		  ]
-	  }
-},
-"glow_berries": {
-	   "type": "airline_heroes:potion_aoe",
-	       "hidden": true,
-    "radius": 5,
-	"time": 1200,
-	"effect": "minecraft:blindness",
-	  "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  },
-				  {
-    "type": "palladium:energy_bar",
-    "energy_bar": "glow_berries",
-    "min": 1
-},
-				  {
-    "type": "palladium:crouching"
-}
-		  ]
-	  }
-},
-"potato": {
-	   "type": "airline_heroes:potion_aoe",
-	       "hidden": true,
-    "radius": 5,
-	"time": 1200,
-	"effect": "minecraft:nausea",
-	  "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  },
-				  {
-    "type": "palladium:energy_bar",
-    "energy_bar": "potato",
-    "min": 1
-},
-				  {
-    "type": "palladium:crouching"
-}
-		  ]
-	  }
-},
-"rotten_flesh": {
-	   "type": "airline_heroes:potion_aoe",
-	       "hidden": true,
-    "radius": 5,
-	"time": 1200,
-	"effect": "minecraft:poison",
-	  "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  },
-				  {
-    "type": "palladium:energy_bar",
-    "energy_bar": "rotten_flesh",
-    "min": 1
-},
-				  {
-    "type": "palladium:crouching"
-}
-		  ]
-	  }
-},
-"exhaust":
-{
-    "type": "palladium:command",
-    "hidden": true,
-    "first_tick_commands": [
-	"say on",
-	"particle minecraft:cloud ~ ~1.3 ~ 0.3 0.2 0.3 0.05 10 force",
-	"playsound minecraft:block.fire.extinguish master @a ~ ~ ~ 1 1.8"
-	],
-    "last_tick_commands": [
-	"say off",
-	"particle minecraft:cloud ~ ~1.3 ~ 0.3 0.2 0.3 0.05 10 force",
-	"playsound minecraft:block.fire.extinguish master @a ~ ~ ~ 1 1.8"
-	],
-    "commands": [
-	"effect give @s minecraft:hunger 1 4 true",
-	
-	"scoreboard players set @s[scores={airline_heroes.golden_carrot=26..}] airline_heroes.golden_carrot 25",
-	"scoreboard players set @s[scores={airline_heroes.cake=26..}] airline_heroes.cake 25",
-	"scoreboard players set @s[scores={airline_heroes.melon=26..}] airline_heroes.melon 25",
-	"scoreboard players set @s[scores={airline_heroes.glow_berry=26..}] airline_heroes.glow_berry 25",
-	"scoreboard players set @s[scores={airline_heroes.potato=26..}] airline_heroes.potato 25",
-	"scoreboard players set @s[scores={airline_heroes.rotten_flesh=26..}] airline_heroes.rotten_flesh 25"
-    ],
-		"conditions": {
-		"enabling": [
-			                  {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  }
-		]
-	}
-},
-"food_decrease": {
-    "type": "palladium:command",
-    "hidden": true,
-    "first_tick_commands": [
-	],
-    "last_tick_commands": [
-	],
-    "commands": [
-	"effect give @s minecraft:hunger 1 16 true",
-	
-    "scoreboard players remove @s[scores={airline_heroes.golden_carrot=1..}] airline_heroes.golden_carrot 1",
-	"scoreboard players remove @s[scores={airline_heroes.cake=1..}] airline_heroes.cake 1",
-	"scoreboard players remove @s[scores={airline_heroes.melon=1..}] airline_heroes.melon 1",
-	"scoreboard players remove @s[scores={airline_heroes.glow_berry=1..}] airline_heroes.glow_berry 1",
-	"scoreboard players remove @s[scores={airline_heroes.potato=1..}] airline_heroes.potato 1",
-	"scoreboard players remove @s[scores={airline_heroes.rotten_flesh=1..}] airline_heroes.rotten_flesh 1"
-    ],
-		"conditions": {
-		"enabling": [
-			                  {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  },
-				  				  {
-    "type": "palladium:crouching"
-},
-{
-    "type": "palladium:interval",
-    "active_ticks": 1,
-    "disabled_ticks": 60
-}
-		]
-	}
-},
-"float": {
-    "type": "palladium:attribute_modifier",
-    "hidden": true,
-    "attribute": "porting_lib:entity_gravity",
-    "amount": -0.085,
-    "operation": 0,
-	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
-	 "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  }
-		  ]
-	  }
-},
-"health_upgrade_1": {
-    "type": "palladium:attribute_modifier",
-    "icon": "airline_heroes:textures/icons/health_upgrade_1.png",
-    "title": "Health Increase 1",
-	 "gui_position": [
-	0,
-	1
-	],
-    "attribute": "minecraft:generic.max_health",
-    "amount": 8,
-    "operation": 0,
-	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
-	 "conditions": {
-		"unlocking": [
-		{
-    "type": "palladium:scoreboard_score_buyable",
-    "objective": "airline_heroes.skill_points",
-    "score": 1,
-    "icon": "minecraft:command_block",
-    "description": {
-        "text": "Scoreboard Score"
-    }
-},
-{
-    "type": "palladium:ability_unlocked",
-    "ability": "gas_form"
-}
-		]
-      }
-},
-"health_upgrade_2": {
-    "type": "palladium:attribute_modifier",
-    "icon": "airline_heroes:textures/icons/health_upgrade_2.png",
-    "title": "Health Increase 2",
-	"gui_position": [
-	0,
-	2
-	],
-    "attribute": "minecraft:generic.max_health",
-    "amount": 6,
-    "operation": 0,
-	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e2",
-	 "conditions": {
-		"unlocking": [
-		{
-    "type": "palladium:scoreboard_score_buyable",
-    "objective": "airline_heroes.skill_points",
-    "score": 1,
-    "icon": "minecraft:command_block",
-    "description": {
-        "text": "Scoreboard Score"
-    }
-},
-{
-    "type": "palladium:ability_unlocked",
-    "ability": "health_upgrade_1"
-}
-		]
-      }
-},
-"health_upgrade_3": {
-    "type": "palladium:attribute_modifier",
-    "icon": "airline_heroes:textures/icons/health_upgrade_3.png",
-    "title": "Health Increase 3",
-	"gui_position": [
-	0,
-	3
-	],
-    "attribute": "minecraft:generic.max_health",
-    "amount": 6,
-    "operation": 0,
-	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e3",
-	 "conditions": {
-		"unlocking": [
-		{
-    "type": "palladium:scoreboard_score_buyable",
-    "objective": "airline_heroes.skill_points",
-    "score": 1,
-    "icon": "minecraft:command_block",
-    "description": {
-        "text": "Scoreboard Score"
-    }
-},
-{
-    "type": "palladium:ability_unlocked",
-    "ability": "health_upgrade_2"
-}
-		]
-      }
-},
-"power_upgrade_1": {
-    "type": "palladium:attribute_modifier",
-    "icon": "airline_heroes:textures/icons/power_upgrade_1.png",
-    "title": "Power Increase 1",
-	"gui_position": [
-	1,
-	0
-	],
-    "attribute": "palladium:punch_damage",
-    "amount": 10,
-    "operation": 0,
-	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e4",
-	 "conditions": {
-		"unlocking": [
-		{
-    "type": "palladium:scoreboard_score_buyable",
-    "objective": "airline_heroes.skill_points",
-    "score": 1,
-    "icon": "minecraft:command_block",
-    "description": {
-        "text": "Scoreboard Score"
-    }
-},
-{
-    "type": "palladium:ability_unlocked",
-    "ability": "gas_form"
-}
-		]
-      }
-},
-"power_upgrade_2": {
-    "type": "palladium:attribute_modifier",
-    "icon": "airline_heroes:textures/icons/power_upgrade_2.png",
-    "title": "Power Increase 2",
-	"gui_position": [
-	2,
-	0
-	],
-    "attribute": "palladium:punch_damage",
-    "amount": 5,
-    "operation": 0,
-	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e5",
-	 "conditions": {
-		"unlocking": [
-		{
-    "type": "palladium:scoreboard_score_buyable",
-    "objective": "airline_heroes.skill_points",
-    "score": 1,
-    "icon": "minecraft:command_block",
-    "description": {
-        "text": "Scoreboard Score"
-    }
-},
-{
-    "type": "palladium:ability_unlocked",
-    "ability": "power_upgrade_1"
-}
-		]
-      }
-},
-"power_upgrade_3": {
-    "type": "palladium:attribute_modifier",
-    "icon": "airline_heroes:textures/icons/power_upgrade_3.png",
-    "title": "Power Increase 3",
-	"gui_position": [
-	3,
-	0
-	],
-    "attribute": "palladium:punch_damage",
-    "amount": 4,
-    "operation": 0,
-	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e6",
-	 "conditions": {
-		"unlocking": [
-		{
-    "type": "palladium:scoreboard_score_buyable",
-    "objective": "airline_heroes.skill_points",
-    "score": 1,
-    "icon": "minecraft:command_block",
-    "description": {
-        "text": "Scoreboard Score"
-    }
-},
-{
-    "type": "palladium:ability_unlocked",
-    "ability": "power_upgrade_2"
-}
-		]
-      }
-},
-"endurance_upgrade_1": {
-    "type": "palladium:attribute_modifier",
-    "icon": "airline_heroes:textures/icons/endurance_upgrade_1.png",
-    "title": "Endurance Increase 1",
-	"gui_position": [
-	-1,
-	0
-	],
-    "attribute": "minecraft:generic.movement_speed",
-    "amount": 0.02,
-    "operation": 0,
-	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e7",
-	 "conditions": {
-		"enabling": [
-		{
-       "type": "palladium:sprinting"
-        }
-		],
-		"unlocking": [
-		{
-    "type": "palladium:scoreboard_score_buyable",
-    "objective": "airline_heroes.skill_points",
-    "score": 1,
-    "icon": "minecraft:command_block",
-    "description": {
-        "text": "Scoreboard Score"
-    }
-},
-{
-    "type": "palladium:ability_unlocked",
-    "ability": "gas_form"
-}
-		]
-      }
-},
-"endurance_upgrade_2": {
-    "type": "palladium:attribute_modifier",
-    "icon": "airline_heroes:textures/icons/endurance_upgrade_2.png",
-    "title": "Endurance Increase 2",
-	"gui_position": [
-	-2,
-	0
-	],
-    "attribute": "minecraft:generic.movement_speed",
-    "amount": 0.02,
-    "operation": 0,
-	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e8",
-	 "conditions": {
-		"enabling": [
-		{
-    "type": "palladium:sprinting"
-      }
-		],
-		"unlocking": [
-		{
-    "type": "palladium:scoreboard_score_buyable",
-    "objective": "airline_heroes.skill_points",
-    "score": 1,
-    "icon": "minecraft:command_block",
-    "description": {
-        "text": "Scoreboard Score"
-    }
-},
-{
-    "type": "palladium:ability_unlocked",
-    "ability": "endurance_upgrade_1"
-}
-		]
-      }
-},
-"endurance_upgrade_3": {
-    "type": "palladium:attribute_modifier",
-    "icon": "airline_heroes:textures/icons/endurance_upgrade_3.png",
-    "title": "Endurance Increase 3",
-	 "gui_position": [
-	-3,
-	0
-	],
-    "attribute": "minecraft:generic.movement_speed",
-    "amount": 0.02,
-    "operation": 0,
-	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e9",
-	 "conditions": {
-		"enabling": [
-		{
-    "type": "palladium:sprinting"
-}
-		],
-		"unlocking": [
-		{
-    "type": "palladium:scoreboard_score_buyable",
-    "objective": "airline_heroes.skill_points",
-    "score": 1,
-    "icon": "minecraft:command_block",
-    "description": {
-        "text": "Scoreboard Score"
-    }
-},
-{
-    "type": "palladium:ability_unlocked",
-    "ability": "endurance_upgrade_2"
-}
-		]
-      }
-},
-"mining_upgrade_1": {
-    "type": "palladium:attribute_modifier",
-    "hidden": true,
-    "attribute": "palladium:destroy_speed",
-    "amount": 1,
-    "operation": 0,
-	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e7",
-	 	 "conditions": {
-			 "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_unlocked",
-                    "ability": "endurance_upgrade_1"
-                  }
-		  ]
-	  }
-      }
-},
-"mining_upgrade_2": {
-    "type": "palladium:attribute_modifier",
-    "hidden": true,
-    "attribute": "palladium:destroy_speed",
-    "amount": 1,
-    "operation": 0,
-	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e8",
-		 "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_unlocked",
-                    "ability": "endurance_upgrade_2"
-                  }
-		  ]
-	  }
-},
-"mining_upgrade_3": {
-    "type": "palladium:attribute_modifier",
-    "hidden": true,
-    "attribute": "palladium:destroy_speed",
-    "amount": 1,
-    "operation": 0,
-	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e9",
-			 "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_unlocked",
-                    "ability": "endurance_upgrade_3"
-                  }
-		  ]
-	  }
-},
-"set_name_description": {
-	"type": "airline_heroes:set_name_description",
-	"hidden": true,
-	"power_name": "Sublimation",
-	"power_description": "The user is able to transform their whole body into a gas"
-},
-"half_mass_form": 
-{
-    "type": "palladium:dummy",
+        "half_mass_behind_you": {
+            "type": "palladium:command",
+            "last_tick_commands": [
+                 "tp @s ^ ^ ^5"
+            ],
+            "first_tick_commands": [],
+            "commands": [
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "half_mass_dummy"
+                    }
+                ]
+            }
+        },
+        "half_mass_behind_you_particle": {
+    "type": "palladium:particles",
     "icon": "minecraft:blaze_rod",
     "title": "null",
     "bar_color": "light_gray",
     "hidden": false,
     "hidden_in_bar": false,
     "list_index": -1,
-	"gui_position": [
-	0,
-	-1
-	],
+    "gui_position": "null",
     "description": "null",
-		 "conditions": {
-		  "enabling": [
+                "emitter": [
+                "airline_heroes:full_body"
+            ],
+    "particle_type": "airline_heroes:flash_step",
+    "options": "",
+                "conditions": {
+                "enabling": [
 {
-    "type": "palladium:toggle",
-    "cooldown": 0,
-    "key_type": "key_bind",
-    "needs_empty_hand": false,
-    "allow_scrolling_when_crouching": true
-},
-{
-    "type": "palladium:not",
-    "conditions": [
-	             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "gas_form"
-                  },
-			  {
-    "type": "palladium:has_effect",
-    "effect": "airline_heroes:nullified"
-}				  
-	]
+    "type": "palladium:animation_timer_ability",
+    "power": "null",
+    "ability": "half_mass_behind_you_timer",
+    "min": 59,
+    "max": 60
 }
-		  ],
-		 "unlocking": [
-		{
-    "type": "palladium:scoreboard_score_buyable",
-    "objective": "airline_heroes.skill_points",
-    "score": 1,
-    "icon": "minecraft:command_block",
-    "description": {
-        "text": "Scoreboard Score"
+                ]
+            }
+},
+"hunger_test": {
+	"type": "airline_heroes:add_hunger",
+	"hunger": 2,
+	    "icon": "minecraft:blaze_rod",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+	                "conditions": {
+                "enabling": [
+{
+    "type": "palladium:animation_timer_ability",
+    "power": "null",
+    "ability": "half_mass_behind_you_timer",
+    "min": 59,
+    "max": 60
+}
+                ]
+            }
+}
     }
-},
-{
-    "type": "palladium:ability_unlocked",
-    "ability": "gas_form"
-}
-		]
-	  }
-},
-"missing_eye":
-{
-    "type": "palladium:render_layer",
-    "hidden": true,
-    "render_layer": "airline_heroes:eyes_missing",
-	"conditions": {
-				"unlocking": [
-{
-    "type": "palladium:ability_unlocked",
-    "ability": "half_mass_form"
-}
-		]
-	}
-},
-"half_mass_animation": {
-    "type": "palladium:animation_timer",
-    "hidden": true,
-    "start_value": 0,
-    "max_value": 50,
-		 "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "half_mass_form"
-                  }      
-		  ]
-	  }
-},
-"half_mass_interpolate": {
-    "type": "palladium:animation_timer",
-    "hidden": true,
-    "start_value": 0,
-    "max_value": 15,
-		 "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "half_mass_form"
-                  }      
-		  ]
-	  }
-},
-"half_mass_text": {
-    "type": "palladium:animation_timer",
-    "hidden": true,
-    "start_value": 0,
-    "max_value": 31,
-		 "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "half_mass_form"
-                  }      
-		  ]
-	  }
-},
-"half_mass_render": 
-{
-    "type": "palladium:render_layer",
-    "hidden": true,
-    "render_layer": "airline_heroes:half_mass_form",
-		 "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "half_mass_form"
-                  }      
-		  ]
-	  }
-},
-"half_mass_eye_particles": {
-	"type": "palladium:particles",
-	"hidden": true,
-	"emitter": [
-	"airline_heroes:left_eye"
-],
-      "particle_type": "airline_heroes:pink_smoke",
-	  "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "half_mass_form"
-			 }
-		  ]
-	  }
-},
-"half_mass_arm_particles": {
-	"type": "palladium:particles",
-	"hidden": true,
-	"emitter": [
-	"airline_heroes:left_arm"
-],
-      "particle_type": "airline_heroes:pink_smoke",
-	  "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "half_mass_form"
-			 }
-		  ]
-	  }
-},
-"half_mass_leg_particles": {
-	"type": "palladium:particles",
-	"hidden": true,
-	"emitter": [
-	"airline_heroes:left_leg"
-],
-      "particle_type": "airline_heroes:pink_smoke",
-	  "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "half_mass_form"
-			 }
-		  ]
-	  }
-},
-"half_mass_body_particles": {
-	"type": "palladium:particles",
-	"hidden": true,
-	"emitter": [
-	"airline_heroes:left_body"
-],
-      "particle_type": "airline_heroes:pink_smoke",
-	  "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "half_mass_form"
-			 },
-			 {
-    "type": "palladium:interval",
-    "active_ticks": 1,
-    "disabled_ticks": 1
-}
-		  ]
-	  }
-},
-"half_mass_transformation_attribute": {
-    "type": "palladium:attribute_modifier",
-    "hidden": true,
-    "attribute": "minecraft:generic.movement_speed",
-    "amount": -1,
-    "operation": 2,
-    "uuid": "698be4fb-af04-42f2-8948-e6ccdc0d99e1",
-		  "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:animation_timer_ability",
-                    "ability": "half_mass_animation",
-					"min": 1,
-					"max": 49
-			 }
-		  ]
-	  }
-},
-"half_mass_transformation_sound":
-{
-    "type": "palladium:play_sound",
-    "hidden": true,
-    "sound": "airline_heroes:half_mass_form",
-    "volume": 1,
-    "pitch": 1,
-    "looping": false,
-    "play_self": false,
-    "play_others": false,
-			  "conditions": {
-		  "enabling": [
-{
-    "type": "palladium:ability_enabled",
-    "ability": "half_mass_form"
-}
-		  ]
-	  }
-},
-"half_mass_transformation_pop":
-{
-    "type": "palladium:play_sound",
-    "hidden": true,
-    "sound": "minecraft:block.fire.extinguish",
-    "volume": 1,
-    "pitch": 0.7,
-    "looping": false,
-    "play_self": false,
-    "play_others": false,
-		  "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:animation_timer_ability",
-                    "ability": "half_mass_animation",
-					"min": 49,
-					"max": 49
-			 }
-		  ]
-	  }
-},
-"half_mass_speed": {
-    "type": "palladium:attribute_modifier",
-    "hidden": true,
-    "attribute": "minecraft:generic.movement_speed",
-    "amount": 1.5,
-    "operation": 2,
-    "uuid": "798be4fb-af04-42f2-8948-e6ccdc0d99e1",
-		  "conditions": {
-		  "enabling": [
-            {
-                    "type": "palladium:ability_enabled",
-                    "ability": "half_mass_form"
-			 }
-		  ]
-	  }
-},
-"half_mass_gravity": {
-    "type": "palladium:attribute_modifier",
-    "hidden": true,
-    "attribute": "porting_lib:entity_gravity",
-    "amount": -0.07,
-    "operation": 0,
-    "uuid": "798be4fb-af04-42f2-8948-e6ccdc0d99e1",
-		  "conditions": {
-		  "enabling": [
-            {
-                    "type": "palladium:ability_enabled",
-                    "ability": "half_mass_form"
-			 }
-		  ]
-	  }
-},
-"half_mass_no_fall": {
-    "type": "palladium:damage_immunity",
-    "hidden": true,
-    "damage_sources": [
-        "minecraft:is_fall"
-    ],
-		  "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "half_mass_form"
-			 }
-		  ]
-	  }
-},
-"half_mass_dual_wielding": {
-    "type": "palladium:dual_wielding",
-    "hidden": true,
-			  "conditions": {
-		  "enabling": [
-             {
-                    "type": "palladium:ability_enabled",
-                    "ability": "half_mass_form"
-			 }
-		  ]
-	  }
-}
-}
 }
