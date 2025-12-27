@@ -3,6 +3,12 @@
   "background": "minecraft:textures/block/white_wool.png",
   "icon": "airline_heroes:textures/icons/ergokinesis.png",
   "gui_display_type": "tree",
+  "energy_bars": {
+    "awaken": {
+      "max": 500,
+      "color": "#fdf1c6"
+    }
+  },
   "abilities": {
     "gui": {
       "type": "airline_heroes:set_name_description",
@@ -17,10 +23,7 @@
       "type": "palladium:dummy",
       "icon": "airline_heroes:textures/icons/ergokinesis.png",
       "title": "Ergokinesis",
-      "gui_position": [
-        0,
-        0
-      ],
+      "gui_position": [0, 0],
       "bar_color": "light_gray",
       "hidden_in_bar": true,
       "list_index": -1,
@@ -123,34 +126,23 @@
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:or",
-            "conditions": [
-              {
-                "type": "palladium:and",
-                "conditions": [
-                  {
-                    "type": "palladium:ability_enabled",
-                    "ability": "flight"
-                  },
-                  {
-                    "type": "palladium:is_hovering_or_flying"
-                  }
-                ]
-              },
-              {
-                "type": "palladium:ability_enabled",
-                "ability": "beam"
-              },
-              {
-                "type": "palladium:ability_enabled",
-                "ability": "awaken"
-              }
-            ]
+            "type": "palladium:ability_enabled",
+            "ability": "beam"
           },
           {
             "type": "palladium:interval",
             "active_ticks": 1,
             "disabled_ticks": 40
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_enabled",
+                "power": "null",
+                "ability": "awaken"
+              }
+            ]
           }
         ]
       }
@@ -223,20 +215,29 @@
       "hidden": true,
       "hunger": -1,
       "conditions": {
-        "enabling": {
-          "type": "palladium:ability_enabled",
-          "ability": "blast"
-        }
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "blast"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_enabled",
+                "power": "null",
+                "ability": "awaken"
+              }
+            ]
+          }
+        ]
       }
     },
     "flight": {
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/wings.png",
       "title": "Flight",
-      "gui_position": [
-        1,
-        -1
-      ],
+      "gui_position": [1, -1],
       "bar_color": "light_gray",
       "hidden": false,
       "list_index": -1,
@@ -287,10 +288,7 @@
       "type": "palladium:particles",
       "hidden": true,
       "hidden_in_bar": true,
-      "emitter": [
-        "airline_heroes:energy_right",
-        "airline_heroes:energy_left"
-      ],
+      "emitter": ["airline_heroes:energy_right", "airline_heroes:energy_left"],
       "particle_type": "minecraft:electric_spark",
       "options": "",
       "conditions": {
@@ -313,10 +311,7 @@
       "title": "Awaken",
       "bar_color": "light_gray",
       "list_index": 1,
-      "gui_position": [
-        2,
-        -1
-      ],
+      "gui_position": [2, -1],
       "conditions": {
         "enabling": [
           {
@@ -366,14 +361,41 @@
         ]
       }
     },
+    "recharge": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "null",
+      "energy_bar_usage": {
+        "energy_bar": "awaken",
+        "amount": -1
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_enabled",
+                "power": "null",
+                "ability": "awaken"
+              }
+            ]
+          }
+        ],
+        "unlocking": []
+      }
+    },
     "health_upgrade_1": {
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/health_upgrade_1.png",
       "title": "Health Increase 1",
-      "gui_position": [
-        0,
-        1
-      ],
+      "gui_position": [0, 1],
       "attribute": "minecraft:generic.max_health",
       "amount": 8,
       "operation": 0,
@@ -400,10 +422,7 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/health_upgrade_2.png",
       "title": "Health Increase 2",
-      "gui_position": [
-        0,
-        2
-      ],
+      "gui_position": [0, 2],
       "attribute": "minecraft:generic.max_health",
       "amount": 6,
       "operation": 0,
@@ -430,10 +449,7 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/health_upgrade_3.png",
       "title": "Health Increase 3",
-      "gui_position": [
-        0,
-        3
-      ],
+      "gui_position": [0, 3],
       "attribute": "minecraft:generic.max_health",
       "amount": 6,
       "operation": 0,
@@ -478,10 +494,7 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/power_upgrade_1.png",
       "title": "Power Increase 1",
-      "gui_position": [
-        1,
-        0
-      ],
+      "gui_position": [1, 0],
       "attribute": "palladium:punch_damage",
       "amount": 10,
       "operation": 0,
@@ -508,10 +521,7 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/power_upgrade_2.png",
       "title": "Power Increase 2",
-      "gui_position": [
-        2,
-        0
-      ],
+      "gui_position": [2, 0],
       "attribute": "palladium:punch_damage",
       "amount": 5,
       "operation": 0,
@@ -538,10 +548,7 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/power_upgrade_3.png",
       "title": "Power Increase 3",
-      "gui_position": [
-        3,
-        0
-      ],
+      "gui_position": [3, 0],
       "attribute": "palladium:punch_damage",
       "amount": 4,
       "operation": 0,
@@ -586,10 +593,7 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/endurance_upgrade_1.png",
       "title": "Endurance Increase 1",
-      "gui_position": [
-        -1,
-        0
-      ],
+      "gui_position": [-1, 0],
       "attribute": "minecraft:generic.movement_speed",
       "amount": 0.02,
       "operation": 0,
@@ -621,10 +625,7 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/endurance_upgrade_2.png",
       "title": "Endurance Increase 2",
-      "gui_position": [
-        -2,
-        0
-      ],
+      "gui_position": [-2, 0],
       "attribute": "minecraft:generic.movement_speed",
       "amount": 0.02,
       "operation": 0,
@@ -656,10 +657,7 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/endurance_upgrade_3.png",
       "title": "Endurance Increase 3",
-      "gui_position": [
-        -3,
-        0
-      ],
+      "gui_position": [-3, 0],
       "attribute": "minecraft:generic.movement_speed",
       "amount": 0.02,
       "operation": 0,

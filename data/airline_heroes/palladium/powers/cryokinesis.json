@@ -1,225 +1,294 @@
 {
-  "name": "Power Stealer",
-  "background": "minecraft:textures/block/black_concrete.png",
-  "persistent_data": true,
-  "icon": "minecraft:ender_pearl",
+  "name": "Cryokinesis",
+  "background": "minecraft:textures/block/light_blue_wool.png",
+  "icon": "minecraft:ice",
+  "gui_display_type": "tree",
   "abilities": {
-    "gui": {
-      "type": "airline_heroes:set_name_description",
-      "title": "null",
+    "freezeproof": {
+      "type": "palladium:damage_immunity",
       "hidden": true,
       "hidden_in_bar": true,
       "list_index": -1,
-      "power_name": "All For One",
-      "power_description": "Allows you to take and give people abilities"
+      "damage_sources": [
+        "minecraft:is_freezing"
+      ]
     },
-    "start": {
-      "type": "palladium:dummy",
-      "icon": "airline_heroes:textures/icons/afo.png",
-      "title": "All For One",
+    "iceform": {
+      "type": "palladium:skin_change",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
       "bar_color": "light_gray",
+      "hidden": true,
       "hidden_in_bar": true,
       "list_index": -1,
       "gui_position": "null",
-      "description": "Able to steal others power",
+      "description": "null",
+      "texture": "airline_heroes:textures/models/ice-man.png",
+      "model_type": "keep",
+      "priority": 50,
       "conditions": {
-        "enabling": [],
+        "enabling": [
+          {
+            "type": "palladium:toggle",
+            "cooldown": 0,
+            "key_type": "right_click",
+            "needs_empty_hand": false
+          }
+        ]
+      }
+    },
+    "frostwalker": {
+      "type": "palladium:command",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "commands": [
+        "fill ~2 ~-1 ~2 ~-2 ~-1 ~-2 ice replace minecraft:water",
+        "fill ~2 ~-1 ~2 ~-2 ~-1 ~-2 obsidian replace minecraft:lava"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "iceform"
+          }
+        ]
+      }
+    },
+    "cooler": {
+      "type": "palladium:command",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "commands": [
+        "execute as @e[distance=..3] run damage @s 1 minecraft:freeze"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "iceform"
+          }
+        ]
+      }
+    },
+    "icebeam": {
+      "type": "palladium:energy_beam",
+      "icon": "minecraft:snow_block",
+      "title": "Snow Beam",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "gui_position": [
+        0,
+        -1
+      ],
+      "list_index": -1,
+      "damage_type": "minecraft:freeze",
+      "damage": 1,
+      "max_distance": 10,
+      "speed": 0.5,
+      "set_on_fire_seconds": 0,
+      "cause_fire": false,
+      "smelt_blocks": false,
+      "commands_on_block_hit": [
+        "function airline_heroes:frost"
+      ],
+      "commands_on_entity_hit": [],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "icebeam_hand"
+          }
+        ]
+      }
+    },
+    "icebeam2": {
+      "type": "palladium:energy_beam",
+      "icon": "minecraft:ice",
+      "title": "Ice Beam",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "gui_position": [
+        1,
+        -1
+      ],
+      "list_index": -1,
+      "energy_beam": "airline_heroes:icebeam",
+      "damage_type": "minecraft:freeze",
+      "damage": 0,
+      "max_distance": 10,
+      "speed": 0.5,
+      "set_on_fire_seconds": 0,
+      "cause_fire": false,
+      "smelt_blocks": false,
+      "commands_on_block_hit": [
+        "function airline_heroes:freeze"
+      ],
+      "commands_on_entity_hit": [],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "icebeam_hand"
+          }
+        ],
         "unlocking": [
           {
-            "type": "palladium:experience_level_buyable",
-            "xp_level": 0,
-            "flat_levels": true
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Scoreboard Score"
+            }
           },
           {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:has_effect",
-                "effect": "airline_heroes:nullified"
-              }
-            ]
+            "type": "palladium:ability_unlocked",
+            "ability": "icebeam"
           }
         ]
       }
     },
-    "steal": {
-      "type": "airline_heroes:power_steal",
-      "title": "Steal Power",
-      "description": "Steal a superpower from a targeted player.",
-      "icon": "airline_heroes:textures/icons/afo.png",
-      "hidden": true,
-      "list_index": 0,
-      "range": 5,
-      "whitelist": [
-        "airline_heroes:luck",
-        "airline_heroes:gas",
-        "airline_heroes:broodweaver",
-        "airline_heroes:brood",
-        "airline_heroes:hot_blooded",
-        "airline_heroes:muses",
-        "airline_heroes:kinetic_energy_manipulation",
-        "airline_heroes:enhanced_vision",
-        "airline_heroes:energy_transference",
-        "airline_heroes:ergo",
-        "airline_heroes:push_pull",
-        "airline_heroes:striker"
+    "icebeam3": {
+      "type": "palladium:energy_beam",
+      "icon": "minecraft:blue_ice",
+      "title": "Cold Beam",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "gui_position": [
+        2,
+        -1
       ],
-      "max": 10,
+      "list_index": -1,
+      "energy_beam": "airline_heroes:icebeam",
+      "damage_type": "minecraft:freeze",
+      "damage": 0,
+      "max_distance": 10,
+      "speed": 0.5,
+      "set_on_fire_seconds": 0,
+      "cause_fire": false,
+      "smelt_blocks": false,
+      "commands_on_block_hit": [
+        "function airline_heroes:frozen"
+      ],
+      "commands_on_entity_hit": [],
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:action"
+            "type": "palladium:ability_enabled",
+            "ability": "icebeam_hand"
           }
         ],
         "unlocking": [
           {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Scoreboard Score"
+            }
+          },
+          {
             "type": "palladium:ability_unlocked",
-            "ability": "start"
+            "ability": "icebeam2"
           }
         ]
       }
     },
-    "transfer": {
-      "type": "airline_heroes:power_bestow",
-      "title": "Transfer Power",
-      "description": "Gift a stolen superpower to a targeted player.",
+    "iceage": {
+      "type": "palladium:energy_beam",
+      "icon": "minecraft:obsidian",
+      "title": "Ice Age",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "gui_position": [3,-1],
+      "list_index": -1,
+      "energy_beam": "airline_heroes:icebeam",
+      "damage_type": "minecraft:freeze",
+      "damage": 0,
+      "max_distance": 10,
+      "speed": 0.5,
+      "set_on_fire_seconds": 0,
+      "cause_fire": false,
+      "smelt_blocks": false,
+      "commands_on_block_hit": [
+        "function airline_heroes:iceage"
+      ],
+      "commands_on_entity_hit": [],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "icebeam_hand"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Scoreboard Score"
+            }
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "icebeam3"
+          }
+        ]
+      }
+    },
+    "ice_beam_particles": {
+      "type": "palladium:particles",
       "hidden": true,
-      "icon": "minecraft:ender_eye",
-      "list_index": 1,
-      "range": 5,
-      "max": 10,
+      "emitter": "airline_heroes:ice_beam",
+      "particle_type": "minecraft:snowflake",
+      "options": "",
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:action"
-          }
-        ],
-        "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "ability": "start"
+            "type": "palladium:ability_enabled",
+            "ability": "icebeam_hand"
           }
         ]
       }
     },
-    "transfer_all": {
-      "type": "airline_heroes:power_bestow_all",
-      "icon": "minecraft:barrier",
-      "title": "Gift All Stolen Powers",
+    "cold": {
+      "type": "airline_heroes:potion_aoe",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "radius": 5,
+      "time": 2,
+      "effect": "minecraft:slowness",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "iceform"
+          }
+        ]
+      }
+    },
+    "icebeam_hand": {
+      "type": "palladium:aim",
+      "title": "Cold Beam",
       "bar_color": "light_gray",
+      "icon": "minecraft:ice",
       "hidden": true,
       "hidden_in_bar": false,
-      "list_index": 2,
-      "range": 3,
-      "max": 3,
-      "whitelist": [
-        "airline_heroes:luck",
-        "airline_heroes:gas",
-        "airline_heroes:broodweaver",
-        "airline_heroes:brood",
-        "airline_heroes:hot_blooded",
-        "airline_heroes:muses",
-        "airline_heroes:kinetic_energy_manipulation",
-        "airline_heroes:enhanced_vision",
-        "airline_heroes:energy_transference",
-        "airline_heroes:ergo",
-        "airline_heroes:push_pull",
-        "airline_heroes:striker"
-      ],
+      "gui_position": [0,-1],
+      "list_index": -1,
+      "time": 5,
+      "arm": "main_arm",
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:action"
-          }
-        ],
-        "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "ability": "start"
-          }
-        ]
-      }
-    },
-    "selector_cycle": {
-      "type": "palladium:dummy",
-      "title": "Cycle Power Selector",
-      "description": "Cycle through the power selector slots (1-3).",
-      "hidden": true,
-      "icon": "minecraft:comparator",
-      "list_index": 3,
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:held"
-          }
-        ],
-        "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "ability": "start"
-          }
-        ]
-      }
-    },
-    "selector_cycle_up": {
-      "type": "airline_heroes:prop_adjust_num",
-      "prop": "collectionSelector",
-      "list_index": 3,
-      "hidden": true,
-      "hidden_in_bar": true,
-      "amount": 1,
-      "mode": "add",
-      "num2": 10,
-      "reset": false,
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:ability_enabled",
-            "power": "null",
-            "ability": "selector_cycle"
-          },
-          {
-            "type": "palladium:action",
-            "key_type": "scroll_up"
-          }
-        ]
-      }
-    },
-    "selector_cycle_down": {
-      "type": "airline_heroes:prop_adjust_num",
-      "prop": "collectionSelector",
-      "list_index": 4,
-      "hidden": true,
-      "hidden_in_bar": true,
-      "amount": 1,
-      "mode": "subtract",
-      "num2": 1,
-      "reset": false,
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:ability_enabled",
-            "power": "null",
-            "ability": "selector_cycle"
-          },
-          {
-            "type": "palladium:action",
-            "key_type": "scroll_down"
-          }
-        ]
-      }
-    },
-    "selector_tell": {
-      "type": "airline_heroes:prop_tell",
-      "prop": "collectionSelector",
-      "hidden": true,
-      "title": "Current Power Selector",
-      "message": "The current power slot selected is: ",
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:ability_enabled",
-            "ability": "selector_cycle"
+            "type": "palladium:held",
+            "cooldown": 0,
+            "key_type": "key_bind",
+            "needs_empty_hand": false
           }
         ]
       }
@@ -228,7 +297,10 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/health_upgrade_1.png",
       "title": "Health Increase 1",
-      "gui_position": [0, 1],
+      "gui_position": [
+        0,
+        1
+      ],
       "attribute": "minecraft:generic.max_health",
       "amount": 8,
       "operation": 0,
@@ -243,10 +315,6 @@
             "description": {
               "text": "Scoreboard Score"
             }
-          },
-          {
-            "type": "palladium:ability_unlocked",
-            "ability": "start"
           }
         ]
       }
@@ -255,7 +323,10 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/health_upgrade_2.png",
       "title": "Health Increase 2",
-      "gui_position": [0, 2],
+      "gui_position": [
+        0,
+        2
+      ],
       "attribute": "minecraft:generic.max_health",
       "amount": 6,
       "operation": 0,
@@ -282,7 +353,10 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/health_upgrade_3.png",
       "title": "Health Increase 3",
-      "gui_position": [0, 3],
+      "gui_position": [
+        0,
+        3
+      ],
       "attribute": "minecraft:generic.max_health",
       "amount": 6,
       "operation": 0,
@@ -309,7 +383,10 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/power_upgrade_1.png",
       "title": "Power Increase 1",
-      "gui_position": [1, 0],
+      "gui_position": [
+        1,
+        0
+      ],
       "attribute": "palladium:punch_damage",
       "amount": 10,
       "operation": 0,
@@ -324,10 +401,6 @@
             "description": {
               "text": "Scoreboard Score"
             }
-          },
-          {
-            "type": "palladium:ability_unlocked",
-            "ability": "start"
           }
         ]
       }
@@ -336,7 +409,10 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/power_upgrade_2.png",
       "title": "Power Increase 2",
-      "gui_position": [2, 0],
+      "gui_position": [
+        2,
+        0
+      ],
       "attribute": "palladium:punch_damage",
       "amount": 5,
       "operation": 0,
@@ -363,7 +439,10 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/power_upgrade_3.png",
       "title": "Power Increase 3",
-      "gui_position": [3, 0],
+      "gui_position": [
+        3,
+        0
+      ],
       "attribute": "palladium:punch_damage",
       "amount": 4,
       "operation": 0,
@@ -390,7 +469,10 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/endurance_upgrade_1.png",
       "title": "Endurance Increase 1",
-      "gui_position": [-1, 0],
+      "gui_position": [
+        -1,
+        0
+      ],
       "attribute": "minecraft:generic.movement_speed",
       "amount": 0.02,
       "operation": 0,
@@ -410,10 +492,6 @@
             "description": {
               "text": "Scoreboard Score"
             }
-          },
-          {
-            "type": "palladium:ability_unlocked",
-            "ability": "start"
           }
         ]
       }
@@ -422,7 +500,10 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/endurance_upgrade_2.png",
       "title": "Endurance Increase 2",
-      "gui_position": [-2, 0],
+      "gui_position": [
+        -2,
+        0
+      ],
       "attribute": "minecraft:generic.movement_speed",
       "amount": 0.02,
       "operation": 0,
@@ -454,7 +535,10 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/endurance_upgrade_3.png",
       "title": "Endurance Increase 3",
-      "gui_position": [-3, 0],
+      "gui_position": [
+        -3,
+        0
+      ],
       "attribute": "minecraft:generic.movement_speed",
       "amount": 0.02,
       "operation": 0,

@@ -1,0 +1,2 @@
+summon minecraft:armor_stand ~ ~ ~ {Invisible:true,NoBasePlate:true,NoGravity:true,Small:true,DisabledSlots:4144959,Tags:["Explosive.Landmine"]}
+superpower set airline_heroes:explosive_landmine_effect @e[type=minecraft:armor_stand,tag=Explosive.Landmine]
