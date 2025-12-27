@@ -15,9 +15,11 @@
     "gui_position": "null",
     "description": "Your superior vision allows you to see through the dark.",
     "first_tick_commands": [],
-    "last_tick_commands": [],
+    "last_tick_commands": [
+        "effect clear @s minecraft:night_vision"
+    ],
     "commands": [
-        "effect give @s minecraft:night_vision 1 0 true"
+        "effect give @s minecraft:night_vision 15 0 true"
     ],
 		"conditions": {
 		"enabling": [

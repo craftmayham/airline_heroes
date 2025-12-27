@@ -344,11 +344,11 @@
         "hidden": false,
         "list_index": 2,
         "gui_position": [1,-1],
-        "description": "Imbue kinetic energy into your legs, enhancing your movement capablities.",
+        "description": "Imbue kinetic energy into your legs and propel yourself forward.",
         "conditions": {
             "enabling": [
                 {
-                    "type": "palladium:toggle",
+                    "type": "palladium:action",
                     "cooldown": 0,
                     "key_type": "key_bind",
                     "needs_empty_hand": false,
@@ -363,7 +363,7 @@
                 {
                     "type": "palladium:objective_score",
                     "objective": "airline_heroes.kinetic_energy",
-                    "min_score": 5
+                    "min_score": 100
                 },
                 {
                     "type": "palladium:ability_unlocked",
@@ -372,13 +372,10 @@
             ]
         }
     },
-    "charged_legs_speed": {
-        "type": "palladium:attribute_modifier",
+    "charged_legs_launch": {
+        "type": "airline_heroes:launch_player",
         "hidden": true,
-        "attribute": "minecraft:generic.movement_speed",
-        "amount": 2,
-        "operation": 1,
-        "uuid": "9c54129c-290e-40d6-b2f0-698912944639",
+        "power": 2,
         "conditions": {
             "enabling": [
                 {
@@ -388,13 +385,14 @@
             ]
         }
     },
-    "charged_legs_step_height": {
-        "type": "palladium:attribute_modifier",
+    "charge_legs_commands": {
+        "type": "palladium:command",
         "hidden": true,
-        "attribute": "porting_lib:step_height_addition",
-        "amount": 1,
-        "operation": 0,
-        "uuid": "71928ad0-4db2-448e-88ca-b9662379cb59",
+        "first_tick_commands": [
+            "scoreboard players remove @s airline_heroes.kinetic_energy 100"
+        ],
+        "last_tick_commands": [],
+        "commands": [],
         "conditions": {
             "enabling": [
                 {
@@ -404,29 +402,16 @@
             ]
         }
     },
-    "charged_legs_jump_boost": {
-        "type": "palladium:attribute_modifier",
+    "charged_legs_sound": {
+        "type": "palladium:play_sound",
         "hidden": true,
-        "attribute": "palladium:jump_power",
-        "amount": 1.5,
-        "operation": 1,
-        "uuid": "e94f5154-12df-411c-9724-c721042d1592",
-        "conditions": {
-            "enabling": [
-                {
-                    "type": "palladium:ability_enabled",
-                    "ability": "charge_legs_dummy"
-                }
-            ]
-        }
-    },
-    "charged_legs_fall_res": {
-        "type": "palladium:attribute_modifier",
-        "hidden": true,
-        "attribute": "palladium:fall_resistance",
-        "amount": 10,
-        "operation": 0,
-        "uuid": "e94f5154-12df-411c-9724-c721042d1592",
+        "hidden_in_bar": true,
+        "sound": "minecraft:entity.generic.explode",
+        "volume": 1,
+        "pitch": 2,
+        "looping": false,
+        "play_self": true,
+        "play_others": true,
         "conditions": {
             "enabling": [
                 {
@@ -533,7 +518,8 @@
         "type": "palladium:dummy",
         "icon": "minecraft:blaze_rod",
         "title": "Imbue Kinetic Energy - Full Body",
-        "hidden": false,
+        "hidden": true,
+        "hidden_in_bar": true,
         "list_index": 4,
         "gui_position": [3,-1],
         "description": "Cover yourself in kinetic energy making you incredibly powerful.",
