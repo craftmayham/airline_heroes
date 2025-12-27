@@ -3,10 +3,7 @@
 // some help from Fsang
 
 const SELECTOR = "collectionSelector"; // selector (integer)
-// 'posthuman.pSlot' power string storage slot (string)
-// 'posthuman.rSlot' target string storage slot (string)
-// 'posthuman.gSlot' gifted power string storage slot (string)
-// 'posthuman.gifter' gifter string storage slot (string)
+// 'pSlot' power string storage slot (string)
 const PSLOT = [
   "pSlot1",
   "pSlot2",
