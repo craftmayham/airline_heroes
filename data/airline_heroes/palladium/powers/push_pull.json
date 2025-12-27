@@ -5,8 +5,6 @@
   "energy_bars": {
     "infinity": {
       "max": 500,
-      "auto_increase_per_tick": 10,
-      "auto_increase_interval": 20,
       "color": "#A103FC"
     }
   },
@@ -92,6 +90,36 @@
             "ability": "start"
           }
         ]
+      }
+    },
+    "recharge": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "null",
+      "energy_bar_usage": {
+        "energy_bar": "infinity",
+        "amount": -1
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_enabled",
+                "power": "null",
+                "ability": "infinity"
+              }
+            ]
+          }
+        ],
+        "unlocking": []
       }
     },
     "push": {

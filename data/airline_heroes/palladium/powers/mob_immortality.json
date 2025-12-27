@@ -1,0 +1,31 @@
+{
+  "name": "Immortality",
+  "background": "minecraft:textures/block/green_wool.png",
+  "icon": "minecraft:totem_of_undying",
+  "gui_display_type": "tree",
+  "abilities": {
+    "immortal": {
+      "type": "palladium:immortality",
+      "icon": "minecraft:totem_of_undying",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "conditions": {
+        "enabling": [],
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Invisiblity",
+  "background": "minecraft:textures/block/green_wool.png",
+  "icon": "minecraft:phantom_membrane",
+  "gui_display_type": "tree",
+  "abilities": {
+    "invis": {
+      "type": "palladium:invisibility",
+      "icon": "palladium:textures/icon/invisibility.png",
+      "title": "null",
+      "bar_color": "light_gray",
+      "list_index": -1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:night"
+          }
+        ],
+        "unlocking": [
+          ,
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

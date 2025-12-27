@@ -1,0 +1,55 @@
+{
+  "name": "Speed",
+  "background": "minecraft:textures/block/green_wool.png",
+  "icon": "minecraft:feather",
+  "abilities": {
+    "speed": {
+      "type": "palladium:attribute_modifier",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "attribute": "minecraft:generic.movement_speed",
+      "amount": 2,
+      "operation": 0,
+      "uuid": "9bc21887-d916-478d-b9cb-dfa42c0a749c",
+      "conditions": {
+        "enabling": [],
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "atckspeed": {
+      "type": "palladium:attribute_modifier",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "attribute": "minecraft:generic.attack_speed",
+      "amount": 2,
+      "operation": 0,
+      "uuid": "ff62e7c8-1bd5-420b-9d92-b3ab1d1ef95d",
+      "conditions": {
+        "enabling": [],
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

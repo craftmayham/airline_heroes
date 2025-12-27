@@ -51,18 +51,13 @@
       "list_index": 0,
       "range": 5,
       "whitelist": [
-        "airline_heroes:luck",
-        "airline_heroes:gas",
-        "airline_heroes:broodweaver",
-        "airline_heroes:brood",
-        "airline_heroes:hot_blooded",
-        "airline_heroes:muses",
-        "airline_heroes:kinetic_energy_manipulation",
-        "airline_heroes:enhanced_vision",
-        "airline_heroes:energy_transference",
-        "airline_heroes:ergo",
-        "airline_heroes:push_pull",
-        "airline_heroes:striker"
+        "airline_heroes:mob_cyclops",
+        "airline_heroes:mob_fire",
+        "airline_heroes:mob_immortality",
+        "airline_heroes:mob_intangibility",
+        "airline_heroes:mob_invisiblity",
+        "airline_heroes:mob_speed",
+        "airline_heroes:mob_strength"
       ],
       "max": 10,
       "conditions": {
@@ -113,18 +108,13 @@
       "range": 3,
       "max": 3,
       "whitelist": [
-        "airline_heroes:luck",
-        "airline_heroes:gas",
-        "airline_heroes:broodweaver",
-        "airline_heroes:brood",
-        "airline_heroes:hot_blooded",
-        "airline_heroes:muses",
-        "airline_heroes:kinetic_energy_manipulation",
-        "airline_heroes:enhanced_vision",
-        "airline_heroes:energy_transference",
-        "airline_heroes:ergo",
-        "airline_heroes:push_pull",
-        "airline_heroes:striker"
+        "airline_heroes:mob_cyclops",
+        "airline_heroes:mob_fire",
+        "airline_heroes:mob_immortality",
+        "airline_heroes:mob_intangibility",
+        "airline_heroes:mob_invisiblity",
+        "airline_heroes:mob_speed",
+        "airline_heroes:mob_strength"
       ],
       "conditions": {
         "enabling": [
@@ -174,13 +164,15 @@
       "conditions": {
         "enabling": [
           {
+            "type": "palladium:action",
+            "key_type": "scroll_up"
+          }
+        ],
+        "unlocking": [
+          {
             "type": "palladium:ability_enabled",
             "power": "null",
             "ability": "selector_cycle"
-          },
-          {
-            "type": "palladium:action",
-            "key_type": "scroll_up"
           }
         ]
       }
@@ -198,13 +190,15 @@
       "conditions": {
         "enabling": [
           {
+            "type": "palladium:action",
+            "key_type": "scroll_down"
+          }
+        ],
+        "unlocking": [
+          {
             "type": "palladium:ability_enabled",
             "power": "null",
             "ability": "selector_cycle"
-          },
-          {
-            "type": "palladium:action",
-            "key_type": "scroll_down"
           }
         ]
       }
