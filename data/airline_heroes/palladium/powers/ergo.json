@@ -3,6 +3,12 @@
   "background": "minecraft:textures/block/white_wool.png",
   "icon": "airline_heroes:textures/icons/ergokinesis.png",
   "gui_display_type": "tree",
+  "energy_bars": {
+    "awaken": {
+      "max": 500,
+      "color": "#fdf1c6"
+    }
+  },
   "abilities": {
     "gui": {
       "type": "airline_heroes:set_name_description",
@@ -89,6 +95,11 @@
             "needs_empty_hand": true
           },
           {
+            "type": "airline_heroes:has_hunger",
+            "min_hunger": 1,
+            "max_hunger": 20
+          },
+          {
             "type": "palladium:not",
             "conditions": [
               {
@@ -104,6 +115,34 @@
             "type": "palladium:ability_enabled",
             "power": "null",
             "ability": "aim"
+          }
+        ]
+      }
+    },
+    "beam_hunger_removal": {
+      "type": "airline_heroes:add_hunger",
+      "hidden": true,
+      "hunger": -1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "beam"
+          },
+          {
+            "type": "palladium:interval",
+            "active_ticks": 1,
+            "disabled_ticks": 40
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_enabled",
+                "power": "null",
+                "ability": "awaken"
+              }
+            ]
           }
         ]
       }
@@ -155,6 +194,11 @@
                 "ability": "beam"
               }
             ]
+          },
+          {
+            "type": "airline_heroes:has_hunger",
+            "min_hunger": 1,
+            "max_hunger": 20
           }
         ],
         "unlocking": [
@@ -162,6 +206,29 @@
             "type": "palladium:ability_enabled",
             "power": "null",
             "ability": "aim"
+          }
+        ]
+      }
+    },
+    "blast_hunger_removal": {
+      "type": "airline_heroes:add_hunger",
+      "hidden": true,
+      "hunger": -1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "blast"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_enabled",
+                "power": "null",
+                "ability": "awaken"
+              }
+            ]
           }
         ]
       }
@@ -189,6 +256,11 @@
                 "ability": "aim"
               }
             ]
+          },
+          {
+            "type": "airline_heroes:has_hunger",
+            "min_hunger": 1,
+            "max_hunger": 20
           }
         ],
         "unlocking": [
@@ -245,6 +317,11 @@
           {
             "type": "palladium:toggle",
             "key_type": "key_bind"
+          },
+          {
+            "type": "airline_heroes:has_hunger",
+            "min_hunger": 1,
+            "max_hunger": 20
           }
         ],
         "unlocking": [
@@ -282,6 +359,36 @@
             "ability": "awaken_dummy"
           }
         ]
+      }
+    },
+    "recharge": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "null",
+      "energy_bar_usage": {
+        "energy_bar": "awaken",
+        "amount": -1
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_enabled",
+                "power": "null",
+                "ability": "awaken"
+              }
+            ]
+          }
+        ],
+        "unlocking": []
       }
     },
     "health_upgrade_1": {
