@@ -8,7 +8,6 @@ EntityEvents.spawned((event) => {
   let powerlist = [
     "airline_heroes:mob_cyclops",
     "airline_heroes:mob_fire",
-    "airline_heroes:mob_immortality",
     "airline_heroes:mob_intangibility",
     "airline_heroes:mob_invisibility",
     "airline_heroes:mob_speed",
