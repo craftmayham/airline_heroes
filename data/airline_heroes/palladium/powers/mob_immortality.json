@@ -1,5 +1,5 @@
 {
-  "name": "Immortality",
+  "name": "Mob Immortality",
   "background": "minecraft:textures/block/green_wool.png",
   "icon": "minecraft:totem_of_undying",
   "gui_display_type": "tree",

@@ -142,3 +142,14 @@ StartupEvents.registry("palladium:abilities", (event) => {
       }
     });
 });
+
+StartupEvents.registry("palladium:abilities", (event) => {
+  event.create("airline_heroes:afo_prop_tell").tick((entity, enabled) => {
+    let range = 5;
+    let target = entity.rayTrace(range).entity;
+    let targetPower = palladium.powers.getPowerIds(target);
+    if (enabled && target != null) {
+      entity.setStatusMessage("§6" + "The target's power is: " + targetPower);
+    } else return;
+  });
+});

@@ -134,6 +134,20 @@
         ]
       }
     },
+    "power_tell": {
+      "type": "airline_heroes:afo_prop_tell",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": 4,
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "start"
+          }
+        ]
+      }
+    },
     "selector_cycle": {
       "type": "palladium:dummy",
       "title": "Cycle Power Selector",

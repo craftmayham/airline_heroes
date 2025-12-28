@@ -1,5 +1,5 @@
 {
-  "name": "Invisiblity",
+  "name": "Mob Invisiblity",
   "background": "minecraft:textures/block/green_wool.png",
   "icon": "minecraft:phantom_membrane",
   "gui_display_type": "tree",
