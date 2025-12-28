@@ -1,0 +1,112 @@
+{
+  "name": "Cryokinesis",
+  "background": "minecraft:textures/block/light_blue_wool.png",
+  "icon": "minecraft:ice",
+  "gui_display_type": "tree",
+  "abilities": {
+    "freezeproof": {
+      "type": "palladium:damage_immunity",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "damage_sources": ["minecraft:is_freezing"],
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "frostwalker": {
+      "type": "palladium:command",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "commands": [
+        "fill ~2 ~-1 ~2 ~-2 ~-1 ~-2 frosted_ice replace minecraft:water"
+      ],
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "cooler": {
+      "type": "palladium:command",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "commands": [
+        "execute as @e[distance=..3] run damage @s 1 minecraft:freeze"
+      ],
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "snow": {
+      "type": "palladium:particles",
+      "hidden": true,
+      "emitter": "airline_heroes:mob_snow",
+      "particle_type": "minecraft:snowflake",
+      "options": "",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "cold": {
+      "type": "airline_heroes:potion_aoe",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "radius": 5,
+      "time": 2,
+      "effect": "minecraft:slowness",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
