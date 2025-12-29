@@ -55,13 +55,11 @@
         "airline_heroes:mob_fire",
         "airline_heroes:mob_immortality",
         "airline_heroes:mob_intangibility",
-        "airline_heroes:mob_invisiblity",
+        "airline_heroes:mob_invisibility",
         "airline_heroes:mob_speed",
         "airline_heroes:mob_strength",
         "airline_heroes:mob_cryo",
-        "airline_heroes:mob_sounds",
-        "airline_heroes:kinetic_energy_manipulation",
-        "airline_heroes:cryokinesis"
+        "airline_heroes:mob_sounds"
       ],
       "max": 10,
       "conditions": {
@@ -116,7 +114,7 @@
         "airline_heroes:mob_fire",
         "airline_heroes:mob_immortality",
         "airline_heroes:mob_intangibility",
-        "airline_heroes:mob_invisiblity",
+        "airline_heroes:mob_invisibility",
         "airline_heroes:mob_speed",
         "airline_heroes:mob_strength",
         "airline_heroes:mob_cryo",

@@ -1,0 +1,27 @@
+{
+  "name": "Mob Explosion",
+  "background": "minecraft:textures/block/orange_wool.png",
+  "icon": "minecraft:tnt",
+  "gui_display_type": "tree",
+  "abilities": {
+    "explode": {
+      "type": "airline_heroes:target_explosion",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "radius": 2,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:interval",
+            "active_ticks": 20,
+            "disabled_ticks": 100
+          }
+        ],
+        "unlocking": []
+      }
+    }
+  }
+}
