@@ -6,7 +6,7 @@
   "abilities": {
     "toggle_iceform_dummy": {
       "type": "palladium:dummy",
-      "icon": "minecraft:blaze_rod",
+      "icon": "airline_heroes:textures/icons/toggle_cryo.png",
       "title": "Ice Form",
       "hidden": false,
       "list_index": 0,
@@ -31,6 +31,42 @@
                 "effect": "airline_heroes:nullified"
               }
             ]
+          }
+        ]
+      }
+    },
+    "toggle_iceform_vfx": {
+      "type": "palladium:command",
+      "hidden": true,
+      "first_tick_commands": [
+        "particle minecraft:snowflake ~ ~ ~ 1 1 1 1 100"
+      ],
+      "last_tick_commands": [],
+      "commands": [],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          }
+        ]
+      }
+    },
+    "toggle_iceform_sfx": {
+      "type": "palladium:play_sound",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "sound": "airline_heroes:toggle.cryo",
+      "volume": 2,
+      "pitch": 1,
+      "looping": false,
+      "play_self": true,
+      "play_others": true,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
           }
         ]
       }
@@ -207,10 +243,62 @@
       "time": 10,
       "arm": "main_arm",
       "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          }
+        ],
         "enabling": [
           {
             "type": "palladium:ability_enabled",
             "ability": "icebeam_dummy"
+          }
+        ]
+      }
+    },
+    "charge_item_projectile": {
+      "type": "airline_heroes:projectile_with_offset",
+      "entity_type": "palladium:custom_projectile",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "velocity": 2,
+      "swinging_arm": "right_arm",
+      "ignore_player_movement": true,
+      "damage_from_player": false,
+      "yaw_inaccuracy": 0,
+      "pitch_inaccuracy": 0,
+      "count": 1,
+      "entity_data": {
+        "Gravity": 0.1,
+        "Damage": 0.01,
+        "Size": 1.2,
+        "Lifetime": 120,
+        "ExplosionRadius": 0,
+        "ExplosionBlockInteraction": "break",
+        "DieOnEntityHit": true,
+        "DieOnBlockHit": true,
+        "Appearances": [
+          {
+            "Type": "item",
+            "Item": "minecraft:snowball"
+          }
+        ]
+      },
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          }
+        ],
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "cooldown": 0,
+            "key_type": "right_click",
+            "needs_empty_hand": false,
+            "allow_scrolling_when_crouching": true
           }
         ]
       }
@@ -227,6 +315,10 @@
           {
             "type": "palladium:wears_suit_set",
             "suit_set": "airline_heroes:cryo_suit"
+          },
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
           }
         ]
       }
@@ -345,7 +437,7 @@
       "title": "Power Increase 1",
       "gui_position": [1,0],
       "attribute": "palladium:punch_damage",
-      "amount": 10,
+      "amount": 1,
       "operation": 0,
       "uuid": "7d62e42b-77cb-4e64-ade0-a3aaba45ef1a",
       "conditions": {
@@ -372,7 +464,7 @@
       "title": "Power Increase 2",
       "gui_position": [2,0],
       "attribute": "palladium:punch_damage",
-      "amount": 5,
+      "amount": 3,
       "operation": 0,
       "uuid": "bca31ef7-8664-49db-80f7-3d593689740d",
       "conditions": {
@@ -598,6 +690,15 @@
           {
             "type": "palladium:ability_enabled",
             "ability": "toggle_iceform_dummy"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:wears_suit_set",
+                "suit_set": "airline_heroes:cryo_suit"
+              }
+            ]
           }
         ]
       }
@@ -608,6 +709,21 @@
       "damage_sources": [
         "minecraft:is_freezing"
       ]
+    },
+    "skin_change": {
+      "type": "palladium:skin_change",
+      "hidden": true,
+      "texture": "airline_heroes:textures/models/cryo_overlay.png",
+      "model_type": "keep",
+      "priority": 50,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          }
+        ]
+      }
     },
     "set_name_description": {
       "type": "airline_heroes:set_name_description",

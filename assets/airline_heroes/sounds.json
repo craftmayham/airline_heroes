@@ -3,5 +3,10 @@
 	{
 		"category": "player",
 		"sounds": [{ "name": "airline_heroes:half_mass_form"}]
+	},
+	"toggle.cryo":
+	{
+		"category": "neutral",
+		"sounds": [{ "name": "airline_heroes:toggle_cryo", "stream": true}]
 	}
 }

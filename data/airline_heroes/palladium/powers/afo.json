@@ -59,7 +59,9 @@
         "airline_heroes:mob_speed",
         "airline_heroes:mob_strength",
         "airline_heroes:mob_cryo",
-        "airline_heroes:mob_sounds"
+        "airline_heroes:mob_sounds",
+        "airline_heroes:kinetic_energy_manipulation",
+        "airline_heroes:cryokinesis"
       ],
       "max": 10,
       "conditions": {
