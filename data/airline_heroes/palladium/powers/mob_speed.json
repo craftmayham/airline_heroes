@@ -1,5 +1,5 @@
 {
-  "name": "Speed",
+  "name": "Mob Speed",
   "background": "minecraft:textures/block/green_wool.png",
   "icon": "minecraft:feather",
   "abilities": {
@@ -9,7 +9,7 @@
       "hidden_in_bar": true,
       "list_index": -1,
       "attribute": "minecraft:generic.movement_speed",
-      "amount": 2,
+      "amount": 1,
       "operation": 0,
       "uuid": "9bc21887-d916-478d-b9cb-dfa42c0a749c",
       "conditions": {
@@ -33,7 +33,7 @@
       "hidden_in_bar": true,
       "list_index": -1,
       "attribute": "minecraft:generic.attack_speed",
-      "amount": 2,
+      "amount": 1,
       "operation": 0,
       "uuid": "ff62e7c8-1bd5-420b-9d92-b3ab1d1ef95d",
       "conditions": {

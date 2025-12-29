@@ -1,0 +1,103 @@
+{
+  "name": "Mob Sounds",
+  "icon": "minecraft:note_block",
+  "gui_display_type": "tree",
+  "abilities": {
+    "creeper": {
+      "type": "palladium:play_sound",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "sound": ["minecraft:entity.creeper.primed"],
+      "volume": 2,
+      "pitch": 1,
+      "looping": false,
+      "play_self": true,
+      "play_others": true,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:interval",
+            "active_ticks": 40,
+            "disabled_ticks": 400
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "cow": {
+      "type": "palladium:play_sound",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "sound": ["minecraft:entity.cow.ambient"],
+      "volume": 2,
+      "pitch": 1,
+      "looping": false,
+      "play_self": true,
+      "play_others": true,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:interval",
+            "active_ticks": 40,
+            "disabled_ticks": 200
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "warden": {
+      "type": "palladium:play_sound",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "sound": ["minecraft:entity.warden.sonic_charge"],
+      "volume": 2,
+      "pitch": 1,
+      "looping": false,
+      "play_self": true,
+      "play_others": true,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:interval",
+            "active_ticks": 40,
+            "disabled_ticks": 800
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

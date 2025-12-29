@@ -4,14 +4,19 @@ EntityEvents.spawned((event) => {
     "minecraft:skeleton",
     "minecraft:creeper",
     "minecraft:spider",
+    "minecraft:husk",
+    "minecraft:stray",
   ];
   let powerlist = [
     "airline_heroes:mob_cyclops",
     "airline_heroes:mob_fire",
     "airline_heroes:mob_intangibility",
+    "airline_heroes:mob_immortality",
     "airline_heroes:mob_invisibility",
     "airline_heroes:mob_speed",
     "airline_heroes:mob_strength",
+    "airline_heroes:mob_cryo",
+    "airline_heroes:mob_sounds",
   ];
   if (moblist.includes(event.entity.getType())) {
     let num = Math.floor(Math.random() * 100) + 1;

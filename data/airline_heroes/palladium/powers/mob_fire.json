@@ -1,5 +1,5 @@
 {
-  "name": "Fire",
+  "name": "Mob Fire",
   "background": "minecraft:textures/block/orange_wool.png",
   "icon": "minecraft:lava_bucket",
   "gui_display_type": "tree",
