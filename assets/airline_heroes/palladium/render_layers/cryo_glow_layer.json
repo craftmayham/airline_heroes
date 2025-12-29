@@ -1,0 +1,10 @@
+  {
+	"type": "palladium:compound",
+	"layers": [
+		{
+			"model_layer": "palladium:humanoid#suit",
+			"texture": "airline_heroes:textures/models/cryo_suit/cryo_lights.png",
+			"render_type": "glow", "enchantment_glint": false
+		  }
+	]
+}
