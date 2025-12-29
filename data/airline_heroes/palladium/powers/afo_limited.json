@@ -1,5 +1,5 @@
 {
-  "name": "All For One",
+  "name": "All For One - Limited",
   "background": "minecraft:textures/block/black_concrete.png",
   "persistent_data": true,
   "icon": "minecraft:ender_pearl",
@@ -10,8 +10,8 @@
       "hidden": true,
       "hidden_in_bar": true,
       "list_index": -1,
-      "power_name": "All For One",
-      "power_description": "Allows you to take and give people abilities"
+      "power_name": "All For One - Limited",
+      "power_description": "Allows you to take and give a limited amount of people's abilities"
     },
     "start": {
       "type": "palladium:dummy",
@@ -49,11 +49,10 @@
       "icon": "airline_heroes:textures/icons/afo.png",
       "hidden": true,
       "list_index": 0,
-      "range": 5,
+      "range": 2,
       "whitelist": [
         "airline_heroes:mob_cyclops",
         "airline_heroes:mob_fire",
-        "airline_heroes:mob_immortality",
         "airline_heroes:mob_intangibility",
         "airline_heroes:mob_invisiblity",
         "airline_heroes:mob_speed",
@@ -61,7 +60,7 @@
         "airline_heroes:mob_cryo",
         "airline_heroes:mob_sounds"
       ],
-      "max": 10,
+      "max": 3,
       "conditions": {
         "enabling": [
           {
@@ -79,47 +78,12 @@
     "transfer": {
       "type": "airline_heroes:power_bestow",
       "title": "Transfer Power",
-      "description": "Gift a stolen superpower to a targeted player.",
+      "description": "Gift a stolen superpower to a targeted entity.",
       "hidden": true,
       "icon": "minecraft:ender_pearl",
       "list_index": 1,
-      "range": 5,
-      "max": 10,
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:action"
-          }
-        ],
-        "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "ability": "start"
-          }
-        ]
-      }
-    },
-    "transfer_all": {
-      "type": "airline_heroes:power_bestow_all",
-      "icon": "minecraft:barrier",
-      "title": "Gift All Stolen Powers",
-      "bar_color": "light_gray",
-      "hidden": true,
-      "hidden_in_bar": false,
-      "list_index": 2,
-      "range": 5,
-      "max": 10,
-      "whitelist": [
-        "airline_heroes:mob_cyclops",
-        "airline_heroes:mob_fire",
-        "airline_heroes:mob_immortality",
-        "airline_heroes:mob_intangibility",
-        "airline_heroes:mob_invisiblity",
-        "airline_heroes:mob_speed",
-        "airline_heroes:mob_strength",
-        "airline_heroes:mob_cryo",
-        "airline_heroes:mob_sounds"
-      ],
+      "range": 2,
+      "max": 3,
       "conditions": {
         "enabling": [
           {
@@ -138,7 +102,6 @@
       "type": "airline_heroes:afo_prop_tell",
       "hidden": true,
       "hidden_in_bar": true,
-      "list_index": 4,
       "conditions": {
         "unlocking": [
           {
@@ -154,7 +117,7 @@
       "description": "Cycle through the power selector slots (1-3).",
       "hidden": true,
       "icon": "minecraft:comparator",
-      "list_index": 3,
+      "list_index": 2,
       "conditions": {
         "enabling": [
           {
@@ -177,7 +140,7 @@
       "hidden_in_bar": true,
       "amount": 1,
       "mode": "add",
-      "num2": 10,
+      "num2": 3,
       "reset": false,
       "conditions": {
         "enabling": [
