@@ -632,7 +632,7 @@
         "title": "Health Increase 1",
         "gui_position": [0,1],
         "attribute": "minecraft:generic.max_health",
-        "amount": 1,
+        "amount": 3,
         "operation": 0,
         "uuid": "833b935c-746f-44c3-b7e9-f7bc449c3f45",
         "conditions": {
@@ -659,7 +659,7 @@
         "title": "Health Increase 2",
         "gui_position": [0,2],
         "attribute": "minecraft:generic.max_health",
-        "amount": 2,
+        "amount": 3,
         "operation": 0,
         "uuid": "55b5e9ae-5de8-4c54-821c-1ebc8cf83bca",
         "conditions": {
@@ -713,7 +713,7 @@
         "title": "Endurance Increase 1",
         "gui_position": [-1,0],
         "attribute": "minecraft:generic.armor",
-        "amount": 1,
+        "amount": 3,
         "operation": 0,
         "uuid": "fc981797-79d7-426e-a5a1-785b753ea789",
         "conditions": {
@@ -740,7 +740,7 @@
         "title": "Endurance Increase 2",
         "gui_position": [-2,0],
         "attribute": "minecraft:generic.armor",
-        "amount": 2,
+        "amount": 3,
         "operation": 0,
         "uuid": "ab5d8036-b203-4578-9ad7-2af7c863a7e8",
         "conditions": {
