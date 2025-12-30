@@ -1,7 +1,7 @@
 PalladiumEvents.registerProperties((event) => {
  // if (event.getEntityType() === "minecraft:player") {
-    event.registerProperty("name", "string", "Example Name");
-    event.registerProperty("description", "string", "Example Description");
+    event.registerProperty("name", "string", "None");
+    event.registerProperty("description", "string", "");
     event.registerProperty("powerCount", "integer", 0);
     event.registerProperty("powerSelect", "integer", 0);
     event.registerProperty("collectionSelector", "integer", 1);
