@@ -54,6 +54,8 @@ StartupEvents.registry("palladium:abilities", (event) => {
                   palladium.superpowers.removeSuperpower(target, power);
                   palladium.superpowers.addSuperpower(entity, power);
                   palladium.setProperty(entity, pSlot, power);
+				  palladium.setProperty(target, "name", "None");
+                  palladium.setProperty(target, "description", "");
                 }
               });
             });
