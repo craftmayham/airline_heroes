@@ -8,16 +8,17 @@ EntityEvents.spawned((event) => {
     "minecraft:stray",
   ];
   let powerlist = [
-    "airline_heroes:mob_cyclops",
-    "airline_heroes:mob_fire",
-    "airline_heroes:mob_intangibility",
-    "airline_heroes:mob_immortality",
-    "airline_heroes:mob_invisibility",
-    "airline_heroes:mob_speed",
-    "airline_heroes:mob_strength",
-    "airline_heroes:mob_cryo",
-    "airline_heroes:mob_sounds",
-	"airline_heroes:mob_headcannon",
+    "airline_heroes:mob/2x_stregth",
+    "airline_heroes:mob/auditory_mimicry",
+    "airline_heroes:mob/big_head",
+    "airline_heroes:mob/frigiokinesis",
+    "airline_heroes:mob/headcannon",
+    "airline_heroes:mob/immortality",
+    "airline_heroes:mob/intangibility",
+    "airline_heroes:mob/ocular_mimicry",
+    "airline_heroes:mob/shadow_fade",
+    "airline_heroes:mob/speedster",
+    "airline_heroes:mob/tactile_pyrokinesis",
   ];
   if (moblist.includes(event.entity.getType())) {
     let num = Math.floor(Math.random() * 100) + 1;

@@ -54,7 +54,7 @@ StartupEvents.registry("palladium:abilities", (event) => {
                   palladium.superpowers.removeSuperpower(target, power);
                   palladium.superpowers.addSuperpower(entity, power);
                   palladium.setProperty(entity, pSlot, power);
-				  palladium.setProperty(target, "name", "None");
+                  palladium.setProperty(target, "name", "None");
                   palladium.setProperty(target, "description", "");
                 }
               });
@@ -149,7 +149,7 @@ StartupEvents.registry("palladium:abilities", (event) => {
   event.create("airline_heroes:afo_prop_tell").tick((entity, enabled) => {
     let range = 5;
     let target = entity.rayTrace(range).entity;
-    let targetPower = palladium.getProperty(target,"name")
+    let targetPower = palladium.getProperty(target, "name");
     if (enabled && target != null) {
       entity.setStatusMessage("§6" + "The target's power is: " + targetPower);
     } else return;
