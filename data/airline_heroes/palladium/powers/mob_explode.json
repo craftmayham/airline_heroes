@@ -1,9 +1,14 @@
 {
-  "name": "Mob Explosion",
+  "name": "Remote Detonation",
   "background": "minecraft:textures/block/orange_wool.png",
   "icon": "minecraft:tnt",
   "gui_display_type": "tree",
   "abilities": {
+    "set_name_description": {
+      "type": "airline_heroes:set_name_description",
+      "hidden": true,
+      "power_description": "You can detonate objects from faraway"
+    },
     "explode": {
       "type": "airline_heroes:target_explosion",
       "title": "null",

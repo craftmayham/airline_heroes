@@ -1,9 +1,14 @@
 {
-  "name": "Mob Cryo",
+  "name": "Frigiokinesis",
   "background": "minecraft:textures/block/light_blue_wool.png",
   "icon": "minecraft:ice",
   "gui_display_type": "tree",
   "abilities": {
+     "set_name_description": {
+      "type": "airline_heroes:set_name_description",
+      "hidden": true,
+      "power_description": "You can create, shape, and manipulate cold air"
+    },
     "freezeproof": {
       "type": "palladium:damage_immunity",
       "hidden": true,

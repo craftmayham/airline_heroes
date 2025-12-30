@@ -1,9 +1,14 @@
 {
-  "name": "Mob Fire",
+  "name": "Tactile Pyrokinesis",
   "background": "minecraft:textures/block/orange_wool.png",
   "icon": "minecraft:lava_bucket",
   "gui_display_type": "tree",
   "abilities": {
+    "set_name_description": {
+      "type": "airline_heroes:set_name_description",
+      "hidden": true,
+      "power_description": "Your skin boasts natural heat generating properties"
+    },
     "start": {
       "type": "palladium:dummy",
       "hidden": true,

@@ -1,5 +1,5 @@
 PalladiumEvents.registerPropertiesClientSided((event) => {
-  if (event.getEntityType() === "minecraft:player") {
+  //if (event.getEntityType() === "minecraft:player") {
     event.registerProperty("name", "string", "Example Name");
     event.registerProperty("description", "string", "Example Description");
     event.registerProperty("powerCount", "integer", 0);
@@ -15,5 +15,5 @@ PalladiumEvents.registerPropertiesClientSided((event) => {
     event.registerProperty("pSlot8", "string", "empty");
     event.registerProperty("pSlot9", "string", "empty");
     event.registerProperty("pSlot10", "string", "empty");
-  }
+  //}
 });

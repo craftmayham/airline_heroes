@@ -1,8 +1,13 @@
 {
-  "name": "Mob Intagibility",
+  "name": "Intagibility",
   "background": "minecraft:textures/block/white_wool.png",
   "icon": "minecraft:bow",
   "abilities": {
+    "set_name_description": {
+      "type": "airline_heroes:set_name_description",
+      "hidden": true,
+      "power_description": "You can move through matter as if it's not there"
+    },
     "intang": {
       "type": "palladium:intangibility",
       "icon": "minecraft:blaze_rod",

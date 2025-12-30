@@ -4,13 +4,12 @@
   "persistent_data": true,
   "icon": "minecraft:ender_pearl",
   "abilities": {
-    "gui": {
+    "set_name_description": {
       "type": "airline_heroes:set_name_description",
       "title": "null",
       "hidden": true,
       "hidden_in_bar": true,
       "list_index": -1,
-      "power_name": "All For One",
       "power_description": "Allows you to take and give people abilities"
     },
     "start": {

@@ -1,9 +1,14 @@
 {
-  "name": "Mob Invisiblity",
+  "name": "Shadow Fade",
   "background": "minecraft:textures/block/green_wool.png",
   "icon": "minecraft:phantom_membrane",
   "gui_display_type": "tree",
   "abilities": {
+    "set_name_description": {
+      "type": "airline_heroes:set_name_description",
+      "hidden": true,
+      "power_description": "You can fade into shadows"
+    },
     "invis": {
       "type": "palladium:invisibility",
       "icon": "palladium:textures/icon/invisibility.png",

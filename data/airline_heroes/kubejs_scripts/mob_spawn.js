@@ -17,6 +17,7 @@ EntityEvents.spawned((event) => {
     "airline_heroes:mob_strength",
     "airline_heroes:mob_cryo",
     "airline_heroes:mob_sounds",
+	"airline_heroes:mob_headcannon",
   ];
   if (moblist.includes(event.entity.getType())) {
     let num = Math.floor(Math.random() * 100) + 1;

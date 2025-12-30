@@ -1,8 +1,13 @@
 {
-  "name": "Mob Speed",
+  "name": "Speedster",
   "background": "minecraft:textures/block/green_wool.png",
   "icon": "minecraft:feather",
   "abilities": {
+    "set_name_description": {
+      "type": "airline_heroes:set_name_description",
+      "hidden": true,
+      "power_description": "You are able to move at extremely high speeds"
+    },
     "speed": {
       "type": "palladium:attribute_modifier",
       "hidden": true,

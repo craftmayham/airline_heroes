@@ -1,5 +1,5 @@
 {
-    "name": "Gas",
+    "name": "Sublimation",
     "background": "minecraft:textures/block/red_wool.png",
     "icon": "airline_heroes:textures/icons/sublimation_icon.png",
     "gui_display_type": "tree",
@@ -882,7 +882,6 @@
         "set_name_description": {
             "type": "airline_heroes:set_name_description",
             "hidden": true,
-            "power_name": "Sublimation",
             "power_description": "The user is able to transform their whole body into a gas"
         },
         "half_mass_form": {
