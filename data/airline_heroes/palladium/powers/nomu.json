@@ -1,0 +1,80 @@
+{
+  "name": "Nomu",
+  "background": "minecraft:textures/block/black_wool.png",
+  "icon": "airline_heroes:textures/icons/luck_icon.png",
+  "gui_display_type": "tree",
+  "abilities": {
+    "health": {
+      "type": "palladium:attribute_modifier",
+      "title": "Extreme Health",
+      "gui_position": [0, 1],
+      "icon": "airline_heroes:textures/icons/health_upgrade_3.png",
+      "hidden": false,
+      "attribute": "minecraft:generic.max_health",
+      "amount": 20,
+      "operation": 0,
+      "uuid": "be45925d-cbed-451a-bafe-42063b8a1a21",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "strength": {
+      "type": "palladium:attribute_modifier",
+      "title": "Super Strength",
+      "gui_position": [1, 0],
+      "icon": "airline_heroes:textures/icons/power_upgrade_3.png",
+      "hidden": false,
+      "attribute": "palladium:punch_damage",
+      "amount": 10,
+      "operation": 0,
+      "uuid": "46db4a9d-c1bc-4a9f-89da-9c9dbd7d099f",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "regen": {
+      "type": "palladium:healing",
+      "icon": "minecraft:apple",
+      "title": "Super Regeneration",
+      "gui_position": [-1, 0],
+      "hidden": false,
+      "list_index": -1,
+      "frequency": 10,
+      "amount": 4,
+      "conditions": {
+        "enabling": [],
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

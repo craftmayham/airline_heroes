@@ -146,6 +146,23 @@ StartupEvents.registry("palladium:abilities", (event) => {
 });
 
 StartupEvents.registry("palladium:abilities", (event) => {
+  event
+    .create("airline_heroes:nomu_creation")
+    .addProperty("range", "integer", 3, "the range to bestow a power")
+    .tick((entity, entry, holder, enabled) => {
+      if (enabled) {
+        let range = entry.getPropertyByName("range");
+        let target = entity.rayTrace(range).entity;
+        if (target === null) return;
+        if (target.isPlayer()) {
+          let power = "airline_heroes:nomu";
+          palladium.superpowers.addSuperpower(target, power);
+        } else return;
+      }
+    });
+});
+
+StartupEvents.registry("palladium:abilities", (event) => {
   event.create("airline_heroes:afo_prop_tell").tick((entity, enabled) => {
     let range = 5;
     let target = entity.rayTrace(range).entity;
