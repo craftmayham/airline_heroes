@@ -94,15 +94,36 @@ event.registerForPower('airline_heroes/half_mass_animation', 'airline_heroes:gas
     }
 });
 	
-	    event.registerForPower('airline_heroes/hand_pos', 'airline_heroes:shotgun', 2, (builder) => {
+	    event.registerForPower('airline_heroes/hand_pos', 'airline_heroes:shotgun', 1, (builder) => {
         const progress = animationUtil.getAnimationTimerAbilityValue(builder.getPlayer(), 'airline_heroes:shotgun', 'hand_pos', builder.getPartialTicks());
 if (progress > 0.0) {	
                      if (builder.isFirstPerson()) {
-            builder.get('right_arm').setXRotDegrees(-2).animate('easeInOutCubic', progress);
-            builder.get('right_arm').setYRotDegrees(40).animate('easeInOutCubic', progress);
-            builder.get('left_arm').setXRotDegrees(-2).animate('easeInOutCubic', progress);
-            builder.get('left_arm').setYRotDegrees(2).animate('easeInOutCubic', progress);
-        }
+            builder.get('right_arm').setXRotDegrees(-20).animate('easeInOutCubic', progress);
+            builder.get('right_arm').setYRotDegrees(50).animate('easeInOutCubic', progress);
+			builder.get('right_arm').setZRotDegrees(-50).animate('easeInOutCubic', progress);
+			builder.get('right_arm').moveY(0).animate('easeInOutCubic', progress);
+			builder.get('right_arm').scaleY(1.5).animate('easeInOutCubic', progress);
+		builder.get('right_arm').scaleX(1.5).animate('easeInOutCubic', progress);
+			builder.get('right_arm').scaleZ(1.5).animate('easeInOutCubic', progress);
+            builder.get('left_arm').setZRotDegrees(20).animate('easeInOutCubic', progress);
+			builder.get('left_arm').setXRotDegrees(-40).animate('easeInOutCubic', progress);
+			builder.get('left_arm').moveZ(-10).animate('easeInOutCubic', progress);
+			builder.get('left_arm').moveY(2).animate('easeInOutCubic', progress);
+			builder.get('left_arm').moveX(-25).animate('easeInOutCubic', progress);
+			builder.get('left_arm')
+			.scaleX(1.5)
+			.scaleY(1.5)
+			.scaleZ(1.5)
+			.animate('easeInOutCubic', progress);
+        } else {
+	   builder.get('right_arm').setXRotDegrees(-80).animate('easeInOutCubic',progress);
+	   builder.get('right_arm').setYRotDegrees(-20).animate('easeInOutCubic',progress);
+	   builder.get('right_arm').moveZ(0.8).animate('easeInOutCubic',progress);
+	   builder.get('left_arm').setYRotDegrees(20).animate('easeInOutCubic',progress);
+	   builder.get('left_arm').setXRotDegrees(-85).animate('easeInOutCubic',progress);
+	   builder.get('left_arm').moveX(-2).animate('easeInOutCubic',progress);
+	   builder.get('left_arm').moveZ(-2).animate('easeInOutCubic',progress);
+		}
 }
     });
 	

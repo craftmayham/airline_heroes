@@ -1,0 +1,110 @@
+{
+  "name": "Headcannon",
+  "background": "minecraft:textures/block/red_wool.png",
+  "icon": "minecraft:bow",
+  "abilities": {
+		"big_head_animation": {
+    "type": "palladium:animation_timer",
+    "hidden": true,
+    "start_value": 0,
+    "max_value": 1
+},
+"mob_dummy": {
+    "type": "palladium:dummy",
+    "hidden": true,
+	"conditions": {
+		"enabling": [
+{
+    "type": "palladium:interval",
+    "active_ticks": 1,
+    "disabled_ticks": 100
+},
+{
+    "type": "palladium:entity_type",
+    "entity_type": "minecraft:zombie"
+}
+		]
+	}
+},
+"headcannon_mob":
+{
+    "type": "palladium:projectile",
+    "icon": "minecraft:snowball",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "entity_type": "minecraft:fireball",
+    "entity_data": {
+		 "Lifetime": 20
+	},
+    "inaccuracy": 0,
+    "velocity": 2,
+    "swinging_arm": "none",
+    "damage_from_player": false,
+    "ignore_player_movement": false,
+	"conditions": {
+		"enabling": [
+{
+    "type": "palladium:ability_enabled",
+    "ability": "mob_dummy"
+},
+{
+	"type": "airline_heroes:is_entity_nearby",
+	"search_radius": 20
+}
+		]
+	}
+},
+"headcannon_player":
+{
+    "type": "palladium:projectile",
+    "icon": "minecraft:snowball",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "entity_type": "minecraft:fireball",
+    "entity_data": {
+		 "Lifetime": 20
+	},
+    "inaccuracy": 0,
+    "velocity": 2,
+    "swinging_arm": "none",
+    "damage_from_player": false,
+    "ignore_player_movement": false,
+	"conditions": {
+		"enabling": [
+{
+    "type": "palladium:action",
+    "cooldown": 0,
+    "key_type": "key_bind",
+    "needs_empty_hand": false,
+    "allow_scrolling_when_crouching": true
+}
+		]
+	}
+},
+"headcannon_render": {
+    "type": "palladium:render_layer",
+    "icon": "minecraft:blaze_rod",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": true,
+    "hidden_in_bar": true,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "render_layer": "airline_heroes:headcannon"
+},
+"bouncing_test": {
+	"type": "airline_heroes:bouncing"
+}
+  }
+}
