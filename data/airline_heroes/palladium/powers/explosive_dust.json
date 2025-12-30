@@ -263,7 +263,6 @@
         "set_name_description": {
             "type": "airline_heroes:set_name_description",
             "hidden": true,
-            "power_name": "Explosive Dust",
             "power_description": "The user can explode small particles in the air"
         }
     }

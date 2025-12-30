@@ -728,7 +728,6 @@
     "set_name_description": {
       "type": "airline_heroes:set_name_description",
       "hidden": true,
-      "power_name": "Cryokinesis",
       "power_description": "The user can turn themself into ice."
     }
   }

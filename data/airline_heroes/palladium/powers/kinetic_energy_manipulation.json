@@ -796,7 +796,6 @@
     "set_name_description": {
         "type": "airline_heroes:set_name_description",
         "hidden": true,
-        "power_name": "Kinetic Energy Manipulation",
         "power_description": "Allows the user to imbue kinetic energy into anything they touch."
     }
   }
