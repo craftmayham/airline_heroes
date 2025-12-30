@@ -24,8 +24,19 @@
             "type": "palladium:not",
             "conditions": [
               {
-                "type": "palladium:has_effect",
-                "effect": "airline_heroes:nullified"
+                "type": "palladium:or",
+                "conditions": [
+                  {
+                    "type": "palladium:has_effect",
+                    "effect": "airline_heroes:nullified"
+                  },
+                  {
+                    "type": "airline_heroes:nearby_block",
+                    "blockID": "minecraft:gold_block",
+                    "search_range": 10,
+                    "amount": 1
+                  }
+                ]
               }
             ]
           }
