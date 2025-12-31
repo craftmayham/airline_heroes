@@ -476,18 +476,12 @@
             "type": "palladium:command",
             "hidden": true,
             "first_tick_commands": [
-                "scale set pehkui:eye_height 0.8",
-                "scale set pehkui:model_height 0.8",
-                "scale set pehkui:model_width 0.8",
-                "scale set pehkui:hitbox_height 0.8",
-                "scale set pehkui:hitbox_width 0.8"
+                "scale set pehkui:height 0.8",
+                "scale set pehkui:width 0.8"
             ],
             "last_tick_commands": [
-                "scale set pehkui:eye_height 1",
-                "scale set pehkui:model_height 1",
-                "scale set pehkui:model_width 1",
-                "scale set pehkui:hitbox_height 1",
-                "scale set pehkui:hitbox_width 1"
+                "scale set pehkui:height 1",
+                "scale set pehkui:width 1"
             ],
             "commands": []
         },

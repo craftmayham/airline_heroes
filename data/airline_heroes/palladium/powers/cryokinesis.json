@@ -55,7 +55,7 @@
     "icebeam_dummy": {
       "type": "palladium:dummy",
       "icon": "airline_heroes:textures/icons/icebeam_icon.png",
-      "title": "Ice Form",
+      "title": "Ice Beam",
       "hidden": false,
       "list_index": 1,
       "gui_position": [0,-1],

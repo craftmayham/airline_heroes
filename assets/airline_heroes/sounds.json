@@ -4,9 +4,14 @@
 		"category": "player",
 		"sounds": [{ "name": "airline_heroes:half_mass_form"}]
 	},
-	"toggle.cryo":
+	"toggle_cryo":
 	{
-		"category": "neutral",
-		"sounds": [{ "name": "airline_heroes:toggle_cryo", "stream": true}]
+		"category": "player",
+		"sounds": [{ "name": "airline_heroes:toggle_cryo"}]
+	},
+	"somebody_get_the_door":
+	{
+		"category": "player",
+		"sounds": [{ "name": "airline_heroes:somebody_get_the_door"}]
 	}
 }
