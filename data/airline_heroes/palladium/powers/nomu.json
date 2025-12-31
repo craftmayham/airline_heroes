@@ -7,7 +7,7 @@
     "health": {
       "type": "palladium:attribute_modifier",
       "title": "Extreme Health",
-      "gui_position": [0, 1],
+      "gui_position": [0, -1],
       "icon": "airline_heroes:textures/icons/health_upgrade_3.png",
       "hidden": false,
       "attribute": "minecraft:generic.max_health",
@@ -31,7 +31,7 @@
     "strength": {
       "type": "palladium:attribute_modifier",
       "title": "Super Strength",
-      "gui_position": [1, 0],
+      "gui_position": [1, 1],
       "icon": "airline_heroes:textures/icons/power_upgrade_3.png",
       "hidden": false,
       "attribute": "palladium:punch_damage",
@@ -56,7 +56,7 @@
       "type": "palladium:healing",
       "icon": "minecraft:apple",
       "title": "Super Regeneration",
-      "gui_position": [-1, 0],
+      "gui_position": [-1, 1],
       "hidden": false,
       "list_index": -1,
       "frequency": 10,
@@ -68,8 +68,16 @@
             "type": "palladium:not",
             "conditions": [
               {
-                "type": "palladium:has_effect",
-                "effect": "airline_heroes:nullified"
+                "type": "palladium:or",
+                "conditions": [
+                  {
+                    "type": "palladium:is_on_fire"
+                  },
+                  {
+                    "type": "palladium:has_effect",
+                    "effect": "airline_heroes:nullified"
+                  }
+                ]
               }
             ]
           }
