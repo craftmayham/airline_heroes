@@ -1,7 +1,7 @@
 {
   "name": "Kinetic Energy Manipulation",
   "background": "minecraft:textures/block/red_wool.png",
-  "icon": "minecraft:ender_eye",
+  "icon": "airline_heroes:textures/icons/kinetic_energy_manipulation.png",
   "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
   "energy_bars": {
     "energy": {

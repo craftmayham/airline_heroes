@@ -1,0 +1,26 @@
+{
+  "type": "palladium:compound",
+  "layers": [
+    {
+      "type":"geckolib:default",
+      "model":"airline_heroes:geo/bee_wings.geo.json",
+      "texture": {
+        "base": "airline_heroes:textures/models/bee/wing_anim/wing_#FRAME.png",
+        "variables": {
+          "FRAME": {
+            "type": "palladium:objective_score",
+            "objective": "airline_heroes.bee_wings_anim"
+          }
+        }
+      },
+      "animation_file": "airline_heroes:animations/bee_wings.animation.json",
+      "animation_controller": [
+        {
+          "name": "looping",
+          "transition_tick_time": 20,
+          "animation": "bee_wings.idle"
+        }
+      ]
+    }
+  ]
+}
