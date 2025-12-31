@@ -52,25 +52,6 @@
         ]
       }
     },
-    "toggle_iceform_sfx": {
-      "type": "palladium:play_sound",
-      "hidden": true,
-      "hidden_in_bar": true,
-      "sound": "airline_heroes:toggle.cryo",
-      "volume": 2,
-      "pitch": 1,
-      "looping": false,
-      "play_self": true,
-      "play_others": true,
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:ability_enabled",
-            "ability": "toggle_iceform_dummy"
-          }
-        ]
-      }
-    },
     "icebeam_dummy": {
       "type": "palladium:dummy",
       "icon": "airline_heroes:textures/icons/icebeam_icon.png",
@@ -707,8 +688,17 @@
       "type": "palladium:damage_immunity",
       "hidden": true,
       "damage_sources": [
-        "minecraft:is_freezing"
-      ]
+        "minecraft:is_freezing",
+        "minecraft:is_fall"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          }
+        ]
+      }
     },
     "skin_change": {
       "type": "palladium:skin_change",

@@ -1,6 +1,6 @@
 {
     "name": "Bee",
-    "background": "minecraft:textures/block/light_blue_wool.png",
+    "background": "minecraft:textures/block/yellow_wool.png",
     "icon": "minecraft:command_block",
     "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
     "abilities": {
@@ -23,6 +23,137 @@
                                 "effect": "airline_heroes:nullified"
                             }
                         ]
+                    },
+                    {
+                        "type": "airline_heroes:has_hunger",
+                        "min_hunger": 1,
+                        "max_hunger": 20
+                    }
+                ]
+            }
+        },
+        "wall_climb_dummy": {
+            "type": "palladium:dummy",
+            "icon": "minecraft:honeycomb",
+            "title": "Climb Wall",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 1,
+            "gui_position": [1,-1],
+            "description": "Stick to walls.",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "bee_dummy"
+                    }
+                ]
+            }
+        },
+        "wall_climb_stick": {
+            "type": "airline_heroes:freeze_player",
+            "hidden": true,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "wall_climb_dummy"
+                    },
+                    {
+                        "type": "airline_heroes:nearby_wall",
+                        "blockID": "minecraft:air",
+                        "search_range": 1,
+                        "amount": 1
+                    }
+                ]
+            }
+        },
+        "wall_climb_move": {
+            "type": "airline_heroes:launch_player",
+            "hidden": true,
+            "power": 0.5,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:has_movement_input"
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "wall_climb_dummy"
+                    },
+                    {
+                        "type": "airline_heroes:nearby_wall",
+                        "blockID": "minecraft:air",
+                        "search_range": 1,
+                        "amount": 1
+                    }
+                ]
+            }
+        },
+        "produce_honey_dummy": {
+            "type": "palladium:dummy",
+            "icon": "minecraft:honeycomb",
+            "title": "Produce Honey",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 0,
+            "gui_position": [0,-1],
+            "description": "Produce some honey at the cost of hunger.",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 20,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "bee_dummy"
+                    }
+                ]
+            }
+        },
+        "produce_honey_commands": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [
+                "give @s minecraft:honeycomb 1"
+            ],
+            "last_tick_commands": [],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "produce_honey_dummy"
+                    }
+                ]
+            }
+        },
+        "produce_honey_hunger": {
+            "type": "airline_heroes:add_hunger",
+            "hidden": true,
+            "hunger": -1,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "produce_honey_dummy"
                     }
                 ]
             }
@@ -272,12 +403,27 @@
         },
         "winged_flight": {
             "type": "palladium:attribute_modifier",
-            "icon": "airline_heroes:textures/icons/endurance_upgrade_3.png",
             "hidden": true,
             "attribute": "palladium:flight_speed",
             "amount": 0.5,
             "operation": 0,
-            "uuid": "a57570a5-48cb-424d-ac68-88aaa22fe53c"
+            "uuid": "a57570a5-48cb-424d-ac68-88aaa22fe53c",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:is_in_water_or_rain"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "bee_dummy"
+                    }
+                ]
+            }
         },
         "bee_wings": {
             "type": "palladium:render_layer",
@@ -289,25 +435,34 @@
             "hidden": true,
             "hidden_in_bar": true,
             "render_layer": "airline_heroes:bee_wings",
-            "controller": "animation_controller"
+            "controller": "animation_controller",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:is_in_water_or_rain"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "bee_dummy"
+                    }
+                ]
+            }
         },
         "bee_wings_anim_timer": {
             "type": "palladium:command",
-            "icon": "minecraft:command_block",
-            "title": "null",
-            "bar_color": "light_gray",
-            "hidden": false,
-            "hidden_in_bar": false,
-            "list_index": -1,
-            "gui_position": "null",
-            "description": "null",
+            "hidden": true,
             "first_tick_commands": [],
             "last_tick_commands": [
                 "scoreboard players set @s airline_heroes.bee_wings_anim 0"
             ],
             "commands": [
                 "scoreboard players add @s airline_heroes.bee_wings_anim 1",
-                "execute if score @s airline_heroes.bee_wings_anim matches 20.. run scoreboard players set @s airline_heroes.bee_wings_anim 0"
+                "execute if score @s airline_heroes.bee_wings_anim matches 3.. run scoreboard players set @s airline_heroes.bee_wings_anim 0"
             ],
             "conditions": {
                 "enabling": [
@@ -316,6 +471,25 @@
                     }
                 ]
             }
+        },
+        "bee_physi": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [
+                "scale set pehkui:eye_height 0.8",
+                "scale set pehkui:model_height 0.8",
+                "scale set pehkui:model_width 0.8",
+                "scale set pehkui:hitbox_height 0.8",
+                "scale set pehkui:hitbox_width 0.8"
+            ],
+            "last_tick_commands": [
+                "scale set pehkui:eye_height 1",
+                "scale set pehkui:model_height 1",
+                "scale set pehkui:model_width 1",
+                "scale set pehkui:hitbox_height 1",
+                "scale set pehkui:hitbox_width 1"
+            ],
+            "commands": []
         },
         "set_name_description": {
             "type": "airline_heroes:set_name_description",
