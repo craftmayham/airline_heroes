@@ -10,7 +10,7 @@
       "hidden": true,
       "hidden_in_bar": true,
       "list_index": -1,
-      "power_description": "Allows you to take and give a limited amount of people's abilities"
+      "power_description": "Allows you to take a limited amount of people's abilities"
     },
     "start": {
       "type": "palladium:dummy",
@@ -41,23 +41,35 @@
         ]
       }
     },
-    "aim": {
-      "type": "palladium:aim",
+
+    "steal": {
+      "type": "airline_heroes:power_steal",
       "icon": "airline_heroes:textures/icons/afo.png",
       "title": "Steal Power",
       "bar_color": "light_gray",
       "description": "Steal a superpower from a targeted player.",
       "hidden": true,
       "list_index": 0,
-      "time": 1,
-      "arm": "right_arm",
+      "range": 2,
+      "whitelist": [
+        "airline_heroes:mob/2x_stregth",
+        "airline_heroes:mob/auditory_mimicry",
+        "airline_heroes:mob/big_head",
+        "airline_heroes:mob/frigiokinesis",
+        "airline_heroes:mob/headcannon",
+        "airline_heroes:mob/immortality",
+        "airline_heroes:mob/infinity",
+        "airline_heroes:mob/intangibility",
+        "airline_heroes:mob/ocular_beams",
+        "airline_heroes:mob/shadow_fade",
+        "airline_heroes:mob/speedster",
+        "airline_heroes:mob/tactile_pyrokinesis"
+      ],
+      "max": 3,
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:toggle",
-            "cooldown": 0,
-            "key_type": "key_bind",
-            "needs_empty_hand": true
+            "type": "palladium:action"
           }
         ],
         "unlocking": [
@@ -68,37 +80,19 @@
         ]
       }
     },
-    "steal": {
-      "type": "airline_heroes:power_steal",
+    "sight": {
+      "type": "palladium:entity_glow",
+      "icon": "minecraft:glow_berries",
       "hidden": true,
-      "hidden_in_bar": true,
-      "range": 2,
-      "whitelist": [
-        "airline_heroes:mob/2x_stregth",
-        "airline_heroes:mob/auditory_mimicry",
-        "airline_heroes:mob/big_head",
-        "airline_heroes:mob/frigiokinesis",
-        "airline_heroes:mob/headcannon",
-        "airline_heroes:mob/immortality",
-        "airline_heroes:mob/intangibility",
-        "airline_heroes:mob/ocular_mimicry",
-        "airline_heroes:mob/shadow_fade",
-        "airline_heroes:mob/speedster",
-        "airline_heroes:mob/tactile_pyrokinesis"
-      ],
-      "max": 3,
+      "mode": "others",
+      "color": "#FF0101",
+      "distance": 0,
       "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:action",
-            "key_type": "right_click"
-          }
-        ],
+        "enabling": [],
         "unlocking": [
           {
-            "type": "palladium:ability_enabled",
-            "power": "null",
-            "ability": "aim"
+            "type": "palladium:ability_unlocked",
+            "ability": "start"
           }
         ]
       }
@@ -112,38 +106,6 @@
           {
             "type": "palladium:ability_unlocked",
             "ability": "start"
-          }
-        ]
-      }
-    },
-    "afo_particles_1": {
-      "type": "palladium:particles",
-      "hidden": true,
-      "emitter": "airline_heroes:gambit_charge",
-      "particle_type": "minecraft:dust_color_transition",
-      "options": "0 0 0 1 0.3 0.3 0.3 1",
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:ability_enabled",
-            "power": "null",
-            "ability": "aim"
-          }
-        ]
-      }
-    },
-    "afo_particles_2": {
-      "type": "palladium:particles",
-      "hidden": true,
-      "emitter": "airline_heroes:gambit_charge",
-      "particle_type": "minecraft:dust_color_transition",
-      "options": "1 0 0 1 0.75 0.05 0.05",
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:ability_enabled",
-            "power": "null",
-            "ability": "aim"
           }
         ]
       }
