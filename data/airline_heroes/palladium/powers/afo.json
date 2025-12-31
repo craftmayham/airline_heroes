@@ -163,6 +163,23 @@
         ]
       }
     },
+    "sight": {
+      "type": "palladium:entity_glow",
+      "icon": "minecraft:glow_berries",
+      "hidden": true,
+      "mode": "others",
+      "color": "#FF0101",
+      "distance": 0,
+      "conditions": {
+        "enabling": [],
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "start"
+          }
+        ]
+      }
+    },
     "power_tell": {
       "type": "airline_heroes:afo_prop_tell",
       "hidden": true,
