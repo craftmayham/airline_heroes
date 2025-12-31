@@ -15,7 +15,6 @@
       "hidden": true,
       "hidden_in_bar": true,
       "list_index": -1,
-      "power_name": "Polarity",
       "power_description": "Allows you to Attract and repel"
     },
     "start": {
@@ -130,13 +129,11 @@
       "hidden": true,
       "list_index": 1,
       "range": 5,
-      "motion_scale": 1,
+      "motion_scale": 4,
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:action",
-            "key_type": "left_click",
-            "needs_empty_hand": true
+            "type": "palladium:action"
           }
         ],
         "unlocking": [
@@ -170,9 +167,7 @@
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:action",
-            "key_type": "right_click",
-            "needs_empty_hand": true
+            "type": "palladium:action"
           }
         ],
         "unlocking": [
@@ -202,13 +197,11 @@
       "hidden": true,
       "list_index": 1,
       "range": 8,
-      "motion_scale": 2,
+      "motion_scale": 6,
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:action",
-            "key_type": "left_click",
-            "needs_empty_hand": true
+            "type": "palladium:action"
           }
         ],
         "unlocking": [
@@ -242,9 +235,7 @@
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:action",
-            "key_type": "right_click",
-            "needs_empty_hand": true
+            "type": "palladium:action"
           }
         ],
         "unlocking": [
@@ -274,13 +265,11 @@
       "hidden": true,
       "list_index": 1,
       "range": 10,
-      "motion_scale": 3,
+      "motion_scale": 8,
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:action",
-            "key_type": "left_click",
-            "needs_empty_hand": true
+            "type": "palladium:action"
           }
         ],
         "unlocking": [
@@ -314,9 +303,7 @@
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:action",
-            "key_type": "right_click",
-            "needs_empty_hand": true
+            "type": "palladium:action"
           }
         ],
         "unlocking": [
@@ -346,13 +333,11 @@
       "hidden": true,
       "list_index": 1,
       "range": 12,
-      "motion_scale": 4,
+      "motion_scale": 10,
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:action",
-            "key_type": "left_click",
-            "needs_empty_hand": true
+            "type": "palladium:action"
           }
         ],
         "unlocking": [
@@ -376,9 +361,7 @@
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:action",
-            "key_type": "right_click",
-            "needs_empty_hand": true
+            "type": "palladium:action"
           }
         ],
         "unlocking": [
