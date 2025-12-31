@@ -1,0 +1,13 @@
+{
+  "name": "Cryokinesis",
+  "background": "minecraft:textures/block/light_blue_wool.png",
+  "icon": "minecraft:ice",
+  "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
+  "abilities": {
+    "cryo_suit_lights": {
+      "type": "palladium:render_layer",
+      "hidden": true,
+      "render_layer": "airline_heroes:cryo_glow_layer"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "airline_heroes:geo/shotgun.geo",
+  "textures": {
+    "layer0": "airline_heroes:item/prisoner_jacket"
+  }
+}

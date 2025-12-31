@@ -1,0 +1,9 @@
+{
+  "variables": {
+    "X": {
+    "type": "palladium:objective_score",
+    "objective": "airline_heroes.bee_wings_anim"
+}
+  },
+  "base": "airline_heroes:textures/models/bee/wing_anim/wing_#X.png"
+}

@@ -1,0 +1,622 @@
+{
+    "name": "Explosive Dust",
+    "background": "minecraft:textures/block/orange_concrete.png",
+    "persistent_data": true,
+    "icon": "airline_heroes:textures/icons/explosive_dust.png",
+    "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
+    "abilities": {
+        "close_range_explosion_dummy": {
+            "type": "palladium:dummy",
+            "icon": "airline_heroes:textures/icons/close_range_explosion_icon.png",
+            "title": "Close Range Explosion",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 0,
+            "gui_position": [0,0],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:held",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:has_effect",
+                                "effect": "airline_heroes:nullified"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "airline_heroes:has_hunger",
+                        "min_hunger": 1,
+                        "max_hunger": 20
+                    }
+                ]
+            }
+        },
+        "close_range_explosion_aim": {
+            "type": "palladium:aim",
+            "hidden": true,
+            "time": 10,
+            "arm": "main_arm",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "close_range_explosion_dummy"
+                    }
+                ]
+            }
+        },
+        "close_range_explosion_commands": {
+            "type": "palladium:command",
+            "hidden": true,
+            "hidden_in_bar": true,
+            "first_tick_commands": [
+                "execute anchored eyes run summon minecraft:tnt ^ ^ ^4"
+            ],
+            "last_tick_commands": [],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "close_range_explosion_aim"
+                    },
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 100,
+                        "key_type": "right_click",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ]
+            }
+        },
+        "close_range_explosion_vfx": {
+            "type": "palladium:particles",
+            "hidden": true,
+            "emitter": "airline_heroes:gambit_charge",
+            "particle_type": "minecraft:dust",
+            "options": "0.77 0.44 0.07 1",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "close_range_explosion_aim"
+                    }
+                ]
+            }
+        },
+        "close_range_explosion_hunger": {
+            "type": "airline_heroes:add_hunger",
+            "hidden": true,
+            "hunger": -1,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "close_range_explosion_commands"
+                    }
+                ]
+            }
+        },
+        "explosive_landmines_dummy": {
+            "type": "palladium:dummy",
+            "icon": "airline_heroes:textures/icons/landmine_icon.png",
+            "title": "Explosive Landmines",
+            "hidden": false,
+            "list_index": 1,
+            "gui_position": [0,-1],
+            "description": "null",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 40,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "close_range_explosion_dummy"
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:crouching"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "airline_heroes:has_hunger",
+                        "min_hunger": 4,
+                        "max_hunger": 20
+                    }
+                ]
+            }
+        },
+        "explosive_landmines_commands": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [
+                "function airline_heroes:explosive_landmine"
+            ],
+            "last_tick_commands": [],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "explosive_landmines_dummy"
+                    }
+                ]
+            }
+        },
+        "explosive_landmines_hunger": {
+            "type": "airline_heroes:add_hunger",
+            "hidden": true,
+            "hunger": -4,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "explosive_landmines_dummy"
+                    }
+                ]
+            }
+        },
+        "detonate_explosive_landmines_dummy": {
+            "type": "palladium:dummy",
+            "icon": "airline_heroes:textures/icons/detonate_icon.png",
+            "title": "Detonate",
+            "hidden": true,
+            "list_index": 1,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "close_range_explosion_dummy"
+                    },
+                    {
+                        "type": "palladium:crouching"
+                    }
+                ]
+            }
+        },
+        "detonate_explosive_landmines_commands": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [
+                "tag @e[type=minecraft:armor_stand,tag=Explosive.Landmine] add Detonate"
+            ],
+            "last_tick_commands": [],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "detonate_explosive_landmines_dummy"
+                    }
+                ]
+            }
+        },
+        "explosion_immunity": {
+            "type": "palladium:damage_immunity",
+            "hidden": true,
+            "damage_sources": [
+                "minecraft:is_explosion"
+            ]
+        },
+        "explosive_shot_dummy": {
+            "type": "palladium:dummy",
+            "icon": "airline_heroes:textures/icons/explosive_shot_icon.png",
+            "title": "Explosive Shot",
+            "hidden": false,
+            "list_index": 2,
+            "gui_position": [0,-2],
+            "description": "null",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 600,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "close_range_explosion_dummy"
+                    },
+                    {
+                        "type": "airline_heroes:has_hunger",
+                        "min_hunger": 6,
+                        "max_hunger": 20
+                    }
+                ]
+            }
+        },
+        "explosive_shot_commands": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [
+                "function airline_heroes:explosive_shot",
+                "superpower set airline_heroes:explosive_shot_effect @e[type=minecraft:armor_stand,tag=Explosive.Shot]"
+            ],
+            "last_tick_commands": [],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "explosive_shot_dummy"
+                    }
+                ]
+            }
+        },
+        "explosive_shot_hunger": {
+            "type": "airline_heroes:add_hunger",
+            "hidden": true,
+            "hunger": -6,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "explosive_shot_dummy"
+                    }
+                ]
+            }
+        },
+        "explosive_bazooka_dummy": {
+            "type": "palladium:dummy",
+            "icon": "airline_heroes:textures/icons/explosive_bazooka_icon.png",
+            "title": "Explosive Bazooka",
+            "hidden": false,
+            "list_index": 3,
+            "gui_position": [0,-3],
+            "description": "null",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 80,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "close_range_explosion_dummy"
+                    },
+                    {
+                        "type": "airline_heroes:has_hunger",
+                        "min_hunger": 4,
+                        "max_hunger": 20
+                    }
+                ]
+            }
+        },
+        "explosive_bazooka_projectile": {
+            "type": "palladium:projectile",
+            "entity_type": "palladium:custom_projectile",
+            "hidden": true,
+            "velocity": 4,
+            "swinging_arm": "right_arm",
+            "ignore_player_movement": true,
+            "damage_from_player": true,
+            "entity_data": {
+                "Gravity": 0.0,
+                "Size": 1.2,
+                "Lifetime": 20,
+                "ExplosionRadius": 0,
+                "ExplosionBlockInteraction": "break",
+                "DieOnEntityHit": true,
+                "DieOnBlockHit": true,
+                "CommandOnEntityHit": "function airline_heroes:explosive_landmine",
+                "CommandOnBlockHit": "function airline_heroes:explosive_landmine",
+                "Appearances": [
+                    {
+                        "Type": "particles",
+                        "ParticleType": "minecraft:witch",
+                        "Spread": 0.16,
+                        "Amount": 3
+                    }
+                ]
+            },
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "explosive_bazooka_dummy"
+                    }
+                ]
+            }
+        },
+        "explosive_bazooka_hunger": {
+            "type": "airline_heroes:add_hunger",
+            "hidden": true,
+            "hunger": -4,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "explosive_bazooka_dummy"
+                    }
+                ]
+            }
+        },
+        "power_upgrade_1": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/power_upgrade_1.png",
+            "title": "Power Increase 1",
+            "gui_position": [1, 0],
+            "attribute": "minecraft:generic.attack_damage",
+            "amount": 1,
+            "operation": 0,
+            "uuid": "7c37e990-46a0-4bfc-a9a1-927ad7042e03",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Scoreboard Score"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "close_range_explosion_dummy"
+                    }
+                ]
+            }
+        },
+        "power_upgrade_2": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/power_upgrade_2.png",
+            "title": "Power Increase 2",
+            "gui_position": [2, 0],
+            "attribute": "minecraft:generic.attack_damage",
+            "amount": 2,
+            "operation": 0,
+            "uuid": "c190bd54-2015-46be-98cf-3c726ccdb33d",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Scoreboard Score"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "power_upgrade_1"
+                    }
+                ]
+            }
+        },
+        "power_upgrade_3": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/power_upgrade_3.png",
+            "title": "Power Increase 3",
+            "gui_position": [3, 0],
+            "attribute": "minecraft:generic.attack_damage",
+            "amount": 3,
+            "operation": 0,
+            "uuid": "94221e41-44e4-4b77-a1a0-db15196a42fa",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Scoreboard Score"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "power_upgrade_2"
+                    }
+                ]
+            }
+        },
+        "health_upgrade_1": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/health_upgrade_1.png",
+            "title": "Health Increase 1",
+            "gui_position": [0,1],
+            "attribute": "minecraft:generic.max_health",
+            "amount": 3,
+            "operation": 0,
+            "uuid": "749f41d9-8dde-40a0-b5b3-886aff458103",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Scoreboard Score"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "close_range_explosion_dummy"
+                    }
+                ]
+            }
+        },
+        "health_upgrade_2": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/health_upgrade_2.png",
+            "title": "Health Increase 2",
+            "gui_position": [0,2],
+            "attribute": "minecraft:generic.max_health",
+            "amount": 3,
+            "operation": 0,
+            "uuid": "a6ba8845-4dd1-45ec-b0a9-9913801536a1",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Scoreboard Score"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "health_upgrade_1"
+                    }
+                ]
+            }
+        },
+        "health_upgrade_3": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/health_upgrade_3.png",
+            "title": "Health Increase 3",
+            "gui_position": [0,3],
+            "attribute": "minecraft:generic.max_health",
+            "amount": 3,
+            "operation": 0,
+            "uuid": "c8e2456f-6fe3-4f7c-b5a6-0405062b9ee5",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Scoreboard Score"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "health_upgrade_2"
+                    }
+                ]
+            }
+        },
+        "endurance_upgrade_1": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/endurance_upgrade_1.png",
+            "title": "Endurance Increase 1",
+            "gui_position": [-1,0],
+            "attribute": "minecraft:generic.armor",
+            "amount": 3,
+            "operation": 0,
+            "uuid": "fc6e48b0-8072-45ab-8941-bb5550e3c58c",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Scoreboard Score"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "close_range_explosion_dummy"
+                    }
+                ]
+            }
+        },
+        "endurance_upgrade_2": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/endurance_upgrade_2.png",
+            "title": "Endurance Increase 2",
+            "gui_position": [-2,0],
+            "attribute": "minecraft:generic.armor",
+            "amount": 3,
+            "operation": 0,
+            "uuid": "642cfa05-1ae9-45c0-bf60-7fa7d4f725c2",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Scoreboard Score"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "endurance_upgrade_1"
+                    }
+                ]
+            }
+        },
+        "endurance_upgrade_3": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/endurance_upgrade_3.png",
+            "title": "Endurance Increase 3",
+            "gui_position": [-3,0],
+            "attribute": "minecraft:generic.armor",
+            "amount": 3,
+            "operation": 0,
+            "uuid": "d5a994a9-e8b0-443b-9b77-8c27457bb8b0",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Scoreboard Score"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "endurance_upgrade_2"
+                    }
+                ]
+            }
+        },
+        "set_name_description": {
+            "type": "airline_heroes:set_name_description",
+            "hidden": true,
+            "power_description": "The user can explode small particles in the air"
+        }
+    }
+}

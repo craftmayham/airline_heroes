@@ -1,0 +1,802 @@
+{
+  "name": "Kinetic Energy Manipulation",
+  "background": "minecraft:textures/block/red_wool.png",
+  "icon": "airline_heroes:textures/icons/kinetic_energy_manipulation.png",
+  "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
+  "energy_bars": {
+    "energy": {
+      "color": "#8437b8",
+      "max": 4000,
+      "synced_value":{
+          "type": "score",
+          "objective":"airline_heroes.kinetic_energy",
+          "fallback":0
+      }
+    }
+  },
+  "abilities": {
+    "kinetic_energy_generation": {
+        "type": "palladium:command",
+        "icon": "airline_heroes:textures/icons/kinetic_energy_generation_icon.png",
+        "title": "Kinetic Energy Generation",
+        "hidden": false,
+        "first_tick_commands": [],
+        "last_tick_commands": [],
+        "commands": [
+            "scoreboard players add @s airline_heroes.kinetic_energy 1",
+            "execute if score @s airline_heroes.kinetic_energy matches ..0 run scoreboard players set @s airline_heroes.kinetic_energy 0",
+            "execute if score @s airline_heroes.kinetic_energy matches 4000.. run scoreboard players set @s airline_heroes.kinetic_energy 4000"
+        ],
+        "gui_position": [0,0],
+        "description": "You're constantly generating kinetic energy. Can be expeld to do aoe damage",
+        "conditions": {
+            "unlocking": [
+                {
+                    "type": "palladium:not",
+                    "conditions": [
+                        {
+                            "type": "palladium:has_effect",
+                            "effect": "airline_heroes:nullified"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "kinetic_energy_expulsion_dummy": {
+        "type": "palladium:dummy",
+        "icon": "airline_heroes:textures/icons/kinetic_energy_expulsion_icon.png",
+        "title": "Kinetic Energy Expulsion",
+        "hidden": true,
+        "list_index": 0,
+        "description": "Imbue kinetic energy into whatever you're holding.",
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:action",
+                    "cooldown": 1200,
+                    "key_type": "key_bind",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }
+            ],
+            "unlocking": [
+                {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "kinetic_energy_generation"
+                },
+                {
+                    "type": "palladium:objective_score",
+                    "objective": "airline_heroes.kinetic_energy",
+                    "min_score": 100
+                },
+                {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "power_upgrade_3"
+                }
+            ]
+        }
+    },
+    "kinetic_energy_expulsion": {
+        "type": "airline_heroes:scoreboard_aoe_damage",
+        "hidden": true,
+        "radius": 10,
+        "default_damage": "3.0",
+        "scoreboard_objective": "airline_heroes.kinetic_energy",
+        "score_divisor": "50.0",
+        "fire_seconds": "0.0",
+        "reset_score_after_use": "true",
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "kinetic_energy_expulsion_dummy"
+                }
+            ]
+        }
+    },
+    "kinetic_energy_expulsion_commands": {
+        "type": "palladium:command",
+        "hidden": true,
+        "first_tick_commands": [
+            "particle minecraft:dust 0.6 0.08 0.78 3 ~ ~ ~ 2 2 2 1 100"
+        ],
+        "last_tick_commands": [],
+        "commands": [],
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "kinetic_energy_expulsion_dummy"
+                }
+            ]
+        }
+    },
+    "kinetic_energy_expulsion_sound": {
+        "type": "palladium:play_sound",
+        "hidden": true,
+        "hidden_in_bar": true,
+        "sound": "minecraft:entity.generic.explode",
+        "volume": 1,
+        "pitch": 2,
+        "looping": false,
+        "play_self": true,
+        "play_others": true,
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "kinetic_energy_expulsion_dummy"
+                }
+            ]
+        }
+    },
+    "charge_item_dummy": {
+        "type": "palladium:dummy",
+        "icon": "airline_heroes:textures/icons/charge_item_icon.png",
+        "title": "Imbue Kinetic Energy - Item",
+        "hidden": false,
+        "list_index": 1,
+        "gui_position": [0,-1],
+        "description": "Imbue kinetic energy into whatever you're holding.",
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:activation",
+                    "ticks": 20,
+                    "cooldown": 10,
+                    "key_type": "key_bind",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }
+            ],
+            "unlocking": [
+                {
+                    "type": "airline_heroes:has_hunger",
+                    "min_hunger": 1,
+                    "max_hunger": 20
+                },
+                {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "kinetic_energy_generation"
+                },
+                {
+                    "type": "palladium:objective_score",
+                    "objective": "airline_heroes.kinetic_energy",
+                    "min_score": 100
+                },
+                {
+                    "type": "palladium:not",
+                    "conditions": [
+                        {
+                            "type": "palladium:empty_slot",
+                            "slot": "mainhand"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "charge_item_projectile": {
+        "type": "palladium:projectile",
+        "entity_type": "palladium:custom_projectile",
+        "hidden": true,
+        "hidden_in_bar": true,
+        "velocity": 4,
+        "swinging_arm": "right_arm",
+        "ignore_player_movement": true,
+        "damage_from_player": true,
+        "entity_data": {
+            "Gravity": 0.0,
+            "Size": 1.2,
+            "Lifetime": 20,
+            "ExplosionRadius": 3,
+            "ExplosionBlockInteraction": "break",
+            "DieOnEntityHit": true,
+            "DieOnBlockHit": true,
+            "Appearances": [
+                {
+                    "Type": "particles",
+                    "ParticleType": "minecraft:witch",
+                    "Spread": 0.16,
+                    "Amount": 3
+                }
+            ]
+        },
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:animation_timer_ability",
+                    "ability": "charge_timer",
+                    "min": 20,
+                    "max": 20
+                }
+            ]
+        }
+    },
+    "charge_item_commands": {
+        "type": "palladium:command",
+        "hidden": true,
+        "first_tick_commands": [
+            "scoreboard players remove @s airline_heroes.kinetic_energy 100"
+        ],
+        "last_tick_commands": [],
+        "commands": [],
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_item_dummy"
+                },
+                {
+                    "type": "palladium:animation_timer_ability",
+                    "ability": "charge_timer",
+                    "min": 20,
+                    "max": 20
+                }
+            ]
+        }
+    },
+    "charge_timer": {
+        "type": "palladium:animation_timer",
+        "hidden": true,
+        "start_value": 0,
+        "max_value": 20,
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_item_dummy"
+                }
+            ]
+        }
+    },
+    "delete_item": {
+        "type": "airline_heroes:delete_held_item",
+        "amount": 1,
+        "hidden": true,
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:animation_timer_ability",
+                    "ability": "charge_timer",
+                    "min": 20,
+                    "max": 20
+                }
+            ]
+        }
+    },
+    "charge_item_start_sound": {
+        "type": "palladium:play_sound",
+        "hidden": true,
+        "hidden_in_bar": true,
+        "sound": "minecraft:entity.allay.death",
+        "volume": 1,
+        "pitch": 0.7,
+        "looping": false,
+        "play_self": true,
+        "play_others": true,
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:animation_timer_ability",
+                    "ability": "charge_timer",
+                    "min": 1,
+                    "max": 20
+                }
+            ]
+        }
+    },
+    "charge_item_end_sound": {
+        "type": "palladium:play_sound",
+        "hidden": true,
+        "hidden_in_bar": true,
+        "sound": "minecraft:block.amethyst_block.hit",
+        "volume": 1,
+        "pitch": 2,
+        "looping": false,
+        "play_self": true,
+        "play_others": true,
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:animation_timer_ability",
+                    "ability": "charge_timer",
+                    "min": 15,
+                    "max": 20
+                }
+            ]
+        }
+    },
+    "charge_aim": {
+        "type": "palladium:aim",
+        "hidden": true,
+        "time": 15,
+        "arm": "main_arm",
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_item_dummy"
+                }
+            ]
+        }
+    },
+    "charge_vfx": {
+        "type": "palladium:particles",
+        "hidden": true,
+        "emitter": "airline_heroes:gambit_charge",
+        "particle_type": "minecraft:dust",
+        "options": "0.6 0.08 0.78 1",
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_item_dummy"
+                }
+            ]
+        }
+    },
+    "charge_legs_dummy": {
+        "type": "palladium:dummy",
+        "icon": "airline_heroes:textures/icons/charged_legs_icon.png",
+        "title": "Imbue Kinetic Energy - Legs",
+        "hidden": false,
+        "list_index": 2,
+        "gui_position": [1,-1],
+        "description": "Imbue kinetic energy into your legs and propel yourself forward.",
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:action",
+                    "cooldown": 0,
+                    "key_type": "key_bind",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }
+            ],
+            "unlocking": [
+                {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "kinetic_energy_generation"
+                },
+                {
+                    "type": "palladium:objective_score",
+                    "objective": "airline_heroes.kinetic_energy",
+                    "min_score": 100
+                },
+                {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "power_upgrade_1"
+                }
+            ]
+        }
+    },
+    "charged_legs_launch": {
+        "type": "airline_heroes:launch_player",
+        "hidden": true,
+        "power": 2,
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_legs_dummy"
+                }
+            ]
+        }
+    },
+    "charge_legs_commands": {
+        "type": "palladium:command",
+        "hidden": true,
+        "first_tick_commands": [
+            "scoreboard players remove @s airline_heroes.kinetic_energy 100"
+        ],
+        "last_tick_commands": [],
+        "commands": [],
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_legs_dummy"
+                }
+            ]
+        }
+    },
+    "charged_legs_sound": {
+        "type": "palladium:play_sound",
+        "hidden": true,
+        "hidden_in_bar": true,
+        "sound": "minecraft:entity.generic.explode",
+        "volume": 1,
+        "pitch": 2,
+        "looping": false,
+        "play_self": true,
+        "play_others": true,
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_legs_dummy"
+                }
+            ]
+        }
+    },
+    "charged_legs_overlay": {
+        "type": "palladium:render_layer",
+        "hidden": true,
+        "render_layer": "airline_heroes:charged_legs",
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_legs_dummy"
+                }
+            ]
+        }
+    },
+    "charge_arms_dummy": {
+        "type": "palladium:dummy",
+        "icon": "airline_heroes:textures/icons/charged_arms_icon.png",
+        "title": "Imbue Kinetic Energy - Arms",
+        "hidden": false,
+        "list_index": 3,
+        "gui_position": [2,-1],
+        "description": "Imbue kinetic energy into your arms, enhancing your combat capablities.",
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:toggle",
+                    "cooldown": 0,
+                    "key_type": "key_bind",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }
+            ],
+            "unlocking": [
+                {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "kinetic_energy_generation"
+                },
+                {
+                    "type": "palladium:objective_score",
+                    "objective": "airline_heroes.kinetic_energy",
+                    "min_score": 100
+                },
+                {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "power_upgrade_2"
+                }
+            ]
+        }
+    },
+    "charged_arms_power_inc": {
+        "type": "palladium:attribute_modifier",
+        "hidden": true,
+        "attribute": "minecraft:generic.attack_damage",
+        "amount": 0.5,
+        "operation": 1,
+        "uuid": "634bbc46-b9c8-4303-b94a-b46238b0ff8a",
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_arms_dummy"
+                }
+            ]
+        }
+    },
+    "charged_arms_knock_back": {
+        "type": "palladium:attribute_modifier",
+        "hidden": true,
+        "attribute": "minecraft:generic.attack_knockback",
+        "amount": 5,
+        "operation": 0,
+        "uuid": "018c2e68-e37a-413b-a7c0-7e1e6d213809",
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_arms_dummy"
+                }
+            ]
+        }
+    },
+    "charged_arms_overlay": {
+        "type": "palladium:render_layer",
+        "hidden": true,
+        "render_layer": "airline_heroes:charged_arms",
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_arms_dummy"
+                }
+            ]
+        }
+    },
+    "kinetic_armor_dummy": {
+        "type": "palladium:dummy",
+        "icon": "minecraft:blaze_rod",
+        "title": "Imbue Kinetic Energy - Full Body",
+        "hidden": true,
+        "hidden_in_bar": true,
+        "list_index": 4,
+        "gui_position": [3,-1],
+        "description": "Cover yourself in kinetic energy making you incredibly powerful.",
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:toggle",
+                    "cooldown": 0,
+                    "key_type": "key_bind",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }
+            ],
+            "unlocking": [
+                {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "kinetic_energy_generation"
+                },
+                {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "power_upgrade_3"
+                }
+            ]
+        }
+    },
+    "power_upgrade_1": {
+        "type": "palladium:attribute_modifier",
+        "icon": "airline_heroes:textures/icons/power_upgrade_1.png",
+        "title": "Power Increase 1",
+        "gui_position": [1, 0],
+        "attribute": "minecraft:generic.attack_damage",
+        "amount": 1,
+        "operation": 0,
+        "uuid": "15ba61bb-4f7d-4edd-926c-2526e5fc9d04",
+        "conditions": {
+            "unlocking": [
+                {
+                    "type": "palladium:scoreboard_score_buyable",
+                    "objective": "airline_heroes.skill_points",
+                    "score": 1,
+                    "icon": "minecraft:command_block",
+                    "description": {
+                        "text": "Scoreboard Score"
+                    }
+                },
+                {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "kinetic_energy_generation"
+                }
+            ]
+        }
+    },
+    "power_upgrade_2": {
+        "type": "palladium:attribute_modifier",
+        "icon": "airline_heroes:textures/icons/power_upgrade_2.png",
+        "title": "Power Increase 2",
+        "gui_position": [2, 0],
+        "attribute": "minecraft:generic.attack_damage",
+        "amount": 2,
+        "operation": 0,
+        "uuid": "9940e11b-49a4-4ded-a468-ff598ce164fe",
+        "conditions": {
+            "unlocking": [
+                {
+                    "type": "palladium:scoreboard_score_buyable",
+                    "objective": "airline_heroes.skill_points",
+                    "score": 1,
+                    "icon": "minecraft:command_block",
+                    "description": {
+                        "text": "Scoreboard Score"
+                    }
+                },
+                {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "power_upgrade_1"
+                }
+            ]
+        }
+    },
+    "power_upgrade_3": {
+        "type": "palladium:attribute_modifier",
+        "icon": "airline_heroes:textures/icons/power_upgrade_3.png",
+        "title": "Power Increase 3",
+        "gui_position": [3, 0],
+        "attribute": "minecraft:generic.attack_damage",
+        "amount": 3,
+        "operation": 0,
+        "uuid": "f4bd223d-fed5-49f6-9ffc-0571d5a95edb",
+        "conditions": {
+            "unlocking": [
+                {
+                    "type": "palladium:scoreboard_score_buyable",
+                    "objective": "airline_heroes.skill_points",
+                    "score": 1,
+                    "icon": "minecraft:command_block",
+                    "description": {
+                        "text": "Scoreboard Score"
+                    }
+                },
+                {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "power_upgrade_2"
+                }
+            ]
+        }
+    },
+    "health_upgrade_1": {
+        "type": "palladium:attribute_modifier",
+        "icon": "airline_heroes:textures/icons/health_upgrade_1.png",
+        "title": "Health Increase 1",
+        "gui_position": [0,1],
+        "attribute": "minecraft:generic.max_health",
+        "amount": 3,
+        "operation": 0,
+        "uuid": "833b935c-746f-44c3-b7e9-f7bc449c3f45",
+        "conditions": {
+            "unlocking": [
+                {
+                    "type": "palladium:scoreboard_score_buyable",
+                    "objective": "airline_heroes.skill_points",
+                    "score": 1,
+                    "icon": "minecraft:command_block",
+                    "description": {
+                        "text": "Scoreboard Score"
+                    }
+                },
+                {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "kinetic_energy_generation"
+                }
+            ]
+        }
+    },
+    "health_upgrade_2": {
+        "type": "palladium:attribute_modifier",
+        "icon": "airline_heroes:textures/icons/health_upgrade_2.png",
+        "title": "Health Increase 2",
+        "gui_position": [0,2],
+        "attribute": "minecraft:generic.max_health",
+        "amount": 3,
+        "operation": 0,
+        "uuid": "55b5e9ae-5de8-4c54-821c-1ebc8cf83bca",
+        "conditions": {
+            "unlocking": [
+                {
+                    "type": "palladium:scoreboard_score_buyable",
+                    "objective": "airline_heroes.skill_points",
+                    "score": 1,
+                    "icon": "minecraft:command_block",
+                    "description": {
+                        "text": "Scoreboard Score"
+                    }
+                },
+                {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "health_upgrade_1"
+                }
+            ]
+        }
+    },
+    "health_upgrade_3": {
+        "type": "palladium:attribute_modifier",
+        "icon": "airline_heroes:textures/icons/health_upgrade_3.png",
+        "title": "Health Increase 3",
+        "gui_position": [0,3],
+        "attribute": "minecraft:generic.max_health",
+        "amount": 3,
+        "operation": 0,
+        "uuid": "ee9ced85-235b-4934-84e9-be2f35ef7c00",
+        "conditions": {
+            "unlocking": [
+                {
+                    "type": "palladium:scoreboard_score_buyable",
+                    "objective": "airline_heroes.skill_points",
+                    "score": 1,
+                    "icon": "minecraft:command_block",
+                    "description": {
+                        "text": "Scoreboard Score"
+                    }
+                },
+                {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "health_upgrade_2"
+                }
+            ]
+        }
+    },
+    "endurance_upgrade_1": {
+        "type": "palladium:attribute_modifier",
+        "icon": "airline_heroes:textures/icons/endurance_upgrade_1.png",
+        "title": "Endurance Increase 1",
+        "gui_position": [-1,0],
+        "attribute": "minecraft:generic.armor",
+        "amount": 3,
+        "operation": 0,
+        "uuid": "fc981797-79d7-426e-a5a1-785b753ea789",
+        "conditions": {
+            "unlocking": [
+                {
+                    "type": "palladium:scoreboard_score_buyable",
+                    "objective": "airline_heroes.skill_points",
+                    "score": 1,
+                    "icon": "minecraft:command_block",
+                    "description": {
+                        "text": "Scoreboard Score"
+                    }
+                },
+                {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "kinetic_energy_generation"
+                }
+            ]
+        }
+    },
+    "endurance_upgrade_2": {
+        "type": "palladium:attribute_modifier",
+        "icon": "airline_heroes:textures/icons/endurance_upgrade_2.png",
+        "title": "Endurance Increase 2",
+        "gui_position": [-2,0],
+        "attribute": "minecraft:generic.armor",
+        "amount": 3,
+        "operation": 0,
+        "uuid": "ab5d8036-b203-4578-9ad7-2af7c863a7e8",
+        "conditions": {
+            "unlocking": [
+                {
+                    "type": "palladium:scoreboard_score_buyable",
+                    "objective": "airline_heroes.skill_points",
+                    "score": 1,
+                    "icon": "minecraft:command_block",
+                    "description": {
+                        "text": "Scoreboard Score"
+                    }
+                },
+                {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "endurance_upgrade_1"
+                }
+            ]
+        }
+    },
+    "endurance_upgrade_3": {
+        "type": "palladium:attribute_modifier",
+        "icon": "airline_heroes:textures/icons/endurance_upgrade_3.png",
+        "title": "Endurance Increase 3",
+        "gui_position": [-3,0],
+        "attribute": "minecraft:generic.armor",
+        "amount": 3,
+        "operation": 0,
+        "uuid": "3f51fbcf-2d01-4db8-a9b8-3a3465d51215",
+        "conditions": {
+            "unlocking": [
+                {
+                    "type": "palladium:scoreboard_score_buyable",
+                    "objective": "airline_heroes.skill_points",
+                    "score": 1,
+                    "icon": "minecraft:command_block",
+                    "description": {
+                        "text": "Scoreboard Score"
+                    }
+                },
+                {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "endurance_upgrade_2"
+                }
+            ]
+        }
+    },
+    "kinetic_eyes_renderer": {
+        "type": "palladium:render_layer",
+        "hidden": true,
+        "render_layer": "airline_heroes:kinetic_energy_eyes"
+    },
+    "set_name_description": {
+        "type": "airline_heroes:set_name_description",
+        "hidden": true,
+        "power_description": "Allows the user to imbue kinetic energy into anything they touch."
+    }
+  }
+}

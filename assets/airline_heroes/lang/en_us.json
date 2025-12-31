@@ -28,5 +28,14 @@
 	"item.airline_heroes.emperium_shoes": "Emperium Shoes",
 	
 	"item.airline_heroes.shotgun": "Shotgun",
-	"item.airline_heroes.shotgun_shell": "Shotgun Shell"
+	"item.airline_heroes.shotgun_shell": "Shotgun Shell",
+
+	"item.airline_heroes.wildcard_": "",
+	"item.airline_heroes.wildcard_chestplate": "Wildcard's Coat",
+	"item.airline_heroes.wildcard_leggings": "Wildcard's Pants",
+	"item.airline_heroes.wildcard_boots": "Wildcard's Boots",
+	"item.airline_heroes.playing_card": "Playing Card",
+
+	"accessory_slot.airline_heroes.trench_coat": "Trench Coat",
+	"accessory.airline_heroes.trench_coat": "Trench Coat"
 }

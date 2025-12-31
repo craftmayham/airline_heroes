@@ -1,0 +1,47 @@
+{
+  "name": "Immortality",
+  "background": "minecraft:textures/block/green_wool.png",
+  "icon": "minecraft:totem_of_undying",
+  "gui_display_type": "tree",
+  "abilities": {
+    "set_name_description": {
+      "type": "airline_heroes:set_name_description",
+      "hidden": true,
+      "power_description": "You're unable to die"
+    },
+    "immortal": {
+      "type": "palladium:immortality",
+      "icon": "minecraft:totem_of_undying",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "conditions": {
+        "enabling": [],
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:or",
+                "conditions": [
+                  {
+                    "type": "palladium:has_effect",
+                    "effect": "airline_heroes:nullified"
+                  },
+                  {
+                    "type": "airline_heroes:nearby_block",
+                    "blockID": "minecraft:gold_block",
+                    "search_range": 10,
+                    "amount": 1
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

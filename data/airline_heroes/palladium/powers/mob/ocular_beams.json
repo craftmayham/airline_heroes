@@ -1,0 +1,91 @@
+{
+  "name": "Ocular Beams",
+  "icon": "minecraft:torch",
+  "abilities": {
+    "set_name_description": {
+      "type": "airline_heroes:set_name_description",
+      "hidden": true,
+      "power_description": "You can fire optic beams from your eyes"
+    },
+    "cyclops_laser": {
+      "type": "palladium:energy_beam",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "energy_beam": "airline_heroes:mob_laser",
+      "damage": 5,
+      "max_distance": 25,
+      "speed": 1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:interval",
+            "active_ticks": 50,
+            "disabled_ticks": 200
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_unlocked",
+                "power": "null",
+                "ability": "cyclops_laser_player"
+              }
+            ]
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "cyclops_laser_player": {
+      "type": "palladium:energy_beam",
+      "icon": "airline_heroes:textures/icons/laser_vision.png",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": -1,
+      "energy_beam": "airline_heroes:mob_laser",
+      "damage": 5,
+      "max_distance": 25,
+      "speed": 1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:held",
+            "cooldown": 0,
+            "key_type": "key_bind",
+            "needs_empty_hand": false
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:entity_type",
+            "entity_type": "minecraft:player"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

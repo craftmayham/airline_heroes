@@ -3,6 +3,13 @@
     "airline_heroes.skill_points",
 	"kinetic_drain",
 	"heat_build_up",
-	"struck_by_lightning"
+	"struck_by_lightning",
+	"airline_heroes.cake",
+	"airline_heroes.glow_berries",
+	"airline_heroes.golden_carrot",
+	"airline_heroes.melon",
+	"airline_heroes.potato",
+	"airline_heroes.rotten_flesh",
+	"airline_heroes.bee_wings_anim"
   ]
 }
