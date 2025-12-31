@@ -1,0 +1,134 @@
+{
+  "name": "gouislouis",
+  "background": "minecraft:textures/block/dirt_block.png",
+  "icon": "minecraft:golden_apple",
+  "abilities": {
+    "sludge_ball": {
+    "type": "palladium:projectile",
+    "icon": "minecraft:snowball",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "entity_type": "palladium:custom_projectile",
+    "entity_data": "null",
+    "inaccuracy": 0,
+    "velocity": 2,
+    "swinging_arm": "main_arm",
+    "damage_from_player": false,
+	 "entity_data": {
+        "Damage": 4,
+		"CommandOnEntityHit": "superpower add airline_heroes:effect_slimed @e[distance=0..5, type=!palladium:custom_projectile, limit=1, type=!minecraft:item, type=!minecraft:arrow, sort=nearest]",
+		"Gravity": 0.03,
+        "Appearances": [
+          {
+            "Type": "item",
+            "Item": "minecraft:slime_ball"
+          },
+          {
+            "Type": "particles",
+            "ParticleType": "minecraft:flame",
+            "Spread": 2.5
+          }
+        ]
+      },
+    "ignore_player_movement": false,
+
+	  "conditions": {
+		  "enabling":[
+	  {
+    "type": "palladium:action",
+    "cooldown": 0,
+    "key_type": "key_bind",
+    "needs_empty_hand": false,
+    "allow_scrolling_when_crouching": true
+       }
+	   ]
+	  }
+    },
+    "command_2": {
+    "type": "palladium:water_walk",
+    "icon": "minecraft:blaze_rod",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+	"conditions": {
+		  "enabling":[
+	  {
+    "type": "palladium:toggle",
+    "cooldown": 0,
+    "key_type": "key_bind",
+    "needs_empty_hand": false,
+    "allow_scrolling_when_crouching": true
+},
+	   {
+    "type": "palladium:on_ground"
+}
+
+	   ]
+	  }
+},
+	"big_minge": {
+    "type": "palladium:size",
+    "icon": "palladium:textures/icon/size.png",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "scale": 1.2
+},
+   "fall_damage_immunity": {
+    "type": "palladium:damage_immunity",
+    "icon": "minecraft:feather",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "damage_sources": [
+        "minecraft:is_fall"
+    ]
+}, 
+"lawnch":{
+	
+    "type": "airline_heroes:launch_player",
+    "icon": "minecraft:elytra",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": false,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null",
+    "power": 2,
+"conditions": {
+		  "enabling":[
+	  {
+    "type": "palladium:action",
+    "cooldown": 0,
+    "key_type": "key_bind",
+    "needs_empty_hand": false,
+    "allow_scrolling_when_crouching": true
+       },
+	   {
+    "type": "palladium:on_ground"
+}
+
+	   ]
+	  }
+}
+  }
+    
+}
