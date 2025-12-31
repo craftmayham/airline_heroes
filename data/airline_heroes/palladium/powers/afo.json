@@ -57,8 +57,9 @@
         "airline_heroes:mob/frigiokinesis",
         "airline_heroes:mob/headcannon",
         "airline_heroes:mob/immortality",
+        "airline_heroes:mob/infinity",
         "airline_heroes:mob/intangibility",
-        "airline_heroes:mob/ocular_mimicry",
+        "airline_heroes:mob/ocular_beams",
         "airline_heroes:mob/shadow_fade",
         "airline_heroes:mob/speedster",
         "airline_heroes:mob/tactile_pyrokinesis"
@@ -118,8 +119,9 @@
         "airline_heroes:mob/frigiokinesis",
         "airline_heroes:mob/headcannon",
         "airline_heroes:mob/immortality",
+        "airline_heroes:mob/infinity",
         "airline_heroes:mob/intangibility",
-        "airline_heroes:mob/ocular_mimicry",
+        "airline_heroes:mob/ocular_beams",
         "airline_heroes:mob/shadow_fade",
         "airline_heroes:mob/speedster",
         "airline_heroes:mob/tactile_pyrokinesis"
@@ -138,11 +140,33 @@
         ]
       }
     },
+    "nomu": {
+      "type": "airline_heroes:nomu_creation",
+      "icon": "minecraft:barrier",
+      "title": "Nomu Creation",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": 4,
+      "range": 5,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "start"
+          }
+        ]
+      }
+    },
     "power_tell": {
       "type": "airline_heroes:afo_prop_tell",
       "hidden": true,
       "hidden_in_bar": true,
-      "list_index": 4,
       "conditions": {
         "unlocking": [
           {

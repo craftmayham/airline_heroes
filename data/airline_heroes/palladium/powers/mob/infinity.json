@@ -1,0 +1,34 @@
+{
+  "name": "Infinity",
+  "background": "minecraft:textures/block/white_wool.png",
+  "icon": "airline_heroes:textures/icons/infinity.png",
+  "abilities": {
+    "set_name_description": {
+      "type": "airline_heroes:set_name_description",
+      "hidden": true,
+      "power_description": "keeps everything away"
+    },
+    "infinity": {
+      "type": "airline_heroes:push_away",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "list_index": 3,
+      "range": 2,
+      "motion_scale": 1,
+      "conditions": {
+        "enabling": [],
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

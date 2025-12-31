@@ -51,7 +51,7 @@
     },
     "cyclops_laser_player": {
       "type": "palladium:energy_beam",
-      "icon": "minecraft:blaze_rod",
+      "icon": "airline_heroes:textures/icons/laser_vision.png",
       "title": "null",
       "bar_color": "light_gray",
       "hidden": true,
