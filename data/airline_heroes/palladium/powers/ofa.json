@@ -29,7 +29,8 @@
         "airline_heroes:push_pull",
         "airline_heroes:striker"
       ],
-      "player_only": true,
+      "blacklist": "airline_heroes:ergo",
+      "player_only": false,
       "tag": "airline_heroes.pastuser",
       "conditions": {
         "enabling": [
