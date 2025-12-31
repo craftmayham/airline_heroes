@@ -18,7 +18,9 @@
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:night"
+            "type": "palladium:brightness_at_position",
+            "min_brightness": 0,
+            "max_brightness": 7
           }
         ],
         "unlocking": [

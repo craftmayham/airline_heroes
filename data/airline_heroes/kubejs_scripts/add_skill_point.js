@@ -2,7 +2,7 @@
 
 // Listen for when a player completes an advancement
 PlayerEvents.advancement(event => {
-    let player = event.player;
+	let player = event.player;
     
 	let scoreboard = player.server.getScoreboard();
     let objective = scoreboard.getObjective('airline_heroes.skill_points');

@@ -1,0 +1,11 @@
+{
+  "textures": {
+    "normal": "airline_heroes:textures/models/armor/equilibrium_jacket.png",
+    "slim": "airline_heroes:textures/models/armor/equilibrium_jacket.png"
+  },
+  "model_layers": {
+    "normal": "palladium:humanoid#tight_suit",
+    "slim": "palladium:humanoid#tight_suit_slim"
+  },
+  "hide_second_layer": true
+}
