@@ -28,9 +28,23 @@
 {
     "type": "palladium:projectile",
     "hidden": true,
-    "entity_type": "minecraft:fireball",
+    "entity_type": "palladium:custom_projectile",
     "entity_data": {
-		 "Lifetime": 20
+		        "Damage": 10,
+        "Gravity": 0,
+        "Size": 1,
+        "Lifetime": 60,
+        "DieOnEntityHit": false,
+        "DieOnBlockHit": true,
+        "ExplosionRadius": 2,
+        "ExplosionCausesFire": false,
+        "ExplosionBlockInteraction": "none",
+		        "Appearances": [
+          {
+            "Type": "item",
+            "Item": "minecraft:fire_charge"
+          }
+        ]
 	},
     "inaccuracy": 0,
     "velocity": 2,
@@ -54,9 +68,23 @@
 {
     "type": "palladium:projectile",
     "hidden": true,
-    "entity_type": "minecraft:fireball",
+    "entity_type": "palladium:custom_projectile",
     "entity_data": {
-		 "Lifetime": 20
+		        "Damage": 10,
+        "Gravity": 0,
+        "Size": 1,
+        "Lifetime": 60,
+        "DieOnEntityHit": false,
+        "DieOnBlockHit": true,
+        "ExplosionRadius": 2,
+        "ExplosionCausesFire": false,
+        "ExplosionBlockInteraction": "none",
+		        "Appearances": [
+          {
+            "Type": "item",
+            "Item": "minecraft:fire_charge"
+          }
+        ]
 	},
     "inaccuracy": 0,
     "velocity": 2,

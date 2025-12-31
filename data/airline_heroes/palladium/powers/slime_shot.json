@@ -1,7 +1,7 @@
 {
-  "name": "gouislouis",
-  "background": "minecraft:textures/block/dirt_block.png",
-  "icon": "minecraft:golden_apple",
+  "name": "Slime Shot",
+  "background": "minecraft:textures/block/slime_block.png",
+  "icon": "minecraft:slime_ball",
   "abilities": {
     "sludge_ball": {
     "type": "palladium:projectile",
