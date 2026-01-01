@@ -16,12 +16,7 @@ PalladiumEvents.registerPropertiesClientSided((event) => {
   event.registerProperty("pSlot9", "string", "empty");
   event.registerProperty("pSlot10", "string", "empty");
 
-  event.registerProperty("boomSelector", "integer", 1);
-  event.registerProperty("bomb1", "string", "empty");
-  event.registerProperty("bomb2", "string", "empty");
-  event.registerProperty("bomb3", "string", "empty");
-  event.registerProperty("bomb4", "string", "empty");
-  event.registerProperty("bomb5", "string", "empty");
+  event.registerProperty("bomb", "string", "empty");
   event.registerProperty("marked", "boolean", false);
 
   event.registerProperty("hasPower", "boolean", false);
