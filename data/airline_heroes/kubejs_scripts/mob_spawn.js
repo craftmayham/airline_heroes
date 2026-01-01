@@ -22,13 +22,14 @@ EntityEvents.spawned((event) => {
     "airline_heroes:mob/speedster",
     "airline_heroes:mob/tactile_pyrokinesis",
     "airline_heroes:mob/sombody_get_the_door",
-    "airline_heroes:mob/shock_absorption"
+    "airline_heroes:mob/shock_absorption",
   ];
   if (moblist.includes(event.entity.getType())) {
     let num = Math.floor(Math.random() * 100) + 1;
     if (num <= 5) {
       let power = powerlist[Math.floor(Math.random() * powerlist.length)];
       palladium.superpowers.addSuperpower(event.entity, power);
+      palladium.setProperty(event.entity, "hasPower", true);
     }
   }
 }); // Made by ShadowLegacy557

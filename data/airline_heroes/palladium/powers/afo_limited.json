@@ -82,19 +82,15 @@
     },
     "sight": {
       "type": "palladium:entity_glow",
-      "icon": "minecraft:glow_berries",
       "hidden": true,
       "mode": "others",
-      "color": "#FF0101",
+      "color": "#F14949",
       "distance": 0,
+      "property_key": "hasPower",
+      "property_value": "true",
       "conditions": {
         "enabling": [],
-        "unlocking": [
-          {
-            "type": "palladium:ability_unlocked",
-            "ability": "start"
-          }
-        ]
+        "unlocking": []
       }
     },
     "power_tell": {

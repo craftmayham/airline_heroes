@@ -1,0 +1,62 @@
+{
+  "name": "Bombies",
+  "background": "minecraft:textures/block/green_wool.png",
+  "icon": "airline_heroes:textures/icons/luck_icon.png",
+  "gui_display_type": "tree",
+  "abilities": {
+    "tag": {
+      "type": "airline_heroes:bomb_tag",
+      "icon": "minecraft:barrier",
+      "title": "Tag",
+      "bar_color": "light_gray",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": -1,
+      "range": 3,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "cooldown": 0,
+            "key_type": "key_bind"
+          }
+        ],
+        "unlocking": []
+      }
+    },
+    "boom": {
+      "type": "airline_heroes:bomb_boom",
+      "icon": "minecraft:barrier",
+      "title": "Boom",
+      "bar_color": "light_gray",
+      "list_index": -1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "cooldown": 0,
+            "key_type": "key_bind"
+          }
+        ],
+        "unlocking": []
+      }
+    },
+    "marked": {
+      "type": "palladium:entity_glow",
+      "icon": "minecraft:glow_berries",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "list_index": -1,
+      "mode": "others",
+      "color": "#5379F5",
+      "distance": 0,
+      "property_key": "marked",
+      "property_value": "true",
+      "conditions": {
+        "enabling": [],
+        "unlocking": []
+      }
+    }
+  }
+}
