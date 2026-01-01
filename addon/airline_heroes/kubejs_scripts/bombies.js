@@ -45,7 +45,6 @@ StartupEvents.registry("palladium:abilities", (event) => {
           explosion.explosionMode("none");
 
           explosion.explode();
-          target1.kill();
           palladium.setProperty(entity, bomb, "empty");
         }
         return;

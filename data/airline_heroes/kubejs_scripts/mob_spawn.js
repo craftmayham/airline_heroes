@@ -19,10 +19,10 @@ EntityEvents.spawned((event) => {
     "airline_heroes:mob/intangibility",
     "airline_heroes:mob/ocular_beams",
     "airline_heroes:mob/shadow_fade",
+    "airline_heroes:mob/shock_absorption",
+    "airline_heroes:mob/sombody_get_the_door",
     "airline_heroes:mob/speedster",
     "airline_heroes:mob/tactile_pyrokinesis",
-    "airline_heroes:mob/sombody_get_the_door",
-    "airline_heroes:mob/shock_absorption",
   ];
   if (moblist.includes(event.entity.getType())) {
     let num = Math.floor(Math.random() * 100) + 1;
