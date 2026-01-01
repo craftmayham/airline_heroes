@@ -62,7 +62,8 @@
         "airline_heroes:mob/ocular_beams",
         "airline_heroes:mob/shadow_fade",
         "airline_heroes:mob/speedster",
-        "airline_heroes:mob/tactile_pyrokinesis"
+        "airline_heroes:mob/tactile_pyrokinesis",
+        "airline_heroes:mob/shock_absorption"
       ],
       "max": 10,
       "conditions": {

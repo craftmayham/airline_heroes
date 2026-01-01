@@ -1,7 +1,7 @@
 {
     "name": "Bee",
     "background": "minecraft:textures/block/yellow_wool.png",
-    "icon": "minecraft:command_block",
+    "icon": "minecraft:bee_nest",
     "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
     "abilities": {
         "bee_dummy": {
@@ -34,7 +34,7 @@
         },
         "wall_climb_dummy": {
             "type": "palladium:dummy",
-            "icon": "minecraft:honeycomb",
+            "icon": "minecraft:cobweb",
             "title": "Climb Wall",
             "hidden": false,
             "hidden_in_bar": false,

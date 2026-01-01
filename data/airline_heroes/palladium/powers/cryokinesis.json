@@ -422,6 +422,12 @@
       "operation": 0,
       "uuid": "7d62e42b-77cb-4e64-ade0-a3aaba45ef1a",
       "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          }
+        ],
         "unlocking": [
           {
             "type": "palladium:ability_unlocked",
@@ -449,6 +455,12 @@
       "operation": 0,
       "uuid": "bca31ef7-8664-49db-80f7-3d593689740d",
       "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          }
+        ],
         "unlocking": [
           {
             "type": "palladium:ability_unlocked",
@@ -480,6 +492,12 @@
       "operation": 0,
       "uuid": "7400111f-28a2-4a7d-b596-ad1c24784cc9",
       "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          }
+        ],
         "unlocking": [
           {
             "type": "palladium:ability_unlocked",
@@ -506,14 +524,15 @@
       "icon": "airline_heroes:textures/icons/endurance_upgrade_1.png",
       "title": "Endurance Increase 1",
       "gui_position": [-1,0],
-      "attribute": "minecraft:generic.movement_speed",
-      "amount": 0.02,
+      "attribute": "minecraft:generic.armor",
+      "amount": 3,
       "operation": 0,
-      "uuid": "5dab7399-97ce-4067-ae29-229ee8e844a3",
+      "uuid": "bc5768d3-b468-4239-9e1e-631aa8453601",
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:sprinting"
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
           }
         ],
         "unlocking": [
@@ -538,14 +557,15 @@
       "icon": "airline_heroes:textures/icons/endurance_upgrade_2.png",
       "title": "Endurance Increase 2",
       "gui_position": [-2,0],
-      "attribute": "minecraft:generic.movement_speed",
-      "amount": 0.02,
+      "attribute": "minecraft:generic.armor",
+      "amount": 3,
       "operation": 0,
-      "uuid": "9ad9e9ba-dcd0-4d88-a61d-ab72de38ad29",
+      "uuid": "c100a65b-ae7f-4873-9cc7-b00786744e76",
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:sprinting"
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
           }
         ],
         "unlocking": [
@@ -574,14 +594,15 @@
       "icon": "airline_heroes:textures/icons/endurance_upgrade_3.png",
       "title": "Endurance Increase 3",
       "gui_position": [-3,0],
-      "attribute": "minecraft:generic.movement_speed",
-      "amount": 0.02,
+      "attribute": "minecraft:generic.armor",
+      "amount": 4,
       "operation": 0,
-      "uuid": "9ad9e9ba-dcd0-4d88-a61d-ab72de38ad29",
+      "uuid": "6e976780-cffa-4352-9d6c-8ab990a2e5c4",
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:sprinting"
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
           }
         ],
         "unlocking": [
