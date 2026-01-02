@@ -32,12 +32,59 @@
                 ]
             }
         },
+        "stinger_punch_dummy": {
+            "type": "palladium:dummy",
+            "icon": "minecraft:rotten_flesh",
+            "title": "Stinger Punch",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 0,
+            "gui_position": [0,-1],
+            "description": "Stab opponets with your stinger to inflict paralysis.",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:activation",
+                        "ticks": 5,
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "bee_dummy"
+                    }
+                ]
+            }
+        },
+        "stinger_punch_poison": {
+            "type": "palladium:energy_beam",
+            "hidden": true,
+            "damage": 3,
+            "max_distance": 5,
+            "speed": 10,
+            "commands_on_block_hit": [],
+            "commands_on_entity_hit": [
+                "execute as @e[distance=..0.5] run effect give @s minecraft:poison 5 1 false",
+                "execute as @e[distance=..0.5] run effect give @s minecraft:slowness 10 255 false"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "stinger_punch_dummy"
+                    }
+                ]
+            }
+        },
         "wall_climb_dummy": {
             "type": "palladium:dummy",
             "icon": "minecraft:cobweb",
             "title": "Climb Wall",
             "hidden": false,
-            "hidden_in_bar": false,
             "list_index": 1,
             "gui_position": [1,-1],
             "description": "Stick to walls.",
@@ -107,8 +154,8 @@
             "title": "Produce Honey",
             "hidden": false,
             "hidden_in_bar": false,
-            "list_index": 0,
-            "gui_position": [0,-1],
+            "list_index": 2,
+            "gui_position": [2,-1],
             "description": "Produce some honey at the cost of hunger.",
             "conditions": {
                 "enabling": [

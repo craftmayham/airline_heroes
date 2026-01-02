@@ -49,6 +49,11 @@
           }
         ]
       }
+    },
+    "set_name_description": {
+      "type": "airline_heroes:set_name_description",
+      "hidden": true,
+      "power_description": ""
     }
   }
 }

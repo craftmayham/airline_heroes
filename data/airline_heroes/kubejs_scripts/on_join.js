@@ -17,6 +17,7 @@ PlayerEvents.loggedIn(event => {
 	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.heat_build_up_timer dummy`);	
 	
 	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.kinetic_energy dummy`);	
+	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.item_charge dummy`);	
 
 	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.bee_wings_anim dummy`);
 })

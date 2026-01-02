@@ -142,20 +142,14 @@
         "conditions": {
             "enabling": [
                 {
-                    "type": "palladium:activation",
-                    "ticks": 20,
-                    "cooldown": 10,
+                    "type": "palladium:held",
+                    "cooldown": 0,
                     "key_type": "key_bind",
                     "needs_empty_hand": false,
                     "allow_scrolling_when_crouching": true
                 }
             ],
             "unlocking": [
-                {
-                    "type": "airline_heroes:has_hunger",
-                    "min_hunger": 1,
-                    "max_hunger": 20
-                },
                 {
                     "type": "palladium:ability_unlocked",
                     "ability": "kinetic_energy_generation"
@@ -206,22 +200,41 @@
         "conditions": {
             "enabling": [
                 {
-                    "type": "palladium:animation_timer_ability",
-                    "ability": "charge_timer",
-                    "min": 20,
-                    "max": 20
+                    "type": "palladium:action",
+                    "cooldown": 0,
+                    "key_type": "right_click",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }
+            ],
+            "unlocking": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_item_dummy"
                 }
             ]
         }
     },
+    "charge_item_attribute": {
+        "type": "airline_heroes:attribute_modifier",
+        "hidden": true,
+        "score_value": "airline_heroes.item_charge",
+        "Division_Amount": "6",
+        "Attribute_Type": "minecraft:generic.attack_damage",
+        "UUID": "0e4b17a8-9add-4565-a01f-9cb7d917093b",
+        "Attribute_Mod": "addition"
+    },
     "charge_item_commands": {
         "type": "palladium:command",
         "hidden": true,
-        "first_tick_commands": [
-            "scoreboard players remove @s airline_heroes.kinetic_energy 100"
+        "first_tick_commands": [],
+        "last_tick_commands": [
+            "scoreboard players set @s airline_heroes.item_charge 0"
         ],
-        "last_tick_commands": [],
-        "commands": [],
+        "commands": [
+            "scoreboard players add @s airline_heroes.item_charge 1",
+            "title @s actionbar [{\"text\":\"[Charge] : \",\"color\":\"dark_purple\"}, {\"score\":{\"name\":\"@s\",\"objective\":\"airline_heroes.item_charge\"}}]"
+        ],
         "conditions": {
             "enabling": [
                 {
@@ -229,24 +242,30 @@
                     "ability": "charge_item_dummy"
                 },
                 {
-                    "type": "palladium:animation_timer_ability",
-                    "ability": "charge_timer",
-                    "min": 20,
-                    "max": 20
+                    "type": "palladium:not",
+                    "conditions": [
+                        {
+                            "type": "palladium:ability_enabled",
+                            "ability": "charge_item_projectile"
+                        }
+                    ]
                 }
             ]
         }
     },
-    "charge_timer": {
-        "type": "palladium:animation_timer",
+    "charge_item_cost": {
+        "type": "palladium:command",
         "hidden": true,
-        "start_value": 0,
-        "max_value": 20,
+        "first_tick_commands": [
+            "scoreboard players operation @s airline_heroes.kinetic_energy -= @s airline_heroes.item_charge"
+        ],
+        "last_tick_commands": [],
+        "commands": [],
         "conditions": {
             "enabling": [
                 {
                     "type": "palladium:ability_enabled",
-                    "ability": "charge_item_dummy"
+                    "ability": "charge_item_projectile"
                 }
             ]
         }
@@ -258,41 +277,37 @@
         "conditions": {
             "enabling": [
                 {
-                    "type": "palladium:animation_timer_ability",
-                    "ability": "charge_timer",
-                    "min": 20,
-                    "max": 20
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_item_projectile"
                 }
             ]
         }
     },
-    "charge_item_start_sound": {
+    "charge_item_loop_sound": {
         "type": "palladium:play_sound",
         "hidden": true,
         "hidden_in_bar": true,
-        "sound": "minecraft:entity.allay.death",
+        "sound": "minecraft:entity.vex.ambient",
         "volume": 1,
-        "pitch": 0.7,
-        "looping": false,
+        "pitch": 2,
+        "looping": true,
         "play_self": true,
         "play_others": true,
         "conditions": {
             "enabling": [
                 {
-                    "type": "palladium:animation_timer_ability",
-                    "ability": "charge_timer",
-                    "min": 1,
-                    "max": 20
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_item_dummy"
                 }
             ]
         }
     },
-    "charge_item_end_sound": {
+    "charge_item_shoot_sound": {
         "type": "palladium:play_sound",
         "hidden": true,
         "hidden_in_bar": true,
         "sound": "minecraft:block.amethyst_block.hit",
-        "volume": 1,
+        "volume": 2,
         "pitch": 2,
         "looping": false,
         "play_self": true,
@@ -300,10 +315,8 @@
         "conditions": {
             "enabling": [
                 {
-                    "type": "palladium:animation_timer_ability",
-                    "ability": "charge_timer",
-                    "min": 15,
-                    "max": 20
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_item_projectile"
                 }
             ]
         }
