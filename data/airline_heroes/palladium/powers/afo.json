@@ -109,8 +109,7 @@
       "icon": "airline_heroes:textures/icons/power_give_all.png",
       "title": "Gift All Stolen Powers",
       "bar_color": "light_gray",
-      "hidden": true,
-      "hidden_in_bar": false,
+      "gui_position": [1, -1],
       "list_index": 2,
       "range": 5,
       "max": 10,
@@ -138,8 +137,17 @@
         ],
         "unlocking": [
           {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Scoreboard Score"
+            }
+          },
+          {
             "type": "palladium:ability_unlocked",
-            "ability": "start"
+            "ability": "power_upgrade_1"
           }
         ]
       }
@@ -148,10 +156,9 @@
       "type": "airline_heroes:nomu_creation",
       "icon": "minecraft:barrier",
       "title": "Nomu Creation",
+      "gui_position": [3, -1],
       "bar_color": "light_gray",
-      "hidden": true,
-      "hidden_in_bar": false,
-      "list_index": 4,
+      "list_index": 5,
       "range": 5,
       "conditions": {
         "enabling": [
@@ -161,8 +168,49 @@
         ],
         "unlocking": [
           {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Scoreboard Score"
+            }
+          },
+          {
             "type": "palladium:ability_unlocked",
-            "ability": "start"
+            "ability": "power_upgrade_3"
+          }
+        ]
+      }
+    },
+    "copy_to": {
+      "type": "airline_heroes:copy_to",
+      "icon": "minecraft:barrier",
+      "title": "Copy To",
+      "gui_position": [2, -1],
+      "bar_color": "light_gray",
+      "list_index": 6,
+      "range": 5,
+      "max": 10,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Scoreboard Score"
+            }
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "power_upgrade_2"
           }
         ]
       }

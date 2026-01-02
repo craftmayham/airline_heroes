@@ -96,6 +96,34 @@ StartupEvents.registry("palladium:abilities", (event) => {
 
 StartupEvents.registry("palladium:abilities", (event) => {
   event
+    .create("airline_heroes:copy_to")
+    .addProperty("range", "integer", 3, "the range to bestow a power")
+    .addProperty("max", "integer", 3, "the max amount of stored powers")
+    .tick((entity, entry, holder, enabled) => {
+      if (enabled) {
+        let range = entry.getPropertyByName("range");
+        let max = entry.getPropertyByName("max");
+        let target = entity.rayTrace(range).entity;
+        if (target === null) return;
+        if (target != null) {
+          let num = palladium.getProperty(entity, SELECTOR);
+          let numstring = String(num);
+          let pSlot = "pSlot" + numstring;
+          let power = palladium.getProperty(entity, pSlot);
+          if (
+            0 < num <= max &&
+            palladium.getProperty(entity, pSlot) !== "empty" &&
+            !palladium.superpowers.hasSuperpower(target, power)
+          ) {
+            palladium.superpowers.addSuperpower(target, power);
+          }
+        } else return;
+      }
+    });
+});
+
+StartupEvents.registry("palladium:abilities", (event) => {
+  event
     .create("airline_heroes:power_bestow_all")
     .addProperty(
       "range",
