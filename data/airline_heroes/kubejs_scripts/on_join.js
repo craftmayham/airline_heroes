@@ -20,4 +20,6 @@ PlayerEvents.loggedIn(event => {
 	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.item_charge dummy`);	
 
 	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.bee_wings_anim dummy`);
+
+	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.capo_shotgun_ammo dummy`);
 })

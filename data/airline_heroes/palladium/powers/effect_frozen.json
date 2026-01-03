@@ -1,0 +1,35 @@
+{
+    "name": "Frozen",
+    "background": "minecraft:textures/block/light_blue_wool.png",
+    "icon": "minecraft:command_block",
+    "abilities": {
+        "frozen_timer": {
+            "type": "palladium:animation_timer",
+            "hidden": true,
+            "start_value": 0,
+            "max_value": 100
+        },
+        "frozen_commands": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [],
+            "last_tick_commands": [
+                "superpower remove airline_heroes:effect_frozen",
+                "effect clear @s minecraft:slowness"
+            ],
+            "commands": [
+                "effect give @s minecraft:slowness 3 255 true"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:animation_timer_ability",
+                        "ability": "frozen_timer",
+                        "min": 0,
+                        "max": 99
+                    }
+                ]
+            }
+        }
+    }
+}

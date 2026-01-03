@@ -1,0 +1,144 @@
+{
+    "name": "Tiantui Star Blade",
+    "background": "minecraft:textures/block/light_blue_wool.png",
+    "icon": "minecraft:ice",
+    "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
+    "abilities": {
+        "reload_dummy": {
+            "type": "palladium:dummy",
+            "icon": "minecraft:blaze_rod",
+            "title": "Reload",
+            "hidden": true,
+            "list_index": 0,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:item_in_slot",
+                        "item": {
+                            "item": "minecraft:stone_button"
+                        },
+                        "slot": "offhand"
+                    }
+                ]
+            }
+        },
+        "reload_commands": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [
+                "scoreboard players add @s airline_heroes.capo_shotgun_ammo 1",
+                "clear @s minecraft:stone_button 1"
+            ],
+            "last_tick_commands": [],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "reload_dummy"
+                    }
+                ]
+            }
+        },
+        "propelled_slash_dummy": {
+            "type": "palladium:dummy",
+            "icon": "minecraft:blaze_rod",
+            "title": "Propelled Slash",
+            "hidden": true,
+            "list_index": 1,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:objective_score",
+                        "objective": "airline_heroes.capo_shotgun_ammo",
+                        "min_score": 1,
+                        "max_score": 2147483647
+                    }
+                ]
+            }
+        },
+        "propelled_slash_projectile": {
+            "type": "palladium:projectile",
+            "entity_type": "palladium:custom_projectile",
+            "hidden": true,
+            "hidden_in_bar": true,
+            "velocity": 2,
+            "swinging_arm": "right_arm",
+            "ignore_player_movement": true,
+            "damage_from_player": true,
+            "entity_data": {
+                "Gravity": 0.0,
+                "Size": 1.2,
+                "Lifetime": 5,
+                "ExplosionRadius": 0,
+                "ExplosionBlockInteraction": "break",
+                "DieOnEntityHit": false,
+                "DieOnBlockHit": true,
+                "Appearances": [
+                    {
+                        "Type": "particles",
+                        "ParticleType": "minecraft:witch",
+                        "Spread": 0.16,
+                        "Amount": 3
+                    }
+                ]
+            },
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "propelled_slash_dummy"
+                    }
+                ]
+            }
+        },
+        "propelled_slash_motion": {
+            "type": "airline_heroes:launch_player",
+            "hidden": true,
+            "power": 2,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "propelled_slash_dummy"
+                    }
+                ]
+            }
+        },
+        "propelled_slash_commands": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [
+                "scoreboard players remove @s airline_heroes.capo_shotgun_ammo 1"
+            ],
+            "last_tick_commands": [],
+            "commands": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "propelled_slash_dummy"
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -43,18 +43,20 @@
             ]
         }
     },
-    "kinetic_energy_expulsion_dummy": {
+    "charge_block_dummy": {
         "type": "palladium:dummy",
-        "icon": "airline_heroes:textures/icons/kinetic_energy_expulsion_icon.png",
-        "title": "Kinetic Energy Expulsion",
-        "hidden": true,
+        "icon": "airline_heroes:textures/icons/charge_item_icon.png",
+        "title": "Imbue Kinetic Energy - Block",
+        "hidden": false,
         "list_index": 0,
-        "description": "Imbue kinetic energy into whatever you're holding.",
+        "gui_position": [-1,-1],
+        "description": "Imbue kinetic energy into the block you're standing on and release it to knock enimies back.",
         "conditions": {
             "enabling": [
                 {
-                    "type": "palladium:action",
-                    "cooldown": 1200,
+                    "type": "palladium:activation",
+                    "ticks": 30,
+                    "cooldown": 0,
                     "key_type": "key_bind",
                     "needs_empty_hand": false,
                     "allow_scrolling_when_crouching": true
@@ -68,51 +70,88 @@
                 {
                     "type": "palladium:objective_score",
                     "objective": "airline_heroes.kinetic_energy",
-                    "min_score": 100
+                    "min_score": 1
                 },
                 {
-                    "type": "palladium:ability_unlocked",
-                    "ability": "power_upgrade_3"
+                    "type": "palladium:on_ground"
                 }
             ]
         }
     },
-    "kinetic_energy_expulsion": {
-        "type": "airline_heroes:scoreboard_aoe_damage",
-        "hidden": true,
-        "radius": 10,
-        "default_damage": "3.0",
-        "scoreboard_objective": "airline_heroes.kinetic_energy",
-        "score_divisor": "50.0",
-        "fire_seconds": "0.0",
-        "reset_score_after_use": "true",
+    "charge_block_knockback_timer": {
+        "type": "palladium:animation_timer",
+        "start_value": 0,
+        "max_value": 30,
         "conditions": {
             "enabling": [
                 {
                     "type": "palladium:ability_enabled",
-                    "ability": "kinetic_energy_expulsion_dummy"
+                    "ability": "charge_block_dummy"
                 }
             ]
         }
     },
-    "kinetic_energy_expulsion_commands": {
-        "type": "palladium:command",
-        "hidden": true,
-        "first_tick_commands": [
-            "particle minecraft:dust 0.6 0.08 0.78 3 ~ ~ ~ 2 2 2 1 100"
-        ],
-        "last_tick_commands": [],
-        "commands": [],
+    "charge_block_anim_timer": {
+        "type": "palladium:animation_timer",
+        "start_value": 0,
+        "max_value": 10,
         "conditions": {
             "enabling": [
                 {
                     "type": "palladium:ability_enabled",
-                    "ability": "kinetic_energy_expulsion_dummy"
+                    "ability": "charge_block_dummy"
                 }
             ]
         }
     },
-    "kinetic_energy_expulsion_sound": {
+    "charge_block_push": {
+        "type": "airline_heroes:push_away",
+        "hidden": true,
+        "range": 5,
+        "motion_scale": 2,
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:animation_timer_ability",
+                    "ability": "charge_block_knockback_timer",
+                    "min": 15,
+                    "max": 30
+                }
+            ]
+        }
+    },
+    "charge_block_no_move": {
+        "type": "palladium:attribute_modifier",
+        "hidden": true,
+        "attribute": "minecraft:generic.movement_speed",
+        "amount": -200,
+        "operation": 0,
+        "uuid": "7535cb88-a25b-403b-8f9d-f30b36451da8",
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_block_dummy"
+                }
+            ]
+        }
+    },
+    "charge_block_vfx": {
+        "type": "palladium:particles",
+        "hidden": true,
+        "emitter": "airline_heroes:gambit_charge",
+        "particle_type": "minecraft:dust",
+        "options": "0.6 0.08 0.78 1",
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_block_dummy"
+                }
+            ]
+        }
+    },
+    "charge_block_sound": {
         "type": "palladium:play_sound",
         "hidden": true,
         "hidden_in_bar": true,
@@ -125,8 +164,29 @@
         "conditions": {
             "enabling": [
                 {
-                    "type": "palladium:ability_enabled",
-                    "ability": "kinetic_energy_expulsion_dummy"
+                    "type": "palladium:animation_timer_ability",
+                    "ability": "charge_block_knockback_timer",
+                    "min": 25,
+                    "max": 25
+                }
+            ]
+        }
+    },
+    "charge_block_commands": {
+        "type": "palladium:command",
+        "hidden": true,
+        "first_tick_commands": [
+            "particle airline_heroes:air_punch"
+        ],
+        "last_tick_commands": [],
+        "commands": [],
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:animation_timer_ability",
+                    "ability": "charge_block_knockback_timer",
+                    "min": 25,
+                    "max": 25
                 }
             ]
         }
@@ -157,7 +217,7 @@
                 {
                     "type": "palladium:objective_score",
                     "objective": "airline_heroes.kinetic_energy",
-                    "min_score": 100
+                    "min_score": 1
                 },
                 {
                     "type": "palladium:not",
@@ -171,7 +231,107 @@
             ]
         }
     },
-    "charge_item_projectile": {
+    "charge_item_projectile_lvl_1": {
+        "type": "palladium:projectile",
+        "entity_type": "palladium:custom_projectile",
+        "hidden": true,
+        "hidden_in_bar": true,
+        "velocity": 4,
+        "swinging_arm": "right_arm",
+        "ignore_player_movement": true,
+        "damage_from_player": true,
+        "entity_data": {
+            "Gravity": 0.0,
+            "Size": 1.2,
+            "Lifetime": 20,
+            "ExplosionRadius": 1,
+            "ExplosionBlockInteraction": "none",
+            "DieOnEntityHit": true,
+            "DieOnBlockHit": true,
+            "Appearances": [
+                {
+                    "Type": "particles",
+                    "ParticleType": "minecraft:witch",
+                    "Spread": 0.16,
+                    "Amount": 3
+                }
+            ]
+        },
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:action",
+                    "cooldown": 0,
+                    "key_type": "right_click",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }
+            ],
+            "unlocking": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_item_dummy"
+                },
+                {
+                    "type": "palladium:objective_score",
+                    "objective": "airline_heroes.item_charge",
+                    "min_score": 1,
+                    "max_score": 100
+                }
+            ]
+        }
+    },
+    "charge_item_projectile_lvl_2": {
+        "type": "palladium:projectile",
+        "entity_type": "palladium:custom_projectile",
+        "hidden": true,
+        "hidden_in_bar": true,
+        "velocity": 4,
+        "swinging_arm": "right_arm",
+        "ignore_player_movement": true,
+        "damage_from_player": true,
+        "entity_data": {
+            "Gravity": 0.0,
+            "Size": 1.2,
+            "Lifetime": 20,
+            "ExplosionRadius": 2,
+            "ExplosionBlockInteraction": "break",
+            "DieOnEntityHit": true,
+            "DieOnBlockHit": true,
+            "Appearances": [
+                {
+                    "Type": "particles",
+                    "ParticleType": "minecraft:witch",
+                    "Spread": 0.16,
+                    "Amount": 3
+                }
+            ]
+        },
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:action",
+                    "cooldown": 0,
+                    "key_type": "right_click",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }
+            ],
+            "unlocking": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_item_dummy"
+                },
+                {
+                    "type": "palladium:objective_score",
+                    "objective": "airline_heroes.item_charge",
+                    "min_score": 101,
+                    "max_score": 200
+                }
+            ]
+        }
+    },
+    "charge_item_projectile_lvl_3": {
         "type": "palladium:projectile",
         "entity_type": "palladium:custom_projectile",
         "hidden": true,
@@ -211,6 +371,361 @@
                 {
                     "type": "palladium:ability_enabled",
                     "ability": "charge_item_dummy"
+                },
+                {
+                    "type": "palladium:objective_score",
+                    "objective": "airline_heroes.item_charge",
+                    "min_score": 201,
+                    "max_score": 300
+                }
+            ]
+        }
+    },
+    "charge_item_projectile_lvl_4": {
+        "type": "palladium:projectile",
+        "entity_type": "palladium:custom_projectile",
+        "hidden": true,
+        "hidden_in_bar": true,
+        "velocity": 4,
+        "swinging_arm": "right_arm",
+        "ignore_player_movement": true,
+        "damage_from_player": true,
+        "entity_data": {
+            "Gravity": 0.0,
+            "Size": 1.2,
+            "Lifetime": 20,
+            "ExplosionRadius": 4,
+            "ExplosionBlockInteraction": "break",
+            "DieOnEntityHit": true,
+            "DieOnBlockHit": true,
+            "Appearances": [
+                {
+                    "Type": "particles",
+                    "ParticleType": "minecraft:witch",
+                    "Spread": 0.16,
+                    "Amount": 3
+                }
+            ]
+        },
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:action",
+                    "cooldown": 0,
+                    "key_type": "right_click",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }
+            ],
+            "unlocking": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_item_dummy"
+                },
+                {
+                    "type": "palladium:objective_score",
+                    "objective": "airline_heroes.item_charge",
+                    "min_score": 301,
+                    "max_score": 400
+                }
+            ]
+        }
+    },
+    "charge_item_projectile_lvl_5": {
+        "type": "palladium:projectile",
+        "entity_type": "palladium:custom_projectile",
+        "hidden": true,
+        "hidden_in_bar": true,
+        "velocity": 4,
+        "swinging_arm": "right_arm",
+        "ignore_player_movement": true,
+        "damage_from_player": true,
+        "entity_data": {
+            "Gravity": 0.0,
+            "Size": 1.2,
+            "Lifetime": 20,
+            "ExplosionRadius": 5,
+            "ExplosionBlockInteraction": "break",
+            "DieOnEntityHit": true,
+            "DieOnBlockHit": true,
+            "Appearances": [
+                {
+                    "Type": "particles",
+                    "ParticleType": "minecraft:witch",
+                    "Spread": 0.16,
+                    "Amount": 3
+                }
+            ]
+        },
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:action",
+                    "cooldown": 0,
+                    "key_type": "right_click",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }
+            ],
+            "unlocking": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_item_dummy"
+                },
+                {
+                    "type": "palladium:objective_score",
+                    "objective": "airline_heroes.item_charge",
+                    "min_score": 401,
+                    "max_score": 500
+                }
+            ]
+        }
+    },
+    "charge_item_projectile_lvl_6": {
+        "type": "palladium:projectile",
+        "entity_type": "palladium:custom_projectile",
+        "hidden": true,
+        "hidden_in_bar": true,
+        "velocity": 4,
+        "swinging_arm": "right_arm",
+        "ignore_player_movement": true,
+        "damage_from_player": true,
+        "entity_data": {
+            "Gravity": 0.0,
+            "Size": 1.2,
+            "Lifetime": 20,
+            "ExplosionRadius": 6,
+            "ExplosionBlockInteraction": "break",
+            "DieOnEntityHit": true,
+            "DieOnBlockHit": true,
+            "Appearances": [
+                {
+                    "Type": "particles",
+                    "ParticleType": "minecraft:witch",
+                    "Spread": 0.16,
+                    "Amount": 3
+                }
+            ]
+        },
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:action",
+                    "cooldown": 0,
+                    "key_type": "right_click",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }
+            ],
+            "unlocking": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_item_dummy"
+                },
+                {
+                    "type": "palladium:objective_score",
+                    "objective": "airline_heroes.item_charge",
+                    "min_score": 501,
+                    "max_score": 600
+                }
+            ]
+        }
+    },
+    "charge_item_projectile_lvl_7": {
+        "type": "palladium:projectile",
+        "entity_type": "palladium:custom_projectile",
+        "hidden": true,
+        "hidden_in_bar": true,
+        "velocity": 4,
+        "swinging_arm": "right_arm",
+        "ignore_player_movement": true,
+        "damage_from_player": true,
+        "entity_data": {
+            "Gravity": 0.0,
+            "Size": 1.2,
+            "Lifetime": 20,
+            "ExplosionRadius": 7,
+            "ExplosionBlockInteraction": "break",
+            "DieOnEntityHit": true,
+            "DieOnBlockHit": true,
+            "Appearances": [
+                {
+                    "Type": "particles",
+                    "ParticleType": "minecraft:witch",
+                    "Spread": 0.16,
+                    "Amount": 3
+                }
+            ]
+        },
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:action",
+                    "cooldown": 0,
+                    "key_type": "right_click",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }
+            ],
+            "unlocking": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_item_dummy"
+                },
+                {
+                    "type": "palladium:objective_score",
+                    "objective": "airline_heroes.item_charge",
+                    "min_score": 601,
+                    "max_score": 700
+                }
+            ]
+        }
+    },
+    "charge_item_projectile_lvl_8": {
+        "type": "palladium:projectile",
+        "entity_type": "palladium:custom_projectile",
+        "hidden": true,
+        "hidden_in_bar": true,
+        "velocity": 4,
+        "swinging_arm": "right_arm",
+        "ignore_player_movement": true,
+        "damage_from_player": true,
+        "entity_data": {
+            "Gravity": 0.0,
+            "Size": 1.2,
+            "Lifetime": 20,
+            "ExplosionRadius": 8,
+            "ExplosionBlockInteraction": "break",
+            "DieOnEntityHit": true,
+            "DieOnBlockHit": true,
+            "Appearances": [
+                {
+                    "Type": "particles",
+                    "ParticleType": "minecraft:witch",
+                    "Spread": 0.16,
+                    "Amount": 3
+                }
+            ]
+        },
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:action",
+                    "cooldown": 0,
+                    "key_type": "right_click",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }
+            ],
+            "unlocking": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_item_dummy"
+                },
+                {
+                    "type": "palladium:objective_score",
+                    "objective": "airline_heroes.item_charge",
+                    "min_score": 701,
+                    "max_score": 800
+                }
+            ]
+        }
+    },
+    "charge_item_projectile_lvl_9": {
+        "type": "palladium:projectile",
+        "entity_type": "palladium:custom_projectile",
+        "hidden": true,
+        "hidden_in_bar": true,
+        "velocity": 4,
+        "swinging_arm": "right_arm",
+        "ignore_player_movement": true,
+        "damage_from_player": true,
+        "entity_data": {
+            "Gravity": 0.0,
+            "Size": 1.2,
+            "Lifetime": 20,
+            "ExplosionRadius": 7,
+            "ExplosionBlockInteraction": "break",
+            "DieOnEntityHit": true,
+            "DieOnBlockHit": true,
+            "Appearances": [
+                {
+                    "Type": "particles",
+                    "ParticleType": "minecraft:witch",
+                    "Spread": 0.16,
+                    "Amount": 3
+                }
+            ]
+        },
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:action",
+                    "cooldown": 0,
+                    "key_type": "right_click",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }
+            ],
+            "unlocking": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_item_dummy"
+                },
+                {
+                    "type": "palladium:objective_score",
+                    "objective": "airline_heroes.item_charge",
+                    "min_score": 801,
+                    "max_score": 900
+                }
+            ]
+        }
+    },
+    "charge_item_projectile_lvl_10": {
+        "type": "palladium:projectile",
+        "entity_type": "palladium:custom_projectile",
+        "hidden": true,
+        "hidden_in_bar": true,
+        "velocity": 4,
+        "swinging_arm": "right_arm",
+        "ignore_player_movement": true,
+        "damage_from_player": true,
+        "entity_data": {
+            "Gravity": 0.0,
+            "Size": 1.2,
+            "Lifetime": 20,
+            "ExplosionRadius": 7,
+            "ExplosionBlockInteraction": "break",
+            "DieOnEntityHit": true,
+            "DieOnBlockHit": true,
+            "Appearances": [
+                {
+                    "Type": "particles",
+                    "ParticleType": "minecraft:witch",
+                    "Spread": 0.16,
+                    "Amount": 3
+                }
+            ]
+        },
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:action",
+                    "cooldown": 0,
+                    "key_type": "right_click",
+                    "needs_empty_hand": false,
+                    "allow_scrolling_when_crouching": true
+                }
+            ],
+            "unlocking": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "charge_item_dummy"
+                },
+                {
+                    "type": "palladium:objective_score",
+                    "objective": "airline_heroes.item_charge",
+                    "min_score": 901
                 }
             ]
         }
@@ -219,7 +734,7 @@
         "type": "airline_heroes:attribute_modifier",
         "hidden": true,
         "score_value": "airline_heroes.item_charge",
-        "Division_Amount": "6",
+        "Division_Amount": "20",
         "Attribute_Type": "minecraft:generic.attack_damage",
         "UUID": "0e4b17a8-9add-4565-a01f-9cb7d917093b",
         "Attribute_Mod": "addition"
@@ -232,7 +747,9 @@
             "scoreboard players set @s airline_heroes.item_charge 0"
         ],
         "commands": [
-            "scoreboard players add @s airline_heroes.item_charge 1",
+            "scoreboard players add @s airline_heroes.item_charge 2",
+            "execute if score @s airline_heroes.item_charge >= @s airline_heroes.kinetic_energy run scoreboard players operation @s airline_heroes.item_charge = @s airline_heroes.kinetic_energy",
+            "execute if score @s airline_heroes.item_charge matches 1000.. run scoreboard players set @s airline_heroes.item_charge 1000",
             "title @s actionbar [{\"text\":\"[Charge] : \",\"color\":\"dark_purple\"}, {\"score\":{\"name\":\"@s\",\"objective\":\"airline_heroes.item_charge\"}}]"
         ],
         "conditions": {
@@ -245,8 +762,49 @@
                     "type": "palladium:not",
                     "conditions": [
                         {
-                            "type": "palladium:ability_enabled",
-                            "ability": "charge_item_projectile"
+                            "type": "palladium:or",
+                            "conditions": [
+                                {
+                                    "type": "palladium:ability_enabled",
+                                    "ability": "charge_item_projectile_lvl_1"
+                                },
+                                {
+                                    "type": "palladium:ability_enabled",
+                                    "ability": "charge_item_projectile_lvl_2"
+                                },
+                                {
+                                    "type": "palladium:ability_enabled",
+                                    "ability": "charge_item_projectile_lvl_3"
+                                },
+                                {
+                                    "type": "palladium:ability_enabled",
+                                    "ability": "charge_item_projectile_lvl_4"
+                                },
+                                {
+                                    "type": "palladium:ability_enabled",
+                                    "ability": "charge_item_projectile_lvl_5"
+                                },
+                                {
+                                    "type": "palladium:ability_enabled",
+                                    "ability": "charge_item_projectile_lvl_6"
+                                },
+                                {
+                                    "type": "palladium:ability_enabled",
+                                    "ability": "charge_item_projectile_lvl_7"
+                                },
+                                {
+                                    "type": "palladium:ability_enabled",
+                                    "ability": "charge_item_projectile_lvl_8"
+                                },
+                                {
+                                    "type": "palladium:ability_enabled",
+                                    "ability": "charge_item_projectile_lvl_9"
+                                },
+                                {
+                                    "type": "palladium:ability_enabled",
+                                    "ability": "charge_item_projectile_lvl_10"
+                                }
+                            ]
                         }
                     ]
                 }
@@ -264,8 +822,49 @@
         "conditions": {
             "enabling": [
                 {
-                    "type": "palladium:ability_enabled",
-                    "ability": "charge_item_projectile"
+                    "type": "palladium:or",
+                    "conditions": [
+                        {
+                            "type": "palladium:ability_enabled",
+                            "ability": "charge_item_projectile_lvl_1"
+                        },
+                        {
+                            "type": "palladium:ability_enabled",
+                            "ability": "charge_item_projectile_lvl_2"
+                        },
+                        {
+                            "type": "palladium:ability_enabled",
+                            "ability": "charge_item_projectile_lvl_3"
+                        },
+                        {
+                            "type": "palladium:ability_enabled",
+                            "ability": "charge_item_projectile_lvl_4"
+                        },
+                        {
+                            "type": "palladium:ability_enabled",
+                            "ability": "charge_item_projectile_lvl_5"
+                        },
+                        {
+                            "type": "palladium:ability_enabled",
+                            "ability": "charge_item_projectile_lvl_6"
+                        },
+                        {
+                            "type": "palladium:ability_enabled",
+                            "ability": "charge_item_projectile_lvl_7"
+                        },
+                        {
+                            "type": "palladium:ability_enabled",
+                            "ability": "charge_item_projectile_lvl_8"
+                        },
+                        {
+                            "type": "palladium:ability_enabled",
+                            "ability": "charge_item_projectile_lvl_9"
+                        },
+                        {
+                            "type": "palladium:ability_enabled",
+                            "ability": "charge_item_projectile_lvl_10"
+                        }
+                    ]
                 }
             ]
         }
@@ -277,8 +876,49 @@
         "conditions": {
             "enabling": [
                 {
-                    "type": "palladium:ability_enabled",
-                    "ability": "charge_item_projectile"
+                    "type": "palladium:or",
+                    "conditions": [
+                        {
+                            "type": "palladium:ability_enabled",
+                            "ability": "charge_item_projectile_lvl_1"
+                        },
+                        {
+                            "type": "palladium:ability_enabled",
+                            "ability": "charge_item_projectile_lvl_2"
+                        },
+                        {
+                            "type": "palladium:ability_enabled",
+                            "ability": "charge_item_projectile_lvl_3"
+                        },
+                        {
+                            "type": "palladium:ability_enabled",
+                            "ability": "charge_item_projectile_lvl_4"
+                        },
+                        {
+                            "type": "palladium:ability_enabled",
+                            "ability": "charge_item_projectile_lvl_5"
+                        },
+                        {
+                            "type": "palladium:ability_enabled",
+                            "ability": "charge_item_projectile_lvl_6"
+                        },
+                        {
+                            "type": "palladium:ability_enabled",
+                            "ability": "charge_item_projectile_lvl_7"
+                        },
+                        {
+                            "type": "palladium:ability_enabled",
+                            "ability": "charge_item_projectile_lvl_8"
+                        },
+                        {
+                            "type": "palladium:ability_enabled",
+                            "ability": "charge_item_projectile_lvl_9"
+                        },
+                        {
+                            "type": "palladium:ability_enabled",
+                            "ability": "charge_item_projectile_lvl_10"
+                        }
+                    ]
                 }
             ]
         }
