@@ -4,6 +4,50 @@
   "icon": "minecraft:ice",
   "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
   "abilities": {
+    "cryo_name_change": {
+      "type": "palladium:name_change",
+      "hidden": true,
+      "name": {
+        "text": "Cold-Steel"
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_tag",
+            "tag": "Slode"
+          }
+        ]
+      }
+    },
+    "not_cryo_name_change": {
+      "type": "palladium:name_change",
+      "hidden": true,
+      "name": {
+        "text": "Cold-Steel?"
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_tag",
+                "tag": "Slode"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "toggle_iceform_vfx": {
+      "type": "palladium:command",
+      "hidden": true,
+      "first_tick_commands": [],
+      "last_tick_commands": [],
+      "commands": [
+        "tag @s[name=Slode_Slopper] add Slode"
+      ]
+    },
     "cryo_suit_lights": {
       "type": "palladium:render_layer",
       "hidden": true,

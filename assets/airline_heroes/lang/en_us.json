@@ -36,6 +36,15 @@
 	"item.airline_heroes.wildcard_boots": "Wildcard's Boots",
 	"item.airline_heroes.playing_card": "Playing Card",
 
+	"item.airline_heroes.cryo_helmet": "Cold-Steel Helmet",
+	"item.airline_heroes.cryo_chestplate": "Cold-Steel Chestplate",
+	"item.airline_heroes.cryo_leggings": "Cold-Steel Leggings",
+	"item.airline_heroes.cryo_boots": "Cold-Steel Boots",
+	"item.airline_heroes.ice_sword": "Ice Sword",
+	"item.airline_heroes.ice_pickaxe": "Ice Pickaxe",
+	"item.airline_heroes.ice_axe": "Ice Axe",
+	"item.airline_heroes.ice_shovel": "Ice Shovel",
+
 	"accessory_slot.airline_heroes.trench_coat": "Trench Coat",
 	"accessory.airline_heroes.trench_coat": "Trench Coat"
 }

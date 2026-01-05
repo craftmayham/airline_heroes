@@ -238,7 +238,7 @@
         ]
       }
     },
-    "charge_item_projectile": {
+    "snowball_projectile": {
       "type": "airline_heroes:projectile_with_offset",
       "entity_type": "palladium:custom_projectile",
       "hidden": true,
@@ -280,6 +280,122 @@
             "key_type": "right_click",
             "needs_empty_hand": false,
             "allow_scrolling_when_crouching": true
+          }
+        ]
+      }
+    },
+    "tool_wheel": {
+      "type": "palladium:ability_wheel",
+      "icon": "airline_heroes:ice_pickaxe",
+      "title": "Ice Tools",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": 2,
+      "gui_position": [1,-1],
+      "description": "null",
+      "abilities": [
+        "ice_sword_commands",
+        "ice_pickaxe_commands",
+        "ice_axe_commands",
+        "ice_shovel_commands"
+      ],
+      "texture": "null",
+      "disable_mouse_scrolling": false,
+      "disable_center_icon": false,
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "toggle_iceform_dummy"
+          }
+        ],
+        "enabling": [
+          {
+            "type": "palladium:held",
+            "cooldown": 0,
+            "key_type": "key_bind",
+            "needs_empty_hand": false,
+            "allow_scrolling_when_crouching": true
+          }
+        ]
+      }
+    },
+    "ice_sword_commands": {
+      "type": "palladium:command",
+      "icon": "airline_heroes:ice_sword",
+      "title": "Ice Sword",
+      "hidden": true,
+      "first_tick_commands": [
+        "give @s airline_heroes:ice_sword"
+      ],
+      "last_tick_commands": [],
+      "commands": [],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_wheel",
+            "cooldown": 0
+          }
+        ]
+      }
+    },
+    "ice_pickaxe_commands": {
+      "type": "palladium:command",
+      "icon": "airline_heroes:ice_pickaxe",
+      "title": "Ice Pickaxe",
+      "hidden": true,
+      "first_tick_commands": [
+        "give @s airline_heroes:ice_pickaxe"
+      ],
+      "last_tick_commands": [],
+      "commands": [],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_wheel",
+            "cooldown": 0
+          }
+        ]
+      }
+    },
+    "ice_axe_commands": {
+      "type": "palladium:command",
+      "icon": "airline_heroes:ice_axe",
+      "title": "Ice Axe",
+      "hidden": true,
+      "first_tick_commands": [
+        "give @s airline_heroes:ice_axe"
+      ],
+      "last_tick_commands": [],
+      "commands": [],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_wheel",
+            "cooldown": 0
+          }
+        ]
+      }
+    },
+    "ice_shovel_commands": {
+      "type": "palladium:command",
+      "icon": "airline_heroes:ice_shovel",
+      "title": "Ice Shovel",
+      "hidden": true,
+      "first_tick_commands": [
+        "give @s airline_heroes:ice_shovel"
+      ],
+      "last_tick_commands": [],
+      "commands": [],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_wheel",
+            "cooldown": 0
           }
         ]
       }
