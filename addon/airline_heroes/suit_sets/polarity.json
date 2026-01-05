@@ -1,0 +1,12 @@
+{
+  "armor_material": "minecraft:diamond",
+  "chest": {
+    "item_name": "polarity_chestplate"
+  },
+  "legs": {
+    "item_name": "polarity_leggings"
+  },
+  "feet": {
+    "item_name": "polarity_boots"
+  }
+}
