@@ -1,5 +1,4 @@
 {
-  "type": "palladium:skin_overlay",
   "model_layer": "palladium:humanoid#suit",
   "texture": "airline_heroes:textures/models/kinetic_overlays/charged_legs.png",
   "render_type": "glow"
