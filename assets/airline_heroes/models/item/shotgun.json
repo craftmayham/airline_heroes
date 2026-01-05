@@ -1,6 +1,6 @@
 {
-  "parent": "airline_heroes:geo/shotgun.geo",
+  "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "airline_heroes:item/prisoner_jacket"
+    "layer0": "airline_heroes:item/shotgun"
   }
 }

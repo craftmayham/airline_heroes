@@ -1,0 +1,23 @@
+	{
+  "type": "palladium:compound",
+  "layers": [
+	{
+  "model_layer": "airline_heroes:perpetual_motion_generator",
+  "texture": "airline_heroes:textures/models/perpetual_motion_generator.png"
+},
+	    {
+      "type": "geckolib:default",
+  "model": "airline_heroes:geo/infinite_motion.geo.json",
+  "texture": "airline_heroes:textures/models/perpetual_motion_generator.png",
+  "render_type": "glow",
+  "animation_file": "airline_heroes:animations/infinite_motion.animation.json",
+      "animation_controller": [
+        {
+          "name": "looping",
+          "transition_tick_time": 0,
+          "animation": "animation.airline_heroes.infinite_motion"
+        }
+      ]
+	}
+	]
+}

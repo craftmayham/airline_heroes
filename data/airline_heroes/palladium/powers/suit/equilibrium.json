@@ -1,0 +1,43 @@
+{
+    "name": "Equilibrium",
+    "background": "minecraft:textures/block/stone.png",
+    "hidden": true,
+    "icon": "minecraft:stone",
+    "hidden": true,
+    "abilities": {
+        "name_change": {
+            "type": "palladium:name_change",
+            "name": {
+                "text": "§3Equil§6ibrium"
+            }
+        },
+        "hide_chest": {
+            "type": "palladium:hide_body_part",
+            "body_parts": [
+                "chest",
+                "chest_overlay"
+            ],
+            "affects_first_person": true,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:wears_suit_set",
+                        "suit_set": "airline_heroes:equilibrium_v2"
+                    }
+                ]
+            }
+        },
+        "render_layer": {
+            "type": "palladium:render_layer",
+            "render_layer": "airline_heroes:perpetual_motion_generator",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:wears_suit_set",
+                        "suit_set": "airline_heroes:equilibrium_v2"
+                    }
+                ]
+            }
+        }
+    }
+}

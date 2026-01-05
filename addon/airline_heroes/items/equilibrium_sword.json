@@ -1,0 +1,16 @@
+{
+    "type": "palladium:default",
+    "tier": "minecraft:diamond",
+    "base_damage": 3,
+    "attack_speed": -2.4,
+	    "attribute_modifiers": {
+        "offhand": [
+            {
+                "attribute": "minecraft:generic.movement_speed",
+                "amount": 2,
+                "operation": 2,
+                "uuid": "2b381038-3b8f-4698-ae81-f0fd753d704e"
+            }
+        ]
+    }
+}

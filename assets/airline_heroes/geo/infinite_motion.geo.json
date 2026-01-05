@@ -1,0 +1,61 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.minecraft:player#main",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [0, 15, -1.25]
+				},
+				{
+					"name": "potential",
+					"parent": "body",
+					"pivot": [-2.5, 14.75, -1.25],
+					"cubes": [
+						{
+							"origin": [-3, 14.25, -1.75],
+							"size": [1, 1, 1],
+							"inflate": 0.009,
+							"uv": {
+								"north": {"uv": [8, 0], "uv_size": [1, 1]},
+								"east": {"uv": [8, 0], "uv_size": [1, 1]},
+								"south": {"uv": [8, 0], "uv_size": [1, 1]},
+								"west": {"uv": [8, 0], "uv_size": [1, 1]},
+								"up": {"uv": [8, 0], "uv_size": [1, 1]},
+								"down": {"uv": [8, 1], "uv_size": [1, -1]}
+							}
+						}
+					]
+				},
+				{
+					"name": "kinetic",
+					"parent": "body",
+					"pivot": [2.5, 14.75, -1.25],
+					"cubes": [
+						{
+							"origin": [2, 14.25, -1.75],
+							"size": [1, 1, 1],
+							"inflate": 0.009,
+							"uv": {
+								"north": {"uv": [9, 0], "uv_size": [1, 1]},
+								"east": {"uv": [9, 0], "uv_size": [1, 1]},
+								"south": {"uv": [9, 0], "uv_size": [1, 1]},
+								"west": {"uv": [9, 0], "uv_size": [1, 1]},
+								"up": {"uv": [9, 0], "uv_size": [1, 1]},
+								"down": {"uv": [9, 1], "uv_size": [1, -1]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

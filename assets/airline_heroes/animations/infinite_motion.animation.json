@@ -1,0 +1,20 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.airline_heroes.infinite_motion": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"body": {
+					"rotation": [0, "-query.anim_time * 360", 0]
+				},
+				"potential": {
+					"rotation": [0, "-query.anim_time / 0.5 * -360", 0]
+				},
+				"kinetic": {
+					"rotation": [0, "-query.anim_time / 0.5 * -360", 0]
+				}
+			}
+		}
+	}
+}
