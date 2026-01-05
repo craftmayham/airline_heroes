@@ -1,0 +1,15 @@
+{
+    "name": "Subli-Mate",
+    "background": "minecraft:textures/block/stone.png",
+    "hidden": true,
+    "icon": "minecraft:stone",
+    "hidden": true,
+    "abilities": {
+        "name_change": {
+            "type": "palladium:name_change",
+            "name": {
+                "text": "§dSubli-Mate"
+            }
+        }
+    }
+}
