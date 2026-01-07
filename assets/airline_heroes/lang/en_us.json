@@ -1,55 +1,59 @@
 {
     "item.airline_heroes.aa_jacket": "AA Jacket",
-	"item.airline_heroes.aa_pants": "AA Pants",
-	"item.airline_heroes.aa_shoes": "AA Shoes",
-	
+    "item.airline_heroes.aa_pants": "AA Pants",
+    "item.airline_heroes.aa_shoes": "AA Shoes",
+
     "item.airline_heroes.prisoner_jacket": "Prisoner Jacket",
-	"item.airline_heroes.prisoner_pants": "Prisoner Pants",
-	"item.airline_heroes.prisoner_shoes": "Prisoner Shoes",
-	
-	"item.airline_heroes.sublimation_goggles": "Subli-Mate's Goggles",
-	"item.airline_heroes.sublimation_jacket": "Subli-Mate's Jacket",
-	"item.airline_heroes.sublimation_pants": "Subli-Mate's Pants",
-	"item.airline_heroes.sublimation_shoes": "Subli-Mate's Shoes",
-	
+    "item.airline_heroes.prisoner_pants": "Prisoner Pants",
+    "item.airline_heroes.prisoner_shoes": "Prisoner Shoes",
+
+    "item.airline_heroes.sublimation_goggles": "Subli-Mate's Goggles",
+    "item.airline_heroes.sublimation_jacket": "Subli-Mate's Jacket",
+    "item.airline_heroes.sublimation_pants": "Subli-Mate's Pants",
+    "item.airline_heroes.sublimation_shoes": "Subli-Mate's Shoes",
+
     "item.airline_heroes.sublimation_goggles_v2": "Subli-Mate's Goggles(V2)",
-	"item.airline_heroes.sublimation_jacket_v2": "Subli-Mate's Jacket(V2)",
-	"item.airline_heroes.sublimation_pants_v2": "Subli-Mate's Pants(V2)",
-	"item.airline_heroes.sublimation_shoes_v2": "Subli-Mate's Shoes(V2)",
-	
-   "item.airline_heroes.alchemist_cloak": "The Alchemist's Cloak",
-	"item.airline_heroes.alchemist_tunic": "The Alchemist's Tunic",
-	"item.airline_heroes.alchemist_pants": "The Alchemist's Pants",
-	"item.airline_heroes.alchemist_boots": "The Alchemist's Boots",
-	
-	"item.airline_heroes.alchemist_cloak_v2": "The Alchemist's Cloak(V2)",
-	"item.airline_heroes.alchemist_tunic_v2": "The Alchemist's Tunic(V2)",
-	"item.airline_heroes.alchemist_pants_v2": "The Alchemist's Pants(V2)",
-	"item.airline_heroes.alchemist_boots_v2": "The Alchemist's Boots(V2)",
-	
+    "item.airline_heroes.sublimation_jacket_v2": "Subli-Mate's Jacket(V2)",
+    "item.airline_heroes.sublimation_pants_v2": "Subli-Mate's Pants(V2)",
+    "item.airline_heroes.sublimation_shoes_v2": "Subli-Mate's Shoes(V2)",
+
+    "item.airline_heroes.alchemist_cloak": "The Alchemist's Cloak",
+    "item.airline_heroes.alchemist_tunic": "The Alchemist's Tunic",
+    "item.airline_heroes.alchemist_pants": "The Alchemist's Pants",
+    "item.airline_heroes.alchemist_boots": "The Alchemist's Boots",
+
+    "item.airline_heroes.alchemist_cloak_v2": "The Alchemist's Cloak(V2)",
+    "item.airline_heroes.alchemist_tunic_v2": "The Alchemist's Tunic(V2)",
+    "item.airline_heroes.alchemist_pants_v2": "The Alchemist's Pants(V2)",
+    "item.airline_heroes.alchemist_boots_v2": "The Alchemist's Boots(V2)",
+
     "item.airline_heroes.emperium_wig": "Emperium Wig",
-	"item.airline_heroes.emperium_jacket": "Emperium Jacket",
-	"item.airline_heroes.emperium_pants": "Emperium Pants",
-	"item.airline_heroes.emperium_shoes": "Emperium Shoes",
-	
-	"item.airline_heroes.shotgun": "Shotgun",
-	"item.airline_heroes.shotgun_shell": "Shotgun Shell",
+    "item.airline_heroes.emperium_jacket": "Emperium Jacket",
+    "item.airline_heroes.emperium_pants": "Emperium Pants",
+    "item.airline_heroes.emperium_shoes": "Emperium Shoes",
 
-	"item.airline_heroes.wildcard_": "",
-	"item.airline_heroes.wildcard_chestplate": "Wildcard's Coat",
-	"item.airline_heroes.wildcard_leggings": "Wildcard's Pants",
-	"item.airline_heroes.wildcard_boots": "Wildcard's Boots",
-	"item.airline_heroes.playing_card": "Playing Card",
+    "item.airline_heroes.shotgun": "Shotgun",
+    "item.airline_heroes.shotgun_shell": "Shotgun Shell",
 
-	"item.airline_heroes.cryo_helmet": "Cold-Steel Helmet",
-	"item.airline_heroes.cryo_chestplate": "Cold-Steel Chestplate",
-	"item.airline_heroes.cryo_leggings": "Cold-Steel Leggings",
-	"item.airline_heroes.cryo_boots": "Cold-Steel Boots",
-	"item.airline_heroes.ice_sword": "Ice Sword",
-	"item.airline_heroes.ice_pickaxe": "Ice Pickaxe",
-	"item.airline_heroes.ice_axe": "Ice Axe",
-	"item.airline_heroes.ice_shovel": "Ice Shovel",
+    "item.airline_heroes.wildcard_helmet": "Wildcard's Mask",
+    "item.airline_heroes.wildcard_chestplate": "Wildcard's Coat",
+    "item.airline_heroes.wildcard_leggings": "Wildcard's Pants",
+    "item.airline_heroes.wildcard_boots": "Wildcard's Boots",
+    "item.airline_heroes.playing_card": "Playing Card",
 
-	"accessory_slot.airline_heroes.trench_coat": "Trench Coat",
-	"accessory.airline_heroes.trench_coat": "Trench Coat"
+    "item.airline_heroes.cryo_helmet": "Cold-Steel Helmet",
+    "item.airline_heroes.cryo_chestplate": "Cold-Steel Chestplate",
+    "item.airline_heroes.cryo_leggings": "Cold-Steel Leggings",
+    "item.airline_heroes.cryo_boots": "Cold-Steel Boots",
+    "item.airline_heroes.ice_sword": "Ice Sword",
+    "item.airline_heroes.ice_pickaxe": "Ice Pickaxe",
+    "item.airline_heroes.ice_axe": "Ice Axe",
+    "item.airline_heroes.ice_shovel": "Ice Shovel",
+
+    "item.airline_heroes.polarity_chestplate": "Polarity Coat",
+    "item.airline_heroes.polarity_leggings": "Polarity Pants",
+    "item.airline_heroes.polarity_boots": "Polarity Shoes",
+    
+    "accessory_slot.airline_heroes.trench_coat": "Trench Coat",
+    "accessory.airline_heroes.trench_coat": "Trench Coat"
 }

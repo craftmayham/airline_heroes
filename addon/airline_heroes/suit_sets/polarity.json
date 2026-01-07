@@ -1,0 +1,13 @@
+{
+  "armor_material": "minecraft:diamond",
+  "creative_mode_tab": "airline_heroes:airline_heroes",
+  "chest": {
+    "item_name": "polarity_chestplate"
+  },
+  "legs": {
+    "item_name": "polarity_leggings"
+  },
+  "feet": {
+    "item_name": "polarity_boots"
+  }
+}

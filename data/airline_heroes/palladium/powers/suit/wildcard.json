@@ -1,0 +1,43 @@
+{
+  "name": "Wildcard",
+  "background": "minecraft:textures/block/light_blue_wool.png",
+  "icon": "minecraft:ice",
+  "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
+  "abilities": {
+    "wildcard_name_change": {
+      "type": "palladium:name_change",
+      "hidden": true,
+      "name": {
+        "text": "§dWildcard"
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_power",
+            "power": "airline_heroes:kinetic_energy_manipulation"
+          }
+        ]
+      }
+    },
+    "not_wildcard_name_change": {
+      "type": "palladium:name_change",
+      "hidden": true,
+      "name": {
+        "text": "§dWildcard§f?"
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_power",
+                "power": "airline_heroes:kinetic_energy_manipulation"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

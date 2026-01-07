@@ -1,0 +1,5 @@
+{
+  "textures": "airline_heroes:textures/models/polarity/polarity_boots.png",
+  "model_layers": "palladium:humanoid#suit",
+  "hide_second_layer": true
+}

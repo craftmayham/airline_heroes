@@ -45,7 +45,7 @@
     },
     "charge_block_dummy": {
         "type": "palladium:dummy",
-        "icon": "airline_heroes:textures/icons/charge_item_icon.png",
+        "icon": "airline_heroes:textures/icons/charge_ground_icon.png",
         "title": "Imbue Kinetic Energy - Block",
         "hidden": false,
         "list_index": 0,

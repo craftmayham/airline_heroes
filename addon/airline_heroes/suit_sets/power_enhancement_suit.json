@@ -1,0 +1,25 @@
+{
+  "tooltip": [
+    "A suit designed to enhacne the abilities of its wearer."
+  ],
+  "armor_material": "minecraft:diamond",
+   "opened_sound": "minecraft:item.armor.equip_leather",
+   "closed_sound": "minecraft:item.armor.equip_leather",
+  "creative_mode_tab": "airline_heroes:airline_heroes",
+  "head": {
+    "item_name": "power_enhancement_helmet",
+    "armor_renderer": "airline_heroes:power_enhancement_helmet"
+  },
+  "chest": {
+    "item_name": "power_enhancement_chestplate",
+    "armor_renderer": "airline_heroes:power_enhancement_chestplate"
+  },
+  "legs": {
+    "item_name": "power_enhancement_leggings",
+    "armor_renderer": "airline_heroes:power_enhancement_leggings"
+  },
+  "feet": {
+    "item_name": "power_enhancement_boots",
+    "armor_renderer": "airline_heroes:power_enhancement_boots"
+  }
+}

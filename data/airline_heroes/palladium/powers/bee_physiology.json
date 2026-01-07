@@ -32,6 +32,24 @@
                 ]
             }
         },
+        "bonemeal_dummy": {
+            "type": "palladium:dummy",
+            "icon": "minecraft:bone_meal",
+            "title": "Polinate",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 0,
+            "gui_position": [-1,-1],
+            "description": "You can polinate crops around you by Shift+Right Clicking",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "bee_dummy"
+                    }
+                ]
+            }
+        },
         "stinger_punch_dummy": {
             "type": "palladium:dummy",
             "icon": "minecraft:rotten_flesh",

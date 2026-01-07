@@ -1,0 +1,5 @@
+{
+  "textures": "airline_heroes:textures/models/wildcard_suit/wildcard_helmet.png",
+  "model_layers": "palladium:humanoid#tight_suit",
+  "hide_second_layer": false
+}

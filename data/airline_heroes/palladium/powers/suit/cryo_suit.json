@@ -1,5 +1,5 @@
 {
-  "name": "Cryokinesis",
+  "name": "Containment Suit",
   "background": "minecraft:textures/block/light_blue_wool.png",
   "icon": "minecraft:ice",
   "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
@@ -8,13 +8,13 @@
       "type": "palladium:name_change",
       "hidden": true,
       "name": {
-        "text": "Cold-Steel"
+        "text": "§bCold-Steel"
       },
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:has_tag",
-            "tag": "Slode"
+            "type": "palladium:has_power",
+            "power": "airline_heroes:cryokinesis"
           }
         ]
       }
@@ -23,7 +23,7 @@
       "type": "palladium:name_change",
       "hidden": true,
       "name": {
-        "text": "Cold-Steel?"
+        "text": "§bCold-Steel§f?"
       },
       "conditions": {
         "enabling": [
@@ -31,22 +31,13 @@
             "type": "palladium:not",
             "conditions": [
               {
-                "type": "palladium:has_tag",
-                "tag": "Slode"
+                "type": "palladium:has_power",
+                "power": "airline_heroes:cryokinesis"
               }
             ]
           }
         ]
       }
-    },
-    "toggle_iceform_vfx": {
-      "type": "palladium:command",
-      "hidden": true,
-      "first_tick_commands": [],
-      "last_tick_commands": [],
-      "commands": [
-        "tag @s[name=Slode_Slopper] add Slode"
-      ]
     },
     "cryo_suit_lights": {
       "type": "palladium:render_layer",

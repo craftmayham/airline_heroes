@@ -1,0 +1,5 @@
+{
+  "textures": "airline_heroes:textures/models/armor/power_enhancement_suit/power_enhancement_helmet.png",
+  "model_layers": "palladium:humanoid#suit",
+  "hide_second_layer": true
+}
