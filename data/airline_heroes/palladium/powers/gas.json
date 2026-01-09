@@ -531,7 +531,7 @@
         "float": {
             "type": "palladium:attribute_modifier",
             "hidden": true,
-            "attribute": "porting_lib:entity_gravity",
+            "attribute": "forge:entity_gravity",
             "amount": -0.085,
             "operation": 0,
             "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
@@ -1149,7 +1149,7 @@
         "half_mass_gravity": {
             "type": "palladium:attribute_modifier",
             "hidden": true,
-            "attribute": "porting_lib:entity_gravity",
+            "attribute": "forge:entity_gravity",
             "amount": -0.07,
             "operation": 0,
             "uuid": "798be4fb-af04-42f2-8948-e6ccdc0d99e1",
@@ -1212,20 +1212,19 @@
                 ]
             }
         },
-        "half_mass_behind_you_timer":
-   {
-    "type": "palladium:animation_timer",
-    "icon": "minecraft:blaze_rod",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": true,
-    "hidden_in_bar": true,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
-    "start_value": 0,
-    "max_value": 60,
-                "conditions": {
+        "half_mass_behind_you_timer": {
+            "type": "palladium:animation_timer",
+            "icon": "minecraft:blaze_rod",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": true,
+            "hidden_in_bar": true,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "start_value": 0,
+            "max_value": 60,
+            "conditions": {
                 "enabling": [
                     {
                         "type": "palladium:ability_enabled",
@@ -1233,15 +1232,14 @@
                     }
                 ]
             }
-},
+        },
         "half_mass_behind_you": {
             "type": "palladium:command",
             "last_tick_commands": [
-                 "tp @s ^ ^ ^5"
+                "tp @s ^ ^ ^5"
             ],
             "first_tick_commands": [],
-            "commands": [
-            ],
+            "commands": [],
             "conditions": {
                 "enabling": [
                     {
@@ -1252,54 +1250,54 @@
             }
         },
         "half_mass_behind_you_particle": {
-    "type": "palladium:particles",
-    "icon": "minecraft:blaze_rod",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
-                "emitter": [
+            "type": "palladium:particles",
+            "icon": "minecraft:blaze_rod",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "emitter": [
                 "airline_heroes:full_body"
             ],
-    "particle_type": "airline_heroes:flash_step",
-    "options": "",
-                "conditions": {
+            "particle_type": "airline_heroes:flash_step",
+            "options": "",
+            "conditions": {
                 "enabling": [
-{
-    "type": "palladium:animation_timer_ability",
-    "power": "null",
-    "ability": "half_mass_behind_you_timer",
-    "min": 59,
-    "max": 60
-}
+                    {
+                        "type": "palladium:animation_timer_ability",
+                        "power": "null",
+                        "ability": "half_mass_behind_you_timer",
+                        "min": 59,
+                        "max": 60
+                    }
                 ]
             }
-},
-"hunger_test": {
-	"type": "airline_heroes:add_hunger",
-	"hunger": 2,
-	    "icon": "minecraft:blaze_rod",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
-	                "conditions": {
+        },
+        "hunger_test": {
+            "type": "airline_heroes:add_hunger",
+            "hunger": 2,
+            "icon": "minecraft:blaze_rod",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "conditions": {
                 "enabling": [
-{
-    "type": "palladium:animation_timer_ability",
-    "power": "null",
-    "ability": "half_mass_behind_you_timer",
-    "min": 59,
-    "max": 60
-}
+                    {
+                        "type": "palladium:animation_timer_ability",
+                        "power": "null",
+                        "ability": "half_mass_behind_you_timer",
+                        "min": 59,
+                        "max": 60
+                    }
                 ]
             }
-}
+        }
     }
 }
