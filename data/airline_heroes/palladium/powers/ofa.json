@@ -3,6 +3,12 @@
   "background": "minecraft:textures/block/light_blue_wool.png",
   "icon": "airline_heroes:textures/icons/ofa.png",
   "gui_display_type": "tree",
+  "energy_bars": {
+    "punch_energy": {
+      "max": 100,
+      "color": "#03FC0F"
+    }
+  },
   "abilities": {
     "transfer": {
       "type": "airline_heroes:power_transferal",
@@ -39,6 +45,117 @@
             "key_type": "key_bind"
           }
         ]
+      }
+    },
+    "energy_punch": {
+      "type": "gravestone:aoe_damage",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "radius": 15,
+      "damage": 30,
+      "energy_bar_usage": {
+        "energy_bar": "punch_energy",
+        "amount": 100
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "power": "null",
+            "ability": "full_cowling"
+          }
+        ],
+        "unlocking": []
+      }
+    },
+    "full_cowling": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:blaze_rod",
+      "title": "Full Cowling",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "cooldown": 0,
+            "key_type": "left_click",
+            "needs_empty_hand": true
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:energy_bar",
+            "power": "null",
+            "energy_bar": "punch_energy",
+            "min": 100
+          }
+        ]
+      }
+    },
+    "energy_build": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:blaze_rod",
+      "title": "charge",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": -1,
+      "energy_bar_usage": {
+        "energy_bar": "punch_energy",
+        "amount": -10
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:held",
+            "cooldown": 0,
+            "key_type": "key_bind",
+            "needs_empty_hand": false
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:energy_bar",
+            "power": "null",
+            "energy_bar": "punch_energy",
+            "min": 0,
+            "max": 99
+          }
+        ]
+      }
+    },
+    "full_cowling_boom": {
+      "type": "gravecore:explode",
+      "hidden": true,
+      "explosion": 0,
+      "fire": false,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "power": "null",
+            "ability": "full_cowling"
+          }
+        ],
+        "unlocking": []
+      }
+    },
+    "cowling_swing": {
+      "type": "gravecore:swing_hand",
+      "hidden": true,
+      "swinging_arm": "main_arm",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "power": "null",
+            "ability": "full_cowling"
+          }
+        ],
+        "unlocking": []
       }
     },
     "health_upgrade_1": {
