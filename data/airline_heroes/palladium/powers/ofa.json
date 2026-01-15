@@ -62,16 +62,16 @@
           {
             "type": "palladium:ability_enabled",
             "power": "null",
-            "ability": "full_cowling"
+            "ability": "detroit_smash"
           }
         ],
         "unlocking": []
       }
     },
-    "full_cowling": {
+    "detroit_smash": {
       "type": "palladium:dummy",
       "icon": "minecraft:blaze_rod",
-      "title": "Full Cowling",
+      "title": "Detroit Smash",
       "bar_color": "light_gray",
       "hidden": true,
       "hidden_in_bar": true,
@@ -98,7 +98,7 @@
     "energy_build": {
       "type": "palladium:dummy",
       "icon": "minecraft:blaze_rod",
-      "title": "charge",
+      "title": "Full Cowling",
       "bar_color": "light_gray",
       "hidden": true,
       "hidden_in_bar": false,
@@ -127,7 +127,7 @@
         ]
       }
     },
-    "full_cowling_boom": {
+    "detroit_smash_boom": {
       "type": "gravecore:explode",
       "hidden": true,
       "explosion": 0,
@@ -137,13 +137,13 @@
           {
             "type": "palladium:ability_enabled",
             "power": "null",
-            "ability": "full_cowling"
+            "ability": "detroit_smash"
           }
         ],
         "unlocking": []
       }
     },
-    "cowling_swing": {
+    "detroit_swing": {
       "type": "gravecore:swing_hand",
       "hidden": true,
       "swinging_arm": "main_arm",
@@ -152,7 +152,7 @@
           {
             "type": "palladium:ability_enabled",
             "power": "null",
-            "ability": "full_cowling"
+            "ability": "detroit_smash"
           }
         ],
         "unlocking": []
