@@ -47,6 +47,93 @@
         ]
       }
     },
+    "energy_punch_25": {
+      "type": "gravestone:aoe_damage",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "radius": 2.5,
+      "damage": 10,
+      "energy_bar_usage": {
+        "energy_bar": "punch_energy",
+        "amount": 25
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "power": "null",
+            "ability": "detroit_smash"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:energy_bar",
+            "power": "null",
+            "energy_bar": "punch_energy",
+            "min": 25,
+            "max": 25
+          }
+        ]
+      }
+    },
+    "energy_punch_50": {
+      "type": "gravestone:aoe_damage",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "radius": 5,
+      "damage": 15,
+      "energy_bar_usage": {
+        "energy_bar": "punch_energy",
+        "amount": 50
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "power": "null",
+            "ability": "detroit_smash"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:energy_bar",
+            "power": "null",
+            "energy_bar": "punch_energy",
+            "min": 50,
+            "max": 50
+          }
+        ]
+      }
+    },
+    "energy_punch_75": {
+      "type": "gravestone:aoe_damage",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "radius": 10,
+      "damage": 25,
+      "energy_bar_usage": {
+        "energy_bar": "punch_energy",
+        "amount": 75
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "power": "null",
+            "ability": "detroit_smash"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:energy_bar",
+            "power": "null",
+            "energy_bar": "punch_energy",
+            "min": 75,
+            "max": 75
+          }
+        ]
+      }
+    },
     "energy_punch": {
       "type": "gravestone:aoe_damage",
       "hidden": true,
@@ -65,7 +152,15 @@
             "ability": "detroit_smash"
           }
         ],
-        "unlocking": []
+        "unlocking": [
+          {
+            "type": "palladium:energy_bar",
+            "power": "null",
+            "energy_bar": "punch_energy",
+            "min": 100,
+            "max": 100
+          }
+        ]
       }
     },
     "detroit_smash": {
@@ -90,12 +185,13 @@
             "type": "palladium:energy_bar",
             "power": "null",
             "energy_bar": "punch_energy",
-            "min": 100
+            "min": 25,
+            "max": 100
           }
         ]
       }
     },
-    "energy_build": {
+    "energyact": {
       "type": "palladium:dummy",
       "icon": "minecraft:blaze_rod",
       "title": "Full Cowling",
@@ -103,10 +199,6 @@
       "hidden": true,
       "hidden_in_bar": false,
       "list_index": -1,
-      "energy_bar_usage": {
-        "energy_bar": "punch_energy",
-        "amount": -10
-      },
       "conditions": {
         "enabling": [
           {
@@ -122,7 +214,81 @@
             "power": "null",
             "energy_bar": "punch_energy",
             "min": 0,
-            "max": 99
+            "max": 100
+          }
+        ]
+      }
+    },
+    "energyinc": {
+      "type": "palladium:dummy",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "energy_bar_usage": {
+        "energy_bar": "punch_energy",
+        "amount": -25
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "key_type": "scroll_up"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "cooldown": 0,
+            "ability": "energyact"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:energy_bar",
+                "power": "null",
+                "energy_bar": "punch_energy",
+                "min": 100,
+                "max": 100
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "energydec": {
+      "type": "palladium:dummy",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "energy_bar_usage": {
+        "energy_bar": "punch_energy",
+        "amount": 25
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "key_type": "scroll_down"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "cooldown": 0,
+            "ability": "energyact"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:energy_bar",
+                "power": "null",
+                "energy_bar": "punch_energy",
+                "min": 0,
+                "max": 0
+              }
+            ]
           }
         ]
       }
@@ -153,6 +319,94 @@
             "type": "palladium:ability_enabled",
             "power": "null",
             "ability": "detroit_smash"
+          }
+        ],
+        "unlocking": []
+      }
+    },
+    "sparks_25": {
+      "type": "palladium:render_layer",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "render_layer": "airline_heroes:ofa_sparks_25",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:energy_bar",
+            "power": "null",
+            "energy_bar": "punch_energy",
+            "min": 25,
+            "max": 25
+          }
+        ],
+        "unlocking": []
+      }
+    },
+    "sparks_50": {
+      "type": "palladium:render_layer",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "render_layer": "airline_heroes:ofa_sparks_50",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:energy_bar",
+            "power": "null",
+            "energy_bar": "punch_energy",
+            "min": 50,
+            "max": 50
+          }
+        ],
+        "unlocking": []
+      }
+    },
+    "sparks_75": {
+      "type": "palladium:render_layer",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "render_layer": "airline_heroes:ofa_sparks_75",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:energy_bar",
+            "power": "null",
+            "energy_bar": "punch_energy",
+            "min": 75,
+            "max": 75
+          }
+        ],
+        "unlocking": []
+      }
+    },
+    "sparks_100": {
+      "type": "palladium:render_layer",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "render_layer": "airline_heroes:ofa_sparks_100",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:energy_bar",
+            "power": "null",
+            "energy_bar": "punch_energy",
+            "min": 100,
+            "max": 100
           }
         ],
         "unlocking": []
