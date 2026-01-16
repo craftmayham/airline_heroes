@@ -1,0 +1,79 @@
+{
+  "name": "Float",
+  "background": "minecraft:textures/block/light_blue_wool.png",
+  "icon": "minecraft:command_block",
+  "abilities": {
+    "float_dummy": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:blaze_rod",
+      "title": "Float",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": 0,
+      "gui_position": [0,0],
+      "description": "null",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "float": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "palladium:levitation_speed",
+      "hidden": true,
+      "amount": 0.2,
+      "operation": 0,
+      "uuid": "07398aa4-7562-42d4-a1b9-57f771deb805",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "float_dummy"
+          },
+          {
+            "type": "palladium:entity_type",
+            "entity_type": "minecraft:player"
+          }
+        ]
+      }
+    },
+    "mob_float": {
+      "type": "palladium:command",
+      "hidden": true,
+      "commands": [
+        "effect give @s minecraft:slow_falling 3 1 true"
+      ],
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "float_dummy"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:entity_type",
+                "entity_type": "minecraft:player"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "set_name_description": {
+      "type": "airline_heroes:set_name_description",
+      "hidden": true,
+      "power_description": "Allows the user to make themself float."
+    }
+  }
+}

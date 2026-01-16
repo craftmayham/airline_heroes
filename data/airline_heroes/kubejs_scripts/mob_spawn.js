@@ -23,6 +23,7 @@ EntityEvents.spawned((event) => {
     "airline_heroes:mob/sombody_get_the_door",
     "airline_heroes:mob/speedster",
     "airline_heroes:mob/tactile_pyrokinesis",
+    "airline_heroes:mob/float",
   ];
   if (moblist.includes(event.entity.getType())) {
     let num = Math.floor(Math.random() * 100) + 1;

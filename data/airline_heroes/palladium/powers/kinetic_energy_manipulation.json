@@ -262,7 +262,7 @@
                 {
                     "type": "palladium:action",
                     "cooldown": 0,
-                    "key_type": "right_click",
+                    "key_type": "left_click",
                     "needs_empty_hand": false,
                     "allow_scrolling_when_crouching": true
                 }
@@ -312,7 +312,7 @@
                 {
                     "type": "palladium:action",
                     "cooldown": 0,
-                    "key_type": "right_click",
+                    "key_type": "left_click",
                     "needs_empty_hand": false,
                     "allow_scrolling_when_crouching": true
                 }
@@ -362,7 +362,7 @@
                 {
                     "type": "palladium:action",
                     "cooldown": 0,
-                    "key_type": "right_click",
+                    "key_type": "left_click",
                     "needs_empty_hand": false,
                     "allow_scrolling_when_crouching": true
                 }
@@ -412,7 +412,7 @@
                 {
                     "type": "palladium:action",
                     "cooldown": 0,
-                    "key_type": "right_click",
+                    "key_type": "left_click",
                     "needs_empty_hand": false,
                     "allow_scrolling_when_crouching": true
                 }
@@ -462,7 +462,7 @@
                 {
                     "type": "palladium:action",
                     "cooldown": 0,
-                    "key_type": "right_click",
+                    "key_type": "left_click",
                     "needs_empty_hand": false,
                     "allow_scrolling_when_crouching": true
                 }
@@ -512,7 +512,7 @@
                 {
                     "type": "palladium:action",
                     "cooldown": 0,
-                    "key_type": "right_click",
+                    "key_type": "left_click",
                     "needs_empty_hand": false,
                     "allow_scrolling_when_crouching": true
                 }
@@ -562,7 +562,7 @@
                 {
                     "type": "palladium:action",
                     "cooldown": 0,
-                    "key_type": "right_click",
+                    "key_type": "left_click",
                     "needs_empty_hand": false,
                     "allow_scrolling_when_crouching": true
                 }
@@ -612,7 +612,7 @@
                 {
                     "type": "palladium:action",
                     "cooldown": 0,
-                    "key_type": "right_click",
+                    "key_type": "left_click",
                     "needs_empty_hand": false,
                     "allow_scrolling_when_crouching": true
                 }
@@ -662,7 +662,7 @@
                 {
                     "type": "palladium:action",
                     "cooldown": 0,
-                    "key_type": "right_click",
+                    "key_type": "left_click",
                     "needs_empty_hand": false,
                     "allow_scrolling_when_crouching": true
                 }
@@ -712,7 +712,7 @@
                 {
                     "type": "palladium:action",
                     "cooldown": 0,
-                    "key_type": "right_click",
+                    "key_type": "left_click",
                     "needs_empty_hand": false,
                     "allow_scrolling_when_crouching": true
                 }

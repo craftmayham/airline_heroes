@@ -215,6 +215,15 @@
           {
             "type": "palladium:ability_unlocked",
             "ability": "get_the_door_dummy"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:entity_type",
+                "entity_type": "minecraft:player"
+              }
+            ]
           }
         ],
         "enabling": [
