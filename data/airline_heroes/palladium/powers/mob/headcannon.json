@@ -1,0 +1,117 @@
+{
+  "name": "Headcannon",
+  "background": "minecraft:textures/block/red_wool.png",
+  "icon": "minecraft:bow",
+  "abilities": {
+"mob_dummy": {
+    "type": "palladium:dummy",
+    "hidden": true,
+	"conditions": {
+		"enabling": [
+{
+    "type": "palladium:interval",
+    "active_ticks": 1,
+    "disabled_ticks": 100
+},
+{
+    "type": "palladium:not",
+    "conditions":
+{
+    "type": "palladium:entity_type",
+    "entity_type": "minecraft:player"
+}
+}
+		]
+	}
+},
+"headcannon_mob":
+{
+    "type": "palladium:projectile",
+    "hidden": true,
+    "entity_type": "palladium:custom_projectile",
+    "entity_data": {
+		        "Damage": 10,
+        "Gravity": 0,
+        "Size": 1,
+        "Lifetime": 60,
+        "DieOnEntityHit": false,
+        "DieOnBlockHit": true,
+        "ExplosionRadius": 2,
+        "ExplosionCausesFire": false,
+        "ExplosionBlockInteraction": "none",
+		        "Appearances": [
+          {
+            "Type": "item",
+            "Item": "minecraft:fire_charge"
+          }
+        ]
+	},
+    "inaccuracy": 0,
+    "velocity": 2,
+    "swinging_arm": "none",
+    "damage_from_player": true,
+    "ignore_player_movement": false,
+	"conditions": {
+		"enabling": [
+{
+    "type": "palladium:ability_enabled",
+    "ability": "mob_dummy"
+},
+{
+    "type": "palladium:ability_first_tick",
+    "ability": "mob_dummy"
+}
+		]
+	}
+},
+"headcannon_player":
+{
+    "type": "palladium:projectile",
+    "hidden": true,
+    "entity_type": "palladium:custom_projectile",
+    "entity_data": {
+		        "Damage": 10,
+        "Gravity": 0,
+        "Size": 1,
+        "Lifetime": 60,
+        "DieOnEntityHit": false,
+        "DieOnBlockHit": true,
+        "ExplosionRadius": 2,
+        "ExplosionCausesFire": false,
+        "ExplosionBlockInteraction": "none",
+		        "Appearances": [
+          {
+            "Type": "item",
+            "Item": "minecraft:fire_charge"
+          }
+        ]
+	},
+    "inaccuracy": 0,
+    "velocity": 2,
+    "swinging_arm": "none",
+    "damage_from_player": true,
+    "ignore_player_movement": false,
+	"conditions": {
+		"enabling": [
+{
+    "type": "palladium:action",
+    "cooldown": 40,
+    "key_type": "key_bind",
+    "needs_empty_hand": false,
+    "allow_scrolling_when_crouching": true
+}
+		]
+	}
+},
+"headcannon_render": {
+    "type": "palladium:render_layer",
+    "hidden": true,
+    "render_layer": "airline_heroes:headcannon"
+},
+    "set_name_description": {
+      "type": "airline_heroes:set_name_description",
+      "hidden": true,
+      "power_description": "Your head is a cannon"
+    }
+  }
+}

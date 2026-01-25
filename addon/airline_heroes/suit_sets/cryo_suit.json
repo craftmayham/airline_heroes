@@ -1,0 +1,25 @@
+{
+  "tooltip": [
+    "A containment suit for a Cryokinesis user."
+  ],
+  "armor_material": "minecraft:diamond",
+   "opened_sound": "minecraft:item.armor.equip_leather",
+   "closed_sound": "minecraft:item.armor.equip_leather",
+  "creative_mode_tab": "airline_heroes:airline_heroes",
+  "head": {
+    "item_name": "cryo_helmet",
+    "armor_renderer": "airline_heroes:cryo_helmet"
+  },
+  "chest": {
+    "item_name": "cryo_chestplate",
+    "armor_renderer": "airline_heroes:cryo_chestplate"
+  },
+  "legs": {
+    "item_name": "cryo_leggings",
+    "armor_renderer": "airline_heroes:cryo_leggings"
+  },
+  "feet": {
+    "item_name": "cryo_boots",
+    "armor_renderer": "airline_heroes:cryo_boots"
+  }
+}

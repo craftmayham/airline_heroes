@@ -17,6 +17,17 @@
     "start_value": 1,
     "max_value": 1
 },
+"show_other_hand": {
+    "type": "palladium:show_both_arms",
+    "icon": "minecraft:blaze_rod",
+    "title": "null",
+    "bar_color": "light_gray",
+    "hidden": true,
+    "hidden_in_bar": false,
+    "list_index": -1,
+    "gui_position": "null",
+    "description": "null"
+},
 
 	"render":
 	{

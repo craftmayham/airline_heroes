@@ -1,0 +1,40 @@
+{
+  "name": "Shadow Fade",
+  "background": "minecraft:textures/block/green_wool.png",
+  "icon": "minecraft:phantom_membrane",
+  "gui_display_type": "tree",
+  "abilities": {
+    "set_name_description": {
+      "type": "airline_heroes:set_name_description",
+      "hidden": true,
+      "power_description": "You can fade into shadows"
+    },
+    "invis": {
+      "type": "palladium:invisibility",
+      "icon": "palladium:textures/icon/invisibility.png",
+      "title": "null",
+      "bar_color": "light_gray",
+      "list_index": -1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:brightness_at_position",
+            "min_brightness": 0,
+            "max_brightness": 7
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

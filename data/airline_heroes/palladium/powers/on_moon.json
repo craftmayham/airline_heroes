@@ -1,0 +1,21 @@
+{
+  "name": "on_moon",
+  "background": "minecraft:textures/block/stone.png",
+  "icon": "minecraft:stone",
+  "hidden": true,
+  "abilities": {
+    "gravity": {
+      "type": "palladium:attribute_modifier",
+      "attribute": "forge:entity_gravity",
+      "amount": -0.07,
+      "operation": 0,
+      "uuid": "f678e0f7-97e1-42d8-9548-9592e185ff29"
+    },
+    "no_fall": {
+      "type": "palladium:damage_immunity",
+      "damage_sources": [
+        "minecraft:is_fall"
+      ]
+    }
+  }
+}

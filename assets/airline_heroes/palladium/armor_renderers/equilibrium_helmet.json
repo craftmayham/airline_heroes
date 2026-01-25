@@ -1,0 +1,8 @@
+{
+  "textures": "airline_heroes:textures/models/armor/equilibrium_helmet.png",
+  "model_layers": "palladium:humanoid#tight_suit",
+    "render_layers": [
+    "airline_heroes:equilibrium_hair"
+  ],
+    "hide_second_layer": true
+}

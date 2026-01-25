@@ -1,0 +1,10 @@
+{
+  "type": "palladium:sword",
+  "max_stack_size": 1,
+  "creative_mode_tab": "airline_heroes:airline_heroes",
+  "rarity": "rare",
+  "is_fire_resistant": true,
+  "tier": "minecraft:iron",
+  "base_damage": 3,
+  "attack_speed": -2.4
+}

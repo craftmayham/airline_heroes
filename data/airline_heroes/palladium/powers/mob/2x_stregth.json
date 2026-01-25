@@ -1,0 +1,60 @@
+{
+  "name": "2x Strength",
+  "background": "minecraft:textures/block/green_wool.png",
+  "icon": "minecraft:diamond_sword",
+  "abilities": {
+    "set_name_description": {
+      "type": "airline_heroes:set_name_description",
+      "hidden": true,
+      "power_description": "You boast 2x the strength of the average human"
+    },
+    "strength": {
+      "type": "palladium:attribute_modifier",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "attribute": "minecraft:generic.attack_damage",
+      "amount": 2,
+      "operation": 0,
+      "uuid": "2d1ddb23-ba1f-45a3-8c88-45f23a0be447",
+      "conditions": {
+        "enabling": [],
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "knock": {
+      "type": "palladium:attribute_modifier",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "attribute": "minecraft:generic.attack_knockback",
+      "amount": 1,
+      "operation": 0,
+      "uuid": "da7eb6a5-ccd4-41a7-8758-1977c375fba4",
+      "conditions": {
+        "enabling": [],
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

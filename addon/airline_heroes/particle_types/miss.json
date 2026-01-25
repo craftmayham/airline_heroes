@@ -1,0 +1,8 @@
+{
+  "lifetime": 25,
+  "has_physics": false,
+  "gravity": 0,
+  "quad_size": 1,
+  "render_type": "translucent",
+  "texture_type": "aging"
+}

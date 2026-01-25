@@ -1,0 +1,25 @@
+{
+  "tooltip": [
+    "The suit of a collector"
+  ],
+  "armor_material": "minecraft:diamond",
+    "opened_sound": "minecraft:item.armor.equip_iron",
+    "closed_sound": "minecraft:item.armor.equip_iron",
+  "creative_mode_tab": "airline_heroes:airline_heroes",
+  "chest": {
+    "item_name": "equilibrium_jacket",
+	"armor_renderer": "airline_heroes:equilibrium_jacket"
+  },
+  "legs": {
+    "item_name": "equilibrium_pants",
+	"armor_renderer": "airline_heroes:equilibrium_pants"
+  },
+  "feet": {
+    "item_name": "equilibrium_boots",
+	"armor_renderer": "airline_heroes:equilibrium_boots"
+  },
+  "head": {
+    "item_name": "equilibrium_helmet",
+	"armor_renderer": "airline_heroes:equilibrium_helmet"
+  }
+}

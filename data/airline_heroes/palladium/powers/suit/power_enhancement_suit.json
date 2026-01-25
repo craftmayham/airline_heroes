@@ -1,0 +1,94 @@
+{
+  "name": "Enhancement Suit",
+  "background": "minecraft:textures/block/light_blue_wool.png",
+  "icon": "minecraft:ice",
+  "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
+  "abilities": {
+    "cryo_name_change": {
+      "type": "palladium:name_change",
+      "hidden": true,
+      "name": {
+        "text": "§9Cold-Steel"
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_power",
+            "power": "airline_heroes:cryokinesis"
+          }
+        ]
+      }
+    },
+    "wildcard_name_change": {
+      "type": "palladium:name_change",
+      "hidden": true,
+      "name": {
+        "text": "§5Wildcard"
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_power",
+            "power": "airline_heroes:kinetic_energy_manipulation"
+          }
+        ]
+      }
+    },
+    "non_compatible_name": {
+      "type": "palladium:name_change",
+      "hidden": true,
+      "name": {
+        "text": "§8Enhancement Suit"
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_power",
+                "power": "airline_heroes:cryokinesis"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "power_suit_strength": {
+      "type": "palladium:attribute_modifier",
+      "hidden": true,
+      "attribute": "minecraft:generic.attack_damage",
+      "amount": 4,
+      "operation": 0,
+      "uuid": "17f3359c-bd9b-4179-9119-59007147fc50"
+    },
+    "power_suit_speed": {
+      "type": "palladium:attribute_modifier",
+      "hidden": true,
+      "attribute": "minecraft:generic.movement_speed",
+      "amount": 0.2,
+      "operation": 0,
+      "uuid": "bb157b4d-97e5-4006-85a4-0c1bf47228ab",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:sprinting"
+          }
+        ]
+      }
+    },
+    "power_suit_jump_strength": {
+      "type": "palladium:attribute_modifier",
+      "hidden": true,
+      "attribute": "palladium:jump_power",
+      "amount": 1,
+      "operation": 0,
+      "uuid": "60f0879d-e992-42d5-816d-76770c0a0da0"
+    },
+    "power_enhancement_suit_lights": {
+      "type": "palladium:render_layer",
+      "hidden": true,
+      "render_layer": "airline_heroes:power_enhancement_suit_lights"
+    }
+  }
+}

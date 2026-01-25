@@ -10,9 +10,16 @@ PlayerEvents.loggedIn(event => {
 	
 	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.glow_berries minecraft.used:minecraft.glow_berries`);
 	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.potato minecraft.used:minecraft.potato`);
+	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.rotten_flesh minecraft.used:minecraft.rotten_flesh`);
 	
 	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.heat_build_up dummy`);
 	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.struck_by_lightning dummy`);
 	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.heat_build_up_timer dummy`);	
 	
+	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.kinetic_energy dummy`);	
+	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.item_charge dummy`);	
+
+	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.bee_wings_anim dummy`);
+
+	event.server.runCommandSilent(`scoreboard objectives add airline_heroes.capo_shotgun_ammo dummy`);
 })

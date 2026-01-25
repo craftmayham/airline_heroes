@@ -1,0 +1,71 @@
+{
+  "name": "Shock Absorption",
+  "background": "minecraft:textures/block/light_blue_wool.png",
+  "icon": "minecraft:command_block",
+  "abilities": {
+    "shock_absorption_dummy": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:blaze_rod",
+      "title": "Quirk Factor",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": 0,
+      "gui_position": [0, 0],
+      "description": "null",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "knock_back_res": {
+      "type": "palladium:attribute_modifier",
+      "icon": "airline_heroes:textures/icons/endurance_upgrade_1.png",
+      "title": "Shock Absorption",
+      "gui_position": [1, 0],
+      "attribute": "minecraft:generic.knockback_resistance",
+      "amount": 10,
+      "operation": 0,
+      "uuid": "2f364b8c-13d7-4a82-8177-f07e474ecfd4",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "shock_absorption_dummy"
+          }
+        ]
+      }
+    },
+    "endurance": {
+      "type": "palladium:attribute_modifier",
+      "icon": "airline_heroes:textures/icons/endurance_upgrade_1.png",
+      "title": "Endurance",
+      "gui_position": [-1, 0],
+      "attribute": "minecraft:generic.armor",
+      "amount": 10,
+      "operation": 0,
+      "uuid": "3c00b695-113a-45c3-9506-3e7d1ace7e52",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "shock_absorption_dummy"
+          }
+        ]
+      }
+    },
+    "set_name_description": {
+      "type": "airline_heroes:set_name_description",
+      "hidden": true,
+      "power_description": "Allows the user to absorb blunt force."
+    }
+  }
+}

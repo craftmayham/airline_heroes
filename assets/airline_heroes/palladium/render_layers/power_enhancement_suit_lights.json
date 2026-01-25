@@ -1,0 +1,23 @@
+{
+  "type": "palladium:compound",
+  "layers": [
+    {
+      "model_layer": "palladium:humanoid#suit",
+      "texture": "airline_heroes:textures/models/armor/power_enhancement_suit/power_enhancement_lights_wildcard.png",
+      "render_type": "glow",
+      "conditions": {
+        "type": "palladium:has_power",
+        "power": "airline_heroes:kinetic_energy_manipulation"
+      }
+    },
+    {
+      "model_layer": "palladium:humanoid#suit",
+      "texture": "airline_heroes:textures/models/armor/power_enhancement_suit/power_enhancement_lights_cryo.png",
+      "render_type": "glow",
+      "conditions": {
+        "type": "palladium:has_power",
+        "power": "airline_heroes:cryokinesis"
+      }
+    }
+  ]
+}

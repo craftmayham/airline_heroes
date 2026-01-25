@@ -1,0 +1,48 @@
+{
+  "name": "Containment Suit",
+  "background": "minecraft:textures/block/light_blue_wool.png",
+  "icon": "minecraft:ice",
+  "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
+  "abilities": {
+    "cryo_name_change": {
+      "type": "palladium:name_change",
+      "hidden": true,
+      "name": {
+        "text": "§bCold-Steel"
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_power",
+            "power": "airline_heroes:cryokinesis"
+          }
+        ]
+      }
+    },
+    "not_cryo_name_change": {
+      "type": "palladium:name_change",
+      "hidden": true,
+      "name": {
+        "text": "§bCold-Steel§f?"
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_power",
+                "power": "airline_heroes:cryokinesis"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "cryo_suit_lights": {
+      "type": "palladium:render_layer",
+      "hidden": true,
+      "render_layer": "airline_heroes:cryo_glow_layer"
+    }
+  }
+}

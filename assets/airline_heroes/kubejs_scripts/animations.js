@@ -94,15 +94,36 @@ event.registerForPower('airline_heroes/half_mass_animation', 'airline_heroes:gas
     }
 });
 	
-	    event.registerForPower('airline_heroes/hand_pos', 'airline_heroes:shotgun', 2, (builder) => {
+	    event.registerForPower('airline_heroes/hand_pos', 'airline_heroes:shotgun', 1, (builder) => {
         const progress = animationUtil.getAnimationTimerAbilityValue(builder.getPlayer(), 'airline_heroes:shotgun', 'hand_pos', builder.getPartialTicks());
 if (progress > 0.0) {	
                      if (builder.isFirstPerson()) {
-            builder.get('right_arm').setXRotDegrees(-2).animate('easeInOutCubic', progress);
-            builder.get('right_arm').setYRotDegrees(40).animate('easeInOutCubic', progress);
-            builder.get('left_arm').setXRotDegrees(-2).animate('easeInOutCubic', progress);
-            builder.get('left_arm').setYRotDegrees(2).animate('easeInOutCubic', progress);
-        }
+            builder.get('right_arm').setXRotDegrees(-20).animate('easeInOutCubic', progress);
+            builder.get('right_arm').setYRotDegrees(50).animate('easeInOutCubic', progress);
+			builder.get('right_arm').setZRotDegrees(-50).animate('easeInOutCubic', progress);
+			builder.get('right_arm').moveY(0).animate('easeInOutCubic', progress);
+			builder.get('right_arm').scaleY(1.5).animate('easeInOutCubic', progress);
+		builder.get('right_arm').scaleX(1.5).animate('easeInOutCubic', progress);
+			builder.get('right_arm').scaleZ(1.5).animate('easeInOutCubic', progress);
+            builder.get('left_arm').setZRotDegrees(20).animate('easeInOutCubic', progress);
+			builder.get('left_arm').setXRotDegrees(-40).animate('easeInOutCubic', progress);
+			builder.get('left_arm').moveZ(-10).animate('easeInOutCubic', progress);
+			builder.get('left_arm').moveY(2).animate('easeInOutCubic', progress);
+			builder.get('left_arm').moveX(-25).animate('easeInOutCubic', progress);
+			builder.get('left_arm')
+			.scaleX(1.5)
+			.scaleY(1.5)
+			.scaleZ(1.5)
+			.animate('easeInOutCubic', progress);
+        } else {
+	   builder.get('right_arm').setXRotDegrees(-80).animate('easeInOutCubic',progress);
+	   builder.get('right_arm').setYRotDegrees(-20).animate('easeInOutCubic',progress);
+	   builder.get('right_arm').moveZ(0.8).animate('easeInOutCubic',progress);
+	   builder.get('left_arm').setYRotDegrees(20).animate('easeInOutCubic',progress);
+	   builder.get('left_arm').setXRotDegrees(-85).animate('easeInOutCubic',progress);
+	   builder.get('left_arm').moveX(-2).animate('easeInOutCubic',progress);
+	   builder.get('left_arm').moveZ(-2).animate('easeInOutCubic',progress);
+		}
 }
     });
 	
@@ -114,16 +135,16 @@ if (!builder.isFirstPerson()) {
 	  builder.get('left_arm')	
                      .setY(4)
                      .setZ(-2)					 
-                     .rotateY(0.5)	
-					  .rotateX(-2.4)
-                      .rotateZ(0)						  
+                     .setYRot(0.5)	
+					  .setXRot(-2.4)
+                      .setZRot(0)						  
 					.animate('InOutCubic', progress); 
       builder.get('right_arm')		
                       .setY(4)
                       .setZ(-2)					  
-                     .rotateY(-0.5)	
-					  .rotateX(-2.4)
-                      .rotateZ(0)						  
+                     .setYRot(-0.5)	
+					  .setXRot(-2.4)
+                      .setZRot(0)						  
 					.animate('InOutCubic', progress); 
 } else {
 		  builder.get('left_arm')	
@@ -143,26 +164,7 @@ if (!builder.isFirstPerson()) {
 }
 }
     });
-			    event.registerForPower('airline_heroes/grab_animation', 'airline_heroes:hot_blooded', 10, (builder) => {
-        const progress = animationUtil.getAnimationTimerAbilityValue(builder.getPlayer(), 'airline_heroes:hot_blooded', 'grab_animation', builder.getPartialTicks());
-if (progress > 0.0) {
-if (!builder.isFirstPerson()) {
-	  builder.get('left_arm')	
-           				 
-                     .rotateY(0.4)	
-					  .rotateX(-1.5)
-                      .rotateZ(0)						  
-					.animate('InOutCubic', progress);  
-} else {
-		  builder.get('left_arm')	
-                     .setY(1)		  
-                     .rotateY(0)	
-					  .rotateX(-0.5)
-                      .rotateZ(0)						  
-					.animate('InOutCubic', progress); 
-}
-}
-    });
+
 	
 	
         event.registerForPower('airline_heroes/ground_slam_animation', 'airline_heroes:hot_blooded', 5, (builder) => {
@@ -206,21 +208,71 @@ if (progress < 0.8) {
 					.animate('InOutCubic', progress);
 }
 } else {
+	if (progress < 0.8) {
 		  builder.get('left_arm')	
-                     .setY(4)
-                     .setZ(0)					 
-                     .rotateY(0)	
-					  .rotateX(-1)
-                      .rotateZ(0)						  
+					  .rotateX(-0.4)
+                       .rotateY(0.5)					  
 					.animate('InOutCubic', progress); 
       builder.get('right_arm')		
-                      .setY(4)
-                      .setZ(0)					  
-                     .rotateY(0)	
-					  .rotateX(-1)
-                      .rotateZ(0)						  
+                          .setY(3)		  
+					  .rotateX(-0.4)
+                        .rotateY(-0.5)					  
+					.animate('InOutCubic', progress); 
+} else {
+			  builder.get('left_arm')
+                          .setX(-6)
+						 .rotateX(-0.4)	
+                           .rotateY(0.5)						 
+					.animate('InOutCubic', progress); 
+      builder.get('right_arm')			
+	                      .setX(6)					  
+						  .rotateX(-0.4)	
+                          .rotateY(-0.5)						  
 					.animate('InOutCubic', progress); 
 }
+}
+}
+    });
+	
+		    event.registerForPower('airline_heroes/jump_animation', 'airline_heroes:hot_blooded', 10, (builder) => {
+        const progress = animationUtil.getAnimationTimerAbilityValue(builder.getPlayer(), 'airline_heroes:hot_blooded', 'jump_animation', builder.getPartialTicks());
+if (progress > 0.0) {
+if (!builder.isFirstPerson()) {	
+	  builder.get('left_arm')					 
+                     .rotateZ(-0.8)						  
+					.animate('InOutCubic', progress); 
+      builder.get('right_arm')							  
+                     .rotateZ(0.8)						  
+					.animate('InOutCubic', progress); 
+}
+}
+    });
+	
+			    event.registerForPower('airline_heroes/launch_forward_animation', 'airline_heroes:energy_transference', 5, (builder) => {
+        const progress = animationUtil.getAnimationTimerAbilityValue(builder.getPlayer(), 'airline_heroes:energy_transference', 'launch_forward_animation', builder.getPartialTicks());
+if (progress > 0.0) {
+if (!builder.isFirstPerson()) {	
+	  builder.get('left_arm')					 
+                     .setXRot(1.5)
+					.animate('EaseOutBounce', progress); 
+      builder.get('right_arm')							  
+                     .setXRot(1.5)						  
+					.animate('EaseOutBounce', progress); 
+		  builder.get('left_leg')					 
+                     .setXRot(0.3)
+					.animate('EaseOutBounce', progress); 
+      builder.get('right_leg')							  
+                     .setXRot(-0.4)						  
+					.animate('EaseOutBounce', progress); 				
+}
+}
+    });
+			    event.registerForPower('airline_heroes/big_head_animation', 'airline_heroes:mob_big_head', 1, (builder) => {
+        const progress = animationUtil.getAnimationTimerAbilityValue(builder.getPlayer(), 'airline_heroes:mob_big_head', 'big_head_animation', builder.getPartialTicks());
+if (progress > 0.0) {
+	  builder.get('head')					 
+                     .scaleY(1.8)
+					.animate('EaseOutBounce', progress); 			
 }
     });
 });

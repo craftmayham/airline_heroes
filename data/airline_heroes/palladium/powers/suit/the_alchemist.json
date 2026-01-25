@@ -1,0 +1,15 @@
+{
+    "name": "The Alchemist",
+    "background": "minecraft:textures/block/stone.png",
+    "hidden": true,
+    "icon": "minecraft:stone",
+    "hidden": true,
+    "abilities": {
+        "name_change": {
+            "type": "palladium:name_change",
+            "name": {
+                "text": "§1T§3h§be §5A§dl§cc§4h§2e§am§6i§es§ft"
+            }
+        }
+    }
+}

@@ -6,7 +6,6 @@ StartupEvents.registry('palladium:abilities', event => {
         .displayName('Freeze Player')
         .documentationDescription('Freezes the player on the y axis')
  .tick((entity, entry, holder, enabled) => {
-            // Only active when toggled on
             if (!enabled) return;
             if (!entity.level || entity.level.isClientSide()) return;
 

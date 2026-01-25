@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "airline_heroes:item/alchemist_tunic_v2"
+  }
+}

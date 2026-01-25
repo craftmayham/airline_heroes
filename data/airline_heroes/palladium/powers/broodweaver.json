@@ -156,9 +156,7 @@
                     }
                 ]
             }
-        },
-        
-        
+        },        
         "spider_toggle": {
             "type": "palladium:dummy",
             "icon": "minecraft:vine",

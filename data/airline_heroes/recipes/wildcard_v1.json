@@ -1,0 +1,35 @@
+{
+  "type": "palladium:suit_set_tailoring",
+  "suit_set": "airline_heroes:wildcard",
+  "ingredients": [
+    {
+      "ingredient": {
+        "item": "palladium:black_fabric"
+      },
+      "count": 7
+    },
+    {
+      "ingredient": {
+        "item": "palladium:light_blue_fabric"
+      },
+      "count": 14
+    },
+    {
+      "ingredient": {
+        "item": "palladium:brown_fabric"
+      },
+      "count": 20
+    },
+    {
+      "ingredient": {
+        "item": "palladium:white_fabric"
+      },
+      "count": 10
+    }
+  ],
+  "tool": {
+    "item": "minecraft:shears"
+  },
+  "tool_icon": "palladium:item/empty_tool_slot_shears",
+  "category": "airline_heroes:airline_heroes"
+}

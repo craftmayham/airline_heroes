@@ -1,0 +1,111 @@
+{
+  "name": "Intagibility",
+  "background": "minecraft:textures/block/white_wool.png",
+  "icon": "minecraft:bow",
+  "abilities": {
+    "set_name_description": {
+      "type": "airline_heroes:set_name_description",
+      "hidden": true,
+      "power_description": "You can move through matter as if it's not there"
+    },
+    "intang": {
+      "type": "palladium:intangibility",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "null",
+      "vertical": false,
+      "blacklist": "palladium:prevents_intangibility",
+      "conditions": {
+        "enabling": [],
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:or",
+                "conditions": [
+                  {
+                    "type": "palladium:ability_unlocked",
+                    "power": "null",
+                    "ability": "player_intang"
+                  },
+                  {
+                    "type": "palladium:ability_unlocked",
+                    "power": "null",
+                    "ability": "player_intang_vert"
+                  },
+                  {
+                    "type": "palladium:has_effect",
+                    "effect": "airline_heroes:nullified"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "player_intang": {
+      "type": "palladium:intangibility",
+      "icon": "minecraft:phantom_membrane",
+      "title": "Intagibility",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": false,
+      "list_index": -1,
+      "vertical": false,
+      "blacklist": "palladium:prevents_intangibility",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:toggle",
+            "cooldown": 0,
+            "key_type": "key_bind"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:entity_type",
+            "entity_type": "minecraft:player"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "player_intang_vert": {
+      "type": "palladium:intangibility",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "vertical": true,
+      "blacklist": "palladium:prevents_intangibility",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:crouching"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "power": "null",
+            "ability": "player_intang"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,861 @@
+{
+  "name": "Cryokinesis",
+  "background": "minecraft:textures/block/light_blue_wool.png",
+  "icon": "minecraft:ice",
+  "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
+  "abilities": {
+    "toggle_iceform_dummy": {
+      "type": "palladium:dummy",
+      "icon": "airline_heroes:textures/icons/toggle_cryo.png",
+      "title": "Ice Form",
+      "hidden": false,
+      "list_index": 0,
+      "gui_position": [0,0],
+      "description": "null",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:toggle",
+            "cooldown": 0,
+            "key_type": "key_bind",
+            "needs_empty_hand": false,
+            "allow_scrolling_when_crouching": true
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "toggle_iceform_vfx": {
+      "type": "palladium:command",
+      "hidden": true,
+      "first_tick_commands": [
+        "particle minecraft:snowflake ~ ~ ~ 1 1 1 1 100"
+      ],
+      "last_tick_commands": [],
+      "commands": [],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          }
+        ]
+      }
+    },
+    "icebeam_dummy": {
+      "type": "palladium:dummy",
+      "icon": "airline_heroes:textures/icons/icebeam_icon.png",
+      "title": "Ice Beam",
+      "hidden": false,
+      "list_index": 1,
+      "gui_position": [0,-1],
+      "description": "null",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:held",
+            "cooldown": 0,
+            "key_type": "key_bind",
+            "needs_empty_hand": false,
+            "allow_scrolling_when_crouching": true
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "toggle_iceform_dummy"
+          },
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          }
+        ]
+      }
+    },
+    "icebeam_lvl_0": {
+      "type": "palladium:energy_beam",
+      "hidden": true,
+      "damage_type": "minecraft:freeze",
+      "damage": 1,
+      "max_distance": 10,
+      "speed": 0.5,
+      "set_on_fire_seconds": 0,
+      "cause_fire": false,
+      "smelt_blocks": false,
+      "commands_on_block_hit": [
+        "fill ~ ~ ~ ~ ~ ~ minecraft:snow[layers=1] keep"
+      ],
+      "commands_on_entity_hit": [],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "icebeam_dummy"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_unlocked",
+                "ability": "power_upgrade_3"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "icebeam_lvl_1": {
+      "type": "palladium:energy_beam",
+      "hidden": true,
+      "damage_type": "minecraft:freeze",
+      "damage": 1,
+      "max_distance": 10,
+      "speed": 0.5,
+      "set_on_fire_seconds": 0,
+      "cause_fire": false,
+      "smelt_blocks": false,
+      "commands_on_block_hit": [
+        "fill ~ ~ ~ ~ ~ ~ minecraft:ice replace minecraft:water"
+      ],
+      "commands_on_entity_hit": [],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "icebeam_dummy"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "power_upgrade_1"
+          }
+        ]
+      }
+    },
+    "icebeam_lvl_2": {
+      "type": "palladium:energy_beam",
+      "hidden": true,
+      "damage_type": "minecraft:freeze",
+      "damage": 1,
+      "max_distance": 10,
+      "speed": 0.5,
+      "set_on_fire_seconds": 0,
+      "cause_fire": false,
+      "smelt_blocks": false,
+      "commands_on_block_hit": [
+        "fill ~ ~ ~ ~ ~ ~ minecraft:lava replace minecraft:obsidian"
+      ],
+      "commands_on_entity_hit": [],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "icebeam_dummy"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "power_upgrade_2"
+          }
+        ]
+      }
+    },
+    "icebeam_lvl_3": {
+      "type": "palladium:energy_beam",
+      "hidden": true,
+      "damage_type": "minecraft:freeze",
+      "damage": 1,
+      "max_distance": 10,
+      "speed": 0.5,
+      "set_on_fire_seconds": 0,
+      "cause_fire": false,
+      "smelt_blocks": false,
+      "commands_on_block_hit": [
+        "function airline_heroes:freeze_block"
+      ],
+      "commands_on_entity_hit": [],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "icebeam_dummy"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "power_upgrade_3"
+          }
+        ]
+      }
+    },
+    "icebeam_particles": {
+      "type": "palladium:particles",
+      "hidden": true,
+      "emitter": "airline_heroes:ice_beam",
+      "particle_type": "minecraft:snowflake",
+      "options": "",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "icebeam_dummy"
+          }
+        ]
+      }
+    },
+    "icebeam_aim": {
+      "type": "palladium:aim",
+      "hidden": true,
+      "time": 10,
+      "arm": "main_arm",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          }
+        ],
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "icebeam_dummy"
+          }
+        ]
+      }
+    },
+    "snowball_projectile": {
+      "type": "airline_heroes:projectile_with_offset",
+      "entity_type": "palladium:custom_projectile",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "velocity": 2,
+      "swinging_arm": "right_arm",
+      "ignore_player_movement": true,
+      "damage_from_player": false,
+      "yaw_inaccuracy": 0,
+      "pitch_inaccuracy": 0,
+      "count": 1,
+      "entity_data": {
+        "Gravity": 0.1,
+        "Damage": 0.01,
+        "Size": 1.2,
+        "Lifetime": 120,
+        "ExplosionRadius": 0,
+        "ExplosionBlockInteraction": "break",
+        "DieOnEntityHit": true,
+        "DieOnBlockHit": true,
+        "Appearances": [
+          {
+            "Type": "item",
+            "Item": "minecraft:snowball"
+          }
+        ]
+      },
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          }
+        ],
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "cooldown": 0,
+            "key_type": "right_click",
+            "needs_empty_hand": false,
+            "allow_scrolling_when_crouching": true
+          }
+        ]
+      }
+    },
+    "tool_wheel": {
+      "type": "palladium:ability_wheel",
+      "icon": "airline_heroes:ice_pickaxe",
+      "title": "Ice Tools",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": 2,
+      "gui_position": [1,-1],
+      "description": "null",
+      "abilities": [
+        "ice_sword_commands",
+        "ice_pickaxe_commands",
+        "ice_axe_commands",
+        "ice_shovel_commands"
+      ],
+      "texture": "null",
+      "disable_mouse_scrolling": false,
+      "disable_center_icon": false,
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "toggle_iceform_dummy"
+          }
+        ],
+        "enabling": [
+          {
+            "type": "palladium:held",
+            "cooldown": 0,
+            "key_type": "key_bind",
+            "needs_empty_hand": false,
+            "allow_scrolling_when_crouching": true
+          }
+        ]
+      }
+    },
+    "ice_sword_commands": {
+      "type": "palladium:command",
+      "icon": "airline_heroes:ice_sword",
+      "title": "Ice Sword",
+      "hidden": true,
+      "first_tick_commands": [
+        "give @s airline_heroes:ice_sword"
+      ],
+      "last_tick_commands": [],
+      "commands": [],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_wheel",
+            "cooldown": 0
+          }
+        ]
+      }
+    },
+    "ice_pickaxe_commands": {
+      "type": "palladium:command",
+      "icon": "airline_heroes:ice_pickaxe",
+      "title": "Ice Pickaxe",
+      "hidden": true,
+      "first_tick_commands": [
+        "give @s airline_heroes:ice_pickaxe"
+      ],
+      "last_tick_commands": [],
+      "commands": [],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_wheel",
+            "cooldown": 0
+          }
+        ]
+      }
+    },
+    "ice_axe_commands": {
+      "type": "palladium:command",
+      "icon": "airline_heroes:ice_axe",
+      "title": "Ice Axe",
+      "hidden": true,
+      "first_tick_commands": [
+        "give @s airline_heroes:ice_axe"
+      ],
+      "last_tick_commands": [],
+      "commands": [],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_wheel",
+            "cooldown": 0
+          }
+        ]
+      }
+    },
+    "ice_shovel_commands": {
+      "type": "palladium:command",
+      "icon": "airline_heroes:ice_shovel",
+      "title": "Ice Shovel",
+      "hidden": true,
+      "first_tick_commands": [
+        "give @s airline_heroes:ice_shovel"
+      ],
+      "last_tick_commands": [],
+      "commands": [],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_wheel",
+            "cooldown": 0
+          }
+        ]
+      }
+    },
+    "cryo_suit_flight": {
+      "type": "palladium:attribute_modifier",
+      "hidden": true,
+      "attribute": "palladium:flight_speed",
+      "amount": 1,
+      "operation": 0,
+      "uuid": "762afdce-301b-4868-b803-38357b2d977c",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:wears_suit_set",
+            "suit_set": "airline_heroes:cryo_suit"
+          },
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          }
+        ]
+      }
+    },
+    "cryo_suit_flight_particles": {
+      "type": "palladium:particles",
+      "hidden": true,
+      "emitter": [
+        "airline_heroes:cryo_left_hand",
+        "airline_heroes:cryo_right_hand",
+        "airline_heroes:cryo_left_leg",
+        "airline_heroes:cryo_right_leg"
+      ],
+      "particle_type": "minecraft:snowflake",
+      "options": "",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:is_hovering_or_flying"
+          }
+        ]
+      }
+    },
+    "health_upgrade_1": {
+      "type": "palladium:attribute_modifier",
+      "icon": "airline_heroes:textures/icons/health_upgrade_1.png",
+      "title": "Health Increase 1",
+      "gui_position": [0,1],
+      "attribute": "minecraft:generic.max_health",
+      "amount": 8,
+      "operation": 0,
+      "uuid": "0e099955-a6e2-40dd-b334-5eef6eab6e06",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "toggle_iceform_dummy"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Scoreboard Score"
+            }
+          }
+        ]
+      }
+    },
+    "health_upgrade_2": {
+      "type": "palladium:attribute_modifier",
+      "icon": "airline_heroes:textures/icons/health_upgrade_2.png",
+      "title": "Health Increase 2",
+      "gui_position": [0,2],
+      "attribute": "minecraft:generic.max_health",
+      "amount": 6,
+      "operation": 0,
+      "uuid": "5ca10900-6f16-4ff2-8e5d-7af93b76130d",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "toggle_iceform_dummy"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Scoreboard Score"
+            }
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "health_upgrade_1"
+          }
+        ]
+      }
+    },
+    "health_upgrade_3": {
+      "type": "palladium:attribute_modifier",
+      "icon": "airline_heroes:textures/icons/health_upgrade_3.png",
+      "title": "Health Increase 3",
+      "gui_position": [0,3],
+      "attribute": "minecraft:generic.max_health",
+      "amount": 6,
+      "operation": 0,
+      "uuid": "2df426df-5c76-42ee-949a-e5978d42bc24",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "toggle_iceform_dummy"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Scoreboard Score"
+            }
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "health_upgrade_2"
+          }
+        ]
+      }
+    },
+    "power_upgrade_1": {
+      "type": "palladium:attribute_modifier",
+      "icon": "airline_heroes:textures/icons/power_upgrade_1.png",
+      "title": "Power Increase 1",
+      "gui_position": [1,0],
+      "attribute": "palladium:punch_damage",
+      "amount": 1,
+      "operation": 0,
+      "uuid": "7d62e42b-77cb-4e64-ade0-a3aaba45ef1a",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "toggle_iceform_dummy"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Scoreboard Score"
+            }
+          }
+        ]
+      }
+    },
+    "power_upgrade_2": {
+      "type": "palladium:attribute_modifier",
+      "icon": "airline_heroes:textures/icons/power_upgrade_2.png",
+      "title": "Power Increase 2",
+      "gui_position": [2,0],
+      "attribute": "palladium:punch_damage",
+      "amount": 3,
+      "operation": 0,
+      "uuid": "bca31ef7-8664-49db-80f7-3d593689740d",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "toggle_iceform_dummy"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Scoreboard Score"
+            }
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "power_upgrade_1"
+          }
+        ]
+      }
+    },
+    "power_upgrade_3": {
+      "type": "palladium:attribute_modifier",
+      "icon": "airline_heroes:textures/icons/power_upgrade_3.png",
+      "title": "Power Increase 3",
+      "gui_position": [3,0],
+      "attribute": "palladium:punch_damage",
+      "amount": 4,
+      "operation": 0,
+      "uuid": "7400111f-28a2-4a7d-b596-ad1c24784cc9",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "toggle_iceform_dummy"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Scoreboard Score"
+            }
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "power_upgrade_2"
+          }
+        ]
+      }
+    },
+    "endurance_upgrade_1": {
+      "type": "palladium:attribute_modifier",
+      "icon": "airline_heroes:textures/icons/endurance_upgrade_1.png",
+      "title": "Endurance Increase 1",
+      "gui_position": [-1,0],
+      "attribute": "minecraft:generic.armor",
+      "amount": 3,
+      "operation": 0,
+      "uuid": "bc5768d3-b468-4239-9e1e-631aa8453601",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "toggle_iceform_dummy"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Scoreboard Score"
+            }
+          }
+        ]
+      }
+    },
+    "endurance_upgrade_2": {
+      "type": "palladium:attribute_modifier",
+      "icon": "airline_heroes:textures/icons/endurance_upgrade_2.png",
+      "title": "Endurance Increase 2",
+      "gui_position": [-2,0],
+      "attribute": "minecraft:generic.armor",
+      "amount": 3,
+      "operation": 0,
+      "uuid": "c100a65b-ae7f-4873-9cc7-b00786744e76",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "toggle_iceform_dummy"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Scoreboard Score"
+            }
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "endurance_upgrade_1"
+          }
+        ]
+      }
+    },
+    "endurance_upgrade_3": {
+      "type": "palladium:attribute_modifier",
+      "icon": "airline_heroes:textures/icons/endurance_upgrade_3.png",
+      "title": "Endurance Increase 3",
+      "gui_position": [-3,0],
+      "attribute": "minecraft:generic.armor",
+      "amount": 4,
+      "operation": 0,
+      "uuid": "6e976780-cffa-4352-9d6c-8ab990a2e5c4",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "toggle_iceform_dummy"
+          },
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Scoreboard Score"
+            }
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "endurance_upgrade_2"
+          }
+        ]
+      }
+    },
+    "mining_upgrade_1": {
+      "type": "palladium:attribute_modifier",
+      "hidden": true,
+      "attribute": "palladium:destroy_speed",
+      "amount": 1,
+      "operation": 0,
+      "uuid": "dc600f3c-a2da-4794-9903-712b3d943143",
+      "conditions": {
+        "conditions": {
+          "enabling": [
+            {
+              "type": "palladium:ability_unlocked",
+              "ability": "endurance_upgrade_1"
+            }
+          ]
+        }
+      }
+    },
+    "mining_upgrade_2": {
+      "type": "palladium:attribute_modifier",
+      "hidden": true,
+      "attribute": "palladium:destroy_speed",
+      "amount": 1,
+      "operation": 0,
+      "uuid": "6bb8fc6e-621a-411a-872c-f7def9098c08",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "endurance_upgrade_2"
+          }
+        ]
+      }
+    },
+    "mining_upgrade_3": {
+      "type": "palladium:attribute_modifier",
+      "hidden": true,
+      "attribute": "palladium:destroy_speed",
+      "amount": 1,
+      "operation": 0,
+      "uuid": "6bb8fc6e-621a-411a-872c-f7def9098c08",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "endurance_upgrade_3"
+          }
+        ]
+      }
+    },
+    "cryo_passives": {
+      "type": "palladium:command",
+      "hidden": true,
+      "first_tick_commands": [],
+      "last_tick_commands": [],
+      "commands": [
+        "fill ~2 ~-1 ~2 ~-2 ~-1 ~-2 minecraft:ice replace minecraft:water",
+        "fill ~2 ~-1 ~2 ~-2 ~-1 ~-2 minecraft:obsidian replace minecraft:lava",
+        "effect give @e[distance=0.01..8] minecraft:slowness 5 1 true",
+        "execute as @e[distance=0.01..3] run damage @s 1 minecraft:freeze"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:wears_suit_set",
+                "suit_set": "airline_heroes:cryo_suit"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "damage_immunites": {
+      "type": "palladium:damage_immunity",
+      "hidden": true,
+      "damage_sources": [
+        "minecraft:is_freezing",
+        "minecraft:is_fall"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          }
+        ]
+      }
+    },
+    "skin_change": {
+      "type": "palladium:skin_change",
+      "hidden": true,
+      "texture": "airline_heroes:textures/models/cryo_overlay.png",
+      "model_type": "keep",
+      "priority": 50,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "toggle_iceform_dummy"
+          }
+        ]
+      }
+    },
+    "set_name_description": {
+      "type": "airline_heroes:set_name_description",
+      "hidden": true,
+      "power_description": "The user can turn themself into ice."
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "name": "Tactile Pyrokinesis",
+  "background": "minecraft:textures/block/orange_wool.png",
+  "icon": "minecraft:lava_bucket",
+  "gui_display_type": "tree",
+  "abilities": {
+    "set_name_description": {
+      "type": "airline_heroes:set_name_description",
+      "hidden": true,
+      "power_description": "Your skin boasts natural heat generating properties"
+    },
+    "start": {
+      "type": "palladium:dummy",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "conditions": {
+        "enabling": [],
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "fire_aspect": {
+      "type": "palladium:fire_aspect",
+      "hidden": true,
+      "time": 5,
+      "max_time": 5,
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "start"
+          }
+        ]
+      }
+    },
+    "lavawalk": {
+      "type": "palladium:fluid_walking",
+      "hidden": true,
+      "fluid_tag": "minecraft:lava",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "power": "null",
+            "ability": "start"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Magnetic Suit",
+  "background": "airline_heroes:textures/icons/push_pull.png",
+  "icon": "airline_heroes:textures/icons/push_pull.png",
+  "abilities": {
+    "polarity_name": {
+      "type": "palladium:name_change",
+      "hidden": true,
+      "name": {
+        "text": "§9Pola§crity"
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:has_power",
+            "power": "airline_heroes:push_pull"
+          }
+        ]
+      }
+    },
+    "not_polarity_name": {
+      "type": "palladium:name_change",
+      "hidden": true,
+      "name": {
+        "text": "§9Pola§crity§f?"
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_power",
+                "power": "airline_heroes:push_pull"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

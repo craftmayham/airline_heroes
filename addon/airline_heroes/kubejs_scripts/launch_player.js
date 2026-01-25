@@ -7,15 +7,14 @@ StartupEvents.registry('palladium:abilities', event => {
         .documentationDescription('Launches the player in the direction they are looking.')
         .addProperty('power', 'double', 2.0, 'Launch strength multiplier')
  .tick((entity, entry, holder, enabled) => {
-            // Only active when toggled on
             if (!enabled) return;
  
-            const lookVec = entity.getLookAngle(); // Vec3d
+            const lookVec = entity.getLookAngle(); 
             const launchPower = entry.getPropertyByName('power');
             const motion = lookVec.scale(launchPower);
                    
 					 entity.setDeltaMovement(motion);
-            // Apply velocity boost in the look direction      
+            // Apply velocity in the look direction      
 			              if (entity.isPlayer()) {
                         entity.connection.send(new ClientboundSetEntityMotionPacket(entity));
                     }

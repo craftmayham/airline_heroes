@@ -1,0 +1,43 @@
+{
+    "name": "Explosive Landmine",
+    "background": "minecraft:textures/block/iron_block.png",
+    "persistent_data": true,
+    "icon": "minecraft:command_block",
+    "abilities": {
+        "explosive_landmines_commands": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "particle dust 0.77 0.44 0.07 1 ~ ~1 ~ 0.2 0.2 0.2 1 10"
+            ]
+        },
+        "detonation_timer": {
+            "type": "palladium:animation_timer",
+            "hidden": true,
+            "start_value": 0,
+            "max_value": 30
+        },
+        "detonate": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "summon minecraft:tnt",
+                "kill @s"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:animation_timer_ability",
+                        "ability": "detonation_timer",
+                        "min": 30,
+                        "max": 30
+                    }
+                ]
+            }
+        }
+    }
+}

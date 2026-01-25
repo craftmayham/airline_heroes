@@ -1,7 +1,7 @@
 {
   "name": "Muses",
   "background": "minecraft:textures/block/red_wool.png",
-  "icon": "minecraft:lightning_rod",
+  "icon": "airline_heroes:textures/icons/muses_icon.png",
   "gui_display_type": "tree",
   	"ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
   "abilities": {

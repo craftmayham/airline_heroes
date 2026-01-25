@@ -7,7 +7,6 @@ StartupEvents.registry('palladium:abilities', event => {
 		.addProperty('time', 'double', 2, 'How long effect lasts')
 		.addProperty('effect', 'string', 'minecraft:slowness', 'Effect ID to apply')
         .tick((entity, entry, holder, enabled) => {
-            // Only active when toggled on
             if (!enabled) return;
             if (!entity.level || entity.level.isClientSide()) return;
 
@@ -15,7 +14,7 @@ StartupEvents.registry('palladium:abilities', event => {
             const time = entry.getPropertyByName('time');
 			const effect = entry.getPropertyByName('effect');
 			
-            // Create an axis-aligned bounding box around the entity
+            // Create bounding box
             const aabb = AABB.of(
                 entity.x - radius, entity.y - radius, entity.z - radius,
                 entity.x + radius, entity.y + radius, entity.z + radius
@@ -27,7 +26,7 @@ StartupEvents.registry('palladium:abilities', event => {
 
             for (const e of nearby) {
 					  
-                    // Apply short-duration effects that refresh each tick
+                    // Apply potion effects each tick
 			    try {
 					e.potionEffects.add(effect,time, 4, false, true); 
 					
