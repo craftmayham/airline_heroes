@@ -35,13 +35,8 @@
             "flat_levels": true
           },
           {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:has_effect",
-                "effect": "airline_heroes:nullified"
-              }
-            ]
+            "type": "airline_heroes:dampened_by",
+            "effect": "dampened:genetic"
           }
         ]
       }
@@ -444,16 +439,6 @@
             "type": "palladium:ability_unlocked",
             "power": "null",
             "ability": "power_upgrade_2"
-          },
-          {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:ability_unlocked",
-                "power": "null",
-                "ability": "launch_3"
-              }
-            ]
           }
         ]
       }
