@@ -1,12 +1,17 @@
 {
   "pack": {
     "id": "airline_heroes",
-    "description": "e",
+    "description": "HeroesSMP Official Addon",
     "pack_format": 15,
     "version": "1.0.0"
   },
   "dependencies": {
     "common": {
+      "palladium": ">=4.0.0",
+      "geckolib": ">=4.8.2",
+      "gravecore": ">=1.2.2",
+      "kubejs": "*",
+      "pehkui": ">=3.8.2"
     },
     "fabric": {
     },
