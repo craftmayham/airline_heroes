@@ -38,14 +38,14 @@
                     "type": "palladium:ability_unlocked",
                     "power": "null",
                     "ability": "player_intang_vert"
-                  },
-                  {
-                    "type": "palladium:has_effect",
-                    "effect": "airline_heroes:nullified"
                   }
                 ]
               }
             ]
+          },
+          {
+            "type": "airline_heroes:dampened_by",
+            "effect": "dampened:genetic"
           }
         ]
       }
@@ -74,13 +74,8 @@
             "entity_type": "minecraft:player"
           },
           {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:has_effect",
-                "effect": "airline_heroes:nullified"
-              }
-            ]
+            "type": "airline_heroes:dampened_by",
+            "effect": "dampened:genetic"
           }
         ]
       }
@@ -103,6 +98,10 @@
             "type": "palladium:ability_enabled",
             "power": "null",
             "ability": "player_intang"
+          },
+          {
+            "type": "airline_heroes:dampened_by",
+            "effect": "dampened:genetic"
           }
         ]
       }
