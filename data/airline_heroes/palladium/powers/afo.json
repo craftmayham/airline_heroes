@@ -30,13 +30,8 @@
             "flat_levels": true
           },
           {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:has_effect",
-                "effect": "airline_heroes:nullified"
-              }
-            ]
+            "type": "airline_heroes:dampened_by",
+            "effect": "dampened:genetic"
           }
         ]
       }
@@ -54,6 +49,7 @@
         "airline_heroes:mob/2x_stregth",
         "airline_heroes:mob/auditory_mimicry",
         "airline_heroes:mob/big_head",
+        "airline_heroes:mob/float",
         "airline_heroes:mob/frigiokinesis",
         "airline_heroes:mob/headcannon",
         "airline_heroes:mob/immortality",
@@ -117,6 +113,7 @@
         "airline_heroes:mob/2x_stregth",
         "airline_heroes:mob/auditory_mimicry",
         "airline_heroes:mob/big_head",
+        "airline_heroes:mob/float",
         "airline_heroes:mob/frigiokinesis",
         "airline_heroes:mob/headcannon",
         "airline_heroes:mob/immortality",

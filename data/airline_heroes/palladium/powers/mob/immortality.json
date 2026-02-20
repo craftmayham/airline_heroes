@@ -27,8 +27,8 @@
                 "type": "palladium:or",
                 "conditions": [
                   {
-                    "type": "palladium:has_effect",
-                    "effect": "airline_heroes:nullified"
+                    "type": "airline_heroes:dampened_by",
+                    "effect": "dampened:genetic"
                   },
                   {
                     "type": "airline_heroes:nearby_block",

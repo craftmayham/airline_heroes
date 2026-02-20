@@ -10,7 +10,7 @@
       "hidden": false,
       "hidden_in_bar": false,
       "list_index": 0,
-      "gui_position": [0,0],
+      "gui_position": [0, 0],
       "description": "null",
       "conditions": {
         "unlocking": [
@@ -49,9 +49,7 @@
     "mob_float": {
       "type": "palladium:command",
       "hidden": true,
-      "commands": [
-        "effect give @s minecraft:slow_falling 3 1 true"
-      ],
+      "commands": ["effect give @s minecraft:slow_falling 3 1 true"],
       "conditions": {
         "unlocking": [
           {
@@ -59,13 +57,8 @@
             "ability": "float_dummy"
           },
           {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:entity_type",
-                "entity_type": "minecraft:player"
-              }
-            ]
+            "type": "airline_heroes:dampened_by",
+            "effect": "dampened:genetic"
           }
         ]
       }

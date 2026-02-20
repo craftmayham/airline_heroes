@@ -36,13 +36,8 @@
             "flat_levels": true
           },
           {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:has_effect",
-                "effect": "airline_heroes:nullified"
-              }
-            ]
+            "type": "airline_heroes:dampened_by",
+            "effect": "dampened:genetic"
           }
         ]
       }

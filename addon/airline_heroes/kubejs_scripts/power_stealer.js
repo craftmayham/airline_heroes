@@ -56,6 +56,7 @@ StartupEvents.registry("palladium:abilities", (event) => {
                   palladium.setProperty(entity, pSlot, power);
                   palladium.setProperty(target, "name", "None");
                   palladium.setProperty(target, "description", "");
+                  palladium.setProperty(target, "hasPower", false);
                 }
               });
             });
@@ -88,6 +89,7 @@ StartupEvents.registry("palladium:abilities", (event) => {
             palladium.setProperty(entity, pSlot, "empty");
             palladium.superpowers.removeSuperpower(entity, power);
             palladium.superpowers.addSuperpower(target, power);
+            palladium.setProperty(target, "hasPower", true);
           }
         } else return;
       }
@@ -164,6 +166,7 @@ StartupEvents.registry("palladium:abilities", (event) => {
                   palladium.superpowers.removeSuperpower(entity, power);
                   palladium.superpowers.addSuperpower(target, power);
                   palladium.setProperty(entity, pSlot, "empty");
+                  palladium.setProperty(target, "hasPower", true);
                 }
               });
             });

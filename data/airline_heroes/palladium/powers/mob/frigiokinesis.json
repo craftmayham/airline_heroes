@@ -4,7 +4,7 @@
   "icon": "minecraft:ice",
   "gui_display_type": "tree",
   "abilities": {
-     "set_name_description": {
+    "set_name_description": {
       "type": "airline_heroes:set_name_description",
       "hidden": true,
       "power_description": "You can create, shape, and manipulate cold air"
@@ -18,13 +18,8 @@
       "conditions": {
         "unlocking": [
           {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:has_effect",
-                "effect": "airline_heroes:nullified"
-              }
-            ]
+            "type": "airline_heroes:dampened_by",
+            "effect": "dampened:genetic"
           }
         ]
       }
@@ -39,13 +34,8 @@
       "conditions": {
         "unlocking": [
           {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:has_effect",
-                "effect": "airline_heroes:nullified"
-              }
-            ]
+            "type": "airline_heroes:dampened_by",
+            "effect": "dampened:genetic"
           }
         ]
       }
@@ -60,13 +50,8 @@
       "conditions": {
         "unlocking": [
           {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:has_effect",
-                "effect": "airline_heroes:nullified"
-              }
-            ]
+            "type": "airline_heroes:dampened_by",
+            "effect": "dampened:genetic"
           }
         ]
       }
@@ -80,13 +65,8 @@
       "conditions": {
         "unlocking": [
           {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:has_effect",
-                "effect": "airline_heroes:nullified"
-              }
-            ]
+            "type": "airline_heroes:dampened_by",
+            "effect": "dampened:genetic"
           }
         ]
       }
@@ -102,13 +82,8 @@
       "conditions": {
         "unlocking": [
           {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:has_effect",
-                "effect": "airline_heroes:nullified"
-              }
-            ]
+            "type": "airline_heroes:dampened_by",
+            "effect": "dampened:genetic"
           }
         ]
       }

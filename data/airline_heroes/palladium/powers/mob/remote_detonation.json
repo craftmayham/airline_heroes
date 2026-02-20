@@ -25,7 +25,12 @@
             "disabled_ticks": 100
           }
         ],
-        "unlocking": []
+        "unlocking": [
+          {
+            "type": "airline_heroes:dampened_by",
+            "effect": "dampened:genetic"
+          }
+        ]
       }
     }
   }

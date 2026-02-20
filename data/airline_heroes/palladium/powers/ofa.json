@@ -44,6 +44,12 @@
             "type": "palladium:action",
             "key_type": "key_bind"
           }
+        ],
+        "unlocking": [
+          {
+            "type": "airline_heroes:dampened_by",
+            "effect": "dampened:genetic"
+          }
         ]
       }
     },
@@ -215,6 +221,10 @@
             "energy_bar": "punch_energy",
             "min": 0,
             "max": 100
+          },
+          {
+            "type": "airline_heroes:dampened_by",
+            "effect": "dampened:genetic"
           }
         ]
       }
