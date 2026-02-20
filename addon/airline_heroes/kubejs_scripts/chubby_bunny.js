@@ -1,16 +1,20 @@
-let ClientboundSetEntityMotionPacket = Java.loadClass('net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket');
-
 StartupEvents.registry("palladium:abilities", event => {
   event.create("airline_heroes:chubby_feed")
-    .icon(palladium.createItemIcon('minecraft:egg'))
-    .documentationDescription('Gives motion to the player.')
+    .icon(palladium.createItemIcon('minecraft:cooked_pork'))
+    .documentationDescription('Feeds players with items from the wielders hand.')
     .tick((entity, entry, holder, enabled) => {
       if (enabled) {
         let target = entity.rayTrace(10).entity;
         let item = entity.mainHandItem
-        entity.setDiscardFriction(true)
-        if (entity !== null && item.isEdible() && entity.isPlayer()) {
-          entity.eat(entity.level, item)
+        if (target !== null && item.isEdible() && target.isPlayer()) {
+          target.eat(entity.level, item)
+          if (target.foodData.getFoodLevel == 20) {
+            palladium.superpowers.addSuperpower(target, "airline_heroes:mob/tactile_pyrokinesis");
+          }
+        }
+        if (target !== null && item.isEdible() && !target.isPlayer()) {
+          palladium.superpowers.addSuperpower(target, "airline_heroes:mob/tactile_pyrokinesis");
+          item.shrink(1);
         }
       }
     })
