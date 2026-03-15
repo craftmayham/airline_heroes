@@ -1,0 +1,32 @@
+  {
+    "type": "palladium:compound",
+    "layers": [
+      {
+        "model_layer": "palladium:humanoid#suit",
+        "texture": "airline_heroes:textures/models/armor/comedy.png",
+        "conditions": [
+          {
+            "type": "palladium:ability_enabled",
+            "power": "airline_heroes:muses",
+            "ability": "comedy_tragedy"
+          }
+        ]
+      },
+      {
+        "model_layer": "palladium:humanoid#suit",
+        "texture": "airline_heroes:textures/models/armor/tragedy.png",
+        "conditions": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_enabled",
+                "power": "airline_heroes:muses",
+                "ability": "comedy_tragedy"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }

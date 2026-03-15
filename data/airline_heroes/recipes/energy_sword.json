@@ -1,0 +1,20 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " N ",
+    " N ",
+    " S "
+  ],
+  "key": {
+    "N": {
+      "item": "palladium:vibranium_ingot"
+    },
+    "S": {
+      "item": "palladium:vibranium_circuit"
+    }
+  },
+  "result": {
+    "item": "airline_heroes:energy_sword",
+    "count": 1
+  }
+}

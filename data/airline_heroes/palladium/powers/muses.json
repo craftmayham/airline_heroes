@@ -1,464 +1,455 @@
 {
-  "name": "Muses",
-  "background": "minecraft:textures/block/red_wool.png",
-  "icon": "airline_heroes:textures/icons/muses_icon.png",
-  "gui_display_type": "tree",
-  	"ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
-  "abilities": {
-	"comedy_tragedy":{
-    "type": "palladium:dummy",
-    "icon": "minecraft:blaze_rod",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": 4,
-    "gui_position": "null",
-    "description": "null",
-	"conditions": {
-		"enabling":[
-			{
-    "type": "palladium:toggle",
-    "cooldown": 0,
-    "key_type": "key_bind",
-    "needs_empty_hand": false,
-    "allow_scrolling_when_crouching": true
-},
-		 {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:has_effect",
-                "effect": "airline_heroes:nullified"
-              }
-            ]
-          }
-		  
-		]
-	}
-},
-	
-	"comedy_speed":{
-    "type": "palladium:attribute_modifier",
-    "icon": "minecraft:iron_chestplate",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
-    "attribute": "minecraft:generic.movement_speed",
-    "amount": 0.5,
-    "operation": 0,
-    "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
-	"conditions": {
-		"enabling":[
-		{
-    "type": "palladium:ability_enabled",
-    "ability": "comedy_tragedy"
-}
-	]
-	}
-},
-	"comedy_haste":{
-    "type": "palladium:command",
-    "icon": "minecraft:command_block",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
-    "first_tick_commands": [],
-    "last_tick_commands": ["effect clear @s minecraft:haste"],
-    "commands": ["effect give @s minecraft:haste infinite 0 true"],
-	"conditions": {
-		"enabling":[
-		{
-    "type": "palladium:ability_enabled",
-    "ability": "comedy_tragedy"
-}
-	]
-	}
-},
-	"comedy_strength":{
-    "type": "palladium:attribute_modifier",
-    "icon": "minecraft:iron_chestplate",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
-    "attribute": "minecraft:generic.attack_damage",
-    "amount": 1.4,
-    "operation": 0,
-    "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
-	"conditions": {
-		"enabling":[
-		{
-    "type": "palladium:ability_enabled",
-    "ability": "comedy_tragedy"
-}
-	]
-	}
-},
-"tragedy_resistance":{
-    "type": "palladium:attribute_modifier",
-    "icon": "minecraft:iron_chestplate",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
-    "attribute": "minecraft:generic.armor_toughness",
-    "amount": 1.4,
-    "operation": 0,
-    "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
-	"conditions": {
-		"enabling":[
-		{
-		 "type": "palladium:not",
-    "conditions": [		
-	{
-    "type": "palladium:ability_enabled",
-    "ability": "comedy_tragedy"
-}
-]
-		}
-	]
-	}
-},
-"tragedy_Regen":{
-    "type": "palladium:healing",
-    "icon": "minecraft:apple",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
-    "frequency": 20,
-    "amount": 2,
-	"conditions": {
-		"enabling":[
-		{
-		 "type": "palladium:not",
-    "conditions": [		
-	{
-    "type": "palladium:ability_enabled",
-    "ability": "comedy_tragedy"
-}
-]
-		}
-	]
-	}
-},
-"tragedy_saturation":{
-    "type": "palladium:attribute_modifier",
-    "icon": "minecraft:iron_chestplate",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
-    "attribute": "minecraft:generic.max_health",
-    "amount": 3.5,
-    "operation": 0,
-    "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
-	"conditions": {
-		"enabling":[
-		{
-		 "type": "palladium:not",
-    "conditions": [		
-	{
-    "type": "palladium:ability_enabled",
-    "ability": "comedy_tragedy"
-}
-]
-		}
-	]
-	}
-},
-"tragedy_invisiblity":{
-    "type": "palladium:invisibility",
-    "icon": "palladium:textures/icon/invisibility.png",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": 1,
-    "gui_position": "null",
-    "description": "null",
-	"conditions": {
-		"enabling":[
-		{
-    "type": "palladium:toggle",
-    "cooldown": 0,
-    "key_type": "key_bind",
-    "needs_empty_hand": false,
-    "allow_scrolling_when_crouching": true
-}
-
-	],
-	"unlocking":[
-	{
-		 "type": "palladium:not",
-    "conditions": [		
-	{
-    "type": "palladium:ability_enabled",
-    "ability": "comedy_tragedy"
-}
-]
-		}
-	]
-	}
-},
-"comedy_push_away":{
-    
-    "type": "airline_heroes:push_away",
-    "icon": "minecraft:egg",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": 1,
-    "gui_position": "null",
-    "description": "null",
-    "range": -1,
-    "motion_scale": 1,
-	"conditions": {
-		"enabling":[
-		{
-    "type": "palladium:ability_enabled",
-    "ability": "comedy_tragedy"
-},
-{
-    "type": "palladium:activation",
-    "cooldown": 60,
-    "ticks": 30,
-    "key_type": "key_bind",
-    "needs_empty_hand": false,
-    "allow_scrolling_when_crouching": true
-}
-	],
-	"unlocking":[
-	{
-    "type": "palladium:ability_enabled",
-    "ability": "comedy_tragedy"
-		}
-	]
-	}
-},
-"comedy_aoe_slowness":{
-    "type": "airline_heroes:potion_aoe",
-    "icon": "minecraft:beacon",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": 0,
-    "gui_position": "null",
-    "description": "null",
-    "radius": 8,
-    "time": 10,
-    "effect": "minecraft:slowness",
-	"conditions": {
-		"enabling":[
-		{
-    "type": "palladium:toggle",
-    "cooldown": 0,
-    "key_type": "key_bind",
-    "needs_empty_hand": false,
-    "allow_scrolling_when_crouching": true
-}
-
-	],
-	"unlocking":[
-	{
-		 "type": "palladium:not",
-    "conditions": [		
-	{
-    "type": "palladium:ability_enabled",
-    "ability": "comedy_tragedy"
-}
-]
-		}
-	]
-	}	
-},
-"comedy_aoe_nausea":{
-    "type": "airline_heroes:potion_aoe",
-    "icon": "minecraft:beacon",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": true,
-    "hidden_in_bar": true,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
-    "radius": 8,
-    "time": 10,
-    "effect": "minecraft:nausea",
-	"conditions":{
-		"enabling":[
-		{
-    "type": "palladium:ability_first_tick",
-    "ability": "comedy_aoe_slowness"
-}
-		]
-	}
-	
-
-  },
-"tragedy_aoe_blindness":{
-    "type": "airline_heroes:potion_aoe",
-    "icon": "minecraft:beacon",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": 0,
-    "gui_position": "null",
-    "description": "null",
-    "radius": 8,
-    "time": 10,
-    "effect": "minecraft:blindness",
-	"conditions": {
-		"enabling":[
-		{
-    "type": "palladium:toggle",
-    "cooldown": 0,
-    "key_type": "key_bind",
-    "needs_empty_hand": false,
-    "allow_scrolling_when_crouching": true
-}
-
-	],
-	"unlocking":[
-	{
-    "type": "palladium:ability_enabled",
-    "ability": "comedy_tragedy"
-}
-	]
-	}	
-},
-"tragedy_aoe_speed":{
-    "type": "airline_heroes:potion_aoe",
-    "icon": "minecraft:beacon",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": true,
-    "hidden_in_bar": true,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
-    "radius": 8,
-    "time": 10,
-    "effect": "minecraft:speed",
-	"conditions":{
-		"enabling":[
-		{
-    "type": "palladium:ability_first_tick",
-    "ability": "tragedy_aoe_blindess"
-}
-		]
-	}
-  },
-
-"comedy_ult":{
-      "type": "palladium:projectile",
-      "entity_type": "palladium:custom_projectile",
-      "title": "Appearance Combination",
-      "list_index": 2,
-      "velocity": 1.5,
-      "entity_data": {
-        "Damage": 0,
-        "Gravity": 0,
-		"Size": 0.5,
-        "Lifetime": 1200,
-        "DieOnEntityHit": true,
-        "DieOnBlockHit": true,
-       "CommandOnEntityHit": "summon firework_rocket ~ ~ ~ {FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:0,Colors:[I;16711680]}]}}}}",
-       "CommandOnBlockHit": "summon firework_rocket ~ ~ ~ {FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:0,Colors:[I;16711680]}]}}}}",
-        "Appearances": [
-          {
-            "Type": "item",
-            "Item": "minecraft:firework_rocket"
-          },
-          {
-            "Type": "particles",
-            "ParticleType": "minecraft:flame",
-            "Spread": 2.5
-          }
-        ]
-      },
-    "swinging_arm": "main_arm",
-    "damage_from_player": false,
-    "ignore_player_movement": false,	
-	"conditions": {
-		"enabling":[
-		{
-    "type": "palladium:toggle",
-    "cooldown": 60,
-    "key_type": "key_bind",
-    "needs_empty_hand": false,
-    "allow_scrolling_when_crouching": true
-}
-
-	],
-	"unlocking":[
-	{
-    "type": "palladium:ability_enabled",
-    "ability": "comedy_tragedy"
-}
-	]
-	}
-},
-"tragedy_teleport":{
-    "type": "airline_heroes:teleport",
-    "icon": "minecraft:ender_pearl",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": 3,
-    "gui_position": "null",
-    "description": "null",
-    "max_distance": 10,
-	"conditions": {
-		"enabling":[
-		{
-    "type": "palladium:action",
-    "cooldown": 60,
-    "key_type": "key_bind",
-    "needs_empty_hand": false,
-    "allow_scrolling_when_crouching": true
-}
-
-	],
-	"unlocking":[
-	{
-		 "type": "palladium:not",
-    "conditions": [		
-	{
-    "type": "palladium:ability_enabled",
-    "ability": "comedy_tragedy"
-}
-]
-		}
-	]
-	}
-}
-
-
-  }
+    "name": "Muses",
+    "background": "minecraft:textures/block/red_wool.png",
+    "icon": "airline_heroes:textures/icons/muses_icon.png",
+    "gui_display_type": "tree",
+    "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
+    "abilities": {
+        "comedy_tragedy": {
+            "type": "palladium:dummy",
+            "icon": "minecraft:blaze_rod",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 4,
+            "gui_position": "null",
+            "description": "null",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:has_effect",
+                                "effect": "airline_heroes:nullified"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "comedy_speed": {
+            "type": "palladium:attribute_modifier",
+            "icon": "minecraft:iron_chestplate",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "attribute": "minecraft:generic.movement_speed",
+            "amount": 0.5,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "comedy_tragedy"
+                    }
+                ]
+            }
+        },
+        "comedy_haste": {
+            "type": "palladium:command",
+            "icon": "minecraft:command_block",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [],
+            "last_tick_commands": [
+                "effect clear @s minecraft:haste"
+            ],
+            "commands": [
+                "effect give @s minecraft:haste infinite 0 true"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "comedy_tragedy"
+                    }
+                ]
+            }
+        },
+        "comedy_strength": {
+            "type": "palladium:attribute_modifier",
+            "icon": "minecraft:iron_chestplate",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "attribute": "minecraft:generic.attack_damage",
+            "amount": 1.4,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "comedy_tragedy"
+                    }
+                ]
+            }
+        },
+        "tragedy_resistance": {
+            "type": "palladium:attribute_modifier",
+            "icon": "minecraft:iron_chestplate",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "attribute": "minecraft:generic.armor_toughness",
+            "amount": 1.4,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_enabled",
+                                "ability": "comedy_tragedy"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "tragedy_Regen": {
+            "type": "palladium:healing",
+            "icon": "minecraft:apple",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "frequency": 20,
+            "amount": 2,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_enabled",
+                                "ability": "comedy_tragedy"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "tragedy_saturation": {
+            "type": "palladium:attribute_modifier",
+            "icon": "minecraft:iron_chestplate",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "attribute": "minecraft:generic.max_health",
+            "amount": 3.5,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_enabled",
+                                "ability": "comedy_tragedy"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "tragedy_invisiblity": {
+            "type": "palladium:invisibility",
+            "icon": "palladium:textures/icon/invisibility.png",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 1,
+            "gui_position": "null",
+            "description": "null",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_enabled",
+                                "ability": "comedy_tragedy"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "comedy_push_away": {
+            "type": "airline_heroes:push_away",
+            "icon": "minecraft:egg",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 1,
+            "gui_position": "null",
+            "description": "null",
+            "range": -1,
+            "motion_scale": 1,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "comedy_tragedy"
+                    },
+                    {
+                        "type": "palladium:activation",
+                        "cooldown": 60,
+                        "ticks": 30,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "comedy_tragedy"
+                    }
+                ]
+            }
+        },
+        "comedy_aoe_slowness": {
+            "type": "airline_heroes:potion_aoe",
+            "icon": "minecraft:beacon",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 0,
+            "gui_position": "null",
+            "description": "null",
+            "radius": 8,
+            "time": 10,
+            "effect": "minecraft:slowness",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_enabled",
+                                "ability": "comedy_tragedy"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "comedy_aoe_nausea": {
+            "type": "airline_heroes:potion_aoe",
+            "icon": "minecraft:beacon",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": true,
+            "hidden_in_bar": true,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "radius": 8,
+            "time": 10,
+            "effect": "minecraft:nausea",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_first_tick",
+                        "ability": "comedy_aoe_slowness"
+                    }
+                ]
+            }
+        },
+        "tragedy_aoe_blindness": {
+            "type": "airline_heroes:potion_aoe",
+            "icon": "minecraft:beacon",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 0,
+            "gui_position": "null",
+            "description": "null",
+            "radius": 8,
+            "time": 10,
+            "effect": "minecraft:blindness",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "comedy_tragedy"
+                    }
+                ]
+            }
+        },
+        "tragedy_aoe_speed": {
+            "type": "airline_heroes:potion_aoe",
+            "icon": "minecraft:beacon",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": true,
+            "hidden_in_bar": true,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "radius": 8,
+            "time": 10,
+            "effect": "minecraft:speed",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_first_tick",
+                        "ability": "tragedy_aoe_blindess"
+                    }
+                ]
+            }
+        },
+        "comedy_ult": {
+            "type": "palladium:projectile",
+            "entity_type": "palladium:custom_projectile",
+            "title": "Appearance Combination",
+            "list_index": 2,
+            "velocity": 1.5,
+            "entity_data": {
+                "Damage": 0,
+                "Gravity": 0,
+                "Size": 0.5,
+                "Lifetime": 1200,
+                "DieOnEntityHit": true,
+                "DieOnBlockHit": true,
+                "CommandOnEntityHit": "summon firework_rocket ~ ~ ~ {FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:0,Colors:[I;16711680]}]}}}}",
+                "CommandOnBlockHit": "summon firework_rocket ~ ~ ~ {FireworksItem:{id:firework_rocket,Count:1,tag:{Fireworks:{Explosions:[{Type:0,Colors:[I;16711680]}]}}}}",
+                "Appearances": [
+                    {
+                        "Type": "item",
+                        "Item": "minecraft:firework_rocket"
+                    },
+                    {
+                        "Type": "particles",
+                        "ParticleType": "minecraft:flame",
+                        "Spread": 2.5
+                    }
+                ]
+            },
+            "swinging_arm": "main_arm",
+            "damage_from_player": false,
+            "ignore_player_movement": false,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 60,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "comedy_tragedy"
+                    }
+                ]
+            }
+        },
+        "tragedy_teleport": {
+            "type": "airline_heroes:teleport",
+            "icon": "minecraft:ender_pearl",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 3,
+            "gui_position": "null",
+            "description": "null",
+            "max_distance": 10,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 60,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_enabled",
+                                "ability": "comedy_tragedy"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
 }

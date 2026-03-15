@@ -45,5 +45,6 @@
     "item.airline_heroes.polarity_boots": "Polarity Shoes",
     "accessory_slot.airline_heroes.trench_coat": "Trench Coat",
     "accessory.airline_heroes.trench_coat": "Trench Coat",
-    "item.airline_heroes.energy_sword.description": "Hold the sword with energy transference to unlock it's full potential"
+    "item.airline_heroes.energy_sword.description": "Hold the sword with energy transference to unlock it's full potential",
+    "item.airline_heroes.energy_sword": "Energy Sword"
 }
