@@ -252,7 +252,7 @@
             }
         },
         "comedy_push_away": {
-            "type": "airline_heroes:push_away",
+            "type": "gravestone:aoe_knockback",
             "icon": "minecraft:egg",
             "title": "null",
             "bar_color": "light_gray",
@@ -261,8 +261,12 @@
             "list_index": 1,
             "gui_position": "null",
             "description": "null",
-            "range": -1,
-            "motion_scale": 1,
+            "radius": 10,
+            "knockback": 2,
+            "tag_ex": "exclusion_tag",
+            "invert": false,
+            "crush": false,
+            "cone": false,
             "conditions": {
                 "enabling": [
                     {
