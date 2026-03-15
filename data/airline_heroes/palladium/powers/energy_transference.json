@@ -675,6 +675,85 @@
         ]
       }
     },
+    "sword_upgrade": {
+      "type": "gravecore:aoe_damage",
+      "icon": "minecraft:fire_charge",
+      "title": "Dash Slash",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "list_index": -1,
+      "radius": 10,
+      "damage": 15,
+      "fire_ticks": 0,
+      "damage_type": "null",
+      "cone": false,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:item_in_slot",
+            "item": {
+              "item": "airline_heroes:energy_sword"
+            },
+            "slot": "mainhand"
+          },
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "launch_forward_animation"
+          },
+          {
+            "type": "palladium:objective_score",
+            "objective": "airline_heroes.potential_energy",
+            "min_score": 150
+          },
+          {
+            "type": "palladium:interval",
+            "active_ticks": 2,
+            "disabled_ticks": 2
+          }
+        ]
+      }
+    },
+    "sword_slash_particle": {
+      "type": "palladium:particles",
+      "hidden": true,
+      "emitter": [
+        "airline_heroes:slash_effect"
+      ],
+      "particle_type": "minecraft:sweep_attack",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "sword_upgrade"
+          }
+        ]
+      }
+    },
+    "slash_sound": {
+      "type": "palladium:play_sound",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "null",
+      "sound": "minecraft:entity.player.attack.sweep",
+      "volume": 3,
+      "pitch": 3,
+      "looping": false,
+      "play_self": true,
+      "play_others": true,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "sword_upgrade"
+          }
+        ]
+      }
+    },
     "health_upgrade_1": {
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/health_upgrade_1.png",

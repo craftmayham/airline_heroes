@@ -1,0 +1,17 @@
+{
+    "type": "palladium:sword",
+    "tier": "minecraft:netherite",
+    "base_damage": 3,
+    "attack_speed": -2.4,
+    "creative_mode_tab": "minecraft:combat",
+    "rarity": "rare",
+    "is_fire_resistant": true,
+    "tooltip": [
+        "It seems powerful in the right hands",
+        {
+            "translate": "item.airline_heroes.energy_sword.description",
+            "color": "#FFFFFF",
+            "underlined": false
+        }
+    ]
+}
