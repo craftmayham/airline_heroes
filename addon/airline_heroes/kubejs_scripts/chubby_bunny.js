@@ -19,3 +19,19 @@ StartupEvents.registry("palladium:abilities", event => {
       }
     })
 });
+StartupEvents.registry("palladium:abilities", event => {
+  event.create("airline_heroes:potion_transfer")
+    .icon(palladium.createItemIcon('minecraft:cooked_pork'))
+    .documentationDescription('Transfers potions from the user into a target.')
+    .tick((entity, entry, holder, enabled) => {
+      if (enabled) {
+        let target = entity.rayTrace(10).entity;
+        if (target !== null) {
+          entity.activeEffects.forEach(effect => {
+            target.potionEffect.add(effect)
+          })
+        }
+      }
+    })
+
+});

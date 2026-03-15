@@ -2,7 +2,7 @@
   "lifetime": 20,
   "has_physics": false,
   "gravity": 0,
-  "quad_size": 10,
+  "quad_size": 6,
   "render_type": "opaque",
   "texture_type": "aging"
 }

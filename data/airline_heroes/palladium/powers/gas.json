@@ -91,6 +91,15 @@
                     {
                         "type": "palladium:ability_unlocked",
                         "ability": "half_mass_form"
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:has_effect",
+                                "effect": "minecraft:invisibility"
+                            }
+                        ]
                     }
                 ]
             }
@@ -330,7 +339,15 @@
         },
         "golden_carrot": {
             "type": "airline_heroes:potion_aoe",
-            "hidden": true,
+            "icon": "minecraft:golden_carrot",
+            "title": "Regeneration Aura",
+            "bar_color": "light_gray",
+            "description": "Eat a golden carrot before crouching in gas form to release regeneration around you.",
+            "list_index": 1,
+            "gui_position": [
+                1,
+                -1
+            ],
             "radius": 5,
             "time": 1200,
             "effect": "minecraft:regeneration",
@@ -341,19 +358,42 @@
                         "ability": "gas_form"
                     },
                     {
-                        "type": "palladium:energy_bar",
-                        "energy_bar": "golden_carrot",
-                        "min": 1
+                        "type": "palladium:objective_score",
+                        "objective": "airline_heroes.golden_carrot",
+                        "min_score": 1
                     },
                     {
                         "type": "palladium:crouching"
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Skill Points"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "gas_form"
                     }
                 ]
             }
         },
         "cake": {
             "type": "airline_heroes:potion_aoe",
-            "hidden": true,
+            "icon": "minecraft:cake",
+            "title": "Speed Aura",
+            "bar_color": "light_gray",
+            "description": "Eat a cake before crouching in gas form to release speed around you.",
+            "list_index": 1,
+            "gui_position": [
+                1,
+                -2
+            ],
             "radius": 5,
             "time": 1200,
             "effect": "minecraft:speed",
@@ -364,19 +404,42 @@
                         "ability": "gas_form"
                     },
                     {
-                        "type": "palladium:energy_bar",
-                        "energy_bar": "cake",
-                        "min": 1
+                        "type": "palladium:objective_score",
+                        "objective": "airline_heroes.cake",
+                        "min_score": 1
                     },
                     {
                         "type": "palladium:crouching"
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Skill Points"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "golden_carrot"
                     }
                 ]
             }
         },
         "melon": {
             "type": "airline_heroes:potion_aoe",
-            "hidden": true,
+            "icon": "minecraft:melon_slice",
+            "title": "Strength Aura",
+            "bar_color": "light_gray",
+            "description": "Eat a melon slice before crouching in gas form to release strength around you.",
+            "list_index": 1,
+            "gui_position": [
+                1,
+                -3
+            ],
             "radius": 5,
             "time": 1200,
             "effect": "minecraft:strength",
@@ -387,19 +450,42 @@
                         "ability": "gas_form"
                     },
                     {
-                        "type": "palladium:energy_bar",
-                        "energy_bar": "melon",
-                        "min": 1
+                        "type": "palladium:objective_score",
+                        "objective": "airline_heroes.melon",
+                        "min_score": 1
                     },
                     {
                         "type": "palladium:crouching"
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Skill Points"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "cake"
                     }
                 ]
             }
         },
         "glow_berries": {
             "type": "airline_heroes:potion_aoe",
-            "hidden": true,
+            "icon": "minecraft:glow_berries",
+            "title": "Blindness Aura",
+            "bar_color": "light_gray",
+            "description": "Eat a glow berry before crouching in gas form to release blindness around you.",
+            "list_index": 1,
+            "gui_position": [
+                -1,
+                -2
+            ],
             "radius": 5,
             "time": 1200,
             "effect": "minecraft:blindness",
@@ -410,19 +496,41 @@
                         "ability": "gas_form"
                     },
                     {
-                        "type": "palladium:energy_bar",
-                        "energy_bar": "glow_berries",
-                        "min": 1
+                        "type": "palladium:objective_score",
+                        "objective": "airline_heroes.glow_berries",
+                        "min_score": 1
                     },
                     {
                         "type": "palladium:crouching"
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Skill Points"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "potato"
                     }
                 ]
             }
         },
         "potato": {
             "type": "airline_heroes:potion_aoe",
-            "hidden": true,
+            "icon": "minecraft:potato",
+            "title": "Nausea Aura",
+            "bar_color": "light_gray",
+            "description": "Eat a potato before crouching in gas form to release nausea around you.",
+            "gui_position": [
+                -1,
+                -1
+            ],
             "radius": 5,
             "time": 1200,
             "effect": "minecraft:nausea",
@@ -433,19 +541,41 @@
                         "ability": "gas_form"
                     },
                     {
-                        "type": "palladium:energy_bar",
-                        "energy_bar": "potato",
-                        "min": 1
+                        "type": "palladium:objective_score",
+                        "objective": "airline_heroes.potato",
+                        "min_score": 1
                     },
                     {
                         "type": "palladium:crouching"
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Skill Points"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "gas_form"
                     }
                 ]
             }
         },
         "rotten_flesh": {
             "type": "airline_heroes:potion_aoe",
-            "hidden": true,
+            "icon": "minecraft:rotten_flesh",
+            "title": "Poison Aura",
+            "bar_color": "light_gray",
+            "description": "Eat rotten flesh before crouching in gas form to release poison around you.",
+            "gui_position": [
+                -1,
+                -3
+            ],
             "radius": 5,
             "time": 1200,
             "effect": "minecraft:poison",
@@ -456,12 +586,27 @@
                         "ability": "gas_form"
                     },
                     {
-                        "type": "palladium:energy_bar",
-                        "energy_bar": "rotten_flesh",
-                        "min": 1
+                        "type": "palladium:objective_score",
+                        "objective": "airline_heroes.rotten_flesh",
+                        "min_score": 1
                     },
                     {
                         "type": "palladium:crouching"
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Skill Points"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "potato"
                     }
                 ]
             }
@@ -887,14 +1032,14 @@
         "half_mass_form": {
             "type": "palladium:dummy",
             "icon": "minecraft:blaze_rod",
-            "title": "null",
+            "title": "Half-Mass Form",
             "bar_color": "light_gray",
             "hidden": false,
             "hidden_in_bar": false,
-            "list_index": -1,
+            "list_index": 1,
             "gui_position": [
                 0,
-                -1
+                -3
             ],
             "description": "null",
             "conditions": {
@@ -927,12 +1072,21 @@
                         "score": 1,
                         "icon": "minecraft:command_block",
                         "description": {
-                            "text": "Scoreboard Score"
+                            "text": "Skill Points"
                         }
                     },
                     {
-                        "type": "palladium:ability_unlocked",
-                        "ability": "gas_form"
+                        "type": "palladium:and",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_unlocked",
+                                "ability": "rotten_flesh"
+                            },
+                            {
+                                "type": "palladium:ability_unlocked",
+                                "ability": "melon"
+                            }
+                        ]
                     }
                 ]
             }
@@ -946,6 +1100,15 @@
                     {
                         "type": "palladium:ability_unlocked",
                         "ability": "half_mass_form"
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:has_effect",
+                                "effect": "minecraft:invisibility"
+                            }
+                        ]
                     }
                 ]
             }
@@ -1001,6 +1164,15 @@
                     {
                         "type": "palladium:ability_enabled",
                         "ability": "half_mass_form"
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:has_effect",
+                                "effect": "minecraft:invisibility"
+                            }
+                        ]
                     }
                 ]
             }
@@ -1017,6 +1189,15 @@
                     {
                         "type": "palladium:ability_enabled",
                         "ability": "half_mass_form"
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:has_effect",
+                                "effect": "minecraft:invisibility"
+                            }
+                        ]
                     }
                 ]
             }
@@ -1033,6 +1214,15 @@
                     {
                         "type": "palladium:ability_enabled",
                         "ability": "half_mass_form"
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:has_effect",
+                                "effect": "minecraft:invisibility"
+                            }
+                        ]
                     }
                 ]
             }
@@ -1049,6 +1239,15 @@
                     {
                         "type": "palladium:ability_enabled",
                         "ability": "half_mass_form"
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:has_effect",
+                                "effect": "minecraft:invisibility"
+                            }
+                        ]
                     }
                 ]
             }
@@ -1070,6 +1269,15 @@
                         "type": "palladium:interval",
                         "active_ticks": 1,
                         "disabled_ticks": 1
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:has_effect",
+                                "effect": "minecraft:invisibility"
+                            }
+                        ]
                     }
                 ]
             }
@@ -1189,112 +1397,509 @@
                 ]
             }
         },
-        "half_mass_dummy": {
+        "flash_step_dummy": {
             "type": "palladium:dummy",
             "icon": "minecraft:blaze_rod",
-            "title": "null",
+            "title": "Flash Step",
             "bar_color": "light_gray",
             "hidden": false,
             "hidden_in_bar": false,
-            "list_index": -1,
-            "gui_position": "null",
-            "description": "null",
+            "list_index": 2,
+            "description": "Requires Half-Mass Form",
+            "gui_position": [
+                0,
+                -5
+            ],
             "conditions": {
                 "enabling": [
                     {
                         "type": "palladium:activation",
                         "cooldown": 0,
-                        "ticks": 60,
+                        "ticks": 20,
                         "key_type": "key_bind",
                         "needs_empty_hand": false,
                         "allow_scrolling_when_crouching": true
                     }
-                ]
-            }
-        },
-        "half_mass_behind_you_timer": {
-            "type": "palladium:animation_timer",
-            "icon": "minecraft:blaze_rod",
-            "title": "null",
-            "bar_color": "light_gray",
-            "hidden": true,
-            "hidden_in_bar": true,
-            "list_index": -1,
-            "gui_position": "null",
-            "description": "null",
-            "start_value": 0,
-            "max_value": 60,
-            "conditions": {
-                "enabling": [
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Skill Points"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "half_mass_form"
+                    },
                     {
                         "type": "palladium:ability_enabled",
-                        "ability": "half_mass_dummy"
+                        "ability": "half_mass_form"
                     }
                 ]
             }
         },
-        "half_mass_behind_you": {
+        "flash_step": {
+            "type": "airline_heroes:flash_step",
+            "hidden": true,
+            "air": false,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_last_tick",
+                        "ability": "flash_step_dummy"
+                    },
+                    {
+                        "type": "palladium:on_ground"
+                    }
+                ]
+            }
+        },
+        "flash_step_air": {
+            "type": "airline_heroes:flash_step",
+            "hidden": true,
+            "air": true,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_last_tick",
+                        "ability": "flash_step_dummy"
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:on_ground"
+                            },
+                            {
+                                "type": "palladium:ability_enabled",
+                                "ability": "flash_step"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "flash_step_animation": {
+            "type": "palladium:animation_timer",
+            "icon": "minecraft:blaze_rod",
+            "hidden": true,
+            "start_value": 0,
+            "max_value": 10,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "flash_step_dummy"
+                    }
+                ]
+            }
+        },
+        "flash_step_behind_you_particle": {
             "type": "palladium:command",
-            "last_tick_commands": [
-                "tp @s ^ ^ ^5"
-            ],
+            "hidden": true,
             "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "effect give @s minecraft:invisibility 1 0 true",
+                "particle minecraft:explosion ~ ~1 ~ 0 0 0 0.5 2"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:animation_timer_ability",
+                        "ability": "flash_step_animation",
+                        "min": 9,
+                        "max": 9
+                    }
+                ]
+            }
+        },
+        "flash_step_invis": {
+            "type": "palladium:invisibility",
+            "hidden": true,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:has_effect",
+                        "effect": "minecraft:invisibility"
+                    }
+                ]
+            }
+        },
+        "flash_step_sound": {
+            "type": "palladium:play_sound",
+            "hidden": true,
+            "sound": "minecraft:entity.ender_dragon.flap",
+            "volume": 0.5,
+            "pitch": 2,
+            "looping": false,
+            "play_self": true,
+            "play_others": true,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:or",
+                        "conditions": [
+                            {
+                                "type": "palladium:animation_timer_ability",
+                                "ability": "flash_step_animation",
+                                "min": 9,
+                                "max": 9
+                            },
+                            {
+                                "type": "palladium:animation_timer_ability",
+                                "ability": "vapor_kick_animation",
+                                "min": 3,
+                                "max": 4
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "flash_step_attribute": {
+            "type": "palladium:attribute_modifier",
+            "hidden": true,
+            "attribute": "minecraft:generic.movement_speed",
+            "amount": -1,
+            "operation": 2,
+            "uuid": "708be4fb-af04-42f2-8948-e6ccdc0d99e1",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:animation_timer_ability",
+                        "ability": "flash_step_animation",
+                        "min": 1,
+                        "max": 10
+                    }
+                ]
+            }
+        },
+        "smoke_fling": {
+            "type": "palladium:projectile",
+            "entity_type": "palladium:custom_projectile",
+            "title": "Appearance Combination",
+            "list_index": 4,
+            "velocity": 0.3,
+            "swinging_arm": "off_arm",
+            "entity_data": {
+                "Damage": 0,
+                "Gravity": -0.005,
+                "Lifetime": 100,
+                "Appearances": [
+                    {
+                        "Type": "particles",
+                        "ParticleType": "airline_heroes:pink_smoke",
+                        "Spread": 0.2
+                    },
+                    {
+                        "Type": "particles",
+                        "ParticleType": "airline_heroes:pink_smoke",
+                        "Spread": 0.1
+                    }
+                ]
+            },
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "key_type": "right_click",
+                        "needs_empty_hand": true
+                    }
+                ]
+            }
+        },
+        "smoke_fling_golden_carrot": {
+            "type": "palladium:projectile",
+            "entity_type": "palladium:custom_projectile",
+            "hidden": true,
+            "velocity": 0.3,
+            "swinging_arm": "off_arm",
+            "entity_data": {
+                "Damage": 0,
+                "Gravity": -0.005,
+                "Lifetime": 100,
+                "CommandOnEntityHit": "execute as @e[distance=0..5, type=!palladium:custom_projectile, limit=1, type=!minecraft:item, type=!minecraft:arrow, tag=!smoke_flinger, sort=nearest] run effect give @s minecraft:instant_health 1 0 true",
+                "Appearances": []
+            },
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:objective_score",
+                        "objective": "airline_heroes.golden_carrot",
+                        "min_score": 1
+                    },
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "smoke_fling"
+                    }
+                ]
+            }
+        },
+        "smoke_fling_cake": {
+            "type": "palladium:projectile",
+            "entity_type": "palladium:custom_projectile",
+            "hidden": true,
+            "velocity": 0.3,
+            "swinging_arm": "off_arm",
+            "entity_data": {
+                "Damage": 0,
+                "Gravity": -0.005,
+                "Lifetime": 100,
+                "CommandOnEntityHit": "execute as @e[distance=0..5, type=!palladium:custom_projectile, limit=1, type=!minecraft:item, type=!minecraft:arrow, tag=!smoke_flinger, sort=nearest] run effect give @s minecraft:speed 5 0 true",
+                "Appearances": []
+            },
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:objective_score",
+                        "objective": "airline_heroes.cake",
+                        "min_score": 1
+                    },
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "smoke_fling"
+                    }
+                ]
+            }
+        },
+        "smoke_fling_melon": {
+            "type": "palladium:projectile",
+            "entity_type": "palladium:custom_projectile",
+            "hidden": true,
+            "velocity": 0.3,
+            "swinging_arm": "off_arm",
+            "entity_data": {
+                "Damage": 0,
+                "Gravity": -0.005,
+                "Lifetime": 100,
+                "CommandOnEntityHit": "execute as @e[distance=0..5, type=!palladium:custom_projectile, limit=1, type=!minecraft:item, type=!minecraft:arrow, tag=!smoke_flinger, sort=nearest] run effect give @s minecraft:strength 5 0 true",
+                "Appearances": []
+            },
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:objective_score",
+                        "objective": "airline_heroes.melon",
+                        "min_score": 1
+                    },
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "smoke_fling"
+                    }
+                ]
+            }
+        },
+        "smoke_fling_glow_berries": {
+            "type": "palladium:projectile",
+            "entity_type": "palladium:custom_projectile",
+            "hidden": true,
+            "velocity": 0.3,
+            "swinging_arm": "off_arm",
+            "entity_data": {
+                "Damage": 0,
+                "Gravity": -0.005,
+                "Lifetime": 100,
+                "CommandOnEntityHit": "execute as @e[distance=0..5, type=!palladium:custom_projectile, limit=1, type=!minecraft:item, type=!minecraft:arrow, tag=!smoke_flinger, sort=nearest] run effect give @s minecraft:blindness 5 0 true",
+                "Appearances": []
+            },
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:objective_score",
+                        "objective": "airline_heroes.glow_berries",
+                        "min_score": 1
+                    },
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "smoke_fling"
+                    }
+                ]
+            }
+        },
+        "smoke_fling_potato": {
+            "type": "palladium:projectile",
+            "entity_type": "palladium:custom_projectile",
+            "hidden": true,
+            "velocity": 0.3,
+            "swinging_arm": "off_arm",
+            "entity_data": {
+                "Damage": 0,
+                "Gravity": -0.005,
+                "Lifetime": 100,
+                "CommandOnEntityHit": "execute as @e[distance=0..5, type=!palladium:custom_projectile, limit=1, type=!minecraft:item, type=!minecraft:arrow, tag=!smoke_flinger, sort=nearest] run effect give @s minecraft:hunger 5 0 true",
+                "Appearances": []
+            },
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:objective_score",
+                        "objective": "airline_heroes.potato",
+                        "min_score": 1
+                    },
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "smoke_fling"
+                    }
+                ]
+            }
+        },
+        "smoke_fling_rotten_flesh": {
+            "type": "palladium:projectile",
+            "entity_type": "palladium:custom_projectile",
+            "hidden": true,
+            "velocity": 0.3,
+            "swinging_arm": "off_arm",
+            "entity_data": {
+                "Damage": 0,
+                "Gravity": -0.005,
+                "Lifetime": 100,
+                "CommandOnEntityHit": "execute as @e[distance=0..5, type=!palladium:custom_projectile, limit=1, type=!minecraft:item, type=!minecraft:arrow, tag=!smoke_flinger, sort=nearest] run effect give @s minecraft:poison 5 0 true",
+                "Appearances": []
+            },
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:objective_score",
+                        "objective": "airline_heroes.rotten_flesh",
+                        "min_score": 1
+                    },
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "smoke_fling"
+                    }
+                ]
+            }
+        },
+        "smoke_fling_decrease": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "tag @s add smoke_flinger",
+                "scoreboard players remove @s[scores={airline_heroes.golden_carrot=1..}] airline_heroes.golden_carrot 1",
+                "scoreboard players remove @s[scores={airline_heroes.cake=1..}] airline_heroes.cake 1",
+                "scoreboard players remove @s[scores={airline_heroes.melon=1..}] airline_heroes.melon 1",
+                "scoreboard players remove @s[scores={airline_heroes.glow_berry=1..}] airline_heroes.glow_berry 1",
+                "scoreboard players remove @s[scores={airline_heroes.potato=1..}] airline_heroes.potato 1",
+                "scoreboard players remove @s[scores={airline_heroes.rotten_flesh=1..}] airline_heroes.rotten_flesh 1"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "smoke_fling"
+                    }
+                ]
+            }
+        },
+        "vapor_kick": {
+            "type": "palladium:dummy",
+            "icon": "minecraft:blaze_rod",
+            "title": "Vapor Kick",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 3,
+            "description": "Requires Half-Mass Form",
+            "gui_position": [
+                0,
+                -6
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:activation",
+                        "cooldown": 80,
+                        "ticks": 25,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Skill Points"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "half_mass_form"
+                    },
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "half_mass_form"
+                    }
+                ]
+            }
+        },
+        "vapor_kick_animation": {
+            "type": "palladium:animation_timer",
+            "icon": "minecraft:blaze_rod",
+            "hidden": true,
+            "start_value": 0,
+            "max_value": 20,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "vapor_kick"
+                    }
+                ]
+            }
+        },
+        "vapor_kick_particle": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [
+                "effect give @s minecraft:invisibility 1 0 true",
+                "particle minecraft:explosion ~ ~1 ~ 0 0 0 0.5 2"
+            ],
+            "last_tick_commands": [
+                "effect give @s minecraft:invisibility 1 0 true",
+                "particle minecraft:explosion ~ ~1 ~ 0 0 0 0.5 2"
+            ],
             "commands": [],
             "conditions": {
                 "enabling": [
                     {
                         "type": "palladium:ability_enabled",
-                        "ability": "half_mass_dummy"
+                        "ability": "vapor_kick_animation"
                     }
                 ]
             }
         },
-        "half_mass_behind_you_particle": {
-            "type": "palladium:particles",
-            "icon": "minecraft:blaze_rod",
-            "title": "null",
-            "bar_color": "light_gray",
-            "hidden": false,
-            "hidden_in_bar": false,
-            "list_index": -1,
-            "gui_position": "null",
-            "description": "null",
-            "emitter": [
-                "airline_heroes:full_body"
-            ],
-            "particle_type": "airline_heroes:flash_step",
-            "options": "",
+        "vapor_kick_hitbox": {
+            "type": "palladium:projectile",
+            "entity_type": "palladium:custom_projectile",
+            "title": "Appearance Combination",
+            "list_index": 4,
+            "velocity": 5,
+            "swinging_arm": "none",
+            "entity_data": {
+                "Damage": 10,
+                "Gravity": 0,
+                "Lifetime": 15,
+                "CommandOnEntityHit": "execute as @e[distance=0..5, type=!palladium:custom_projectile, limit=1, type=!minecraft:item, type=!minecraft:arrow, tag=!smoke_flinger, sort=nearest] at @s run function airline_heroes:vapor_kick_hit",
+                "Appearances": []
+            },
             "conditions": {
                 "enabling": [
                     {
                         "type": "palladium:animation_timer_ability",
-                        "power": "null",
-                        "ability": "half_mass_behind_you_timer",
-                        "min": 59,
-                        "max": 60
-                    }
-                ]
-            }
-        },
-        "hunger_test": {
-            "type": "airline_heroes:add_hunger",
-            "hunger": 2,
-            "icon": "minecraft:blaze_rod",
-            "title": "null",
-            "bar_color": "light_gray",
-            "hidden": false,
-            "hidden_in_bar": false,
-            "list_index": -1,
-            "gui_position": "null",
-            "description": "null",
-            "conditions": {
-                "enabling": [
-                    {
-                        "type": "palladium:animation_timer_ability",
-                        "power": "null",
-                        "ability": "half_mass_behind_you_timer",
-                        "min": 59,
-                        "max": 60
+                        "ability": "vapor_kick_animation",
+                        "min": 20,
+                        "max": 20
                     }
                 ]
             }

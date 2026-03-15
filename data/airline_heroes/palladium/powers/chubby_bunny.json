@@ -4,7 +4,64 @@
   "icon": "minecraft:command_block",
   "abilities": {
     "chubby_eat": {
-      "type": "airline_heroes:chubby_feed"
+      "type": "airline_heroes:chubby_feed",
+      "icon": "minecraft:blaze_rod",
+      "title": "Dummy",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": 0,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "cooldown": 0,
+            "key_type": "key_bind",
+            "needs_empty_hand": false,
+            "allow_scrolling_when_crouching": true
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "chubby_transfer": {
+      "type": "airline_heroes:potion_transfer",
+      "icon": "minecraft:blaze_rod",
+      "title": "Dummy",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": 1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "cooldown": 0,
+            "key_type": "key_bind",
+            "needs_empty_hand": false,
+            "allow_scrolling_when_crouching": true
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:has_effect",
+                "effect": "airline_heroes:nullified"
+              }
+            ]
+          }
+        ]
+      }
     },
     "core_dummy": {
       "type": "palladium:dummy",
