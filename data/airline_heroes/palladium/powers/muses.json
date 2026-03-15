@@ -32,6 +32,13 @@
                                 "effect": "airline_heroes:nullified"
                             }
                         ]
+                    },
+                    {
+                        "type": "palladium:item_in_slot",
+                        "item": {
+                            "item": "airline_heroes:muses_mask"
+                        },
+                        "slot": "head"
                     }
                 ]
             }
@@ -158,6 +165,13 @@
                                 "ability": "comedy_tragedy"
                             }
                         ]
+                    },
+                    {
+                        "type": "palladium:item_in_slot",
+                        "item": {
+                            "item": "airline_heroes:muses_mask"
+                        },
+                        "slot": "head"
                     }
                 ]
             }
@@ -186,6 +200,13 @@
                                 "ability": "comedy_tragedy"
                             }
                         ]
+                    },
+                    {
+                        "type": "palladium:item_in_slot",
+                        "item": {
+                            "item": "airline_heroes:muses_mask"
+                        },
+                        "slot": "head"
                     }
                 ]
             }
@@ -208,6 +229,13 @@
                         "key_type": "key_bind",
                         "needs_empty_hand": false,
                         "allow_scrolling_when_crouching": true
+                    },
+                    {
+                        "type": "palladium:item_in_slot",
+                        "item": {
+                            "item": "airline_heroes:muses_mask"
+                        },
+                        "slot": "head"
                     }
                 ],
                 "unlocking": [
@@ -436,6 +464,13 @@
                         "key_type": "key_bind",
                         "needs_empty_hand": false,
                         "allow_scrolling_when_crouching": true
+                    },
+                    {
+                        "type": "palladium:item_in_slot",
+                        "item": {
+                            "item": "airline_heroes:muses_mask"
+                        },
+                        "slot": "head"
                     }
                 ],
                 "unlocking": [
