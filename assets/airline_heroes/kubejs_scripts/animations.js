@@ -325,5 +325,32 @@ PalladiumEvents.registerAnimations((event) => {
                 .setXRotDegrees(30)
         }
     });
+    event.registerForPower('airline_heroes/invis_animation', 'airline_heroes:muses', 5, (builder) => {
+        const progress = animationUtil.getAnimationTimerAbilityValue(builder.getPlayer(), 'airline_heroes:muses', 'invis_animation', builder.getPartialTicks());
+        if (progress > 0.0) {
+            builder.get('left_leg')
+                .setXRotDegrees(-40)
+                .animate('InOutQuint', progress);
+
+            builder.get('right_leg')
+                .setXRotDegrees(-10)
+                .animate('InOutExpo', progress / 2);
+
+
+            builder.get('right_arm')
+                .setXRotDegrees(-20)
+                .animate('InOutCubic', progress);
+
+
+            builder.get('left_arm')
+                .setXRotDegrees(10)
+                .animate('InOutCubic', progress);
+
+            builder.get('body')
+                .moveZ(-5)
+                .setXRotDegrees(-10)
+                .animate('InOutCubic', progress);
+        }
+    });
 });
 
