@@ -8,9 +8,108 @@ StartupEvents.registry('palladium:abilities', event => {
         .addProperty('z', 'double', 0.0, 'Z offset')
         .addProperty('mob', 'string', 'minecraft:wolf', 'The Mob to summon')
         .addProperty('tamed', 'boolean', true, 'Whether the mob should be tamed')
+        .addProperty('random', 'boolean', false, 'Whether to randomly select a mob')
         .tick((entity, entry, holder, enabled) => {
             if (!enabled) return;
-            const mob = entry.getPropertyByName('mob');
+            let mob = entry.getPropertyByName('mob');
+            const random = entry.getPropertyByName('random');
+            const mobs = [
+                //Passive
+                "minecraft:allay",
+                "minecraft:armadillo",
+                "minecraft:axolotl",
+                "minecraft:bat",
+                "minecraft:bee",
+                "minecraft:camel",
+                "minecraft:cat",
+                "minecraft:chicken",
+                "minecraft:cod",
+                "minecraft:cow",
+                "minecraft:donkey",
+                "minecraft:frog",
+                "minecraft:fox",
+                "minecraft:glow_squid",
+                "minecraft:goat",
+                "minecraft:horse",
+                "minecraft:llama",
+                "minecraft:mooshroom",
+                "minecraft:mule",
+                "minecraft:ocelot",
+                "minecraft:panda",
+                "minecraft:parrot",
+                "minecraft:pig",
+                "minecraft:pufferfish",
+                "minecraft:rabbit",
+                "minecraft:salmon",
+                "minecraft:sheep",
+                "minecraft:skeleton_horse",
+                "minecraft:sniffer",
+                "minecraft:snow_golem",
+                "minecraft:squid",
+                "minecraft:strider",
+                "minecraft:tadpole",
+                "minecraft:tropical_fish",
+                "minecraft:turtle",
+                "minecraft:villager",
+                "minecraft:wandering_trader",
+                "minecraft:wolf",
+
+                //Neutral
+                "minecraft:bee",
+                "minecraft:cave_spider",
+                "minecraft:dolphin",
+                "minecraft:drowned",
+                "minecraft:enderman",
+                "minecraft:goat",
+                "minecraft:iron_golem",
+                "minecraft:llama",
+                "minecraft:piglin",
+                "minecraft:piglin_brute",
+                "minecraft:polar_bear",
+                "minecraft:spider",
+                "minecraft:trader_llama",
+                "minecraft:wolf",
+                "minecraft:zombified_piglin",
+
+                //Hostile
+                "minecraft:blaze",
+                "minecraft:breeze",
+                "minecraft:bogged",
+                "minecraft:creeper",
+                "minecraft:elder_guardian",
+                "minecraft:endermite",
+                "minecraft:evoker",
+                "minecraft:ghast",
+                "minecraft:guardian",
+                "minecraft:hoglin",
+                "minecraft:husk",
+                "minecraft:illusioner",
+                "minecraft:magma_cube",
+                "minecraft:phantom",
+                "minecraft:piglin_brute",
+                "minecraft:pillager",
+                "minecraft:ravager",
+                "minecraft:shulker",
+                "minecraft:silverfish",
+                "minecraft:skeleton",
+                "minecraft:slime",
+                "minecraft:stray",
+                "minecraft:vex",
+                "minecraft:vindicator",
+                "minecraft:warden",
+                "minecraft:witch",
+                "minecraft:wither_skeleton",
+                "minecraft:zoglin",
+                "minecraft:zombie",
+                "minecraft:zombie_villager",
+
+                //Bosses
+                "minecraft:wither"
+            ];
+            const randommob = mobs[Math.floor(Math.random() * mobs.length)];
+            if (random) {
+                mob = randommob;
+            }
             const x = entry.getPropertyByName('x');
             const y = entry.getPropertyByName('y');
             const z = entry.getPropertyByName('z');

@@ -5,6 +5,7 @@
   "abilities": {
     "summon_mob": {
       "type": "airline_heroes:summon_mob",
+      "random": true,
       "conditions": {
         "enabling": [
           {
