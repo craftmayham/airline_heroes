@@ -32,7 +32,7 @@
                 ]
             }
         },
-        "bajakaboom": {
+        "bajakaboom_1": {
             "type": "airline_heroes:lightning_explosion",
             "hidden": true,
             "cause_fire": false,
@@ -44,6 +44,117 @@
                     {
                         "type": "palladium:ability_enabled",
                         "ability": "bajablast"
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "power_upgrade_1"
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_unlocked",
+                                "ability": "power_upgrade_3"
+                            },
+                            {
+                                "type": "palladium:ability_unlocked",
+                                "ability": "power_upgrade_2"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "bajakaboom_2": {
+            "type": "airline_heroes:lightning_explosion",
+            "hidden": true,
+            "cause_fire": false,
+            "radius": 2,
+            "self_damage": 1,
+            "explosion_chance": 0.05,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "bajablast"
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "power_upgrade_1"
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "power_upgrade_2"
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_unlocked",
+                                "ability": "power_upgrade_3"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "bajakaboom_3": {
+            "type": "airline_heroes:lightning_explosion",
+            "hidden": true,
+            "cause_fire": false,
+            "radius": 2,
+            "self_damage": 1,
+            "explosion_chance": 0,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "bajablast"
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "power_upgrade_1"
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "power_upgrade_2"
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "power_upgrade_3"
+                    }
+                ]
+            }
+        },
+        "bajakaboom_base": {
+            "type": "airline_heroes:lightning_explosion",
+            "hidden": true,
+            "cause_fire": false,
+            "radius": 2,
+            "self_damage": 1,
+            "explosion_chance": 0.1,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "bajablast"
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_unlocked",
+                                "ability": "power_upgrade_1"
+                            },
+                            {
+                                "type": "palladium:ability_unlocked",
+                                "ability": "power_upgrade_2"
+                            },
+                            {
+                                "type": "palladium:ability_unlocked",
+                                "ability": "power_upgrade_3"
+                            }
+                        ]
                     }
                 ]
             }
@@ -282,16 +393,14 @@
             "type": "palladium:attribute_modifier",
             "icon": "airline_heroes:textures/icons/power_upgrade_1.png",
             "title": "Power Increase 1",
-            "bar_color": "light_gray",
-            "list_index": 1,
             "gui_position": [
                 1,
                 0
             ],
             "attribute": "minecraft:generic.attack_damage",
-            "amount": 8,
+            "amount": 10,
             "operation": 0,
-            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e4",
+            "uuid": "15ba61bb-4f7d-4edd-926c-2526e5fc9d04",
             "conditions": {
                 "unlocking": [
                     {
@@ -314,16 +423,14 @@
             "type": "palladium:attribute_modifier",
             "icon": "airline_heroes:textures/icons/power_upgrade_2.png",
             "title": "Power Increase 2",
-            "bar_color": "light_gray",
-            "list_index": 2,
             "gui_position": [
                 2,
                 0
             ],
             "attribute": "minecraft:generic.attack_damage",
-            "amount": 6,
+            "amount": 5,
             "operation": 0,
-            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e5",
+            "uuid": "9940e11b-49a4-4ded-a468-ff598ce164fe",
             "conditions": {
                 "unlocking": [
                     {
@@ -346,16 +453,14 @@
             "type": "palladium:attribute_modifier",
             "icon": "airline_heroes:textures/icons/power_upgrade_3.png",
             "title": "Power Increase 3",
-            "bar_color": "light_gray",
-            "list_index": 3,
             "gui_position": [
                 3,
                 0
             ],
             "attribute": "minecraft:generic.attack_damage",
-            "amount": 6,
+            "amount": 4,
             "operation": 0,
-            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e6",
+            "uuid": "f4bd223d-fed5-49f6-9ffc-0571d5a95edb",
             "conditions": {
                 "unlocking": [
                     {
@@ -370,6 +475,186 @@
                     {
                         "type": "palladium:ability_unlocked",
                         "ability": "power_upgrade_2"
+                    }
+                ]
+            }
+        },
+        "health_upgrade_1": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/health_upgrade_1.png",
+            "title": "Health Increase 1",
+            "gui_position": [
+                0,
+                1
+            ],
+            "attribute": "minecraft:generic.max_health",
+            "amount": 8,
+            "operation": 0,
+            "uuid": "833b935c-746f-44c3-b7e9-f7bc449c3f45",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Skill Points"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "bajablast"
+                    }
+                ]
+            }
+        },
+        "health_upgrade_2": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/health_upgrade_2.png",
+            "title": "Health Increase 2",
+            "gui_position": [
+                0,
+                2
+            ],
+            "attribute": "minecraft:generic.max_health",
+            "amount": 6,
+            "operation": 0,
+            "uuid": "55b5e9ae-5de8-4c54-821c-1ebc8cf83bca",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Skill Points"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "health_upgrade_1"
+                    }
+                ]
+            }
+        },
+        "health_upgrade_3": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/health_upgrade_3.png",
+            "title": "Health Increase 3",
+            "gui_position": [
+                0,
+                3
+            ],
+            "attribute": "minecraft:generic.max_health",
+            "amount": 6,
+            "operation": 0,
+            "uuid": "ee9ced85-235b-4934-84e9-be2f35ef7c00",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Skill Points"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "health_upgrade_2"
+                    }
+                ]
+            }
+        },
+        "endurance_upgrade_1": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/endurance_upgrade_1.png",
+            "title": "Endurance Increase 1",
+            "gui_position": [
+                -1,
+                0
+            ],
+            "attribute": "minecraft:generic.armor",
+            "amount": 0.02,
+            "operation": 0,
+            "uuid": "fc981797-79d7-426e-a5a1-785b753ea789",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Skill Points"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "bajablast"
+                    }
+                ]
+            }
+        },
+        "endurance_upgrade_2": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/endurance_upgrade_2.png",
+            "title": "Endurance Increase 2",
+            "gui_position": [
+                -2,
+                0
+            ],
+            "attribute": "minecraft:generic.armor",
+            "amount": 0.02,
+            "operation": 0,
+            "uuid": "ab5d8036-b203-4578-9ad7-2af7c863a7e8",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Skill Points"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "endurance_upgrade_1"
+                    }
+                ]
+            }
+        },
+        "endurance_upgrade_3": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/endurance_upgrade_3.png",
+            "title": "Endurance Increase 3",
+            "gui_position": [
+                -3,
+                0
+            ],
+            "attribute": "minecraft:generic.armor",
+            "amount": 0.02,
+            "operation": 0,
+            "uuid": "3f51fbcf-2d01-4db8-a9b8-3a3465d51215",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Skill Points"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "endurance_upgrade_2"
                     }
                 ]
             }
