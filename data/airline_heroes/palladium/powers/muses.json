@@ -211,8 +211,8 @@
                 ]
             }
         },
-        "tragedy_invisiblity": {
-            "type": "palladium:command",
+        "tragedy_invis_dummy": {
+            "type": "palladium:dummy",
             "icon": "minecraft:command_block",
             "title": "null",
             "bar_color": "light_gray",
@@ -221,13 +221,6 @@
             "list_index": 1,
             "gui_position": "null",
             "description": "null",
-            "first_tick_commands": [],
-            "last_tick_commands": [
-                "effect clear @s minecraft:invisibility"
-            ],
-            "commands": [
-                "effect give @s minecraft:strength infinite 0 true"
-            ],
             "conditions": {
                 "enabling": [
                     {
@@ -237,13 +230,34 @@
                         "key_type": "key_bind",
                         "needs_empty_hand": false,
                         "allow_scrolling_when_crouching": true
-                    },
+                    }
+                ]
+            }
+        },
+        "tragedy_invisiblity": {
+            "type": "palladium:command",
+            "icon": "minecraft:command_block",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": true,
+            "hidden_in_bar": false,
+            "list_index": 1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [],
+            "last_tick_commands": [
+                "effect clear @s minecraft:invisibility"
+            ],
+            "commands": [
+                "effect give @s minecraft:invisibility infinite 0 true"
+            ],
+            "conditions": {
+                "enabling": [
                     {
-                        "type": "palladium:item_in_slot",
-                        "item": {
-                            "item": "airline_heroes:muses_mask"
-                        },
-                        "slot": "head"
+                        "type": "palladium:animation_timer_ability",
+                        "ability": "invis_animation",
+                        "min": 15,
+                        "max": 15
                     }
                 ],
                 "unlocking": [
@@ -267,20 +281,36 @@
                     {
                         "type": "palladium:has_effect",
                         "effect": "minecraft:invisibility"
+                    },
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "tragedy_invisiblity"
                     }
                 ]
             }
         },
         "invis_animation": {
             "type": "palladium:animation_timer",
+            "icon": "minecraft:command_block",
+            "title": "null",
+            "bar_color": "light_gray",
             "hidden": true,
+            "hidden_in_bar": false,
+            "list_index": 1,
             "start_value": 0,
             "max_value": 40,
             "conditions": {
                 "enabling": [
                     {
-                        "type": "palladium:ability_on_cooldown",
-                        "ability": "tragedy_invisibility"
+                        "type": "palladium:ability_enabled",
+                        "ability": "tragedy_invis_dummy"
+                    },
+                    {
+                        "type": "palladium:item_in_slot",
+                        "item": {
+                            "item": "airline_heroes:muses_mask"
+                        },
+                        "slot": "head"
                     }
                 ]
             }
@@ -295,8 +325,10 @@
             "conditions": {
                 "enabling": [
                     {
-                        "type": "palladium:ability_enabled",
-                        "ability": "gas_form"
+                        "type": "palladium:animation_timer_ability",
+                        "ability": "invis_animation",
+                        "min": 1,
+                        "max": 1
                     }
                 ]
             }
