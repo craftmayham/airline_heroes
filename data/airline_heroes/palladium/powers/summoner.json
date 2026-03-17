@@ -3,6 +3,20 @@
   "background": "minecraft:textures/block/light_blue_wool.png",
   "icon": "minecraft:command_block",
   "abilities": {
+    "summon_mob": {
+      "type": "airline_heroes:summon_mob",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "cooldown": 100,
+            "key_type": "key_bind",
+            "needs_empty_hand": false,
+            "allow_scrolling_when_crouching": true
+          }
+        ]
+      }
+    },
     "CORE_dummy": {
       "type": "palladium:dummy",
       "icon": "minecraft:blaze_rod",
