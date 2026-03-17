@@ -3,20 +3,173 @@
   "background": "minecraft:textures/block/light_blue_wool.png",
   "icon": "minecraft:command_block",
   "abilities": {
-     {
-    "type": "palladium:size",
-    "icon": "palladium:textures/icon/size.png",
-    "title": "null",
-    "bar_color": "light_gray",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": -1,
-    "gui_position": "null",
-    "description": "null",
-    "scale": 0.1
+    "Snot": {
+      "type": "palladium:size",
+      "icon": "palladium:textures/icon/size.png",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "null",
+      "scale": 0.5,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:objective_score",
+            "objective": "airline_heroes.sizeshift",
+            "min_score": 0,
+            "max_score": 0
+          }
+        ]
+      }
     },
-
-
+    "slime": {
+      "type": "palladium:size",
+      "icon": "palladium:textures/icon/size.png",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "null",
+      "scale": 1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:objective_score",
+            "objective": "airline_heroes.sizeshift",
+            "min_score": 1,
+            "max_score": 1
+          }
+        ]
+      }
+    },
+    "Goob": {
+      "type": "palladium:size",
+      "icon": "palladium:textures/icon/size.png",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "null",
+      "scale": 5,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:objective_score",
+            "objective": "airline_heroes.sizeshift",
+            "min_score": 2,
+            "max_score": 2
+          }
+        ]
+      }
+    },
+    "WAYGoob": {
+      "type": "palladium:size",
+      "icon": "palladium:textures/icon/size.png",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "null",
+      "scale": 25,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:objective_score",
+            "objective": "airline_heroes.sizeshift",
+            "min_score": 3,
+            "max_score": 3
+          }
+        ]
+      }
+    },
+    "SizeShift": {
+      "type": "palladium:command",
+      "icon": "minecraft:command_block",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "null",
+      "first_tick_commands": [
+        "scoreboard objectives add airline_heroes.sizeshift dummy"
+      ],
+      "last_tick_commands": [],
+      "commands": [
+        "scoreboard players set @s[scores={airline_heroes.sizeshift=..0}] airline_heroes.sizeshift 0",
+        "scoreboard players set @s[scores={airline_heroes.sizeshift=3..}] airline_heroes.sizeshift 3"
+      ]
+    },
+    "SizeUp": {
+      "type": "palladium:command",
+      "icon": "minecraft:command_block",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "null",
+      "first_tick_commands": [],
+      "last_tick_commands": [],
+      "commands": [
+        "scoreboard players add @s airline_heroes.sizeshift 1"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "cooldown": 0,
+            "key_type": "scroll_up",
+            "needs_empty_hand": false,
+            "allow_scrolling_when_crouching": false
+          },
+          {
+            "type": "palladium:crouching"
+          }
+        ]
+      }
+    },
+    "Sizedown": {
+      "type": "palladium:command",
+      "icon": "minecraft:command_block",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "null",
+      "first_tick_commands": [],
+      "last_tick_commands": [],
+      "commands": [
+        "scoreboard players remove @s airline_heroes.sizeshift 1"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "cooldown": 0,
+            "key_type": "scroll_down",
+            "needs_empty_hand": false,
+            "allow_scrolling_when_crouching": false
+          },
+          {
+            "type": "palladium:crouching"
+          }
+        ]
+      }
+    },
     "CORE_dummy": {
       "type": "palladium:dummy",
       "icon": "minecraft:blaze_rod",
@@ -24,7 +177,10 @@
       "hidden": false,
       "hidden_in_bar": false,
       "list_index": 0,
-      "gui_position": [0, 0],
+      "gui_position": [
+        0,
+        0
+      ],
       "description": "null",
       "conditions": {
         "unlocking": [
@@ -44,7 +200,10 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/power_upgrade_1.png",
       "title": "Power Increase 1",
-      "gui_position": [1, 0],
+      "gui_position": [
+        1,
+        0
+      ],
       "attribute": "minecraft:generic.attack_damage",
       "amount": 1,
       "operation": 0,
@@ -71,7 +230,10 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/power_upgrade_2.png",
       "title": "Power Increase 2",
-      "gui_position": [2, 0],
+      "gui_position": [
+        2,
+        0
+      ],
       "attribute": "minecraft:generic.attack_damage",
       "amount": 2,
       "operation": 0,
@@ -98,7 +260,10 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/power_upgrade_3.png",
       "title": "Power Increase 3",
-      "gui_position": [3, 0],
+      "gui_position": [
+        3,
+        0
+      ],
       "attribute": "minecraft:generic.attack_damage",
       "amount": 3,
       "operation": 0,
@@ -125,7 +290,10 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/health_upgrade_1.png",
       "title": "Health Increase 1",
-      "gui_position": [0, 1],
+      "gui_position": [
+        0,
+        1
+      ],
       "attribute": "minecraft:generic.max_health",
       "amount": 3,
       "operation": 0,
@@ -152,7 +320,10 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/health_upgrade_2.png",
       "title": "Health Increase 2",
-      "gui_position": [0, 2],
+      "gui_position": [
+        0,
+        2
+      ],
       "attribute": "minecraft:generic.max_health",
       "amount": 3,
       "operation": 0,
@@ -179,7 +350,10 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/health_upgrade_3.png",
       "title": "Health Increase 3",
-      "gui_position": [0, 3],
+      "gui_position": [
+        0,
+        3
+      ],
       "attribute": "minecraft:generic.max_health",
       "amount": 3,
       "operation": 0,
@@ -206,7 +380,10 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/endurance_upgrade_1.png",
       "title": "Endurance Increase 1",
-      "gui_position": [-1, 0],
+      "gui_position": [
+        -1,
+        0
+      ],
       "attribute": "minecraft:generic.armor",
       "amount": 3,
       "operation": 0,
@@ -233,7 +410,10 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/endurance_upgrade_2.png",
       "title": "Endurance Increase 2",
-      "gui_position": [-2, 0],
+      "gui_position": [
+        -2,
+        0
+      ],
       "attribute": "minecraft:generic.armor",
       "amount": 3,
       "operation": 0,
@@ -260,7 +440,10 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/endurance_upgrade_3.png",
       "title": "Endurance Increase 3",
-      "gui_position": [-3, 0],
+      "gui_position": [
+        -3,
+        0
+      ],
       "attribute": "minecraft:generic.armor",
       "amount": 3,
       "operation": 0,
