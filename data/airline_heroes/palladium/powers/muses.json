@@ -212,8 +212,8 @@
             }
         },
         "tragedy_invisiblity": {
-            "type": "palladium:invisibility",
-            "icon": "palladium:textures/icon/invisibility.png",
+            "type": "palladium:command",
+            "icon": "minecraft:command_block",
             "title": "null",
             "bar_color": "light_gray",
             "hidden": false,
@@ -221,11 +221,19 @@
             "list_index": 1,
             "gui_position": "null",
             "description": "null",
+            "first_tick_commands": [],
+            "last_tick_commands": [
+                "effect clear @s minecraft:invisibility"
+            ],
+            "commands": [
+                "effect give @s minecraft:strength infinite 0 true"
+            ],
             "conditions": {
                 "enabling": [
                     {
-                        "type": "palladium:toggle",
-                        "cooldown": 0,
+                        "type": "palladium:activation",
+                        "cooldown": 100,
+                        "ticks": 400,
                         "key_type": "key_bind",
                         "needs_empty_hand": false,
                         "allow_scrolling_when_crouching": true
@@ -247,6 +255,48 @@
                                 "ability": "comedy_tragedy"
                             }
                         ]
+                    }
+                ]
+            }
+        },
+        "tragedy_invis": {
+            "type": "palladium:invisibility",
+            "hidden": true,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:has_effect",
+                        "effect": "minecraft:invisibility"
+                    }
+                ]
+            }
+        },
+        "invis_animation": {
+            "type": "palladium:animation_timer",
+            "hidden": true,
+            "start_value": 0,
+            "max_value": 40,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_on_cooldown",
+                        "ability": "tragedy_invisibility"
+                    }
+                ]
+            }
+        },
+        "invis_smoke_particles": {
+            "type": "palladium:particles",
+            "hidden": true,
+            "emitter": [
+                "airline_heroes:big_cloud"
+            ],
+            "particle_type": "airline_heroes:pink_smoke",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
                     }
                 ]
             }
@@ -493,6 +543,41 @@
                                 "ability": "comedy_tragedy"
                             }
                         ]
+                    }
+                ]
+            }
+        },
+        "comedy_swap": {
+            "type": "airline_heroes:swap_places",
+            "icon": "minecraft:chorus_fruit",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 3,
+            "gui_position": "null",
+            "description": "null",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    },
+                    {
+                        "type": "palladium:item_in_slot",
+                        "item": {
+                            "item": "airline_heroes:muses_mask"
+                        },
+                        "slot": "head"
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "comedy_tragedy"
                     }
                 ]
             }
