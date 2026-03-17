@@ -10,6 +10,7 @@
             "icon": "minecraft:lightning_rod",
             "title": "Lightning Strike",
             "description": "The user is able to strike themselves with lightning",
+            "icon": "airline_heroes:textures/icons/thunder_strike_icon.png",
             "bar_color": "light_blue",
             "list_index": 0,
             "gui_position": [
@@ -49,7 +50,7 @@
         },
         "bajasuperblast_lightning": {
             "type": "palladium:command",
-            "icon": "minecraft:tnt",
+            "icon": "airline_heroes:textures/icons/thunder_crash_icon.png",
             "title": "Lightning Crash",
             "description": "The user is able to summon a large bolt of lightning shattering the earth below",
             "bar_color": "light_blue",
@@ -102,7 +103,7 @@
         },
         "bajasuperduperblast_lightning": {
             "type": "palladium:command",
-            "icon": "minecraft:firework_rocket",
+            "icon": "airline_heroes:textures/icons/thunder_crash_icon.png",
             "title": "Lightning Crash",
             "description": "The user is able to summon a large bolt of lightning shattering the earth below",
             "bar_color": "light_blue",
@@ -165,10 +166,10 @@
         },
         "electricdash": {
             "type": "palladium:command",
-            "icon": "minecraft:string",
             "title": "Electric Dash",
             "description": "The user is able to dash forwards like thundah!",
             "bar_color": "light_blue",
+            "icon": "airline_heroes:textures/icons/electric_dash_icon.png",
             "hidden": false,
             "hidden_in_bar": false,
             "list_index": 5,
