@@ -245,11 +245,9 @@
             "gui_position": "null",
             "description": "null",
             "first_tick_commands": [],
-            "last_tick_commands": [
-                "effect clear @s minecraft:invisibility"
-            ],
+            "last_tick_commands": [],
             "commands": [
-                "effect give @s minecraft:invisibility infinite 0 true"
+                "effect give @s minecraft:invisibility 2 0 true"
             ],
             "conditions": {
                 "enabling": [
@@ -281,10 +279,6 @@
                     {
                         "type": "palladium:has_effect",
                         "effect": "minecraft:invisibility"
-                    },
-                    {
-                        "type": "palladium:ability_enabled",
-                        "ability": "tragedy_invisiblity"
                     }
                 ]
             }
