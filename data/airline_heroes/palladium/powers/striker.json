@@ -1,403 +1,391 @@
 {
-  "name": "Striker",
-  "background": "minecraft:textures/block/red_wool.png",
-  "icon": "minecraft:lightning_rod",
-  "gui_display_type": "tree",
-  	"ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
-  "abilities": {
-    "bajablast": {
-      "type": "palladium:command",
+    "name": "Striker",
+    "background": "minecraft:textures/block/red_wool.png",
     "icon": "minecraft:lightning_rod",
-    "title": "Lightning Strike",
-	"description": "The user is able to strike themselves with lightning",
-    "bar_color": "light_blue",
-    "list_index": 0,
-    "gui_position": [
-	0,
-	0
-	],
-      "commands": [
-        "summon minecraft:lightning_bolt ~ ~ ~"
-      ],
-	"conditions": {
-		"enabling": [ 
-		{
-    "type": "palladium:action",
-    "cooldown": 100,
-    "key_type": "key_bind",
-    "needs_empty_hand": false,
-    "allow_scrolling_when_crouching": true
-}
-	]
-	}
-    },
-	"bajakaboom":
-	{
-    "type": "airline_heroes:lightning_explosion",
-    "hidden": true,
-    "cause_fire": false,
-    "radius": 2,
-    "self_damage": 1,
-	"explosion_chance": 0.1,
-	"conditions": {
-		"enabling": [
-		{
-    "type": "palladium:ability_enabled",
-    "ability": "bajablast"
-}
-]
-}
-	},
-	    "bajasuperblast_lightning": {
-      "type": "palladium:command",
-    "icon": "minecraft:tnt",
-    "title": "Lightning Crash",
-	"description": "The user is able to summon a large bolt of lightning shattering the earth below",
-    "bar_color": "light_blue",
-    "list_index": 10,
-    "gui_position": [
-	0,
-	-2
-	],
-      "commands": [
-        "summon minecraft:lightning_bolt ~ ~ ~"
-      ],
-	"conditions": {
-		"enabling": [ 
-		{
-    "type": "palladium:action",
-    "cooldown": 100,
-    "key_type": "key_bind",
-    "needs_empty_hand": false,
-    "allow_scrolling_when_crouching": true
-}
-	],
-		"unlocking": [
-		{
-    "type": "palladium:scoreboard_score_buyable",
-    "objective": "airline_heroes.skill_points",
-    "score": 1
-		},
-	{	
-    "type": "palladium:ability_unlocked",
-    "ability": "electricdash"
-	}
-		]
-	}
-    },
-  "bajasuperblast": 
-  {
-    "type": "airline_heroes:lightning_explosion",
-    "hidden": true,
-    "cause_fire": true,
-    "radius": 20,
-    "self_damage": 1,
-	"explosion_chance": 0,
-	"conditions": {
-		"enabling": [
-		{
-    "type": "palladium:ability_enabled",
-    "ability": "bajasuperblast_lightning"
-}
-]
-	}
-},
-	"bajasuperduperblast_lightning": {
-        "type": "palladium:command",
-        "icon": "minecraft:firework_rocket",
-        "title": "Lightning Crash",
-        "description": "The user is able to summon a large bolt of lightning shattering the earth below",
-        "bar_color": "light_blue",
-        "list_index": 15,
-        "gui_position": [
-            0,
-            -3
-        ],
-        "commands": [
-            "summon minecraft:lightning_bolt ~ ~ ~"
-        ],
-       "energy_bar_usage": {
-       "energy_bar": "energy_bar_name",
-       "amount": 500
-        },
-        "conditions": {
-            "enabling": [ 
-                {
-                    "type": "palladium:action",
-                    "cooldown": 100,
-                    "key_type": "key_bind",
-                    "needs_empty_hand": false,
-                    "allow_scrolling_when_crouching": true
-                },
-                {
-                    "type": "palladium:energy_bar",
-                    "power": "null",
-                    "energy_bar": "energy_bar_name",
-                    "min": 490,
-                    "max": 2147483647
-                }
+    "gui_display_type": "tree",
+    "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
+    "abilities": {
+        "bajablast": {
+            "type": "palladium:command",
+            "icon": "minecraft:lightning_rod",
+            "title": "Lightning Strike",
+            "description": "The user is able to strike themselves with lightning",
+            "bar_color": "light_blue",
+            "list_index": 0,
+            "gui_position": [
+                0,
+                0
             ],
-            "unlocking": [
-                {
-                    "type": "palladium:scoreboard_score_buyable",
-                    "objective": "airline_heroes.skill_points",
-                    "score": 1
-            
-                },
-
-                {	
-                    "type": "palladium:ability_unlocked",
-                    "ability": "superbajablast"
-                }	
+            "commands": [
+                "summon minecraft:lightning_bolt ~ ~ ~"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 100,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ]
+            }
+        },
+        "bajakaboom": {
+            "type": "airline_heroes:lightning_explosion",
+            "hidden": true,
+            "cause_fire": false,
+            "radius": 2,
+            "self_damage": 1,
+            "explosion_chance": 0.1,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "bajablast"
+                    }
+                ]
+            }
+        },
+        "bajasuperblast_lightning": {
+            "type": "palladium:command",
+            "icon": "minecraft:tnt",
+            "title": "Lightning Crash",
+            "description": "The user is able to summon a large bolt of lightning shattering the earth below",
+            "bar_color": "light_blue",
+            "list_index": 10,
+            "gui_position": [
+                0,
+                -2
+            ],
+            "commands": [
+                "summon minecraft:lightning_bolt ~ ~ ~"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 100,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "electricdash"
+                    }
+                ]
+            }
+        },
+        "bajasuperblast": {
+            "type": "airline_heroes:lightning_explosion",
+            "hidden": true,
+            "cause_fire": true,
+            "radius": 20,
+            "self_damage": 1,
+            "explosion_chance": 0,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "bajasuperblast_lightning"
+                    }
+                ]
+            }
+        },
+        "bajasuperduperblast_lightning": {
+            "type": "palladium:command",
+            "icon": "minecraft:firework_rocket",
+            "title": "Lightning Crash",
+            "description": "The user is able to summon a large bolt of lightning shattering the earth below",
+            "bar_color": "light_blue",
+            "list_index": 15,
+            "gui_position": [
+                0,
+                -3
+            ],
+            "commands": [
+                "summon minecraft:lightning_bolt ~ ~ ~"
+            ],
+            "energy_bar_usage": {
+                "energy_bar": "energy_bar_name",
+                "amount": 500
+            },
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 100,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    },
+                    {
+                        "type": "palladium:energy_bar",
+                        "energy_bar": "energy_bar_name",
+                        "min": 490,
+                        "max": 2147483647
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "superbajablast"
+                    }
+                ]
+            }
+        },
+        "bajasuperduperblast": {
+            "type": "airline_heroes:lightning_explosion",
+            "hidden": true,
+            "cause_fire": true,
+            "radius": 40,
+            "self_damage": 1,
+            "explosion_chance": 0,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "bajasuperduperblast_lightning"
+                    }
+                ]
+            }
+        },
+        "electricdash": {
+            "type": "palladium:command",
+            "icon": "minecraft:string",
+            "title": "Electric Dash",
+            "description": "The user is able to dash forwards like thundah!",
+            "bar_color": "light_blue",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 5,
+            "gui_position": [
+                0,
+                -1
+            ],
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "summon minecraft:lightning_bolt ~ ~ ~"
+            ],
+            "energy_bar_usage": {
+                "energy_bar": "energy_bar_name",
+                "amount": 5
+            },
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:energy_bar",
+                        "energy_bar": "energy_bar_name",
+                        "min": 5
+                    },
+                    {
+                        "type": "palladium:interval",
+                        "active_ticks": 5,
+                        "disabled_ticks": 1
+                    },
+                    {
+                        "type": "palladium:held",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false
+                    }
+                ],
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "bajablast"
+                    }
+                ]
+            }
+        },
+        "autojump_dash": {
+            "type": "palladium:command",
+            "icon": "minecraft:command_block",
+            "hidden": true,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [],
+            "last_tick_commands": [
+                "scale reset pehkui:step_height"
+            ],
+            "commands": [
+                "scale set pehkui:step_height 5"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "electricdash"
+                    }
+                ]
+            }
+        },
+        "electricdash_speed": {
+            "type": "palladium:attribute_modifier",
+            "hidden": true,
+            "attribute": "minecraft:generic.movement_speed",
+            "amount": 1.5,
+            "operation": 0,
+            "uuid": "e3ee9053-1e43-4c78-8893-4546a66aa4c6",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "electricdash"
+                    }
+                ]
+            }
+        },
+        "firedash_immunity": {
+            "type": "palladium:damage_immunity",
+            "hidden": true,
+            "damage_sources": [
+                "minecraft:is_fire"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "electricdash"
+                    }
+                ]
+            }
+        },
+        "lighting_immunity": {
+            "type": "palladium:damage_immunity",
+            "hidden": true,
+            "damage_sources": [
+                "minecraft:is_lightning"
             ]
+        },
+        "power_upgrade_1": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/power_upgrade_1.png",
+            "title": "Power Increase 1",
+            "bar_color": "light_gray",
+            "list_index": 1,
+            "gui_position": [
+                1,
+                0
+            ],
+            "attribute": "minecraft:generic.attack_damage",
+            "amount": 8,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e4",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Skill Points"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "bajablast"
+                    }
+                ]
+            }
+        },
+        "power_upgrade_2": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/power_upgrade_2.png",
+            "title": "Power Increase 2",
+            "bar_color": "light_gray",
+            "list_index": 2,
+            "gui_position": [
+                2,
+                0
+            ],
+            "attribute": "minecraft:generic.attack_damage",
+            "amount": 6,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e5",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Skill Points"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "power_upgrade_1"
+                    }
+                ]
+            }
+        },
+        "power_upgrade_3": {
+            "type": "palladium:attribute_modifier",
+            "icon": "airline_heroes:textures/icons/power_upgrade_3.png",
+            "title": "Power Increase 3",
+            "bar_color": "light_gray",
+            "list_index": 3,
+            "gui_position": [
+                3,
+                0
+            ],
+            "attribute": "minecraft:generic.attack_damage",
+            "amount": 6,
+            "operation": 0,
+            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e6",
+            "conditions": {
+                "unlocking": [
+                    {
+                        "type": "palladium:scoreboard_score_buyable",
+                        "objective": "airline_heroes.skill_points",
+                        "score": 1,
+                        "icon": "minecraft:command_block",
+                        "description": {
+                            "text": "Skill Points"
+                        }
+                    },
+                    {
+                        "type": "palladium:ability_unlocked",
+                        "ability": "power_upgrade_2"
+                    }
+                ]
+            }
+        },
+        "set_name_description": {
+            "type": "airline_heroes:set_name_description",
+            "hidden": true,
+            "power_name": "Striker",
+            "power_description": "The user is able to strike themselves with lightning"
         }
     },
-  "bajasuperduperblast": 
-  {
-    "type": "airline_heroes:lightning_explosion",
-    "hidden": true,
-    "cause_fire": true,
-    "radius": 40,
-    "self_damage": 1,
-	"explosion_chance": 0,
-	"conditions": {
-		"enabling": [
-		{
-    "type": "palladium:ability_enabled",
-    "ability": "bajasuperduperblast_lightning"
-}
-]
-}
-
-	},
-  "electricdash":
-  {
-	  
-    "type": "palladium:command",
-    "icon": "minecraft:string",
-    "title": "Electric Dash",
-	"description": "The user is able to dash forwards like thundah!",
-    "bar_color": "light_blue",
-    "hidden": false,
-    "hidden_in_bar": false,
-    "list_index": 5,
-     "gui_position": [
-	0,
-	-1
-	],
-    "first_tick_commands": [],
-    "last_tick_commands": [],
-    "commands": [
-	"summon minecraft:lightning_bolt ~ ~ ~"
-        
-    ],
-	"energy_bar_usage": {
-   "energy_bar": "energy_bar_name",
-   "amount": 5
-	},
-	
-	"conditions": 
-	{
-	"enabling":[
-	{
-    "type": "palladium:energy_bar",
-    "energy_bar": "energy_bar_name",
-    "min": 5
-},
-{
-    "type": "palladium:held",
-    "cooldown": 0,
-    "key_type": "key_bind",
-    "needs_empty_hand": false
-}
-	],
-	"unlocking": [
-		{
-    "type": "palladium:scoreboard_score_buyable",
-    "objective": "airline_heroes.skill_points",
-    "score": 1
-		},
-	{	
-    "type": "palladium:ability_unlocked",
-    "ability": "bajablast"
-	}
-		]
-	}
-},
-  "autojump_dash":{
-    "type": "palladium:command",
-    "icon": "minecraft:command_block",
-    "hidden": true,
-    "gui_position": "null",
-    "description": "null",
-    "first_tick_commands": [],
-    "last_tick_commands": ["scale reset pehkui:step_height"],
-    "commands":["scale set pehkui:step_height 5"],
-        "conditions": {
-            "enabling":[
-            {
-            "type": "palladium:ability_enabled",
-            "ability": "electricdash"
-}
-
-            ]
-		}
-},
-  "electricdash_speed" : 
-  {
-    "type": "palladium:attribute_modifier",
-	"hidden": true,
-    "attribute": "minecraft:generic.movement_speed",
-    "amount": 1.5,
-    "operation": 0,
-    "uuid": "e3ee9053-1e43-4c78-8893-4546a66aa4c6",
-	"conditions": 
-	{
-	"enabling":[
-{
-    "type": "palladium:ability_enabled",
-    "ability": "electricdash"
-}
-
-	]
-	}
-
-},
-"firedash_immunity":
-{
-    "type": "palladium:damage_immunity",
-    "hidden": true,
-    "damage_sources": [
-        "minecraft:is_fire"
-    ],
-	"conditions":
-	{
-	"enabling":[
-{
-    "type": "palladium:ability_enabled",
-    "ability": "electricdash"
-}
-
-	]
-	}
-},
-"lighting_immunity":
-{
-    "type": "palladium:damage_immunity",
-    "hidden": true,
-    "damage_sources": [
-        "minecraft:is_lightning"
-    ]
-},
-"power_upgrade_1": {
-    "type": "palladium:attribute_modifier",
-    "icon": "airline_heroes:textures/icons/power_upgrade_1.png",
-    "title": "Power Increase 1",
-    "bar_color": "light_gray",
-    "list_index": 1,
-    "gui_position": [
-	1,
-	0
-	],
-    "attribute": "minecraft:generic.attack_damage",
-    "amount": 8,
-    "operation": 0,
-	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e4",
-	 "conditions": {
-		"unlocking": [
-		{
-    "type": "palladium:scoreboard_score_buyable",
-    "objective": "airline_heroes.skill_points",
-    "score": 1,
-    "icon": "minecraft:command_block",
-    "description": {
-        "text": "Skill Points"
+    "energy_bars": {
+        "energy_bar_name": {
+            "max": 500,
+            "auto_increase_per_tick": 10,
+            "auto_increase_interval": 20,
+            "color": "#fadd8e6"
+        }
     }
-},
-{
-    "type": "palladium:ability_unlocked",
-    "ability": "bajablast"
-}
-		]
-      }
-},
-"power_upgrade_2": {
-    "type": "palladium:attribute_modifier",
-    "icon": "airline_heroes:textures/icons/power_upgrade_2.png",
-    "title": "Power Increase 2",
-    "bar_color": "light_gray",
-    "list_index": 2,
-    "gui_position": [
-	2,
-	0
-	],
-    "attribute": "minecraft:generic.attack_damage",
-    "amount": 6,
-    "operation": 0,
-	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e5",
-	 "conditions": {
-		"unlocking": [
-		{
-    "type": "palladium:scoreboard_score_buyable",
-    "objective": "airline_heroes.skill_points",
-    "score": 1,
-    "icon": "minecraft:command_block",
-    "description": {
-        "text": "Skill Points"
-    }
-},
-{
-    "type": "palladium:ability_unlocked",
-    "ability": "power_upgrade_1"
-}
-		]
-      }
-},
-"power_upgrade_3": {
-    "type": "palladium:attribute_modifier",
-    "icon": "airline_heroes:textures/icons/power_upgrade_3.png",
-    "title": "Power Increase 3",
-    "bar_color": "light_gray",
-    "list_index": 3,
-    "gui_position": [
-	3,
-	0
-	],
-    "attribute": "minecraft:generic.attack_damage",
-    "amount": 6,
-    "operation": 0,
-	"uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e6",
-	 "conditions": {
-		"unlocking": [
-		{
-    "type": "palladium:scoreboard_score_buyable",
-    "objective": "airline_heroes.skill_points",
-    "score": 1,
-    "icon": "minecraft:command_block",
-    "description": {
-        "text": "Skill Points"
-    }
-},
-{
-    "type": "palladium:ability_unlocked",
-    "ability": "power_upgrade_2"
-}
-		]
-      }
-},
-"set_name_description": {
-	"type": "airline_heroes:set_name_description",
-	"hidden": true,
-	"power_name": "Striker",
-	"power_description": "The user is able to strike themselves with lightning"
-}
-},
-"energy_bars": {
-   "energy_bar_name": {
-       "max": 500,
-       "auto_increase_per_tick": 10,
-       "auto_increase_interval": 20,
-       "color": "#fadd8e6"
-   }
-}
 }
