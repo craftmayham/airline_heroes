@@ -336,21 +336,18 @@ PalladiumEvents.registerAnimations((event) => {
                 .setXRotDegrees(-10)
                 .animate('InOutExpo', progress / 2);
 
-
             builder.get('right_arm')
                 .setXRotDegrees(-20)
                 .animate('InOutCubic', progress);
-
-
             builder.get('left_arm')
                 .setXRotDegrees(10)
                 .animate('InOutCubic', progress);
-
             builder.get('body')
                 .moveZ(-5)
                 .setXRotDegrees(-10)
                 .animate('InOutCubic', progress);
         }
     });
+
 });
 

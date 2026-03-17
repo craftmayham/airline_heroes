@@ -129,8 +129,10 @@
             "conditions": {
                 "enabling": [
                     {
-                        "type": "palladium:ability_enabled",
-                        "ability": "gas_form"
+                        "type": "palladium:ability_ticks",
+                        "ability": "tragedy_invisibility",
+                        "min": 1,
+                        "max": 20
                     }
                 ]
             }

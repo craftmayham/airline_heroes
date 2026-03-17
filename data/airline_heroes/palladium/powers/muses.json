@@ -285,6 +285,22 @@
                 ]
             }
         },
+        "invis_smoke_particles": {
+            "type": "palladium:particles",
+            "hidden": true,
+            "emitter": [
+                "airline_heroes:big_cloud"
+            ],
+            "particle_type": "airline_heroes:pink_smoke",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "ability": "gas_form"
+                    }
+                ]
+            }
+        },
         "comedy_push_away": {
             "type": "gravestone:aoe_knockback",
             "icon": "minecraft:egg",
