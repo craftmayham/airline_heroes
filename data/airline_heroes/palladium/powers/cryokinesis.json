@@ -31,6 +31,10 @@
                 "effect": "airline_heroes:nullified"
               }
             ]
+          },
+          {
+            "type": "airline_heroes:dampened_by",
+            "effect": "dampened:genetic"
           }
         ]
       }

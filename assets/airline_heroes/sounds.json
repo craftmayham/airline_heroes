@@ -13,5 +13,10 @@
 	{
 		"category": "player",
 		"sounds": [{ "name": "airline_heroes:somebody_get_the_door"}]
+	},
+	"mang":
+	{
+		"category": "player",
+		"sounds": [{ "name": "airline_heroes:mang"}]
 	}
 }

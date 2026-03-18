@@ -1,0 +1,6 @@
+{
+  "type":"geckolib:default",
+  "model":"airline_heroes:geo/mang_right_fist.geo.json",
+  "texture": "airline_heroes:textures/models/mang_right_fist.png",
+  "render_type": "glow"
+}
