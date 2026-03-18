@@ -349,5 +349,23 @@ PalladiumEvents.registerAnimations((event) => {
         }
     });
 
+    event.registerForPower('airline_heroes/phantom_glide_animation', 'airline_heroes:summoner', 5, (builder) => {
+        const progress = animationUtil.getAnimationTimerAbilityValue(builder.getPlayer(), 'airline_heroes:summoner', 'phantom_glide_animation', builder.getPartialTicks());
+        if (progress > 0.0) {
+            builder.get('body')
+                .setXRotDegrees(0)
+                .animate('InOutCubic', progress);
+            builder.get('left_arm')
+                .setXRotDegrees(-180)
+                .animate('InOutCubic', progress);
+            builder.get('right_arm')
+                .setXRotDegrees(-180)
+                .animate('InOutCubic', progress);
+            builder.get('head')
+                .setXRotDegrees(0)
+                .animate('InOutCubic', progress);
+        }
+
+    });
 });
 

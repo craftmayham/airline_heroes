@@ -1,0 +1,31 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.airline_heroes.phantom_glide": {
+			"loop": true,
+			"bones": {
+				"head2": {
+					"rotation": ["-math.sin(query.anim_time * 80) * 5", 0, 0]
+				},
+				"left_wing": {
+					"rotation": [0, 0, "math.sin(query.anim_time * 80) * 25"]
+				},
+				"left_wing_tip": {
+					"rotation": [0, 0, "math.sin(query.anim_time * 80) * 15"]
+				},
+				"right_wing": {
+					"rotation": [0, 0, "-math.sin(query.anim_time * 80) * 25"]
+				},
+				"right_wing_tip": {
+					"rotation": [0, 0, "-math.sin(query.anim_time * 80) * 15"]
+				},
+				"tail": {
+					"rotation": ["-math.sin(query.anim_time * 80) * 5", 0, 0]
+				},
+				"tail2": {
+					"rotation": ["-math.sin(query.anim_time * 80) * 10", 0, 0]
+				}
+			}
+		}
+	}
+}

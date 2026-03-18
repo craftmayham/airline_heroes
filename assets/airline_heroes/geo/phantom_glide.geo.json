@@ -1,0 +1,92 @@
+{
+	"format_version": "1.21.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.minecraft:player#main",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [0, 24, 4]
+				},
+				{
+					"name": "Phantom",
+					"parent": "body",
+					"pivot": [0, 27, 4]
+				},
+				{
+					"name": "body2",
+					"parent": "Phantom",
+					"pivot": [0.5, 32, 4],
+					"cubes": [
+						{"origin": [-2.5, 31, -4], "size": [5, 3, 9], "uv": [0, 8]}
+					]
+				},
+				{
+					"name": "head2",
+					"parent": "Phantom",
+					"pivot": [0.5, 30.75, -4],
+					"cubes": [
+						{"origin": [-3.5, 29.75, -9], "size": [7, 3, 5], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "left_wing",
+					"parent": "Phantom",
+					"pivot": [2.5, 34, -4],
+					"cubes": [
+						{"origin": [2.5, 32, -4], "size": [6, 2, 9], "uv": [23, 12]}
+					]
+				},
+				{
+					"name": "left_wing_tip",
+					"parent": "left_wing",
+					"pivot": [8.5, 34, -4],
+					"cubes": [
+						{"origin": [8.5, 33, -4], "size": [13, 1, 9], "uv": [16, 24]}
+					]
+				},
+				{
+					"name": "right_wing",
+					"parent": "Phantom",
+					"pivot": [-2.5, 34, -4],
+					"mirror": true,
+					"cubes": [
+						{"origin": [-8.5, 32, -4], "size": [6, 2, 9], "uv": [23, 12]}
+					]
+				},
+				{
+					"name": "right_wing_tip",
+					"parent": "right_wing",
+					"pivot": [-8.5, 34, -4],
+					"mirror": true,
+					"cubes": [
+						{"origin": [-21.5, 33, -4], "size": [13, 1, 9], "uv": [16, 24]}
+					]
+				},
+				{
+					"name": "tail",
+					"parent": "Phantom",
+					"pivot": [0.5, 34, 5],
+					"cubes": [
+						{"origin": [-1.5, 32, 5], "size": [3, 2, 6], "uv": [3, 20]}
+					]
+				},
+				{
+					"name": "tail2",
+					"parent": "tail",
+					"pivot": [0.5, 33.5, 11],
+					"cubes": [
+						{"origin": [-0.5, 32.5, 11], "size": [1, 1, 6], "uv": [4, 29]}
+					]
+				}
+			]
+		}
+	]
+}
