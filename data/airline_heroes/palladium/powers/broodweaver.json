@@ -267,14 +267,14 @@
             "list_index": 9,
             "gui_position": "null",
             "description": "null",
-            "first_tick_commands": [],
+            "first_tick_commands": ["function airline_heroes:web_of_life_and_destiny"],
             "last_tick_commands": [],
-            "commands": ["function airline_heroes:web_of_life_and_destiny"],
+            "commands": [],
             "conditions": {
                 "enabling": [
                     {
                         "type": "palladium:action",
-                        "cooldown": 250 ,
+                        "cooldown": 500 ,
                         "key_type": "key_bind",
                         "needs_empty_hand": false,
                         "allow_scrolling_when_crouching": true
@@ -295,6 +295,8 @@
             }
         },
         
+
+
         "fluid_ring": {
             "type": "palladium:command",
             "icon": "minecraft:iron_block",
@@ -471,8 +473,58 @@
             "swinging_arm": "none",
             "damage_from_player": false,
             "ignore_player_movement": false
+        },
+
+        "spider_punch": {
+            "type": "gravecore:potion_punch",
+            "icon": "minecraft:iron_chestplate",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "effect": "minecraft:poison",
+            "time": 7
+        },
+
+        "spider_kiss": {
+            "type": "gravecore:projectile",
+            "icon": "minecraft:cobweb",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "entity_type": "palladium:custom_projectile",
+            "damage_from_player": true,
+            "ignore_player_movement": false,
+            "DieOnEntityHit": false,
+            "DieOnBlockHit": false,
+            "pitchOffset": 45,
+            "entity_data": {
+                "Damage": 15,
+                "Gravity": 3,
+                "Size": 4,
+                "Lifetime":5,
+                "CommandOnEntityHit": "function airline_heroes:spiderkiss",
+                "Appearances": []
+            },
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 60,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ]
+            }
         }
-		
     },
     
     
