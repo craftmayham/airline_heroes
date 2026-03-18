@@ -59,7 +59,7 @@
             "attribute": "minecraft:generic.movement_speed",
             "amount": 0.5,
             "operation": 0,
-            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
+            "uuid": "198be4fb-af04-42f2-8948-e6ccdc0d99e1",
             "conditions": {
                 "enabling": [
                     {
@@ -108,7 +108,7 @@
             "attribute": "minecraft:generic.attack_damage",
             "amount": 1.4,
             "operation": 0,
-            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
+            "uuid": "128be4fb-af04-42f2-8948-e6ccdc0d99e1",
             "conditions": {
                 "enabling": [
                     {
@@ -131,7 +131,7 @@
             "attribute": "minecraft:generic.armor_toughness",
             "amount": 1.4,
             "operation": 0,
-            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
+            "uuid": "438be4fb-af04-42f2-8948-e6ccdc0d99e1",
             "conditions": {
                 "enabling": [
                     {
@@ -146,7 +146,7 @@
                 ]
             }
         },
-        "tragedy_Regen": {
+        "tragedy_regen": {
             "type": "palladium:healing",
             "icon": "minecraft:apple",
             "title": "null",
@@ -192,7 +192,7 @@
             "attribute": "minecraft:generic.max_health",
             "amount": 3.5,
             "operation": 0,
-            "uuid": "498be4fb-af04-42f2-8948-e6ccdc0d99e1",
+            "uuid": "393be4fb-af04-42f2-8948-e6ccdc0d99e1",
             "conditions": {
                 "enabling": [
                     {
@@ -286,17 +286,6 @@
                         "ability": "invis_animation",
                         "min": 15,
                         "max": 15
-                    }
-                ],
-                "unlocking": [
-                    {
-                        "type": "palladium:not",
-                        "conditions": [
-                            {
-                                "type": "palladium:ability_enabled",
-                                "ability": "comedy_tragedy"
-                            }
-                        ]
                     }
                 ]
             }
@@ -461,13 +450,8 @@
                         "ability": "comedy_push_away"
                     },
                     {
-                        "type": "palladium:not",
-                        "conditions": [
-                            {
-                                "type": "palladium:ability_enabled",
-                                "ability": "comedy_tragedy"
-                            }
-                        ]
+                        "type": "palladium:ability_enabled",
+                        "ability": "comedy_tragedy"
                     }
                 ]
             }
@@ -536,8 +520,13 @@
                         "ability": "tragedy_invis_dummy"
                     },
                     {
-                        "type": "palladium:ability_enabled",
-                        "ability": "comedy_tragedy"
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_enabled",
+                                "ability": "comedy_tragedy"
+                            }
+                        ]
                     }
                 ]
             }
@@ -559,7 +548,7 @@
                 "enabling": [
                     {
                         "type": "palladium:ability_first_tick",
-                        "ability": "tragedy_aoe_blindess"
+                        "ability": "tragedy_aoe_blindness"
                     }
                 ]
             }
