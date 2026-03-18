@@ -325,27 +325,46 @@ PalladiumEvents.registerAnimations((event) => {
                 .setXRotDegrees(30)
         }
     });
-    event.registerForPower('airline_heroes/invis_animation', 'airline_heroes:muses', 5, (builder) => {
+    event.registerForPower('airline_heroes/invis_animation', 'airline_heroes:muses', 3, (builder) => {
         const progress = animationUtil.getAnimationTimerAbilityValue(builder.getPlayer(), 'airline_heroes:muses', 'invis_animation', builder.getPartialTicks());
         if (progress > 0.0) {
-            builder.get('left_leg')
-                .setXRotDegrees(-40)
-                .animate('InOutQuint', progress);
+            if (!builder.isFirstPerson()) {
+                builder.get('left_arm')
+                    .setY(4)
+                    .setZ(-2)
+                    .setYRot(0.5)
+                    .setXRot(-2.4)
+                    .setZRot(0)
+                    .animate('InOutCubic', progress);
+                builder.get('right_arm')
+                    .setY(4)
+                    .setZ(-2)
+                    .setYRot(-0.5)
+                    .setXRot(-2.4)
+                    .setZRot(0)
+                    .animate('InOutCubic', progress);
+            } else {
+                builder.get('left_arm')
+                    .setY(4)
+                    .setZ(0)
+                    .rotateY(0)
+                    .rotateX(-1)
+                    .rotateZ(0)
+                    .animate('InOutCubic', progress);
+                builder.get('right_arm')
+                    .setY(4)
+                    .setZ(0)
+                    .rotateY(0)
+                    .rotateX(-1)
+                    .rotateZ(0)
+                    .animate('InOutCubic', progress);
+                builder.get('head')
+                    .setXRotDegrees(-10)
+                    .setYRotDegrees(20)
+                    .setZRotDegrees(-10)
+                    .animate('InOutCubic', progress);
 
-            builder.get('right_leg')
-                .setXRotDegrees(-10)
-                .animate('InOutExpo', progress / 2);
-
-            builder.get('right_arm')
-                .setXRotDegrees(-20)
-                .animate('InOutCubic', progress);
-            builder.get('left_arm')
-                .setXRotDegrees(10)
-                .animate('InOutCubic', progress);
-            builder.get('body')
-                .moveZ(-5)
-                .setXRotDegrees(-10)
-                .animate('InOutCubic', progress);
+            }
         }
     });
 
