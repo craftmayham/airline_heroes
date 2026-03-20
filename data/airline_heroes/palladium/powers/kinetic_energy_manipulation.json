@@ -39,6 +39,10 @@
                             "effect": "airline_heroes:nullified"
                         }
                     ]
+                },
+                {
+                    "type": "airline_heroes:dampened_by",
+                    "effect": "dampened:genetic"
                 }
             ]
         }
@@ -1002,7 +1006,7 @@
             "enabling": [
                 {
                     "type": "palladium:action",
-                    "cooldown": 0,
+                    "cooldown": 30,
                     "key_type": "key_bind",
                     "needs_empty_hand": false,
                     "allow_scrolling_when_crouching": true
@@ -1437,6 +1441,230 @@
                 {
                     "type": "palladium:ability_unlocked",
                     "ability": "endurance_upgrade_2"
+                }
+            ]
+        }
+    },
+    "enhancement_suit_shoot_kinetic_energy": {
+        "type": "palladium:projectile",
+        "entity_type": "palladium:custom_projectile",
+        "hidden": true,
+        "hidden_in_bar": true,
+        "velocity": 4,
+        "swinging_arm": "right_arm",
+        "ignore_player_movement": true,
+        "damage_from_player": true,
+        "entity_data": {
+            "Gravity": 0.0,
+            "Size": 1.2,
+            "Lifetime": 20,
+            "ExplosionRadius": 1,
+            "ExplosionBlockInteraction": "none",
+            "DieOnEntityHit": true,
+            "DieOnBlockHit": true,
+            "Appearances": [
+                {
+                    "Type": "particles",
+                    "ParticleType": "minecraft:witch",
+                    "Spread": 0.16,
+                    "Amount": 3
+                },
+                {
+                    "Type": "particles",
+                    "ParticleType": "minecraft:witch",
+                    "Spread": 0.25,
+                    "Amount": 6
+                },
+                {
+                    "Type": "particles",
+                    "ParticleType": "minecraft:witch",
+                    "Spread": 0.46,
+                    "Amount": 9
+                }
+            ]
+        },
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:action",
+                    "cooldown": 20,
+                    "key_type": "right_click",
+                    "needs_empty_hand": true,
+                    "allow_scrolling_when_crouching": true
+                }
+            ],
+            "unlocking": [
+                {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "kinetic_energy_generation"
+                },
+                {
+                    "type": "palladium:objective_score",
+                    "objective": "airline_heroes.kinetic_energy",
+                    "min_score": 50
+                },
+                {
+                    "type": "palladium:wears_suit_set",
+                    "suit_set": "airline_heroes:power_enhancement_suit"
+                },
+                {
+                    "type": "palladium:empty_slot",
+                    "slot": "mainhand"
+                }
+            ]
+        }
+    },
+    "enhancement_suit_shoot_kinetic_energy_cost": {
+        "type": "palladium:command",
+        "hidden": true,
+        "first_tick_commands": [
+            "scoreboard players remove @s airline_heroes.kinetic_energy 50"
+        ],
+        "last_tick_commands": [],
+        "commands": [],
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "enhancement_suit_shoot_kinetic_energy"
+                }
+            ]
+        }
+    },
+    "enhancement_suit_kinetic_beam": {
+        "type": "palladium:energy_beam",
+        "icon": "minecraft:blaze_rod",
+        "title": "Kinetic Energy Beam",
+        "hidden": true,
+        "hidden_in_bar": false,
+        "list_index": 5,
+        "energy_beam": "airline_heroes:kinetic_beam",
+        "damage_type": "null",
+        "damage": 7,
+        "max_distance": 30,
+        "speed": 0.5,
+        "set_on_fire_seconds": 0,
+        "cause_fire": false,
+        "smelt_blocks": false,
+        "commands_on_block_hit": [],
+        "commands_on_entity_hit": [],
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:held",
+                    "cooldown": 100,
+                    "key_type": "key_bind",
+                    "needs_empty_hand": true,
+                    "allow_scrolling_when_crouching": true
+                }
+            ],
+            "unlocking": [
+                {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "kinetic_energy_generation"
+                },
+                {
+                    "type": "palladium:objective_score",
+                    "objective": "airline_heroes.kinetic_energy",
+                    "min_score": 20
+                },
+                {
+                    "type": "palladium:wears_suit_set",
+                    "suit_set": "airline_heroes:power_enhancement_suit"
+                },
+                {
+                    "type": "palladium:empty_slot",
+                    "slot": "mainhand"
+                }
+            ]
+        }
+    },
+    "enhancement_suit_kinetic_beam_cost": {
+        "type": "palladium:command",
+        "hidden": true,
+        "first_tick_commands": [],
+        "last_tick_commands": [],
+        "commands": [
+            "scoreboard players remove @s airline_heroes.kinetic_energy 15"
+        ],
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "enhancement_suit_kinetic_beam"
+                }
+            ]
+        }
+    },
+    "enhancement_suit_aim": {
+        "type": "palladium:aim",
+        "hidden": true,
+        "time": 10,
+        "arm": "right_arm",
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "enhancement_suit_kinetic_beam"
+                }
+            ]
+        }
+    },
+    "enhancement_suit_double_jump": {
+        "type": "airline_heroes:move_player",
+        "hidden": true,
+        "hidden_in_bar": true,
+        "x": 0,
+        "y": 2,
+        "z": 0,
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:action",
+                    "cooldown": 60,
+                    "key_type": "space_bar",
+                    "needs_empty_hand": true,
+                    "allow_scrolling_when_crouching": true
+                }
+            ],
+            "unlocking": [
+                {
+                    "type": "palladium:ability_unlocked",
+                    "ability": "kinetic_energy_generation"
+                },
+                {
+                    "type": "palladium:wears_suit_set",
+                    "suit_set": "airline_heroes:power_enhancement_suit"
+                },
+                {
+                    "type": "palladium:objective_score",
+                    "objective": "airline_heroes.kinetic_energy",
+                    "min_score": 20
+                },
+                {
+                    "type": "palladium:not",
+                    "conditions": [
+                        {
+                            "type": "palladium:on_ground"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "enhancement_suit_double_jump_cost": {
+        "type": "palladium:command",
+        "hidden": true,
+        "first_tick_commands": [],
+        "last_tick_commands": [],
+        "commands": [
+            "scoreboard players remove @s airline_heroes.kinetic_energy 20"
+        ],
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_enabled",
+                    "ability": "enhancement_suit_double_jump"
                 }
             ]
         }

@@ -490,8 +490,8 @@
         },
 
         "spider_kiss": {
-            "type": "gravecore:projectile",
-            "icon": "minecraft:cobweb",
+            "type": "gravecore:aoe_damage",
+            "icon": "minecraft:fire_charge",
             "title": "null",
             "bar_color": "light_gray",
             "hidden": false,
@@ -499,20 +499,11 @@
             "list_index": -1,
             "gui_position": "null",
             "description": "null",
-            "entity_type": "palladium:custom_projectile",
-            "damage_from_player": true,
-            "ignore_player_movement": false,
-            "DieOnEntityHit": false,
-            "DieOnBlockHit": false,
-            "pitchOffset": 45,
-            "entity_data": {
-                "Damage": 15,
-                "Gravity": 3,
-                "Size": 4,
-                "Lifetime":5,
-                "CommandOnEntityHit": "function airline_heroes:spiderkiss",
-                "Appearances": []
-            },
+            "radius": 3,
+            "damage": 10,
+            "fire_ticks": 0,
+            "damage_type": "null",
+            "cone": true,
             "conditions": {
                 "enabling": [
                     {
@@ -521,6 +512,39 @@
                         "key_type": "key_bind",
                         "needs_empty_hand": false,
                         "allow_scrolling_when_crouching": true
+                    }
+                ]
+            }
+        },
+
+        "spider_heal": {
+            "type": "palladium:command",
+            "icon": "minecraft:command_block",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": true,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": ["function airline_heroes:spiderkiss"],
+            "conditions":{
+                "enabling": [
+                    {
+                        "type": "palladium:and",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_enabled",
+                                "power": "null",
+                                "ability": "spider_kiss"      
+                            },
+                            {
+                                "type": "airline_heroes:is_entity_nearby",
+                                "search_radius": 3
+                            }
+                        ]
                     }
                 ]
             }

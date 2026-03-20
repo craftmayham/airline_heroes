@@ -26,6 +26,91 @@
         ]
       }
     },
+    "mang_toggle_dummy": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:blaze_rod",
+      "title": "Mang",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": 0,
+      "gui_position": [0,-1],
+      "description": "null",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:toggle",
+            "cooldown": 0,
+            "key_type": "key_bind",
+            "needs_empty_hand": false,
+            "allow_scrolling_when_crouching": true
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "the_capo_dummy"
+          }
+        ]
+      }
+    },
+    "mang_sound": {
+      "type": "palladium:command",
+      "hidden": true,
+      "first_tick_commands": [
+        "/playsound airline_heroes:mang master @s ~ ~ ~ 10 1 1"
+      ],
+      "last_tick_commands": [],
+      "commands": [],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "mang_toggle_dummy"
+          }
+        ]
+      }
+    },
+    "mang_fist_render": {
+      "type": "palladium:render_layer",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "render_layer": "airline_heroes:mang_right_fist",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "mang_toggle_dummy"
+          },
+          {
+            "type": "palladium:empty_slot",
+            "slot": "mainhand"
+          }
+        ]
+      }
+    },
+    "mang_sword_render": {
+      "type": "palladium:render_layer",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "render_layer": "airline_heroes:mang_right_sword",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "mang_toggle_dummy"
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:empty_slot",
+                "slot": "mainhand"
+              }
+            ]
+          }
+        ]
+      }
+    },
     "power_upgrade_1": {
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/power_upgrade_1.png",
