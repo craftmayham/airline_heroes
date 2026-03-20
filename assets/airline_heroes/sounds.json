@@ -1,17 +1,58 @@
 {
-	"half_mass_form":
-	{
+	"half_mass_form": {
 		"category": "player",
-		"sounds": [{ "name": "airline_heroes:half_mass_form"}]
+		"sounds": [
+			{
+				"name": "airline_heroes:half_mass_form"
+			}
+		]
 	},
-	"toggle_cryo":
-	{
+	"toggle_cryo": {
 		"category": "player",
-		"sounds": [{ "name": "airline_heroes:toggle_cryo"}]
+		"sounds": [
+			{
+				"name": "airline_heroes:toggle_cryo"
+			}
+		]
 	},
-	"somebody_get_the_door":
-	{
+	"somebody_get_the_door": {
 		"category": "player",
-		"sounds": [{ "name": "airline_heroes:somebody_get_the_door"}]
+		"sounds": [
+			{
+				"name": "airline_heroes:somebody_get_the_door"
+			}
+		]
+	},
+	"comedy_push": {
+		"category": "player",
+		"sounds": [
+			{
+				"name": "airline_heroes:comedy_push"
+			}
+		]
+	},
+	"tragedy_invis": {
+		"category": "player",
+		"sounds": [
+			{
+				"name": "airline_heroes:tragedy_invis"
+			}
+		]
+	},
+	"comedy_aoe": {
+		"category": "player",
+		"sounds": [
+			{
+				"name": "airline_heroes:comedy_aoe"
+			}
+		]
+	},
+	"tragedy_aoe": {
+		"category": "player",
+		"sounds": [
+			{
+				"name": "airline_heroes:tragedy_aoe"
+			}
+		]
 	}
 }
