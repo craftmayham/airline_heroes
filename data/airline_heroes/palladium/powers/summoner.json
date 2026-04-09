@@ -2,10 +2,50 @@
   "name": "Quirk Template",
   "background": "minecraft:textures/block/light_blue_wool.png",
   "icon": "minecraft:command_block",
+  "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
   "abilities": {
+    "summoner_rings": {
+      "type": "palladium:render_layer",
+      "render_layer": "airline_heroes:summoner_rings",
+      "hidden": false,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "ring_interpolate"
+          }
+        ]
+      }
+    },
+    "ring_interpolate": {
+      "type": "palladium:animation_timer",
+      "hidden": true,
+      "start_value": 0,
+      "max_value": 29,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:or",
+            "conditions": [
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "phantom_glide_dummy"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "dragon_crush_dummy"
+              }
+            ]
+          }
+        ]
+      }
+    },
     "summon_mob": {
       "type": "airline_heroes:summon_mob",
+      "icon": "airline_heroes:textures/icons/summon.png",
       "random": true,
+      "bar_color": "lime",
+      "list_index": 0,
       "conditions": {
         "enabling": [
           {
@@ -17,6 +57,303 @@
           }
         ]
       }
+    },
+    "undead_unrest_dummy": {
+      "type": "palladium:dummy",
+      "icon": "airline_heroes:textures/icons/summon.png",
+      "random": true,
+      "bar_color": "lime",
+      "list_index": 3,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "cooldown": 100,
+            "key_type": "key_bind",
+            "needs_empty_hand": false,
+            "allow_scrolling_when_crouching": true
+          }
+        ]
+      }
+    },
+    "summon_undead1": {
+      "type": "airline_heroes:summon_mob",
+      "hidden": true,
+      "mob": "minecraft:skeleton",
+      "x": 1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "undead_unrest_dummy"
+          }
+        ]
+      }
+    },
+    "summon_undead2": {
+      "type": "airline_heroes:summon_mob",
+      "hidden": true,
+      "mob": "minecraft:zombie",
+      "x": 2,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "undead_unrest_dummy"
+          }
+        ]
+      }
+    },
+    "summon_undead3": {
+      "type": "airline_heroes:summon_mob",
+      "hidden": true,
+      "mob": "minecraft:zombie",
+      "x": 3,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "undead_unrest_dummy"
+          }
+        ]
+      }
+    },
+    "summon_undead4": {
+      "type": "airline_heroes:summon_mob",
+      "hidden": true,
+      "mob": "minecraft:skeleton",
+      "x": -1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "undead_unrest_dummy"
+          }
+        ]
+      }
+    },
+    "summon_undead5": {
+      "type": "airline_heroes:summon_mob",
+      "hidden": true,
+      "mob": "minecraft:zombie",
+      "x": -2,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "undead_unrest_dummy"
+          }
+        ]
+      }
+    },
+    "summon_undead6": {
+      "type": "airline_heroes:summon_mob",
+      "hidden": true,
+      "mob": "minecraft:zombie",
+      "x": -3,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "undead_unrest_dummy"
+          }
+        ]
+      }
+    },
+    "summon_undead7": {
+      "type": "airline_heroes:summon_mob",
+      "hidden": true,
+      "mob": "minecraft:zombie",
+      "z": 1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "undead_unrest_dummy"
+          }
+        ]
+      }
+    },
+    "summon_undead8": {
+      "type": "airline_heroes:summon_mob",
+      "hidden": true,
+      "mob": "minecraft:zombie",
+      "z": -1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "undead_unrest_dummy"
+          }
+        ]
+      }
+    },
+    "slime_launch": {
+      "type": "airline_heroes:slime_launch",
+      "icon": "airline_heroes:textures/icons/slime_launch.png",
+      "bar_color": "green",
+      "list_index": 1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "cooldown": 100,
+            "key_type": "key_bind",
+            "needs_empty_hand": false,
+            "allow_scrolling_when_crouching": true
+          }
+        ]
+      }
+    },
+    "dragon_crush_dummy": {
+      "type": "palladium:dummy",
+      "icon": "airline_heroes:textures/icons/dragon_crush.png",
+      "title": "Incomplete Summon: Dragon!",
+      "bar_color": "lime",
+      "list_index": 4,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:activation",
+            "cooldown": 20,
+            "ticks": 12,
+            "key_type": "key_bind",
+            "needs_empty_hand": false,
+            "allow_scrolling_when_crouching": true
+          },
+          {
+            "type": "palladium:not",
+            "conditions": [
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "phantom_glide_dummy"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "dragon_crush_particle": {
+      "type": "palladium:command",
+      "icon": "minecraft:command_block",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "null",
+      "first_tick_commands": [],
+      "last_tick_commands": [],
+      "commands": [
+        "particle minecraft:dragon_breath ^ ^1.2 ^2 0.2 0.2 0.2 0.2 20 force"
+      ],
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "ability": "dragon_crush_anim",
+            "min": 10,
+            "max": 10
+          }
+        ]
+      }
+    },
+    "dragon_crush_anim": {
+      "type": "palladium:animation_timer",
+      "hidden": true,
+      "start_value": 0,
+      "max_value": 12,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "dragon_crush_dummy"
+          }
+        ]
+      }
+    },
+    "dragon_crush": {
+      "type": "gravecore:aoe_damage",
+      "radius": 4,
+      "damage": 4,
+      "cone": true,
+      "hidden": true,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "ability": "dragon_crush_anim",
+            "min": 10,
+            "max": 10
+          }
+        ]
+      }
+    },
+    "dragon_crush_knockback": {
+      "type": "gravecore:aoe_knockback",
+      "radius": 4,
+      "knockback": 0.2,
+      "cone": true,
+      "hidden": true,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "ability": "dragon_crush_anim",
+            "min": 11,
+            "max": 11
+          }
+        ]
+      }
+    },
+    "dragon_crush_sound": {
+      "type": "palladium:play_sound",
+      "sound": "minecraft:entity.zombie.attack_wooden_door",
+      "pitch": 1.2,
+      "hidden": true,
+      "play_self": true,
+      "play_others": true,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "ability": "dragon_crush_anim",
+            "min": 12,
+            "max": 12
+          }
+        ]
+      }
+    },
+    "dragon_crush_render_layer": {
+      "type": "palladium:render_layer",
+      "render_layer": "airline_heroes:dragon_crush",
+      "hidden": false,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:animation_timer_ability",
+            "ability": "dragon_crush_anim",
+            "min": 4,
+            "max": 20
+          }
+        ]
+      }
+    },
+    "phantom_glide_attribute": {
+      "type": "palladium:attribute_modifier",
+      "icon": "minecraft:iron_chestplate",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "null",
+      "attribute": "palladium:levitation_speed",
+      "amount": 2,
+      "operation": 0,
+      "uuid": "508be4fb-af04-42f2-8948-e6ccdc0d99e1"
     },
     "phantom_glide_dummy": {
       "type": "palladium:dummy",

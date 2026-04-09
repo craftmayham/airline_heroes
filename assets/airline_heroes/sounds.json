@@ -54,12 +54,13 @@
 				"name": "airline_heroes:tragedy_aoe"
 			}
 		]
-
-		"sounds": [{ "name": "airline_heroes:somebody_get_the_door"}]
 	},
-	"mang":
-	{
+	"mang": {
 		"category": "player",
-		"sounds": [{ "name": "airline_heroes:mang"}]
+		"sounds": [
+			{
+				"name": "airline_heroes:mang"
+			}
+		]
 	}
 }
