@@ -1,0 +1,38 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.airline_heroes.summoner_rings": {
+			"loop": true,
+			"animation_length": 4,
+			"bones": {
+				"right_summoner_rings": {
+					"rotation": {
+						"0.0": {
+							"post": [0, "query.anim_time / 4 * 720", 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"summoner_rings_left": {
+					"rotation": {
+						"0.0": {
+							"post": [0, "-query.anim_time / 4 * 720", 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"right_ring2": {
+					"rotation": [0, "-query.anim_time / 4 * 360", 0]
+				},
+				"left_ring2": {
+					"rotation": {
+						"0.0": {
+							"post": [0, "query.anim_time / 4 * 360", 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			}
+		}
+	}
+}

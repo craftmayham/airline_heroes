@@ -1,0 +1,34 @@
+  {
+    "type": "palladium:compound",
+    "layers": [
+      {
+        "type": "geckolib:default",
+        "model": "airline_heroes:geo/summoner_rings.geo.json",
+        "texture": {
+          "base": "airline_heroes:textures/models/summoner_rings.png",
+          "transformers": [
+            {
+              "type": "palladium:alpha_mask",
+              "mask": "airline_heroes:textures/models/alpha_masks/summoner_rings/ring_#TIMER.png"
+            }
+          ],
+          "variables": {
+            "TIMER": {
+              "type": "palladium:animation_timer_ability",
+              "power": "airline_heroes:summoner",
+              "ability": "ring_interpolate"
+            }
+          }
+        },
+        "render_type": "glow",
+        "animation_file": "airline_heroes:animations/summoner_rings.animation.json",
+        "animation_controller": [
+          {
+            "name": "summoner_rings",
+            "transition_tick_time": 0,
+            "animation": "animation.airline_heroes.summoner_rings"
+          }
+        ]
+      }
+    ]
+  }r

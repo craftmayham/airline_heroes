@@ -23,3 +23,35 @@ StartupEvents.registry("palladium:abilities", event => {
       }
     })
 });
+
+StartupEvents.registry("palladium:abilities", event => {
+  event.create("airline_heroes:push_away")
+    .icon(palladium.createItemIcon('minecraft:egg'))
+    .documentationDescription('Pushes all entities away from the player.')
+    .addProperty("range", "float", 5.0, "Range of the push effect")
+    .addProperty("motion_scale", "float", 1.0, "How strongly entities are pushed")
+    .tick((entity, entry, holder, enabled) => {
+
+      if (!enabled) return;
+
+      const range = entry.getPropertyByName("range");
+      const motionScale = entry.getPropertyByName("motion_scale");
+
+      // Get nearby entities
+      let entities = entity.level.getEntities(entity, entity.getBoundingBox().inflate(range));
+
+      entities.forEach(target => {
+        if (target === entity) return;
+
+        let dir = target.position().subtract(entity.position());
+
+        dir = dir.normalize().scale(motionScale);
+
+        target.setDeltaMovement(dir);
+
+        if (target.isPlayer()) {
+          target.connection.send(new ClientboundSetEntityMotionPacket(target));
+        }
+      });
+    });
+});
