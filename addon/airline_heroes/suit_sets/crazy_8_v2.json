@@ -1,0 +1,25 @@
+{
+  "tooltip": [
+    "The crazier"
+  ],
+  "armor_material": "minecraft:netherite",
+  "opened_sound": "minecraft:item.armor.equip_leather",
+  "closed_sound": "minecraft:item.armor.equip_leather",
+  "creative_mode_tab": "airline_heroes:airline_heroes",
+  "chest": {
+    "item_name": "crazy_8_jacket_v2",
+    "armor_renderer": "airline_heroes:crazy_8_jacket_v2"
+  },
+  "legs": {
+    "item_name": "crazy_8_pants_v2",
+    "armor_renderer": "airline_heroes:crazy_8_pants"
+  },
+  "feet": {
+    "item_name": "crazy_8_shoes_v2",
+    "armor_renderer": "airline_heroes:crazy_8_shoes"
+  },
+  "head": {
+    "item_name": "crazy_8_helmet_v2",
+    "armor_renderer": "airline_heroes:crazy_8_helmet"
+  }
+}

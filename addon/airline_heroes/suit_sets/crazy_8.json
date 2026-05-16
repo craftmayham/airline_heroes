@@ -1,0 +1,25 @@
+{
+  "tooltip": [
+    "The craziest"
+  ],
+  "armor_material": "minecraft:diamond",
+  "opened_sound": "minecraft:item.armor.equip_leather",
+  "closed_sound": "minecraft:item.armor.equip_leather",
+  "creative_mode_tab": "airline_heroes:airline_heroes",
+  "chest": {
+    "item_name": "crazy_8_jacket",
+    "armor_renderer": "airline_heroes:crazy_8_jacket"
+  },
+  "legs": {
+    "item_name": "crazy_8_pants",
+    "armor_renderer": "airline_heroes:crazy_8_pants"
+  },
+  "feet": {
+    "item_name": "crazy_8_shoes",
+    "armor_renderer": "airline_heroes:crazy_8_shoes"
+  },
+  "head": {
+    "item_name": "crazy_8_helmet",
+    "armor_renderer": "airline_heroes:crazy_8_helmet"
+  }
+}
