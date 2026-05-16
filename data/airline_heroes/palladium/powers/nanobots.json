@@ -39,13 +39,13 @@
       "icon": "minecraft:blaze_rod",
       "title": "null",
       "bar_color": "light_gray",
-      "list_index": -1,
-      "abilities": ["form1", "form2", "form3"],
+      "list_index": 0,
+      "abilities": ["form0", "form1", "form2", "form3"],
       "conditions": {
         "unlocking": [
           {
             "type": "palladium:ability_unlocked",
-            "ability": "CORE_Dummy"
+            "ability": "CORE_dummy"
           }
         ],
         "enabling": [
@@ -56,14 +56,32 @@
         ]
       }
     },
-    "form1": {
-      "type": "palladium:dummy",
+    "form0": {
+      "type": "airline_heroes:form_set",
       "icon": "minecraft:blaze_rod",
-      "title": "Attack",
-      "bar_color": "light_gray",
+      "title": "Base",
       "hidden": true,
       "hidden_in_bar": true,
-      "list_index": -1,
+      "prop": "form",
+      "amount": 0,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_wheel",
+            "cooldown": 0
+          }
+        ],
+        "unlocking": []
+      }
+    },
+    "form1": {
+      "type": "airline_heroes:form_set",
+      "icon": "airline_heroes:textures/icons/nano_attack.png",
+      "title": "Attack",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "prop": "form",
+      "amount": 1,
       "conditions": {
         "enabling": [
           {
@@ -85,11 +103,41 @@
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:ability_enabled",
-            "ability": "form1"
+            "type": "palladium:integer_property",
+            "property": "form",
+            "min": 1,
+            "max": 1
           }
         ],
-        "unlocking": []
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "CORE_dummy"
+          }
+        ]
+      }
+    },
+    "sight": {
+      "type": "palladium:entity_glow",
+      "hidden": true,
+      "mode": "others",
+      "color": "#F14949",
+      "distance": 25,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:integer_property",
+            "property": "form",
+            "min": 1,
+            "max": 1
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "CORE_dummy"
+          }
+        ]
       }
     },
     "f1aim": {
@@ -98,7 +146,7 @@
       "title": "Energy Beam",
       "bar_color": "light_gray",
       "hidden": true,
-      "list_index": 0,
+      "list_index": 1,
       "time": 10,
       "arm": "right_arm",
       "conditions": {
@@ -112,8 +160,14 @@
         ],
         "unlocking": [
           {
+            "type": "palladium:integer_property",
+            "property": "form",
+            "min": 1,
+            "max": 1
+          },
+          {
             "type": "palladium:ability_unlocked",
-            "ability": "form1"
+            "ability": "CORE_dummy"
           }
         ]
       }
@@ -185,13 +239,13 @@
       }
     },
     "form2": {
-      "type": "palladium:dummy",
-      "icon": "minecraft:blaze_rod",
-      "title": "Defense",
-      "bar_color": "light_gray",
+      "type": "airline_heroes:form_set",
+      "icon": "airline_heroes:textures/icons/nano_moves.png",
+      "title": "Movement",
       "hidden": true,
       "hidden_in_bar": true,
-      "list_index": -1,
+      "prop": "form",
+      "amount": 2,
       "conditions": {
         "enabling": [
           {
@@ -202,14 +256,39 @@
         "unlocking": []
       }
     },
-    "form3": {
-      "type": "palladium:dummy",
-      "icon": "minecraft:blaze_rod",
-      "title": "Movement",
-      "bar_color": "light_gray",
+    "f2a": {
+      "type": "palladium:attribute_modifier",
       "hidden": true,
       "hidden_in_bar": true,
-      "list_index": -1,
+      "attribute": "palladium:flight_speed",
+      "amount": 0.5,
+      "operation": 0,
+      "uuid": "53c6078d-d4d9-4d16-9471-b0d711f57caf",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:integer_property",
+            "property": "form",
+            "min": 2,
+            "max": 2
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "CORE_dummy"
+          }
+        ]
+      }
+    },
+    "form3": {
+      "type": "airline_heroes:form_set",
+      "icon": "airline_heroes:textures/icons/nano_defense.png",
+      "title": "Defense",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "prop": "form",
+      "amount": 3,
       "conditions": {
         "enabling": [
           {
