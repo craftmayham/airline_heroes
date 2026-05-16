@@ -1,62 +1,230 @@
 {
-  "name": "Nullify",
+  "name": "Nano Bots",
   "background": "minecraft:textures/block/light_blue_wool.png",
-  "icon": "minecraft:barrier",
+  "icon": "airline_heroes:textures/icons/nanobots.png",
   "abilities": {
     "CORE_dummy": {
       "type": "palladium:dummy",
-      "icon": "minecraft:blaze_rod",
-      "title": "Dummy",
+      "icon": "airline_heroes:textures/icons/nanobots.png",
+      "title": "Nano Bots",
       "hidden": false,
       "hidden_in_bar": false,
       "list_index": 0,
-      "gui_position": [
-        0,
-        0
-      ],
+      "gui_position": [0, 0],
       "description": "null",
       "conditions": {
         "unlocking": [
           {
-            "type": "palladium:not",
+            "type": "palladium:or",
             "conditions": [
               {
-                "type": "palladium:has_effect",
-                "effect": "airline_heroes:nullified"
+                "type": "palladium:not",
+                "conditions": [
+                  {
+                    "type": "palladium:is_in_water_rain_or_bubble"
+                  }
+                ]
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "form2"
               }
             ]
           }
         ]
       }
     },
-    "nullify": {
-        "type": "airline_heroes:nullify",
-        "icon": "minecraft:beacon",
-        "title": "null",
-        "bar_color": "light_gray",
-        "hidden": true,
-        "list_index": -1,
-        "radius": 2,
-        "time": 2,
-        "effect": "dampened:genetic",
-        "conditions": {
-            "enabling": [
-              {
-                "type": "palladium:held",
-                "key_type": "key_bind"
-              }
-            ],
-            "unlocking": []
-        }
+    "forms": {
+      "type": "palladium:ability_wheel",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "list_index": -1,
+      "abilities": ["form1", "form2", "form3"],
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "CORE_Dummy"
+          }
+        ],
+        "enabling": [
+          {
+            "type": "palladium:held",
+            "key_type": "key_bind"
+          }
+        ]
+      }
+    },
+    "form1": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:blaze_rod",
+      "title": "Attack",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_wheel",
+            "cooldown": 0
+          }
+        ],
+        "unlocking": []
+      }
+    },
+    "f1a": {
+      "type": "palladium:attribute_modifier",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "attribute": "minecraft:generic.movement_speed",
+      "amount": 0.5,
+      "operation": 0,
+      "uuid": "7c706a84-b911-441e-9163-0889addff915",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "form1"
+          }
+        ],
+        "unlocking": []
+      }
+    },
+    "f1aim": {
+      "type": "palladium:aim",
+      "icon": "airline_heroes:textures/icons/energy_beam.png",
+      "title": "Energy Beam",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "list_index": 0,
+      "time": 10,
+      "arm": "right_arm",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:held",
+            "cooldown": 0,
+            "key_type": "key_bind",
+            "needs_empty_hand": true
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "form1"
+          }
+        ]
+      }
+    },
+    "f1blast": {
+      "type": "airline_heroes:projectile_with_offset",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "entity_type": "palladium:custom_projectile",
+      "entity_data": {
+        "Damage": 5,
+        "Gravity": 0,
+        "Size": 0.15,
+        "Lifetime": 500,
+        "DieOnEntityHit": true,
+        "DieOnBlockHit": true,
+        "Appearances": [
+          {
+            "Type": "trail",
+            "Trail": "airline_heroes:energy_blast"
+          }
+        ]
+      },
+      "yaw_offset": 19,
+      "pitch_offset": 25,
+      "yaw_inaccuracy": 0,
+      "pitch_inaccuracy": 0,
+      "count": 1,
+      "speed": 5,
+      "align_velocity_with_calculated_rotation": false,
+      "source_property": "value",
+      "projectile_property": "value",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "cooldown": 0,
+            "key_type": "left_click",
+            "needs_empty_hand": true
+          },
+          {
+            "type": "airline_heroes:has_hunger",
+            "min_hunger": 1,
+            "max_hunger": 20
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "power": "null",
+            "ability": "f1aim"
+          }
+        ]
+      }
+    },
+    "blast_hunger_removal": {
+      "type": "airline_heroes:add_hunger",
+      "hidden": true,
+      "hunger": -1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "f1blast"
+          }
+        ]
+      }
+    },
+    "form2": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:blaze_rod",
+      "title": "Defense",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_wheel",
+            "cooldown": 0
+          }
+        ],
+        "unlocking": []
+      }
+    },
+    "form3": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:blaze_rod",
+      "title": "Movement",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_wheel",
+            "cooldown": 0
+          }
+        ],
+        "unlocking": []
+      }
     },
     "power_upgrade_1": {
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/power_upgrade_1.png",
       "title": "Power Increase 1",
-      "gui_position": [
-        1,
-        0
-      ],
+      "gui_position": [1, 0],
       "attribute": "minecraft:generic.attack_damage",
       "amount": 10,
       "operation": 0,
@@ -83,10 +251,7 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/power_upgrade_2.png",
       "title": "Power Increase 2",
-      "gui_position": [
-        2,
-        0
-      ],
+      "gui_position": [2, 0],
       "attribute": "minecraft:generic.attack_damage",
       "amount": 5,
       "operation": 0,
@@ -113,10 +278,7 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/power_upgrade_3.png",
       "title": "Power Increase 3",
-      "gui_position": [
-        3,
-        0
-      ],
+      "gui_position": [3, 0],
       "attribute": "minecraft:generic.attack_damage",
       "amount": 4,
       "operation": 0,
@@ -143,10 +305,7 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/health_upgrade_1.png",
       "title": "Health Increase 1",
-      "gui_position": [
-        0,
-        1
-      ],
+      "gui_position": [0, 1],
       "attribute": "minecraft:generic.max_health",
       "amount": 8,
       "operation": 0,
@@ -173,10 +332,7 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/health_upgrade_2.png",
       "title": "Health Increase 2",
-      "gui_position": [
-        0,
-        2
-      ],
+      "gui_position": [0, 2],
       "attribute": "minecraft:generic.max_health",
       "amount": 6,
       "operation": 0,
@@ -203,10 +359,7 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/health_upgrade_3.png",
       "title": "Health Increase 3",
-      "gui_position": [
-        0,
-        3
-      ],
+      "gui_position": [0, 3],
       "attribute": "minecraft:generic.max_health",
       "amount": 6,
       "operation": 0,
@@ -233,10 +386,7 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/endurance_upgrade_1.png",
       "title": "Endurance Increase 1",
-      "gui_position": [
-        -1,
-        0
-      ],
+      "gui_position": [-1, 0],
       "attribute": "minecraft:generic.armor",
       "amount": 0.02,
       "operation": 0,
@@ -263,10 +413,7 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/endurance_upgrade_2.png",
       "title": "Endurance Increase 2",
-      "gui_position": [
-        -2,
-        0
-      ],
+      "gui_position": [-2, 0],
       "attribute": "minecraft:generic.armor",
       "amount": 0.02,
       "operation": 0,
@@ -293,10 +440,7 @@
       "type": "palladium:attribute_modifier",
       "icon": "airline_heroes:textures/icons/endurance_upgrade_3.png",
       "title": "Endurance Increase 3",
-      "gui_position": [
-        -3,
-        0
-      ],
+      "gui_position": [-3, 0],
       "attribute": "minecraft:generic.armor",
       "amount": 0.02,
       "operation": 0,
@@ -322,7 +466,7 @@
     "set_name_description": {
       "type": "airline_heroes:set_name_description",
       "hidden": true,
-      "power_description": "Allows The user To Nullify Any Powered Being In A Radius Around Them."
+      "power_description": "This is just a blank power with only the basics for making a new quirk."
     }
   }
 }
