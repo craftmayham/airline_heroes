@@ -120,6 +120,13 @@ StartupEvents.registry('palladium:abilities', event => {
             }
             summon.setPosition(entity.x + x, entity.y + y, entity.z + z);
             summon.spawn();
+            if (tamed && !random) {
+                if (summon.type.toString() !== "minecraft:wolf") {
+                    const mobUUID = summon.getUuid().toString()
+                    const playername = entity.getUsername()
+                    entity.server.runCommand(`tame ${mobUUID} ${playername}`)
+                }
+            }
         });
 });
 
