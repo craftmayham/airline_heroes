@@ -34,12 +34,12 @@
                             {
                                 "type": "palladium:ability_enabled",
                                 "ability": "half_mass_form"
-                            },
-                            {
-                                "type": "palladium:has_effect",
-                                "effect": "airline_heroes:nullified"
                             }
                         ]
+                    },
+                    {
+                        "type": "airline_heroes:dampened_by",
+                        "effect": "dampened:genetic"
                     }
                 ]
             }
@@ -1059,12 +1059,12 @@
                             {
                                 "type": "palladium:ability_enabled",
                                 "ability": "gas_form"
-                            },
-                            {
-                                "type": "palladium:has_effect",
-                                "effect": "airline_heroes:nullified"
                             }
                         ]
+                    },
+                    {
+                        "type": "airline_heroes:dampened_by",
+                        "effect": "dampened:genetic"
                     }
                 ],
                 "unlocking": [

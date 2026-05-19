@@ -3,6 +3,11 @@
   "background": "minecraft:textures/block/light_blue_wool.png",
   "icon": "minecraft:command_block",
   "abilities": {
+    "bunny_ears": {
+      "type": "palladium:render_layer",
+      "hidden": true,
+      "render_layer": "airline_heroes:bunny_ears"
+    },
     "chubby_eat": {
       "type": "airline_heroes:chubby_feed",
       "icon": "minecraft:blaze_rod",
@@ -22,13 +27,8 @@
         ],
         "unlocking": [
           {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:has_effect",
-                "effect": "airline_heroes:nullified"
-              }
-            ]
+            "type": "airline_heroes:dampened_by",
+            "effect": "dampened:genetic"
           }
         ]
       }
@@ -52,13 +52,8 @@
         ],
         "unlocking": [
           {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:has_effect",
-                "effect": "airline_heroes:nullified"
-              }
-            ]
+            "type": "airline_heroes:dampened_by",
+            "effect": "dampened:genetic"
           }
         ]
       }
@@ -78,13 +73,8 @@
       "conditions": {
         "unlocking": [
           {
-            "type": "palladium:not",
-            "conditions": [
-              {
-                "type": "palladium:has_effect",
-                "effect": "airline_heroes:nullified"
-              }
-            ]
+            "type": "airline_heroes:dampened_by",
+            "effect": "dampened:genetic"
           }
         ]
       }
