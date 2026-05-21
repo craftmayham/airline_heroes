@@ -20,5 +20,7 @@ PalladiumEvents.registerProperties((event) => {
   event.registerProperty("marked", "boolean", false);
 
   event.registerProperty("hasPower", "boolean", false);
+
+  event.registerProperty("form", "integer", 0);
   // }
 });

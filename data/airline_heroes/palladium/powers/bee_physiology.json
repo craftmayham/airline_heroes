@@ -11,18 +11,16 @@
             "hidden": false,
             "hidden_in_bar": false,
             "list_index": 0,
-            "gui_position": [0,0],
+            "gui_position": [
+                0,
+                0
+            ],
             "description": "You have all the powers of a bumble bee",
             "conditions": {
                 "unlocking": [
                     {
-                        "type": "palladium:not",
-                        "conditions": [
-                            {
-                                "type": "palladium:has_effect",
-                                "effect": "airline_heroes:nullified"
-                            }
-                        ]
+                        "type": "airline_heroes:dampened_by",
+                        "effect": "dampened:genetic"
                     },
                     {
                         "type": "airline_heroes:has_hunger",
@@ -39,7 +37,10 @@
             "hidden": false,
             "hidden_in_bar": false,
             "list_index": 0,
-            "gui_position": [-1,-1],
+            "gui_position": [
+                -1,
+                -1
+            ],
             "description": "You can polinate crops around you by Shift+Right Clicking",
             "conditions": {
                 "unlocking": [
@@ -57,7 +58,10 @@
             "hidden": false,
             "hidden_in_bar": false,
             "list_index": 0,
-            "gui_position": [0,-1],
+            "gui_position": [
+                0,
+                -1
+            ],
             "description": "Stab opponets with your stinger to inflict paralysis.",
             "conditions": {
                 "enabling": [
@@ -104,7 +108,10 @@
             "title": "Climb Wall",
             "hidden": false,
             "list_index": 1,
-            "gui_position": [1,-1],
+            "gui_position": [
+                1,
+                -1
+            ],
             "description": "Stick to walls.",
             "conditions": {
                 "enabling": [
@@ -173,7 +180,10 @@
             "hidden": false,
             "hidden_in_bar": false,
             "list_index": 2,
-            "gui_position": [2,-1],
+            "gui_position": [
+                2,
+                -1
+            ],
             "description": "Produce some honey at the cost of hunger.",
             "conditions": {
                 "enabling": [
@@ -227,7 +237,10 @@
             "type": "palladium:attribute_modifier",
             "icon": "airline_heroes:textures/icons/power_upgrade_1.png",
             "title": "Power Increase 1",
-            "gui_position": [1, 0],
+            "gui_position": [
+                1,
+                0
+            ],
             "attribute": "minecraft:generic.attack_damage",
             "amount": 1,
             "operation": 0,
@@ -254,7 +267,10 @@
             "type": "palladium:attribute_modifier",
             "icon": "airline_heroes:textures/icons/power_upgrade_2.png",
             "title": "Power Increase 2",
-            "gui_position": [2, 0],
+            "gui_position": [
+                2,
+                0
+            ],
             "attribute": "minecraft:generic.attack_damage",
             "amount": 2,
             "operation": 0,
@@ -281,7 +297,10 @@
             "type": "palladium:attribute_modifier",
             "icon": "airline_heroes:textures/icons/power_upgrade_3.png",
             "title": "Power Increase 3",
-            "gui_position": [3, 0],
+            "gui_position": [
+                3,
+                0
+            ],
             "attribute": "minecraft:generic.attack_damage",
             "amount": 3,
             "operation": 0,
@@ -308,7 +327,10 @@
             "type": "palladium:attribute_modifier",
             "icon": "airline_heroes:textures/icons/health_upgrade_1.png",
             "title": "Health Increase 1",
-            "gui_position": [0,1],
+            "gui_position": [
+                0,
+                1
+            ],
             "attribute": "minecraft:generic.max_health",
             "amount": 3,
             "operation": 0,
@@ -335,7 +357,10 @@
             "type": "palladium:attribute_modifier",
             "icon": "airline_heroes:textures/icons/health_upgrade_2.png",
             "title": "Health Increase 2",
-            "gui_position": [0,2],
+            "gui_position": [
+                0,
+                2
+            ],
             "attribute": "minecraft:generic.max_health",
             "amount": 3,
             "operation": 0,
@@ -362,7 +387,10 @@
             "type": "palladium:attribute_modifier",
             "icon": "airline_heroes:textures/icons/health_upgrade_3.png",
             "title": "Health Increase 3",
-            "gui_position": [0,3],
+            "gui_position": [
+                0,
+                3
+            ],
             "attribute": "minecraft:generic.max_health",
             "amount": 3,
             "operation": 0,
@@ -389,7 +417,10 @@
             "type": "palladium:attribute_modifier",
             "icon": "airline_heroes:textures/icons/endurance_upgrade_1.png",
             "title": "Endurance Increase 1",
-            "gui_position": [-1,0],
+            "gui_position": [
+                -1,
+                0
+            ],
             "attribute": "minecraft:generic.armor",
             "amount": 3,
             "operation": 0,
@@ -416,7 +447,10 @@
             "type": "palladium:attribute_modifier",
             "icon": "airline_heroes:textures/icons/endurance_upgrade_2.png",
             "title": "Endurance Increase 2",
-            "gui_position": [-2,0],
+            "gui_position": [
+                -2,
+                0
+            ],
             "attribute": "minecraft:generic.armor",
             "amount": 3,
             "operation": 0,
@@ -443,7 +477,10 @@
             "type": "palladium:attribute_modifier",
             "icon": "airline_heroes:textures/icons/endurance_upgrade_3.png",
             "title": "Endurance Increase 3",
-            "gui_position": [-3,0],
+            "gui_position": [
+                -3,
+                0
+            ],
             "attribute": "minecraft:generic.armor",
             "amount": 3,
             "operation": 0,

@@ -1,0 +1,101 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.minecraft:player#main",
+				"texture_width": 256,
+				"texture_height": 256,
+				"visible_bounds_width": 8,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "dragon_head2",
+					"parent": "body",
+					"pivot": [46, 12, -20],
+					"rotation": [0, 90, 0]
+				},
+				{
+					"name": "dragon_headmain2",
+					"parent": "dragon_head2",
+					"pivot": [46, 12, -20]
+				},
+				{
+					"name": "jaw2",
+					"parent": "dragon_headmain2",
+					"pivot": [46, 16, -26],
+					"cubes": [
+						{"origin": [40, 12, -42], "size": [12, 4, 16], "uv": [176, 65], "mirror": true}
+					]
+				},
+				{
+					"name": "head2",
+					"parent": "dragon_head2",
+					"pivot": [46, 20, -18],
+					"cubes": [
+						{"origin": [40, 16, -42], "size": [12, 5, 16], "uv": [176, 44], "mirror": true},
+						{"origin": [38, 12, -28], "size": [16, 16, 16], "uv": [112, 30], "mirror": true},
+						{"origin": [41, 28, -22], "size": [2, 4, 6], "uv": [0, 0], "mirror": true},
+						{"origin": [41, 21, -40], "size": [2, 2, 4], "uv": [112, 0], "mirror": true}
+					]
+				},
+				{
+					"name": "mirrored2",
+					"parent": "head2",
+					"pivot": [46, 14, 6],
+					"mirror": true,
+					"cubes": [
+						{"origin": [49, 21, -40], "size": [2, 2, 4], "uv": [112, 0], "mirror": false},
+						{"origin": [49, 28, -22], "size": [2, 4, 6], "uv": [0, 0], "mirror": false}
+					]
+				},
+				{
+					"name": "dragon_head",
+					"parent": "body",
+					"pivot": [-46, 12, -20],
+					"rotation": [0, -90, 0]
+				},
+				{
+					"name": "dragon_headmain",
+					"parent": "dragon_head",
+					"pivot": [-46, 12, -20]
+				},
+				{
+					"name": "jaw",
+					"parent": "dragon_headmain",
+					"pivot": [-46, 16, -26],
+					"cubes": [
+						{"origin": [-52, 12, -42], "size": [12, 4, 16], "uv": [176, 65]}
+					]
+				},
+				{
+					"name": "head",
+					"parent": "dragon_head",
+					"pivot": [-46, 20, -18],
+					"cubes": [
+						{"origin": [-52, 16, -42], "size": [12, 5, 16], "uv": [176, 44]},
+						{"origin": [-54, 12, -28], "size": [16, 16, 16], "uv": [112, 30]},
+						{"origin": [-43, 28, -22], "size": [2, 4, 6], "uv": [0, 0]},
+						{"origin": [-43, 21, -40], "size": [2, 2, 4], "uv": [112, 0]}
+					]
+				},
+				{
+					"name": "mirrored",
+					"parent": "head",
+					"pivot": [-46, 14, 6],
+					"mirror": true,
+					"cubes": [
+						{"origin": [-51, 21, -40], "size": [2, 2, 4], "uv": [112, 0]},
+						{"origin": [-51, 28, -22], "size": [2, 4, 6], "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}

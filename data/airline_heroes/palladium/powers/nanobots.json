@@ -1,0 +1,551 @@
+{
+  "name": "Nano Bots",
+  "background": "minecraft:textures/block/light_blue_wool.png",
+  "icon": "airline_heroes:textures/icons/nanobots.png",
+  "abilities": {
+    "CORE_dummy": {
+      "type": "palladium:dummy",
+      "icon": "airline_heroes:textures/icons/nanobots.png",
+      "title": "Nano Bots",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": 0,
+      "gui_position": [0, 0],
+      "description": "null",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:or",
+            "conditions": [
+              {
+                "type": "palladium:not",
+                "conditions": [
+                  {
+                    "type": "palladium:is_in_water_rain_or_bubble"
+                  }
+                ]
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "form2"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "forms": {
+      "type": "palladium:ability_wheel",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "list_index": 0,
+      "abilities": ["form0", "form1", "form2", "form3"],
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "CORE_dummy"
+          }
+        ],
+        "enabling": [
+          {
+            "type": "palladium:held",
+            "key_type": "key_bind"
+          }
+        ]
+      }
+    },
+    "form0": {
+      "type": "airline_heroes:form_set",
+      "icon": "minecraft:blaze_rod",
+      "title": "Base",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "prop": "form",
+      "amount": 0,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_wheel",
+            "cooldown": 0
+          }
+        ],
+        "unlocking": []
+      }
+    },
+    "form1": {
+      "type": "airline_heroes:form_set",
+      "icon": "airline_heroes:textures/icons/nano_attack.png",
+      "title": "Attack",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "prop": "form",
+      "amount": 1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_wheel",
+            "cooldown": 0
+          }
+        ],
+        "unlocking": []
+      }
+    },
+    "f1a": {
+      "type": "palladium:attribute_modifier",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "attribute": "minecraft:generic.movement_speed",
+      "amount": 0.5,
+      "operation": 0,
+      "uuid": "7c706a84-b911-441e-9163-0889addff915",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:integer_property",
+            "property": "form",
+            "min": 1,
+            "max": 1
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "CORE_dummy"
+          }
+        ]
+      }
+    },
+    "sight": {
+      "type": "palladium:entity_glow",
+      "hidden": true,
+      "mode": "others",
+      "color": "#F14949",
+      "distance": 25,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:integer_property",
+            "property": "form",
+            "min": 1,
+            "max": 1
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "CORE_dummy"
+          }
+        ]
+      }
+    },
+    "f1aim": {
+      "type": "palladium:aim",
+      "icon": "airline_heroes:textures/icons/energy_beam.png",
+      "title": "Energy Beam",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "list_index": 1,
+      "time": 10,
+      "arm": "right_arm",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:held",
+            "cooldown": 0,
+            "key_type": "key_bind",
+            "needs_empty_hand": true
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:integer_property",
+            "property": "form",
+            "min": 1,
+            "max": 1
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "CORE_dummy"
+          }
+        ]
+      }
+    },
+    "f1blast": {
+      "type": "airline_heroes:projectile_with_offset",
+      "bar_color": "light_gray",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "list_index": -1,
+      "entity_type": "palladium:custom_projectile",
+      "entity_data": {
+        "Damage": 5,
+        "Gravity": 0,
+        "Size": 0.15,
+        "Lifetime": 500,
+        "DieOnEntityHit": true,
+        "DieOnBlockHit": true,
+        "Appearances": [
+          {
+            "Type": "trail",
+            "Trail": "airline_heroes:energy_blast"
+          }
+        ]
+      },
+      "yaw_offset": 19,
+      "pitch_offset": 25,
+      "yaw_inaccuracy": 0,
+      "pitch_inaccuracy": 0,
+      "count": 1,
+      "speed": 5,
+      "align_velocity_with_calculated_rotation": false,
+      "source_property": "value",
+      "projectile_property": "value",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action",
+            "cooldown": 0,
+            "key_type": "left_click",
+            "needs_empty_hand": true
+          },
+          {
+            "type": "airline_heroes:has_hunger",
+            "min_hunger": 1,
+            "max_hunger": 20
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_enabled",
+            "power": "null",
+            "ability": "f1aim"
+          }
+        ]
+      }
+    },
+    "blast_hunger_removal": {
+      "type": "airline_heroes:add_hunger",
+      "hidden": true,
+      "hunger": -1,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "f1blast"
+          }
+        ]
+      }
+    },
+    "form2": {
+      "type": "airline_heroes:form_set",
+      "icon": "airline_heroes:textures/icons/nano_moves.png",
+      "title": "Movement",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "prop": "form",
+      "amount": 2,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_wheel",
+            "cooldown": 0
+          }
+        ],
+        "unlocking": []
+      }
+    },
+    "f2a": {
+      "type": "palladium:attribute_modifier",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "attribute": "palladium:flight_speed",
+      "amount": 0.5,
+      "operation": 0,
+      "uuid": "53c6078d-d4d9-4d16-9471-b0d711f57caf",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:integer_property",
+            "property": "form",
+            "min": 2,
+            "max": 2
+          }
+        ],
+        "unlocking": [
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "CORE_dummy"
+          }
+        ]
+      }
+    },
+    "form3": {
+      "type": "airline_heroes:form_set",
+      "icon": "airline_heroes:textures/icons/nano_defense.png",
+      "title": "Defense",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "prop": "form",
+      "amount": 3,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_wheel",
+            "cooldown": 0
+          }
+        ],
+        "unlocking": []
+      }
+    },
+    "power_upgrade_1": {
+      "type": "palladium:attribute_modifier",
+      "icon": "airline_heroes:textures/icons/power_upgrade_1.png",
+      "title": "Power Increase 1",
+      "gui_position": [1, 0],
+      "attribute": "minecraft:generic.attack_damage",
+      "amount": 10,
+      "operation": 0,
+      "uuid": "15ba61bb-4f7d-4edd-926c-2526e5fc9d04",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Skill Points"
+            }
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "CORE_dummy"
+          }
+        ]
+      }
+    },
+    "power_upgrade_2": {
+      "type": "palladium:attribute_modifier",
+      "icon": "airline_heroes:textures/icons/power_upgrade_2.png",
+      "title": "Power Increase 2",
+      "gui_position": [2, 0],
+      "attribute": "minecraft:generic.attack_damage",
+      "amount": 5,
+      "operation": 0,
+      "uuid": "9940e11b-49a4-4ded-a468-ff598ce164fe",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Skill Points"
+            }
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "power_upgrade_1"
+          }
+        ]
+      }
+    },
+    "power_upgrade_3": {
+      "type": "palladium:attribute_modifier",
+      "icon": "airline_heroes:textures/icons/power_upgrade_3.png",
+      "title": "Power Increase 3",
+      "gui_position": [3, 0],
+      "attribute": "minecraft:generic.attack_damage",
+      "amount": 4,
+      "operation": 0,
+      "uuid": "f4bd223d-fed5-49f6-9ffc-0571d5a95edb",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Skill Points"
+            }
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "power_upgrade_2"
+          }
+        ]
+      }
+    },
+    "health_upgrade_1": {
+      "type": "palladium:attribute_modifier",
+      "icon": "airline_heroes:textures/icons/health_upgrade_1.png",
+      "title": "Health Increase 1",
+      "gui_position": [0, 1],
+      "attribute": "minecraft:generic.max_health",
+      "amount": 8,
+      "operation": 0,
+      "uuid": "833b935c-746f-44c3-b7e9-f7bc449c3f45",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Skill Points"
+            }
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "CORE_dummy"
+          }
+        ]
+      }
+    },
+    "health_upgrade_2": {
+      "type": "palladium:attribute_modifier",
+      "icon": "airline_heroes:textures/icons/health_upgrade_2.png",
+      "title": "Health Increase 2",
+      "gui_position": [0, 2],
+      "attribute": "minecraft:generic.max_health",
+      "amount": 6,
+      "operation": 0,
+      "uuid": "55b5e9ae-5de8-4c54-821c-1ebc8cf83bca",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Skill Points"
+            }
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "health_upgrade_1"
+          }
+        ]
+      }
+    },
+    "health_upgrade_3": {
+      "type": "palladium:attribute_modifier",
+      "icon": "airline_heroes:textures/icons/health_upgrade_3.png",
+      "title": "Health Increase 3",
+      "gui_position": [0, 3],
+      "attribute": "minecraft:generic.max_health",
+      "amount": 6,
+      "operation": 0,
+      "uuid": "ee9ced85-235b-4934-84e9-be2f35ef7c00",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Skill Points"
+            }
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "health_upgrade_2"
+          }
+        ]
+      }
+    },
+    "endurance_upgrade_1": {
+      "type": "palladium:attribute_modifier",
+      "icon": "airline_heroes:textures/icons/endurance_upgrade_1.png",
+      "title": "Endurance Increase 1",
+      "gui_position": [-1, 0],
+      "attribute": "minecraft:generic.armor",
+      "amount": 0.02,
+      "operation": 0,
+      "uuid": "fc981797-79d7-426e-a5a1-785b753ea789",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Skill Points"
+            }
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "CORE_dummy"
+          }
+        ]
+      }
+    },
+    "endurance_upgrade_2": {
+      "type": "palladium:attribute_modifier",
+      "icon": "airline_heroes:textures/icons/endurance_upgrade_2.png",
+      "title": "Endurance Increase 2",
+      "gui_position": [-2, 0],
+      "attribute": "minecraft:generic.armor",
+      "amount": 0.02,
+      "operation": 0,
+      "uuid": "ab5d8036-b203-4578-9ad7-2af7c863a7e8",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Skill Points"
+            }
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "endurance_upgrade_1"
+          }
+        ]
+      }
+    },
+    "endurance_upgrade_3": {
+      "type": "palladium:attribute_modifier",
+      "icon": "airline_heroes:textures/icons/endurance_upgrade_3.png",
+      "title": "Endurance Increase 3",
+      "gui_position": [-3, 0],
+      "attribute": "minecraft:generic.armor",
+      "amount": 0.02,
+      "operation": 0,
+      "uuid": "3f51fbcf-2d01-4db8-a9b8-3a3465d51215",
+      "conditions": {
+        "unlocking": [
+          {
+            "type": "palladium:scoreboard_score_buyable",
+            "objective": "airline_heroes.skill_points",
+            "score": 1,
+            "icon": "minecraft:command_block",
+            "description": {
+              "text": "Skill Points"
+            }
+          },
+          {
+            "type": "palladium:ability_unlocked",
+            "ability": "endurance_upgrade_2"
+          }
+        ]
+      }
+    },
+    "set_name_description": {
+      "type": "airline_heroes:set_name_description",
+      "hidden": true,
+      "power_description": "This is just a blank power with only the basics for making a new quirk."
+    }
+  }
+}

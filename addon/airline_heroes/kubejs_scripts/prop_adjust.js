@@ -81,3 +81,19 @@ StartupEvents.registry("palladium:abilities", (event) => {
       }
     });
 });
+
+
+StartupEvents.registry("palladium:abilities", (event) => {
+  event
+    .create("airline_heroes:form_set")
+    .addProperty("prop", "string", "form", "the name of the property")
+    .addProperty("amount", "integer", 0, "Which for to switch to 3 is max")
+
+    .firstTick((entity, entry, holder, enabled) => {
+      if (enabled && entity.isPlayer()) {
+        const prop = entry.getPropertyByName("prop");
+        let amount = entry.getPropertyByName("amount");
+          palladium.setProperty(entity, prop, amount);
+      }
+    });
+});

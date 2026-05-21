@@ -1,0 +1,18 @@
+  {
+    "type": "palladium:compound",
+    "layers": [
+      {
+        "type": "geckolib:default",
+        "model": "airline_heroes:geo/dragon_crush.geo.json",
+        "texture": "airline_heroes:textures/models/dragon_crush.png",
+        "animation_file": "airline_heroes:animations/dragon_crush.animation.json",
+        "animation_controller": [
+          {
+            "name": "crush",
+            "transition_tick_time": 0,
+            "animation": "animation.airline_heroes.dragon_crush"
+          }
+        ]
+      }
+    ]
+  }

@@ -386,5 +386,58 @@ PalladiumEvents.registerAnimations((event) => {
         }
 
     });
+    event.registerForPower('airline_heroes/dragon_crush_anim', 'airline_heroes:summoner', 12, (builder) => {
+        const progress = animationUtil.getAnimationTimerAbilityValue(builder.getPlayer(), 'airline_heroes:summoner', 'dragon_crush_anim', builder.getPartialTicks());
+        if (progress > 0.0) {
+            if (!builder.isFirstPerson()) {
+                if (progress < 0.7) {
+                    builder.get('left_arm')
+
+                        .rotateX(-1.7)
+
+                        .animate('InOutCubic', progress);
+                    builder.get('right_arm')
+
+                        .rotateX(-1.7)
+
+                        .animate('InOutCubic', progress);
+                } else {
+                    builder.get('left_arm')
+                        .rotateX(-1)
+                        .rotateY(0.2)
+
+                        .animate('InOutCubic', progress);
+                    builder.get('right_arm')
+                        .rotateX(-1)
+                        .rotateY(-0.2)
+
+                        .animate('InOutCubic', progress);
+                }
+            } else {
+                if (progress < 0.7) {
+                    builder.get('left_arm')
+                        .rotateX(-0.4)
+                        .rotateY(0.5)
+                        .animate('InOutCubic', progress);
+                    builder.get('right_arm')
+                        .setY(3)
+                        .rotateX(-0.4)
+                        .rotateY(-0.5)
+                        .animate('InOutCubic', progress);
+                } else {
+                    builder.get('left_arm')
+                        .setX(-6)
+                        .rotateX(-0.4)
+                        .rotateY(0.5)
+                        .animate('InOutCubic', progress);
+                    builder.get('right_arm')
+                        .setX(6)
+                        .rotateX(-0.4)
+                        .rotateY(-0.5)
+                        .animate('InOutCubic', progress);
+                }
+            }
+        }
+    });
 });
 
