@@ -19,6 +19,9 @@
               "type": "palladium:entity_type",
               "entity_type": "minecraft:player"
             }
+          },
+          {
+            "type": "hsmputil:has_target"
           }
         ],
         "unlocking": [

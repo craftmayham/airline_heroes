@@ -13,7 +13,9 @@
       "hidden": true,
       "hidden_in_bar": true,
       "list_index": -1,
-      "sound": ["minecraft:entity.creeper.primed"],
+      "sound": [
+        "minecraft:entity.creeper.primed"
+      ],
       "volume": 2,
       "pitch": 1,
       "looping": false,
@@ -25,6 +27,9 @@
             "type": "palladium:interval",
             "active_ticks": 40,
             "disabled_ticks": 400
+          },
+          {
+            "type": "hsmputil:has_target"
           }
         ],
         "unlocking": [
@@ -40,7 +45,9 @@
       "hidden": true,
       "hidden_in_bar": true,
       "list_index": -1,
-      "sound": ["minecraft:entity.cow.ambient"],
+      "sound": [
+        "minecraft:entity.cow.ambient"
+      ],
       "volume": 2,
       "pitch": 1,
       "looping": false,
@@ -52,6 +59,9 @@
             "type": "palladium:interval",
             "active_ticks": 40,
             "disabled_ticks": 200
+          },
+          {
+            "type": "hsmputil:has_target"
           }
         ],
         "unlocking": [
@@ -67,7 +77,9 @@
       "hidden": true,
       "hidden_in_bar": true,
       "list_index": -1,
-      "sound": ["minecraft:entity.warden.sonic_charge"],
+      "sound": [
+        "minecraft:entity.warden.sonic_charge"
+      ],
       "volume": 2,
       "pitch": 1,
       "looping": false,
@@ -79,6 +91,9 @@
             "type": "palladium:interval",
             "active_ticks": 40,
             "disabled_ticks": 800
+          },
+          {
+            "type": "hsmputil:has_target"
           }
         ],
         "unlocking": [

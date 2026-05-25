@@ -1,0 +1,5 @@
+{
+    "model_type": "palladium:basic",
+    "model_layer": "airline_heroes:tarot_card",
+    "texture": "airline_heroes:textures/item/tarot_card/fool.png"
+}

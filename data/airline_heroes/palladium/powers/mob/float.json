@@ -10,7 +10,10 @@
       "hidden": false,
       "hidden_in_bar": false,
       "list_index": 0,
-      "gui_position": [0, 0],
+      "gui_position": [
+        0,
+        0
+      ],
       "description": "null",
       "conditions": {
         "unlocking": [
@@ -49,7 +52,9 @@
     "mob_float": {
       "type": "palladium:command",
       "hidden": true,
-      "commands": ["effect give @s minecraft:slow_falling 3 1 true"],
+      "commands": [
+        "effect give @s minecraft:slow_falling 3 1 true"
+      ],
       "conditions": {
         "unlocking": [
           {
@@ -59,6 +64,9 @@
           {
             "type": "airline_heroes:dampened_by",
             "effect": "dampened:genetic"
+          },
+          {
+            "type": "hsmputil:has_target"
           }
         ]
       }

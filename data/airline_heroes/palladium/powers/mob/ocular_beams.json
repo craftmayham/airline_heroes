@@ -24,6 +24,9 @@
             "type": "palladium:interval",
             "active_ticks": 50,
             "disabled_ticks": 200
+          },
+          {
+            "type": "hsmputil:has_target"
           }
         ],
         "unlocking": [
