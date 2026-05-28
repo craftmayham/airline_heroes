@@ -9,11 +9,20 @@
             "type": "palladium:command",
             "hidden": true,
             "hidden_in_bar": true,
-            "first_tick_commands": ["tag @s add webimmune"],
-            "last_tick_commands": ["tag @s remove webimmune"],
-            "commands": ["function airline_heroes:spider_immune"]
+            "first_tick_commands": [
+                "tag @s add webimmune"
+            ],
+            "commands": [
+                "function airline_heroes:spider_immune"
+            ],
+            "conditions": {
+                "enabling": {
+                    "type": "palladium:interval",
+                    "active_ticks": 1,
+                    "disabled_ticks": 19
+                }
+            }
         },
-        
         "spider_lunge": {
             "type": "airline_heroes:launch_player",
             "icon": "minecraft:elytra",
@@ -24,7 +33,7 @@
             "list_index": 1,
             "gui_position": "null",
             "description": "null",
-            "power": 2, 
+            "power": 2,
             "conditions": {
                 "enabling": [
                     {
@@ -52,7 +61,6 @@
                 ]
             }
         },
-
         "spider_fall": {
             "type": "palladium:damage_immunity",
             "hidden": true,
@@ -61,7 +69,6 @@
                 "minecraft:is_fall"
             ]
         },
-        
         "spider_no_stick": {
             "type": "palladium:intangibility",
             "hidden": true,
@@ -69,7 +76,6 @@
             "vertical": true,
             "whitelist": "airline_heroes:cobweb"
         },
-        
         "spider_climb": {
             "type": "airline_heroes:launch_player",
             "icon": "minecraft:vine",
@@ -115,7 +121,6 @@
                 ]
             }
         },
-
         "spider_stick": {
             "type": "airline_heroes:freeze_player",
             "icon": "minecraft:slime_ball",
@@ -156,7 +161,7 @@
                     }
                 ]
             }
-        },        
+        },
         "spider_toggle": {
             "type": "palladium:dummy",
             "icon": "minecraft:vine",
@@ -179,10 +184,7 @@
                 ]
             }
         },
-        
-
-        "spider go fast": 
-        {
+        "spider go fast": {
             "type": "palladium:attribute_modifier",
             "hidden": true,
             "attribute": "minecraft:generic.movement_speed",
@@ -190,7 +192,6 @@
             "operation": 0,
             "uuid": "2de04b0f-fcc3-4ea2-9e9e-f89ab73f9d5c"
         },
-            
         "fluid_cleanup": {
             "type": "palladium:command",
             "icon": "minecraft:red_wool",
@@ -218,7 +219,6 @@
                 ]
             }
         },
-            
         "fluid_splooge": {
             "type": "palladium:command",
             "icon": "minecraft:stone_brick_wall",
@@ -231,12 +231,14 @@
             "description": "null",
             "first_tick_commands": [],
             "last_tick_commands": [],
-            "commands": ["function airline_heroes:web_splooge"],
+            "commands": [
+                "function airline_heroes:web_splooge"
+            ],
             "conditions": {
                 "enabling": [
                     {
                         "type": "palladium:action",
-                        "cooldown": 250 ,
+                        "cooldown": 250,
                         "key_type": "key_bind",
                         "needs_empty_hand": false,
                         "allow_scrolling_when_crouching": true
@@ -256,7 +258,6 @@
                 "amount": 350
             }
         },
-
         "WeboLaD": {
             "type": "palladium:command",
             "icon": "minecraft:stone_brick_wall",
@@ -267,14 +268,16 @@
             "list_index": 9,
             "gui_position": "null",
             "description": "null",
-            "first_tick_commands": ["function airline_heroes:web_of_life_and_destiny"],
+            "first_tick_commands": [
+                "function airline_heroes:web_of_life_and_destiny"
+            ],
             "last_tick_commands": [],
             "commands": [],
             "conditions": {
                 "enabling": [
                     {
                         "type": "palladium:action",
-                        "cooldown": 500 ,
+                        "cooldown": 500,
                         "key_type": "key_bind",
                         "needs_empty_hand": false,
                         "allow_scrolling_when_crouching": true
@@ -294,9 +297,6 @@
                 "amount": 350
             }
         },
-        
-
-
         "fluid_ring": {
             "type": "palladium:command",
             "icon": "minecraft:iron_block",
@@ -309,12 +309,14 @@
             "description": "null",
             "first_tick_commands": [],
             "last_tick_commands": [],
-            "commands": ["function airline_heroes:web_dome"],
+            "commands": [
+                "function airline_heroes:web_dome"
+            ],
             "conditions": {
                 "enabling": [
                     {
                         "type": "palladium:action",
-                        "cooldown": 120 ,
+                        "cooldown": 120,
                         "key_type": "key_bind",
                         "needs_empty_hand": false,
                         "allow_scrolling_when_crouching": true
@@ -334,7 +336,6 @@
                 "amount": 275
             }
         },
-        
         "fluid_wall": {
             "type": "palladium:command",
             "icon": "minecraft:mossy_cobblestone_wall",
@@ -346,9 +347,13 @@
             "gui_position": "null",
             "description": "null",
             "first_tick_commands": [],
-            "last_tick_commands": [],
+            "last_tick_commands": [
+                "function airline_heroes:spider_team"
+            ],
             "commands": [
-                "fill ^-5 ^ ^2 ^5 ^3 ^3 minecraft:cobweb replace minecraft:air"
+                "fill ^-6 ^ ^2 ^6 ^4 ^3 minecraft:cobweb replace minecraft:air",
+                "summon minecraft:spider ^2 ^ ^",
+                "summon minecraft:spider ^-2 ^ ^"
             ],
             "conditions": {
                 "enabling": [
@@ -374,7 +379,6 @@
                 "amount": 150
             }
         },
-        
         "fluid_leak": {
             "type": "palladium:command",
             "icon": "minecraft:milk_bucket",
@@ -414,7 +418,6 @@
                 "amount": 10
             }
         },
-        
         "fluid_shot": {
             "type": "palladium:projectile",
             "icon": "minecraft:cobweb",
@@ -436,7 +439,7 @@
                     {
                         "Type": "item",
                         "Item": "minecraft:cobweb"
-                    }, 
+                    },
                     {
                         "Type": "particles",
                         "ParticleType": "minecraft:cloud",
@@ -444,8 +447,7 @@
                     }
                 ]
             },
-            
-        "conditions": {
+            "conditions": {
                 "enabling": [
                     {
                         "type": "palladium:action",
@@ -474,7 +476,6 @@
             "damage_from_player": false,
             "ignore_player_movement": false
         },
-
         "spider_punch": {
             "type": "gravecore:potion_punch",
             "icon": "minecraft:iron_chestplate",
@@ -488,7 +489,6 @@
             "effect": "minecraft:poison",
             "time": 7
         },
-
         "spider_kiss": {
             "type": "gravecore:aoe_damage",
             "icon": "minecraft:fire_charge",
@@ -516,7 +516,6 @@
                 ]
             }
         },
-
         "spider_heal": {
             "type": "palladium:command",
             "icon": "minecraft:command_block",
@@ -529,8 +528,10 @@
             "description": "null",
             "first_tick_commands": [],
             "last_tick_commands": [],
-            "commands": ["function airline_heroes:spiderkiss"],
-            "conditions":{
+            "commands": [
+                "function airline_heroes:spiderkiss"
+            ],
+            "conditions": {
                 "enabling": [
                     {
                         "type": "palladium:and",
@@ -538,7 +539,7 @@
                             {
                                 "type": "palladium:ability_enabled",
                                 "power": "null",
-                                "ability": "spider_kiss"      
+                                "ability": "spider_kiss"
                             },
                             {
                                 "type": "airline_heroes:is_entity_nearby",
@@ -550,15 +551,42 @@
             }
         }
     },
-    
-    
-    
+    "spider_friends": {
+        "type": "palladium:command",
+        "icon": "minecraft:command_block",
+        "title": "null",
+        "bar_color": "light_gray",
+        "hidden": false,
+        "hidden_in_bar": false,
+        "list_index": -1,
+        "gui_position": "null",
+        "description": "null",
+        "commands": [
+            "function airline_heroes:spider_team"
+        ],
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:or",
+                    "conditions": [
+                        {
+                            "type": "palladium:action",
+                            "cooldown": 0,
+                            "key_type": "key_bind",
+                            "needs_empty_hand": false,
+                            "allow_scrolling_when_crouching": true
+                        }
+                    ]
+                }
+            ]
+        }
+    },
     "energy_bars": {
         "fluids": {
-           "max": 500,
-           "auto_increase_per_tick": 3,
-           "auto_increase_interval": 1,
-           "color": "#FFFFFF"
+            "max": 500,
+            "auto_increase_per_tick": 3,
+            "auto_increase_interval": 1,
+            "color": "#FFFFFF"
         }
     }
 }
