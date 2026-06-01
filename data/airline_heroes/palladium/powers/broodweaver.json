@@ -347,9 +347,7 @@
             "gui_position": "null",
             "description": "null",
             "first_tick_commands": [],
-            "last_tick_commands": [
-                "function airline_heroes:spider_team"
-            ],
+            "last_tick_commands": [],
             "commands": [
                 "fill ^-6 ^ ^2 ^6 ^4 ^3 minecraft:cobweb replace minecraft:air",
                 "summon minecraft:spider ^2 ^ ^",
@@ -499,7 +497,7 @@
             "list_index": -1,
             "gui_position": "null",
             "description": "null",
-            "radius": 3,
+            "radius": 5,
             "damage": 10,
             "fire_ticks": 0,
             "damage_type": "null",
@@ -543,7 +541,7 @@
                             },
                             {
                                 "type": "airline_heroes:is_entity_nearby",
-                                "search_radius": 3
+                                "search_radius": 5
                             }
                         ]
                     }
@@ -552,8 +550,8 @@
         }
     },
     "spider_friends": {
-        "type": "palladium:command",
-        "icon": "minecraft:command_block",
+        "type": "hsmputil:tame_aoe",
+        "icon": "minecraft:bone",
         "title": "null",
         "bar_color": "light_gray",
         "hidden": false,
@@ -561,9 +559,8 @@
         "list_index": -1,
         "gui_position": "null",
         "description": "null",
-        "commands": [
-            "function airline_heroes:spider_team"
-        ],
+        "range": 10,
+        "mob": "minecraft:spider",
         "conditions": {
             "enabling": [
                 {
@@ -571,12 +568,39 @@
                     "conditions": [
                         {
                             "type": "palladium:action",
-                            "cooldown": 0,
+                            "cooldown": 20,
                             "key_type": "key_bind",
                             "needs_empty_hand": false,
                             "allow_scrolling_when_crouching": true
+                        },
+                        {
+                            "type": "palladium:ability_last_tick",
+                            "power": "null",
+                            "ability": "fluid_wall"
                         }
                     ]
+                }
+            ]
+        }
+    },
+    "spider_friends2": {
+        "type": "hsmputil:tame_aoe",
+        "icon": "minecraft:blaze_rod",
+        "title": "null",
+        "bar_color": "light_gray",
+        "hidden": true,
+        "hidden_in_bar": false,
+        "list_index": -1,
+        "gui_position": "null",
+        "description": "null",
+        "range": 10,
+        "mob": "minecraft:cave_spider",
+        "conditions": {
+            "enabling": [
+                {
+                    "type": "palladium:ability_last_tick",
+                    "power": "null",
+                    "ability": "spider_friends"
                 }
             ]
         }
