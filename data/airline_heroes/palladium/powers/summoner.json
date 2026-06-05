@@ -1,8 +1,16 @@
 {
-  "name": "Quirk Template",
+  "name": "Summoner",
   "background": "minecraft:textures/block/light_blue_wool.png",
   "icon": "minecraft:command_block",
   "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
+  "energy_bars": {
+    "summon": {
+      "max": 150,
+      "auto_increase_per_tick": -1,
+      "auto_increase_interval": 5,
+      "color": "#32CD32"
+    }
+  },
   "abilities": {
     "summoner_rings": {
       "type": "palladium:render_layer",
@@ -34,23 +42,102 @@
               {
                 "type": "palladium:ability_enabled",
                 "ability": "dragon_crush_dummy"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "slime_launch_dummy"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "undead_unrest_dummy_dummy"
+              },
+              {
+                "type": "palladium:ability_enabled",
+                "ability": "summon_mob_dummy"
               }
             ]
           }
         ]
       }
     },
-    "summon_mob": {
-      "type": "airline_heroes:summon_mob",
+    "summon_mob_dummy": {
+      "type": "palladium:dummy",
       "icon": "airline_heroes:textures/icons/summon.png",
-      "random": true,
+      "title": "Random Summon",
       "bar_color": "lime",
       "list_index": 0,
+      "energy_bar_usage": {
+        "energy_bar": "summon",
+        "amount": -1
+      },
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:action",
+            "type": "palladium:held",
+            "key_type": "key_bind",
+            "needs_empty_hand": false,
+            "allow_scrolling_when_crouching": true
+          }
+        ]
+      }
+    },
+    "summon_mob": {
+      "type": "airline_heroes:summon_mob",
+      "random": true,
+      "tamed": true,
+      "hidden": true,
+      "energy_bar_usage": {
+        "energy_bar": "summon",
+        "amount": 150
+      },
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:energy_bar",
+            "energy_bar": "summon",
+            "min": 150
+          }
+        ]
+      }
+    },
+    "show_both_arms": {
+      "type": "palladium:show_both_arms",
+      "hidden": true,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "summon_mob_dummy"
+          }
+        ]
+      }
+    },
+    "aim": {
+      "type": "palladium:aim",
+      "arm": "both",
+      "time": 10,
+      "hidden": true,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "summon_mob_dummy"
+          }
+        ]
+      }
+    },
+    "undead_unrest_dummy_dummy": {
+      "type": "palladium:dummy",
+      "icon": "airline_heroes:textures/icons/summon.png",
+      "random": true,
+      "bar_color": "lime",
+      "list_index": 3,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:activation",
             "cooldown": 100,
+            "ticks": 35,
             "key_type": "key_bind",
             "needs_empty_hand": false,
             "allow_scrolling_when_crouching": true
@@ -60,18 +147,12 @@
     },
     "undead_unrest_dummy": {
       "type": "palladium:dummy",
-      "icon": "airline_heroes:textures/icons/summon.png",
-      "random": true,
-      "bar_color": "lime",
-      "list_index": 3,
+      "hidden": true,
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:action",
-            "cooldown": 100,
-            "key_type": "key_bind",
-            "needs_empty_hand": false,
-            "allow_scrolling_when_crouching": true
+            "type": "palladium:ability_first_tick",
+            "ability": "undead_unrest_dummy_dummy"
           }
         ]
       }
@@ -188,19 +269,46 @@
         ]
       }
     },
-    "slime_launch": {
-      "type": "airline_heroes:slime_launch",
+    "slime_launch_dummy": {
+      "type": "palladium:dummy",
+      "title": "Slime Launch",
       "icon": "airline_heroes:textures/icons/slime_launch.png",
       "bar_color": "green",
       "list_index": 1,
       "conditions": {
         "enabling": [
           {
-            "type": "palladium:action",
+            "type": "palladium:activation",
             "cooldown": 100,
+            "ticks": 35,
             "key_type": "key_bind",
             "needs_empty_hand": false,
             "allow_scrolling_when_crouching": true
+          }
+        ]
+      }
+    },
+    "slime_launch": {
+      "type": "airline_heroes:slime_launch",
+      "hidden": true,
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_last_tick",
+            "ability": "slime_launch_dummy"
+          }
+        ]
+      }
+    },
+    "slime_swing": {
+      "type": "gravecore:swing_hand",
+      "hidden": true,
+      "swinging_arm": "main_arm",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:ability_enabled",
+            "ability": "slime_launch"
           }
         ]
       }

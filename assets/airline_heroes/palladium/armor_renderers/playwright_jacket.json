@@ -1,0 +1,4 @@
+{
+  "textures": "airline_heroes:textures/models/armor/playwright_jacket.png",
+  "model_layers": "palladium:humanoid#suit_slim"
+}

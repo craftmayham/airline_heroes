@@ -1,0 +1,4 @@
+{
+  "textures": "airline_heroes:textures/models/armor/portal_suit.png",
+  "model_layers": "palladium:humanoid#suit"
+}

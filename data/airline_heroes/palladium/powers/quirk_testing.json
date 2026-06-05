@@ -1,126 +1,41 @@
 {
-  "name": "Chubby Bunny",
+  "name": "Quirk Template",
   "background": "minecraft:textures/block/light_blue_wool.png",
-  "icon": "minecraft:cake",
-  "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
+  "icon": "minecraft:command_block",
   "abilities": {
-    "bunny_ears": {
-      "type": "palladium:render_layer",
-      "hidden": true,
-      "render_layer": "airline_heroes:bunny_ears"
+    "tame_aoe": {
+      "type": "hsmputil:tame_aoe",
+      "icon": "minecraft:blaze_rod",
+      "title": "null",
+      "bar_color": "light_gray",
+      "hidden": false,
+      "hidden_in_bar": false,
+      "list_index": -1,
+      "gui_position": "null",
+      "description": "null",
+      "range": 25,
+      "mob": "minecraft:spider",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:action"
+          }
+        ]
+      }
     },
-    "chubby_eat": {
-      "type": "hsmputil:chubby_feed",
-      "icon": "minecraft:cooked_beef",
-      "title": "Force Feed",
-      "description": "By holding an item you can force feed someone, alternatively hold an empty hand to use your food bar. Crouch to dispense full bar.",
-      "gui_position": [
-        0,
-        -1
-      ],
+    "CORE_dummy": {
+      "type": "palladium:dummy",
+      "icon": "minecraft:blaze_rod",
+      "title": "Dummy",
       "hidden": false,
       "hidden_in_bar": false,
       "list_index": 0,
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:action",
-            "cooldown": 0,
-            "key_type": "key_bind",
-            "needs_empty_hand": false,
-            "allow_scrolling_when_crouching": true
-          }
-        ],
-        "unlocking": [
-          {
-            "type": "airline_heroes:dampened_by",
-            "effect": "dampened:genetic"
-          },
-          {
-            "type": "palladium:scoreboard_score_buyable",
-            "objective": "airline_heroes.skill_points",
-            "score": 1,
-            "icon": "minecraft:command_block",
-            "description": {
-              "text": "Skill Points"
-            }
-          },
-          {
-            "type": "palladium:ability_unlocked",
-            "ability": "jump_toggle"
-          }
-        ]
-      }
-    },
-    "chubby_transfer": {
-      "type": "hsmputil:potion_transfer",
-      "icon": "minecraft:potion",
-      "title": "Potion Transfer",
-      "gui_position": [
-        0,
-        -2
-      ],
-      "description": "Transfer whatever is in your stomach to whoever you're looking at.",
-      "hidden": false,
-      "hidden_in_bar": false,
-      "list_index": 1,
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:action",
-            "cooldown": 0,
-            "key_type": "key_bind",
-            "needs_empty_hand": false,
-            "allow_scrolling_when_crouching": true
-          }
-        ],
-        "unlocking": [
-          {
-            "type": "airline_heroes:dampened_by",
-            "effect": "dampened:genetic"
-          },
-          {
-            "type": "palladium:scoreboard_score_buyable",
-            "objective": "airline_heroes.skill_points",
-            "score": 1,
-            "icon": "minecraft:command_block",
-            "description": {
-              "text": "Skill Points"
-            }
-          },
-          {
-            "type": "palladium:ability_unlocked",
-            "ability": "chubby_eat"
-          }
-        ]
-      }
-    },
-    "jump_toggle": {
-      "type": "palladium:attribute_modifier",
-      "title": "Rabbit Leap",
-      "icon": "minecraft:rabbit_foot",
-      "list_index": 2,
       "gui_position": [
         0,
         0
       ],
-      "bar_color": "light_gray",
-      "hidden": false,
-      "hidden_in_bar": false,
-      "attribute": "palladium:jump_power",
-      "amount": 3,
-      "operation": 0,
-      "uuid": "422be4fb-af04-42f2-8948-e6ccdc0d99e1",
+      "description": "null",
       "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:toggle",
-            "cooldown": 0,
-            "key_type": "key_bind",
-            "needs_empty_hand": false,
-            "allow_scrolling_when_crouching": true
-          }
-        ],
         "unlocking": [
           {
             "type": "airline_heroes:dampened_by",
@@ -128,35 +43,6 @@
           }
         ]
       }
-    },
-    "leap_toggle": {
-      "type": "palladium:attribute_modifier",
-      "hidden": true,
-      "attribute": "palladium:leaping",
-      "amount": 6,
-      "operation": 0,
-      "uuid": "422be4fb-af04-42f2-8948-e6ccdc0d99e1",
-      "conditions": {
-        "enabling": [
-          {
-            "type": "palladium:ability_enabled",
-            "ability": "jump_toggle"
-          }
-        ],
-        "unlocking": [
-          {
-            "type": "airline_heroes:dampened_by",
-            "effect": "dampened:genetic"
-          }
-        ]
-      }
-    },
-    "no_fall": {
-      "type": "palladium:damage_immunity",
-      "hidden": true,
-      "damage_sources": [
-        "minecraft:is_fall"
-      ]
     },
     "power_upgrade_1": {
       "type": "palladium:attribute_modifier",
@@ -167,7 +53,7 @@
         0
       ],
       "attribute": "minecraft:generic.attack_damage",
-      "amount": 1,
+      "amount": 10,
       "operation": 0,
       "uuid": "15ba61bb-4f7d-4edd-926c-2526e5fc9d04",
       "conditions": {
@@ -183,7 +69,7 @@
           },
           {
             "type": "palladium:ability_unlocked",
-            "ability": "jump_toggle"
+            "ability": "CORE_dummy"
           }
         ]
       }
@@ -197,7 +83,7 @@
         0
       ],
       "attribute": "minecraft:generic.attack_damage",
-      "amount": 2,
+      "amount": 5,
       "operation": 0,
       "uuid": "9940e11b-49a4-4ded-a468-ff598ce164fe",
       "conditions": {
@@ -227,7 +113,7 @@
         0
       ],
       "attribute": "minecraft:generic.attack_damage",
-      "amount": 3,
+      "amount": 4,
       "operation": 0,
       "uuid": "f4bd223d-fed5-49f6-9ffc-0571d5a95edb",
       "conditions": {
@@ -257,7 +143,7 @@
         1
       ],
       "attribute": "minecraft:generic.max_health",
-      "amount": 3,
+      "amount": 8,
       "operation": 0,
       "uuid": "833b935c-746f-44c3-b7e9-f7bc449c3f45",
       "conditions": {
@@ -273,7 +159,7 @@
           },
           {
             "type": "palladium:ability_unlocked",
-            "ability": "jump_toggle"
+            "ability": "CORE_dummy"
           }
         ]
       }
@@ -287,7 +173,7 @@
         2
       ],
       "attribute": "minecraft:generic.max_health",
-      "amount": 3,
+      "amount": 6,
       "operation": 0,
       "uuid": "55b5e9ae-5de8-4c54-821c-1ebc8cf83bca",
       "conditions": {
@@ -317,7 +203,7 @@
         3
       ],
       "attribute": "minecraft:generic.max_health",
-      "amount": 3,
+      "amount": 6,
       "operation": 0,
       "uuid": "ee9ced85-235b-4934-84e9-be2f35ef7c00",
       "conditions": {
@@ -347,7 +233,7 @@
         0
       ],
       "attribute": "minecraft:generic.armor",
-      "amount": 3,
+      "amount": 0.02,
       "operation": 0,
       "uuid": "fc981797-79d7-426e-a5a1-785b753ea789",
       "conditions": {
@@ -363,7 +249,7 @@
           },
           {
             "type": "palladium:ability_unlocked",
-            "ability": "jump_toggle"
+            "ability": "CORE_dummy"
           }
         ]
       }
@@ -377,7 +263,7 @@
         0
       ],
       "attribute": "minecraft:generic.armor",
-      "amount": 3,
+      "amount": 0.02,
       "operation": 0,
       "uuid": "ab5d8036-b203-4578-9ad7-2af7c863a7e8",
       "conditions": {
@@ -407,7 +293,7 @@
         0
       ],
       "attribute": "minecraft:generic.armor",
-      "amount": 3,
+      "amount": 0.02,
       "operation": 0,
       "uuid": "3f51fbcf-2d01-4db8-a9b8-3a3465d51215",
       "conditions": {

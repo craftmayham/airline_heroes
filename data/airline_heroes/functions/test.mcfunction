@@ -1,0 +1,1 @@
+tame @e[type=zombie,limit=1,sort=nearest] @a[sort=random,limit=1]

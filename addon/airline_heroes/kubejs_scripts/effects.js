@@ -6,7 +6,7 @@ StartupEvents.registry('mob_effect', event => {
   event.create('airline_heroes:space_breathing')
     .color(0x888888)
 
-  event.create('airline_heroes:freeze')
+  event.create('airline_heroes:kinetic_drain')
     .color(0x000000)
     .beneficial()
     .effectTick((entity, lvl) => {

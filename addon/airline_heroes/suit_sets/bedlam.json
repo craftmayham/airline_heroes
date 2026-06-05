@@ -1,0 +1,21 @@
+{
+  "tooltip": [
+    "Clocked in."
+  ],
+  "armor_material": "minecraft:diamond",
+  "opened_sound": "minecraft:item.armor.equip_leather",
+  "closed_sound": "minecraft:item.armor.equip_leather",
+  "creative_mode_tab": "airline_heroes:airline_heroes",
+  "chest": {
+    "item_name": "bedlam_shirt",
+    "armor_renderer": "airline_heroes:bedlam_shirt"
+  },
+  "legs": {
+    "item_name": "bedlam_pants",
+    "armor_renderer": "airline_heroes:bedlam_pants"
+  },
+  "feet": {
+    "item_name": "bedlam_shoes",
+    "armor_renderer": "airline_heroes:bedlam_shoes"
+  }
+}

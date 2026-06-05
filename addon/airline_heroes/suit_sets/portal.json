@@ -1,0 +1,25 @@
+{
+  "tooltip": [
+    "A suit fit for breathing in low oxygen environments."
+  ],
+  "armor_material": "minecraft:diamond",
+  "opened_sound": "minecraft:item.armor.equip_leather",
+  "closed_sound": "minecraft:item.armor.equip_leather",
+  "creative_mode_tab": "airline_heroes:airline_heroes",
+  "chest": {
+    "item_name": "portal_suit",
+    "armor_renderer": "airline_heroes:portal_suit"
+  },
+  "legs": {
+    "item_name": "portal_pants",
+    "armor_renderer": "airline_heroes:portal_pants"
+  },
+  "feet": {
+    "item_name": "portal_boots",
+    "armor_renderer": "airline_heroes:portal_boots"
+  },
+  "head": {
+    "item_name": "portal_helmet",
+    "armor_renderer": "airline_heroes:portal_helmet"
+  }
+}
