@@ -10,7 +10,8 @@
             "hidden": true,
             "hidden_in_bar": true,
             "first_tick_commands": [
-                "tag @s add webimmune"
+                "tag @s add webimmune",
+                "tag @s add spider"
             ],
             "commands": [
                 "function airline_heroes:spider_immune"
@@ -205,7 +206,9 @@
             "first_tick_commands": [],
             "last_tick_commands": [],
             "commands": [
-                "fill ~-5 ~-4 ~-5 ~5 ~6 ~5 minecraft:air replace minecraft:cobweb"
+                "fill ~-5 ~-4 ~-5 ~5 ~6 ~5 minecraft:air replace minecraft:cobweb",
+                "kill @e[type=minecraft:spider,distance=0..5]",
+                "kill @e[type=minecraft:cave_spider,distance=0..5]"
             ],
             "conditions": {
                 "enabling": [
@@ -221,7 +224,7 @@
         },
         "fluid_splooge": {
             "type": "palladium:command",
-            "icon": "minecraft:stone_brick_wall",
+            "icon": "minecraft:bone_meal",
             "title": "null",
             "bar_color": "light_gray",
             "hidden": false,
@@ -250,6 +253,16 @@
                         "energy_bar": "fluids",
                         "min": 350,
                         "max": 2147483647
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_on_cooldown",
+                                "power": "null",
+                                "ability": "WeboLaD"
+                            }
+                        ]
                     }
                 ]
             },
@@ -260,7 +273,7 @@
         },
         "WeboLaD": {
             "type": "palladium:command",
-            "icon": "minecraft:stone_brick_wall",
+            "icon": "minecraft:iron_bars",
             "title": "null",
             "bar_color": "light_gray",
             "hidden": false,
@@ -276,8 +289,9 @@
             "conditions": {
                 "enabling": [
                     {
-                        "type": "palladium:action",
-                        "cooldown": 500,
+                        "type": "palladium:activation",
+                        "cooldown": 2400,
+                        "ticks": 600,
                         "key_type": "key_bind",
                         "needs_empty_hand": false,
                         "allow_scrolling_when_crouching": true
@@ -285,21 +299,31 @@
                 ],
                 "unlocking": [
                     {
-                        "type": "palladium:energy_bar",
-                        "energy_bar": "fluids",
-                        "min": 350,
-                        "max": 2147483647
+                        "type": "palladium:or",
+                        "conditions": [
+                            {
+                                "type": "palladium:energy_bar",
+                                "energy_bar": "fluids",
+                                "min": 800,
+                                "max": 2147483647
+                            },
+                            {
+                                "type": "palladium:ability_enabled",
+                                "power": "null",
+                                "ability": "WeboLaD"
+                            }
+                        ]
                     }
                 ]
             },
             "energy_bar_usage": {
                 "energy_bar": "fluids",
-                "amount": 350
+                "amount": 800
             }
         },
         "fluid_ring": {
             "type": "palladium:command",
-            "icon": "minecraft:iron_block",
+            "icon": "minecraft:shield",
             "title": "null",
             "bar_color": "light_gray",
             "hidden": false,
@@ -316,7 +340,7 @@
                 "enabling": [
                     {
                         "type": "palladium:action",
-                        "cooldown": 120,
+                        "cooldown": 400,
                         "key_type": "key_bind",
                         "needs_empty_hand": false,
                         "allow_scrolling_when_crouching": true
@@ -326,14 +350,24 @@
                     {
                         "type": "palladium:energy_bar",
                         "energy_bar": "fluids",
-                        "min": 275,
+                        "min": 500,
                         "max": 2147483647
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_on_cooldown",
+                                "power": "null",
+                                "ability": "WeboLaD"
+                            }
+                        ]
                     }
                 ]
             },
             "energy_bar_usage": {
                 "energy_bar": "fluids",
-                "amount": 275
+                "amount": 500
             }
         },
         "fluid_wall": {
@@ -349,9 +383,9 @@
             "first_tick_commands": [],
             "last_tick_commands": [],
             "commands": [
-                "fill ^-6 ^ ^2 ^6 ^4 ^3 minecraft:cobweb replace minecraft:air",
-                "summon minecraft:spider ^2 ^ ^",
-                "summon minecraft:spider ^-2 ^ ^"
+                "fill ^-6 ^ ^3 ^6 ^4 ^4 minecraft:cobweb replace minecraft:air",
+                "summon minecraft:spider ^2 ^ ^1",
+                "summon minecraft:spider ^-2 ^ ^1"
             ],
             "conditions": {
                 "enabling": [
@@ -369,6 +403,16 @@
                         "energy_bar": "fluids",
                         "min": 150,
                         "max": 2147483647
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_on_cooldown",
+                                "power": "null",
+                                "ability": "WeboLaD"
+                            }
+                        ]
                     }
                 ]
             },
@@ -408,12 +452,22 @@
                         "energy_bar": "fluids",
                         "min": 10,
                         "max": 2147483647
+                    },
+                    {
+                        "type": "palladium:not",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_on_cooldown",
+                                "power": "null",
+                                "ability": "WeboLaD"
+                            }
+                        ]
                     }
                 ]
             },
             "energy_bar_usage": {
                 "energy_bar": "fluids",
-                "amount": 10
+                "amount": 5
             }
         },
         "fluid_shot": {
@@ -489,7 +543,7 @@
         },
         "spider_kiss": {
             "type": "gravecore:aoe_damage",
-            "icon": "minecraft:fire_charge",
+            "icon": "minecraft:iron_sword",
             "title": "null",
             "bar_color": "light_gray",
             "hidden": false,
@@ -547,67 +601,151 @@
                     }
                 ]
             }
-        }
-    },
-    "spider_friends": {
-        "type": "hsmputil:tame_aoe",
-        "icon": "minecraft:bone",
-        "title": "null",
-        "bar_color": "light_gray",
-        "hidden": false,
-        "hidden_in_bar": false,
-        "list_index": -1,
-        "gui_position": "null",
-        "description": "null",
-        "range": 10,
-        "mob": "minecraft:spider",
-        "conditions": {
-            "enabling": [
-                {
-                    "type": "palladium:or",
-                    "conditions": [
-                        {
-                            "type": "palladium:action",
-                            "cooldown": 20,
-                            "key_type": "key_bind",
-                            "needs_empty_hand": false,
-                            "allow_scrolling_when_crouching": true
-                        },
-                        {
-                            "type": "palladium:ability_last_tick",
-                            "power": "null",
-                            "ability": "fluid_wall"
-                        }
-                    ]
-                }
-            ]
-        }
-    },
-    "spider_friends2": {
-        "type": "hsmputil:tame_aoe",
-        "icon": "minecraft:blaze_rod",
-        "title": "null",
-        "bar_color": "light_gray",
-        "hidden": true,
-        "hidden_in_bar": false,
-        "list_index": -1,
-        "gui_position": "null",
-        "description": "null",
-        "range": 10,
-        "mob": "minecraft:cave_spider",
-        "conditions": {
-            "enabling": [
-                {
-                    "type": "palladium:ability_last_tick",
-                    "power": "null",
-                    "ability": "spider_friends"
-                }
-            ]
+        },
+        "spider_tame": {
+            "type": "palladium:dummy",
+            "icon": "minecraft:bone",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 20,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ]
+            }
+        },
+        "spider_buff": {
+            "type": "palladium:command",
+            "icon": "minecraft:command_block",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": true,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "summon minecraft:spider ^ ^1 ^",
+                "summon minecraft:cave_spider ^1 ^ ^",
+                "summon minecraft:cave_spider ^-1 ^ ^",
+                "tag @e[type=minecraft:spider, distance=0..10] add spider",
+                "tag @e[type=minecraft:cave_spider, distance=0..10] add spider",
+                "effect give @e[tag=spider, distance=0..10] minecraft:regeneration 3 2 false",
+                "effect give @e[type=!player, tag=spider, distance=0..10] minecraft:health_boost 3 1 false",
+                "effect give @e[tag=spider, distance=0..10] minecraft:strength 3 1 false",
+                "effect give @e[tag=!spider, distance=0..5] minecraft:nausea 3 1 false",
+                "effect give @e[tag=!spider, distance=0..5] minecraft:poison 3 1 false",
+                "effect give @e[tag=!spider, distance=0..5] minecraft:weakness 3 1 false"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_enabled",
+                        "power": "null",
+                        "ability": "WeboLaD"
+                    },
+                    {
+                        "type": "palladium:interval",
+                        "active_ticks": 1,
+                        "disabled_ticks": 39
+                    }
+                ]
+            }
+        },
+        "spider_friends": {
+            "type": "hsmputil:tame_aoe",
+            "icon": "minecraft:blaze_rod",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "range": 25,
+            "mob": "minecraft:spider",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:or",
+                        "conditions": [
+                            {
+                                "type": "palladium:ability_last_tick",
+                                "power": "null",
+                                "ability": "fluid_wall"
+                            },
+                            {
+                                "type": "palladium:ability_last_tick",
+                                "power": "null",
+                                "ability": "fluid_ring"
+                            },
+                            {
+                                "type": "palladium:ability_last_tick",
+                                "power": "null",
+                                "ability": "fluid_splooge"
+                            },
+                            {
+                                "type": "palladium:ability_last_tick",
+                                "power": "null",
+                                "ability": "spider_tame"
+                            },
+                            {
+                                "type": "palladium:ability_last_tick",
+                                "power": "null",
+                                "ability": "fluid_toss"
+                            },
+                            {
+                                "type": "palladium:ability_enabled",
+                                "power": "null",
+                                "ability": "spider_buff"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "cave_spider_friends": {
+            "type": "hsmputil:tame_aoe",
+            "icon": "minecraft:blaze_rod",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "range": 20,
+            "mob": "minecraft:cave_spider",
+            "last_tick_commands": [
+                "tag @e[type=minecraft:spider, distance=0..20] add webimmune",
+                "tag @e[type=minecraft:cave_spider, distance=0..20] add webimmune"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:ability_last_tick",
+                        "power": "null",
+                        "ability": "spider_friends"
+                    }
+                ]
+            }
         }
     },
     "energy_bars": {
         "fluids": {
-            "max": 500,
+            "max": 1000,
             "auto_increase_per_tick": 3,
             "auto_increase_interval": 1,
             "color": "#FFFFFF"

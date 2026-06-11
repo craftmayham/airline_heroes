@@ -42,3 +42,13 @@ fill ~4 ~3 ~-2 ~4 ~3 ~2 minecraft:cobweb replace minecraft:air
 fill ~-2 ~3 ~4 ~2 ~3 ~4 minecraft:cobweb replace minecraft:air
 fill ~-4 ~3 ~-2 ~-4 ~3 ~2 minecraft:cobweb replace minecraft:air
 fill ~-2 ~3 ~-4 ~2 ~3 ~-4 minecraft:cobweb replace minecraft:air
+
+summon minecraft:cave_spider ~1 ~ ~1
+summon minecraft:cave_spider ~1 ~ ~-1
+summon minecraft:cave_spider ~-1 ~ ~1
+summon minecraft:cave_spider ~-1 ~ ~-1
+
+summon minecraft:cave_spider ~2 ~ ~2
+summon minecraft:cave_spider ~2 ~ ~-2
+summon minecraft:cave_spider ~-2 ~ ~2
+summon minecraft:cave_spider ~-2 ~ ~-2
