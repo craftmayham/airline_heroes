@@ -30,15 +30,20 @@
                 "ability": "form2"
               }
             ]
+          },
+          {
+            "type": "airline_heroes:dampened_by",
+            "effect": "dampened:emp"
           }
         ]
       }
     },
     "forms": {
       "type": "palladium:ability_wheel",
-      "icon": "minecraft:blaze_rod",
-      "title": "null",
+      "icon": "airline_heroes:textures/icons/form.png",
+      "title": "Form Selection",
       "bar_color": "light_gray",
+      "gui_position": [0, -1],
       "list_index": 0,
       "abilities": ["form0", "form1", "form2", "form3"],
       "conditions": {
@@ -58,7 +63,7 @@
     },
     "form0": {
       "type": "airline_heroes:form_set",
-      "icon": "minecraft:blaze_rod",
+      "icon": "airline_heroes:textures/icons/base.png",
       "title": "Base",
       "hidden": true,
       "hidden_in_bar": true,
@@ -92,6 +97,22 @@
         "unlocking": []
       }
     },
+    "f1skin": {
+      "type": "palladium:render_layer",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "render_layer": "airline_heroes:nano_1",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:integer_property",
+            "property": "form",
+            "min": 1,
+            "max": 1
+          }
+        ]
+      }
+    },
     "f1a": {
       "type": "palladium:attribute_modifier",
       "hidden": true,
@@ -111,7 +132,7 @@
         ],
         "unlocking": [
           {
-            "type": "palladium:ability_unlocked",
+            "type": "palladium:ability_enabled",
             "ability": "CORE_dummy"
           }
         ]
@@ -134,7 +155,7 @@
         ],
         "unlocking": [
           {
-            "type": "palladium:ability_unlocked",
+            "type": "palladium:ability_enabled",
             "ability": "CORE_dummy"
           }
         ]
@@ -166,7 +187,7 @@
             "max": 1
           },
           {
-            "type": "palladium:ability_unlocked",
+            "type": "palladium:ability_enabled",
             "ability": "CORE_dummy"
           }
         ]
@@ -256,6 +277,22 @@
         "unlocking": []
       }
     },
+    "f2skin": {
+      "type": "palladium:render_layer",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "render_layer": "airline_heroes:nano_2",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:integer_property",
+            "property": "form",
+            "min": 2,
+            "max": 2
+          }
+        ]
+      }
+    },
     "f2a": {
       "type": "palladium:attribute_modifier",
       "hidden": true,
@@ -275,7 +312,7 @@
         ],
         "unlocking": [
           {
-            "type": "palladium:ability_unlocked",
+            "type": "palladium:ability_enabled",
             "ability": "CORE_dummy"
           }
         ]
@@ -297,6 +334,22 @@
           }
         ],
         "unlocking": []
+      }
+    },
+    "f3skin": {
+      "type": "palladium:render_layer",
+      "hidden": true,
+      "hidden_in_bar": true,
+      "render_layer": "airline_heroes:nano_3",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:integer_property",
+            "property": "form",
+            "min": 3,
+            "max": 3
+          }
+        ]
       }
     },
     "power_upgrade_1": {
