@@ -370,7 +370,7 @@
     "set_name_description": {
       "type": "airline_heroes:set_name_description",
       "hidden": true,
-      "power_description": "Makes the user much stronger than a normal human."
+      "power_description": "Makes the user much stronger than a normal human, best used with a sword."
     }
   }
 }

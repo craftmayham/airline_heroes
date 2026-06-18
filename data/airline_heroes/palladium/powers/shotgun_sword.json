@@ -4,6 +4,38 @@
     "icon": "minecraft:ice",
     "ability_bar_texture": "airline_heroes:textures/gui/ability_bar.png",
     "abilities": {
+        "system_loop": {
+            "type": "palladium:command",
+            "hidden": true,
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "scoreboard players set @s[scores={airline_heroes.capo_shotgun_ammo=6..}] airline_heroes.capo_shotgun_ammo 6",
+                "scoreboard players set @s[scores={airline_heroes.capo_shotgun_ammo=..-1}] airline_heroes.capo_shotgun_ammo 0"
+            ]
+        },
+        "ammo_display": {
+            "type": "palladium:gui_overlay",
+            "texture": "#airline_heroes:capo_ammo",
+            "texture_width": 256,
+            "texture_height": 256,
+            "translate": [
+                0,
+                10,
+                0
+            ],
+            "rotate": [
+                0,
+                0,
+                0
+            ],
+            "scale": [
+                0.2,
+                0.7,
+                0.2
+            ],
+            "alignment": "top_left"
+        },
         "reload_dummy": {
             "type": "palladium:dummy",
             "icon": "minecraft:blaze_rod",

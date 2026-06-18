@@ -1,0 +1,9 @@
+{
+  "variables": {
+    "X": {
+      "type": "palladium:objective_score",
+      "objective": "airline_heroes.capo_shotgun_ammo"
+    }
+  },
+  "base": "airline_heroes:textures/gui/the_capo_ammo/ammo_#X.png"
+}
