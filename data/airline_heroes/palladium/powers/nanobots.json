@@ -56,7 +56,8 @@
         "enabling": [
           {
             "type": "palladium:held",
-            "key_type": "key_bind"
+            "key_type": "key_bind",
+            "cooldown": 0
           }
         ]
       }
@@ -91,7 +92,7 @@
         "enabling": [
           {
             "type": "palladium:ability_wheel",
-            "cooldown": 0
+            "cooldown": 600
           }
         ],
         "unlocking": []
@@ -271,7 +272,7 @@
         "enabling": [
           {
             "type": "palladium:ability_wheel",
-            "cooldown": 0
+            "cooldown": 600
           }
         ],
         "unlocking": []
@@ -350,6 +351,25 @@
             "max": 3
           }
         ]
+      }
+    },
+    "mining": {
+      "type": "palladium:attribute_modifier",
+      "hidden": true,
+      "attribute": "palladium:destroy_speed",
+      "amount": 2,
+      "operation": 0,
+      "uuid": "b468a879-83e6-4600-9816-0724b7b9aea4",
+      "conditions": {
+        "enabling": [
+          {
+            "type": "palladium:integer_property",
+            "property": "form",
+            "min": 3,
+            "max": 3
+          }
+        ],
+        "unlocking": []
       }
     },
     "power_upgrade_1": {
